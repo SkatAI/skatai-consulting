@@ -4,7 +4,9 @@ date: 2023-08-01
 author: Alexis Perrier
 tags: [AutoML, Vertex AI, MLOps, Big Query, Google Cloud]
 description: "At Karhoo, I led pricing and forecasting for a global taxi marketplace operating in real time across multiple continents. Facing accuracy ceilings and scaling limits with bespoke scikit-learn random forest models, we benchmarked and migrated to Vertex AI AutoML on GKE, with feature pipelines in BigQuery and automated model promotion. The transition delivered significantly higher prediction performance, lower infrastructure and operational costs, built-in drift handling, and greater flexibility for global rollout under strict latency constraints."
+image: /images/blog/karhoo_vertex.png
 ---
+
 ### Scaling real-time taxi pricing with AutoML at global marketplace scale
 
 I led pricing, coverage optimization, and cancellation forecasting for a global taxi marketplace operating across Asia, Europe, South America, and the US. The platform was white-labelled and embedded in larger travel flows (e.g. train booking → last-mile ride), which meant pricing predictions were the **very first value shown to users**. Accuracy and latency were therefore critical: pricing was computed in real time, under strict API latency constraints, to avoid saturating downstream taxi fleet systems.

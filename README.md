@@ -4,7 +4,7 @@ Modern consulting services website built with Next.js 14+, React, TypeScript, an
 
 ## Features
 
-- **Home Page**: Consulting pitch with Hero, Services, Experience, Projects, and Contact sections
+- **Home Page**: Consulting pitch with Hero, Services, Projects, and Contact sections
 - **Blog**: MDX-based blog with full markdown support
 - **Courses**: 160+ course chapters across 9 courses
 - **Slides**: Full-screen presentation mode with keyboard/touch navigation
@@ -91,10 +91,17 @@ title: "Post Title"
 date: 2024-01-01
 description: "Post description"
 tags: [AI, ML]
+image: "/images/blog/your-image.png"
+link: "https://example.com"
+link_text: "Example"
 ---
 
 Content here...
 ```
+
+Notes:
+- `image` is optional and must be a path under `public/` (do not include `/public` in the path).
+- `link` and `link_text` are optional and render on the blog listing card.
 
 ### Adding Course Content
 

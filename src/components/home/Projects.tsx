@@ -96,13 +96,14 @@ export function Projects() {
       project_description:
         'Led the migration from bespoke scikit-learn models to Vertex AI AutoML to improve real-time taxi pricing accuracy, scalability, and cost efficiency across a global marketplace.',
       tags: ['Forecasting', 'GCP', 'MLOps'],
+      link: '/blog/karhoo_lead_ML',
     },
     {
-      title: 'Courses & Writing',
+      title: 'AI-Driven PMF Validation',
       project_description:
-        'ML and GenAI courses used in universities and online programs, plus published books on applied ML.',
-      tags: ['Teaching', 'Books', 'Courses'],
-      link: '/courses',
+        'How AI helped validate startup ideas quickly, even when the business case didn’t hold',
+      tags: ['AI experimentation', 'product–market fit', 'startup strategy', 'rapid prototyping'],
+      link: '/blog/testing_ideas_with_AI',
     },
   ]
 
@@ -117,20 +118,19 @@ export function Projects() {
     >
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={4} mb={12} textAlign="center">
-          <Text
+          <Heading
             color="orange.600"
             fontWeight="semibold"
             textTransform="uppercase"
             letterSpacing="wider"
-            fontSize="sm"
+            fontSize="2xl"
+            as="h2"
+            //  size="2xl"
           >
-            Selected Work
-          </Text>
-          <Heading as="h2" size="2xl" color="gray.900">
             Recent Projects & Assets
           </Heading>
           <Text color="gray.600" fontSize="lg" maxW="2xl">
-            A snapshot of the kind of work I deliver, plus the educational material that supports it.
+            A snapshot of the kind of work I deliver.
           </Text>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={6}>
