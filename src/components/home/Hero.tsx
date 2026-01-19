@@ -28,9 +28,9 @@ function Stat({ value, label }: StatProps) {
 
 export function Hero() {
   const stats = [
-    { value: '10+', label: 'Years Freelance ML/AI' },
-    { value: '25+', label: 'ML/AI Projects' },
-    { value: '10+', label: 'Schools & Programs Taught' },
+    { value: '10+', label: 'Years ML & AI' },
+    { value: '20+', label: 'ML & AI Projects' },
+    { value: '10+', label: 'Programs Taught' },
   ]
 
   return (
@@ -66,19 +66,19 @@ export function Hero() {
                   </Text>
                 </Heading>
                 <Text fontSize="xl" color="gray.600" maxW="2xl" lineHeight="tall">
-                  I help startups and small teams design, build, and ship pragmatic AI products.
+                  I help startups and small teams design, build and ship pragmatic AI products.
                   <br /><br />From strategy to POCs to production, <br />I bring 25+ years of software
-                  experience<br /><br />with deep expertise in <em>GenAI</em>, <em>NLP</em>, <em>Machine Learning</em> and <em>Data Science</em>.
+                  experience<br />with expertise in <em>GenAI</em>, <em>NLP</em>, <em>Machine Learning</em> and <em>Data Science</em>.
                 </Text>
               </VStack>
               <Text
                 color="orange.600"
                 fontWeight="semibold"
-                textTransform="uppercase"
+                // textTransform="uppercase"
                 letterSpacing="wider"
                 fontSize={{ base: 'md', lg: 'lg' }}
               >
-                Alexis Perrier, PhD · SkatAI
+                Alexis Perrier, PhD
               </Text>
             </VStack>
             <Box w="100%">
