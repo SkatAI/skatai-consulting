@@ -42,11 +42,11 @@ export function Navigation() {
       top={0}
       left={0}
       right={0}
-      bg="var(--color-nav-bg)"
+      bg="whiteAlpha.900"
       backdropFilter="blur(10px)"
       zIndex={100}
       borderBottom="1px solid"
-      borderColor="var(--color-border-light)"
+      borderColor="gray.200"
     >
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <HStack justify="space-between" py={4}>
@@ -69,11 +69,11 @@ export function Navigation() {
                     height={28}
                   />
                 </Box> */}
-                <Text fontSize="xl" fontWeight="bold" color="var(--color-white)">
-                  Skat<Text as="span" color="var(--color-brand-primary)">AI</Text>
+                <Text fontSize="xl" fontWeight="bold" color="gray.900">
+                  Skat<Text as="span" color="orange.500">AI</Text>
                 </Text>
               </HStack>
-              <Text fontSize="xs" color="var(--color-gray-400)" letterSpacing="wide">
+              <Text fontSize="xs" color="gray.500" letterSpacing="wide">
                 AI from idea to production
               </Text>
             </VStack>
@@ -86,10 +86,10 @@ export function Navigation() {
                 key={link.href}
                 as={NextLink}
                 href={link.href}
-                color="var(--color-gray-300)"
+                color="gray.700"
                 fontSize="sm"
                 fontWeight="medium"
-                _hover={{ color: 'var(--color-brand-primary)' }}
+                _hover={{ color: 'orange.500' }}
                 transition="color 0.2s"
               >
                 {link.label}
@@ -98,10 +98,10 @@ export function Navigation() {
             <Link
               as={NextLink}
               href="/#contact"
-              color="var(--color-gray-300)"
+              color="gray.700"
               fontSize="sm"
               fontWeight="medium"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
               Contact
@@ -113,8 +113,8 @@ export function Navigation() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  color="var(--color-gray-300)"
-                  _hover={{ color: 'var(--color-brand-primary)', transform: 'scale(1.1)' }}
+                  color="gray.600"
+                  _hover={{ color: 'orange.500', transform: 'scale(1.1)' }}
                   transition="all 0.2s"
                   aria-label={social.label}
                 >
@@ -129,7 +129,7 @@ export function Navigation() {
             display={{ base: 'flex', md: 'none' }}
             aria-label="Toggle menu"
             variant="ghost"
-            color="var(--color-white)"
+            color="gray.900"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Text fontSize="xl">{isOpen ? '✕' : '☰'}</Text>
@@ -143,17 +143,17 @@ export function Navigation() {
             py={4}
             gap={4}
             borderTop="1px solid"
-            borderColor="var(--color-border-light)"
+            borderColor="gray.200"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 as={NextLink}
                 href={link.href}
-                color="var(--color-gray-300)"
+                color="gray.700"
                 fontSize="sm"
                 fontWeight="medium"
-                _hover={{ color: 'var(--color-brand-primary)' }}
+                _hover={{ color: 'orange.500' }}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -162,10 +162,10 @@ export function Navigation() {
             <Link
               as={NextLink}
               href="/#contact"
-              color="var(--color-gray-300)"
+              color="gray.700"
               fontSize="sm"
               fontWeight="medium"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               onClick={() => setIsOpen(false)}
             >
               Contact
@@ -177,8 +177,8 @@ export function Navigation() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  color="var(--color-gray-300)"
-                  _hover={{ color: 'var(--color-brand-primary)' }}
+                  color="gray.600"
+                  _hover={{ color: 'orange.500' }}
                   aria-label={social.label}
                 >
                   {social.icon}

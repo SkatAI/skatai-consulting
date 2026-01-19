@@ -15,7 +15,7 @@ export default function BlogPage() {
   return (
     <Box>
       <Navigation />
-      <Box pt="72px" minH="100vh" bg="var(--color-gray-300)">
+      <Box pt="72px" minH="100vh" bg="gray.50">
         <Container maxW="container.xl" py={16}>
           <VStack gap={4} mb={12} textAlign="center">
             <Text

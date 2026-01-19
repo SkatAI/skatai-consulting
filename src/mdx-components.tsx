@@ -29,7 +29,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </Code>
     ),
     pre: ({ children }) => (
-      <Box as="pre" p={4} borderRadius="md" bg="gray.800" color="gray.100" overflow="auto" mb={4}>
+      <Box as="pre" p={4} borderRadius="md" bg="gray.50" color="gray.800" overflow="auto" mb={4}>
         {children}
       </Box>
     ),

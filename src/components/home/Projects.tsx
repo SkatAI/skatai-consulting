@@ -13,23 +13,23 @@ interface ProjectCardProps {
 function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   const content = (
     <Box
-      bg="var(--color-white)"
+      bg="white"
       p={6}
       borderRadius="xl"
       boxShadow="md"
       transition="all 0.3s"
       _hover={{ transform: 'translateY(-4px)', boxShadow: 'xl' }}
       border="1px solid"
-      borderColor="var(--color-gray-100)"
+      borderColor="gray.200"
       height="100%"
       cursor={link ? 'pointer' : 'default'}
     >
       <VStack align="flex-start" gap={4} height="100%">
         <VStack align="flex-start" gap={2} flex="1">
-          <Heading as="h3" size="md" color="var(--color-gray-800)">
+          <Heading as="h3" size="md" color="gray.900">
             {title}
           </Heading>
-          <Text color="var(--color-gray-600)" fontSize="sm" lineHeight="tall">
+          <Text color="gray.600" fontSize="sm" lineHeight="tall">
             {description}
           </Text>
         </VStack>
@@ -85,11 +85,11 @@ export function Projects() {
   ]
 
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} bg="var(--color-gray-50)" id="projects">
+    <Box as="section" py={{ base: 16, md: 24 }} bg="gray.50" id="projects">
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={4} mb={12} textAlign="center">
           <Text
-            color="var(--color-brand-secondary)"
+            color="orange.600"
             fontWeight="semibold"
             textTransform="uppercase"
             letterSpacing="wider"
@@ -97,10 +97,10 @@ export function Projects() {
           >
             Selected Work
           </Text>
-          <Heading as="h2" size="2xl" color="var(--color-gray-800)">
+          <Heading as="h2" size="2xl" color="gray.900">
             Recent Projects & Assets
           </Heading>
-          <Text color="var(--color-gray-600)" fontSize="lg" maxW="2xl">
+          <Text color="gray.600" fontSize="lg" maxW="2xl">
             A snapshot of the kind of work I deliver, plus the educational material that supports it.
           </Text>
         </VStack>

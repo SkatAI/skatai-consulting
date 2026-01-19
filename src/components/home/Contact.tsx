@@ -7,12 +7,12 @@ import Image from 'next/image'
 
 export function Contact() {
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} bg="var(--color-gray-300)" id="contact">
+    <Box as="section" py={{ base: 16, md: 24 }} bg="gray.50" id="contact">
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={16}>
           <VStack align="flex-start" gap={6}>
             <Text
-              color="var(--color-brand-secondary)"
+              color="orange.600"
               fontWeight="semibold"
               textTransform="uppercase"
               letterSpacing="wider"
@@ -20,10 +20,10 @@ export function Contact() {
             >
               Get in Touch
             </Text>
-            <Heading as="h2" size="2xl" color="var(--color-gray-800)">
+            <Heading as="h2" size="2xl" color="gray.900">
               Let&apos;s Build Something Serious
             </Heading>
-            <Text color="var(--color-gray-600)" fontSize="lg" lineHeight="tall">
+            <Text color="gray.600" fontSize="lg" lineHeight="tall">
               Tell me about your product, constraints, and timeline. I work with startups and small
               teams that need reliable AI delivery from strategy to production.
             </Text>
@@ -31,27 +31,27 @@ export function Contact() {
 
           <VStack align="flex-start" gap={8}>
             <VStack align="flex-start" gap={2}>
-              <Text fontWeight="bold" fontSize="xl" color="var(--color-gray-800)">
+              <Text fontWeight="bold" fontSize="xl" color="gray.900">
                 Alexis Perrier
               </Text>
-              <Text color="var(--color-gray-700)">31 rue Pierre Semard</Text>
-              <Text color="var(--color-gray-700)">75009 Paris</Text>
+              <Text color="gray.700">31 rue Pierre Semard</Text>
+              <Text color="gray.700">75009 Paris</Text>
               <HStack gap={2} pt={2}>
-                <Text color="var(--color-gray-700)">Tel:</Text>
+                <Text color="gray.700">Tel:</Text>
                 <Link
                   href="tel:+33661055150"
-                  color="var(--color-gray-700)"
-                  _hover={{ color: 'var(--color-brand-secondary)' }}
+                  color="gray.700"
+                  _hover={{ color: 'orange.600' }}
                 >
                   +33 (0) 661055150
                 </Link>
               </HStack>
               <HStack gap={2}>
-                <Text color="var(--color-gray-700)">Email:</Text>
+                <Text color="gray.700">Email:</Text>
                 <Link
                   href="mailto:alexis.perrier@skatai.com"
-                  color="var(--color-gray-700)"
-                  _hover={{ color: 'var(--color-brand-secondary)' }}
+                  color="gray.700"
+                  _hover={{ color: 'orange.600' }}
                 >
                   alexis.perrier@skatai.com
                 </Link>
@@ -63,7 +63,7 @@ export function Contact() {
                 href="https://www.linkedin.com/in/alexisperrier"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="var(--color-gray-700)"
+                color="gray.700"
                 _hover={{ color: '#0A66C2' }}
               >
                 <HStack gap={2}>
@@ -77,7 +77,7 @@ export function Contact() {
                 href="https://bsky.app/profile/alexisperrier.bsky.social"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="var(--color-gray-700)"
+                color="gray.700"
                 _hover={{ color: '#0085FF' }}
               >
                 <HStack gap={2}>
@@ -91,7 +91,7 @@ export function Contact() {
                 href="https://medium.com/@alexisperrier"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="var(--color-gray-700)"
+                color="gray.700"
                 _hover={{ color: '#000000' }}
               >
                 <HStack gap={2}>
@@ -105,7 +105,7 @@ export function Contact() {
                 href="https://www.malt.fr/profile/alexisperrier"
                 target="_blank"
                 rel="noopener noreferrer"
-                color="var(--color-gray-700)"
+                color="gray.700"
                 _hover={{ color: '#FC5757' }}
               >
                 <Image

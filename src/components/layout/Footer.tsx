@@ -7,14 +7,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <Box as="footer" bg="var(--color-gray-900)" color="var(--color-gray-400)" py={12}>
+    <Box as="footer" bg="gray.100" color="gray.600" py={12}>
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={8}>
           <HStack gap={8} flexWrap="wrap" justify="center">
             <Link
               as={NextLink}
               href="/courses"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
               Courses
@@ -22,7 +22,7 @@ export function Footer() {
             <Link
               as={NextLink}
               href="/blog"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
               Blog
@@ -30,7 +30,7 @@ export function Footer() {
             <Link
               as={NextLink}
               href="/#contact"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
               Contact
@@ -39,7 +39,7 @@ export function Footer() {
               href="https://github.com/skatai"
               target="_blank"
               rel="noopener noreferrer"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
               GitHub
@@ -48,7 +48,7 @@ export function Footer() {
               href="https://linkedin.com/in/skatai"
               target="_blank"
               rel="noopener noreferrer"
-              _hover={{ color: 'var(--color-brand-primary)' }}
+              _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
               LinkedIn
@@ -56,8 +56,8 @@ export function Footer() {
           </HStack>
 
           <Box textAlign="center">
-            <Text fontSize="lg" fontWeight="bold" color="var(--color-white)" mb={2}>
-              Skat<Text as="span" color="var(--color-brand-primary)">AI</Text>
+            <Text fontSize="lg" fontWeight="bold" color="gray.900" mb={2}>
+              Skat<Text as="span" color="orange.500">AI</Text>
             </Text>
             <Text fontSize="sm">© {currentYear} SkatAI. All rights reserved.</Text>
           </Box>

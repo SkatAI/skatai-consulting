@@ -10,10 +10,10 @@ interface StatProps {
 function Stat({ value, label }: StatProps) {
   return (
     <VStack gap={1}>
-      <Text fontSize="5xl" fontWeight="bold" color="var(--color-brand-primary)" lineHeight="1">
+      <Text fontSize="5xl" fontWeight="bold" color="orange.500" lineHeight="1">
         {value}
       </Text>
-      <Text color="var(--color-gray-400)" fontSize="sm" textTransform="uppercase" letterSpacing="wider">
+      <Text color="gray.600" fontSize="sm" textTransform="uppercase" letterSpacing="wider">
         {label}
       </Text>
     </VStack>
@@ -55,14 +55,14 @@ export function Experience() {
     <Box
       as="section"
       py={{ base: 16, md: 24 }}
-      bg="linear-gradient(135deg, var(--color-bg-dark-primary) 0%, var(--color-bg-dark-secondary) 100%)"
-      color="var(--color-white)"
+      bg="white"
+      color="gray.900"
       id="experience"
     >
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={4} mb={16} textAlign="center">
           <Text
-            color="var(--color-brand-primary)"
+            color="orange.600"
             fontWeight="semibold"
             textTransform="uppercase"
             letterSpacing="wider"
@@ -87,17 +87,17 @@ export function Experience() {
               key={item.year}
               gap={6}
               p={6}
-              bg="var(--color-overlay-light)"
+              bg="gray.50"
               borderRadius="lg"
               borderLeft="4px solid"
-              borderLeftColor="var(--color-brand-primary)"
+              borderLeftColor="orange.500"
               transition="all 0.2s"
-              _hover={{ bg: 'var(--color-overlay-light-hover)' }}
+              _hover={{ bg: 'orange.50' }}
             >
               <Text
                 fontSize="sm"
                 fontWeight="bold"
-                color="var(--color-brand-primary)"
+                color="orange.500"
                 minW="60px"
                 textAlign="center"
               >
@@ -107,7 +107,7 @@ export function Experience() {
                 <Heading as="h4" size="md">
                   {item.title}
                 </Heading>
-                <Text color="var(--color-gray-400)" fontSize="sm">
+                <Text color="gray.600" fontSize="sm">
                   {item.description}
                 </Text>
               </VStack>
