@@ -1,11 +1,12 @@
 ---
 title: "Mimesis: training field interviews with personas"
 date: 2026-01-18
-description: "Mimesis is a web-based interview training platform. It allows master-level students and researchers to conduct realistic interviews with adaptive AI personas grounded in real interview data. The project combines two strong axes: rapid delivery using agentic AI coding practices, and deep conceptual work on persona design as a proxy for human social behavior."
-link: [Mimesis(]https://sociomimesis.com)
 author: Alexis Perrier
 tags: [AI, Personnas, Google ADK, Agentic coding, Sociology, Field research]
-image: /public/images/blog/mimesis_illustration.png
+image: /images/blog/mimesis_illustration.png
+description: "Mimesis is a web-based interview training platform. It allows master-level students and researchers to conduct realistic interviews with adaptive AI personas grounded in real interview data. The project combines two strong axes: rapid delivery using agentic AI coding practices, and deep conceptual work on persona design as a proxy for human social behavior."
+link: "https://sociomimesis.com"
+link_text: "Mimesis"
 ---
 
 

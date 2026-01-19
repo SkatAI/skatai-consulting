@@ -5,12 +5,14 @@ import NextLink from 'next/link'
 
 interface ProjectCardProps {
   title: string
-  description: string
+  project_description: string
   tags: string[]
+  image?: string
   link?: string
+  linkText?: string
 }
 
-function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
+function ProjectCard({ title, project_description, tags, image: _image, link, linkText }: ProjectCardProps) {
   const content = (
     <Box
       bg="white"
@@ -23,15 +25,31 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
       borderColor="gray.200"
       height="100%"
       cursor={link ? 'pointer' : 'default'}
+      position="relative"
     >
       <VStack align="flex-start" gap={4} height="100%">
         <VStack align="flex-start" gap={2} flex="1">
-          <Heading as="h3" size="md" color="gray.900">
+          <Heading
+            as="h3"
+            size="md"
+            fontWeight="bold"
+            color="gray.900"
+          >
             {title}
           </Heading>
-          <Text color="gray.600" fontSize="sm" lineHeight="tall">
-            {description}
+          <Text
+            color="gray.600"
+            fontSize="sm"
+            fontWeight="medium"
+            lineHeight="tall"
+          >
+            {project_description}
           </Text>
+          {linkText && (
+            <Text color="orange.600" fontSize="sm" fontWeight="semibold">
+              {linkText}
+            </Text>
+          )}
         </VStack>
         <HStack flexWrap="wrap" gap={2}>
           {tags.map((tag) => (
@@ -58,26 +76,30 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
 export function Projects() {
   const projects = [
     {
-      title: 'Mimesis Interview Coach',
-      description:
-        'A GenAI chatbot for student interview training and evaluation, designed as a full application rather than a demo.',
-      tags: ['GenAI', 'Chatbot', 'Evaluation'],
+      title: 'Mimesis',
+      project_description:
+        'Interview training platform with adaptive AI personas. Rapid delivery using agentic AI coding practices and deep conceptual work on persona design as a proxy for human social behavior.',
+      tags: ['AI', 'Personas', 'Google ADK'],
+      link: '/blog/mimesis_project',
+      image: '/images/blog/mimesis_illustration_no_text.png'
     },
     {
       title: 'Moliere.love',
-      description:
-        'Educational web and mobile app built end-to-end with a GenAI content pipeline and full product stack.',
-      tags: ['Full-Stack', 'GenAI', 'Mobile'],
+      project_description:
+        'moliere.love propose une traduction de Molière en français moderne, vers par vers, pour faciliter l’accès aux œuvres étudiées au collège et au lycée. Le projet s’appuie sur l’IA pour rendre ces textes classiques plus lisibles, sans en trahir le sens.',
+      tags: ['GenAI', 'Education', 'AI agent', 'Claude'],
+      link: '/blog/moliere_project',
+      image: '/images/blog/moliere_illustration_no_text.png'
     },
     {
       title: 'Karhoo Mobility ML',
-      description:
-        'Led pricing, coverage optimization, and cancellation forecasting for a global taxi marketplace.',
+      project_description:
+        'Led the migration from bespoke scikit-learn models to Vertex AI AutoML to improve real-time taxi pricing accuracy, scalability, and cost efficiency across a global marketplace.',
       tags: ['Forecasting', 'GCP', 'MLOps'],
     },
     {
       title: 'Courses & Writing',
-      description:
+      project_description:
         'ML and GenAI courses used in universities and online programs, plus published books on applied ML.',
       tags: ['Teaching', 'Books', 'Courses'],
       link: '/courses',

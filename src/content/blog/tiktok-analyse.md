@@ -1,15 +1,14 @@
 ---
 title: "Analysons TikTok"
 date: 2024-06-19
-description: "Mini projet d'analyse multimodal des videos TikTok grace au deep learning et machine learning classique"
+description: "Analyse multimodal des videos TikTok grace au deep learning et machine learning classique"
 author: Alexis Perrier
-tags: [Deep Learning, TikTok, Analysis, NLP, Computer Vision]
+tags: [Workshop, Deep Learning, TikTok, Analysis, NLP, Computer Vision]
 ---
 
 # TikTok
 
-TikTok a un impact important sur la société. Les politiciens et politiciennes y sont nombreux et influencent les élections, ...
-TikTok est donc une mine d'or d'information qu'il convient d'analyser.
+TikTok a un impact important sur la société. Les politiciens et politiciennes y sont nombreux et influencent les élections, ... TikTok est donc une mine d'or d'information qu'il convient d'analyser.
 
 Dans ce workshop, nous allons télécharger une série de vidéos d'un compte et analyser leur contenu grâce aux deep learning.
 
