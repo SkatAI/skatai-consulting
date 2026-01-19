@@ -38,6 +38,7 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
     if (match) {
       const slideNum = parseInt(match[1], 10) - 1
       if (slideNum >= 0 && slideNum < slides.length) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- Intentional: initialize from URL hash on mount
         setCurrentSlide(slideNum)
       }
     }

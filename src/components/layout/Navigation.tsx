@@ -1,7 +1,8 @@
 'use client'
 
-import { Box, Container, HStack, Link, Button, Text, IconButton, VStack } from '@chakra-ui/react'
+import { Box, Container, HStack, Link, Text, IconButton, VStack } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export function Navigation() {
@@ -30,28 +31,35 @@ export function Navigation() {
     >
       <Container maxW="container.xl">
         <HStack justify="space-between" py={4}>
-          <NextLink href="/" passHref legacyBehavior>
-            <Link _hover={{ textDecoration: 'none' }}>
+          <Link as={NextLink} href="/" _hover={{ textDecoration: 'none' }}>
+            <HStack gap={2}>
+              <Image
+                src="/images/woodpecker_02.png"
+                alt="SkatAI Logo"
+                width={32}
+                height={32}
+              />
               <Text fontSize="xl" fontWeight="bold" color="white">
                 Skat<Text as="span" color="orange.400">AI</Text>
               </Text>
-            </Link>
-          </NextLink>
+            </HStack>
+          </Link>
 
           {/* Desktop Navigation */}
           <HStack gap={8} display={{ base: 'none', md: 'flex' }}>
             {navLinks.map((link) => (
-              <NextLink key={link.href} href={link.href} passHref legacyBehavior>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  fontWeight="medium"
-                  _hover={{ color: 'orange.400' }}
-                  transition="color 0.2s"
-                >
-                  {link.label}
-                </Link>
-              </NextLink>
+              <Link
+                key={link.href}
+                as={NextLink}
+                href={link.href}
+                color="gray.300"
+                fontSize="sm"
+                fontWeight="medium"
+                _hover={{ color: 'orange.400' }}
+                transition="color 0.2s"
+              >
+                {link.label}
+              </Link>
             ))}
           </HStack>
 
@@ -77,17 +85,18 @@ export function Navigation() {
             borderColor="whiteAlpha.200"
           >
             {navLinks.map((link) => (
-              <NextLink key={link.href} href={link.href} passHref legacyBehavior>
-                <Link
-                  color="gray.300"
-                  fontSize="sm"
-                  fontWeight="medium"
-                  _hover={{ color: 'orange.400' }}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </NextLink>
+              <Link
+                key={link.href}
+                as={NextLink}
+                href={link.href}
+                color="gray.300"
+                fontSize="sm"
+                fontWeight="medium"
+                _hover={{ color: 'orange.400' }}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
             ))}
           </VStack>
         )}

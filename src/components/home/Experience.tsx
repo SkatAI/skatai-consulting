@@ -82,7 +82,7 @@ export function Experience() {
         </SimpleGrid>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={8}>
-          {highlights.map((item, index) => (
+          {highlights.map((item) => (
             <HStack
               key={item.year}
               gap={6}

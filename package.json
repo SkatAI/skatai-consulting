@@ -8,6 +8,7 @@
     "postbuild": "next-sitemap && node scripts/generate-rss.js",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md,mdx}\""
   },
   "dependencies": {

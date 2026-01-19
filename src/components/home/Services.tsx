@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Container, Heading, Text, SimpleGrid, VStack, Icon } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, SimpleGrid, VStack } from '@chakra-ui/react'
 
 interface ServiceCardProps {
   title: string

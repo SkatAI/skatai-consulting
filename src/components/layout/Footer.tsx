@@ -11,21 +11,30 @@ export function Footer() {
       <Container maxW="container.xl">
         <VStack gap={8}>
           <HStack gap={8} flexWrap="wrap" justify="center">
-            <NextLink href="/courses" passHref legacyBehavior>
-              <Link _hover={{ color: 'orange.400' }} transition="color 0.2s">
-                Courses
-              </Link>
-            </NextLink>
-            <NextLink href="/blog" passHref legacyBehavior>
-              <Link _hover={{ color: 'orange.400' }} transition="color 0.2s">
-                Blog
-              </Link>
-            </NextLink>
-            <NextLink href="/#contact" passHref legacyBehavior>
-              <Link _hover={{ color: 'orange.400' }} transition="color 0.2s">
-                Contact
-              </Link>
-            </NextLink>
+            <Link
+              as={NextLink}
+              href="/courses"
+              _hover={{ color: 'orange.400' }}
+              transition="color 0.2s"
+            >
+              Courses
+            </Link>
+            <Link
+              as={NextLink}
+              href="/blog"
+              _hover={{ color: 'orange.400' }}
+              transition="color 0.2s"
+            >
+              Blog
+            </Link>
+            <Link
+              as={NextLink}
+              href="/#contact"
+              _hover={{ color: 'orange.400' }}
+              transition="color 0.2s"
+            >
+              Contact
+            </Link>
             <Link
               href="https://github.com/skatai"
               target="_blank"

@@ -46,9 +46,9 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
 
   if (link) {
     return (
-      <NextLink href={link} passHref legacyBehavior>
-        <Link _hover={{ textDecoration: 'none' }}>{content}</Link>
-      </NextLink>
+      <Link as={NextLink} href={link} _hover={{ textDecoration: 'none' }}>
+        {content}
+      </Link>
     )
   }
 
