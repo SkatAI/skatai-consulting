@@ -58,32 +58,29 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
 export function Projects() {
   const projects = [
     {
-      title: 'MLOps Course',
+      title: 'Mimesis Interview Coach',
       description:
-        'Comprehensive course covering the full ML lifecycle: data pipelines, model training, deployment, monitoring, and continuous improvement.',
-      tags: ['MLOps', 'Python', 'Docker', 'Kubernetes'],
-      link: '/courses/mlops-dpe',
+        'A GenAI chatbot for student interview training and evaluation, designed as a full application rather than a demo.',
+      tags: ['GenAI', 'Chatbot', 'Evaluation'],
     },
     {
-      title: 'ML to LLM Transition',
+      title: 'Moliere.love',
       description:
-        'Guide for data scientists transitioning from traditional ML to large language models and generative AI applications.',
-      tags: ['LLMs', 'NLP', 'Transformers'],
-      link: '/courses/ml2llm',
+        'Educational web and mobile app built end-to-end with a GenAI content pipeline and full product stack.',
+      tags: ['Full-Stack', 'GenAI', 'Mobile'],
     },
     {
-      title: 'NoSQL Databases',
+      title: 'Karhoo Mobility ML',
       description:
-        'Deep dive into NoSQL database systems, data modeling patterns, and when to choose different database technologies.',
-      tags: ['MongoDB', 'Neo4j', 'Database Design'],
-      link: '/courses/nosql',
+        'Led pricing, coverage optimization, and cancellation forecasting for a global taxi marketplace.',
+      tags: ['Forecasting', 'GCP', 'MLOps'],
     },
     {
-      title: 'AI for Business',
+      title: 'Courses & Writing',
       description:
-        'Strategic frameworks for identifying AI opportunities, building business cases, and implementing AI solutions that deliver ROI.',
-      tags: ['Strategy', 'Business', 'AI Adoption'],
-      link: '/courses/iabiz',
+        'ML and GenAI courses used in universities and online programs, plus published books on applied ML.',
+      tags: ['Teaching', 'Books', 'Courses'],
+      link: '/courses',
     },
   ]
 
@@ -98,13 +95,13 @@ export function Projects() {
             letterSpacing="wider"
             fontSize="sm"
           >
-            Featured Work
+            Selected Work
           </Text>
           <Heading as="h2" size="2xl" color="var(--color-gray-800)">
-            Courses & Projects
+            Recent Projects & Assets
           </Heading>
           <Text color="var(--color-gray-600)" fontSize="lg" maxW="2xl">
-            Explore our educational content and project portfolio.
+            A snapshot of the kind of work I deliver, plus the educational material that supports it.
           </Text>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={6}>

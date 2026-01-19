@@ -21,11 +21,11 @@ export function Contact() {
               Get in Touch
             </Text>
             <Heading as="h2" size="2xl" color="var(--color-gray-800)">
-              Let&apos;s Work Together
+              Let&apos;s Build Something Serious
             </Heading>
             <Text color="var(--color-gray-600)" fontSize="lg" lineHeight="tall">
-              Have a project in mind or want to discuss how AI can transform your business? I&apos;d
-              love to hear from you.
+              Tell me about your product, constraints, and timeline. I work with startups and small
+              teams that need reliable AI delivery from strategy to production.
             </Text>
           </VStack>
 

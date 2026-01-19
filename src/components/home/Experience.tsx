@@ -22,32 +22,32 @@ function Stat({ value, label }: StatProps) {
 
 export function Experience() {
   const stats = [
-    { value: '10+', label: 'Years Experience' },
-    { value: '50+', label: 'Projects Delivered' },
-    { value: '20+', label: 'Enterprise Clients' },
-    { value: '200+', label: 'Students Trained' },
+    { value: '25+', label: 'Years in Software & AI' },
+    { value: '8+', label: 'Years Freelance AI' },
+    { value: '2', label: 'Published ML Books' },
+    { value: '7+', label: 'Schools & Programs Taught' },
   ]
 
   const highlights = [
     {
-      year: 'Today',
-      title: 'AI & ML Consulting',
-      description: 'Helping organizations build and deploy production ML systems',
+      year: '2024–2025',
+      title: 'GenAI Applications',
+      description: 'Built end-to-end GenAI products, from UX to production infrastructure',
     },
     {
-      year: '2020',
-      title: 'MLOps Education',
-      description: 'Developing comprehensive courses on ML engineering best practices',
+      year: '2022–2023',
+      title: 'Karhoo (Renault Group)',
+      description: 'Led mobility ML projects: pricing, coverage optimization, cancellation forecasting',
     },
     {
-      year: '2015',
-      title: 'Data Science',
-      description: 'Building data-driven solutions for startups and enterprises',
+      year: '2021–2022',
+      title: 'Praexo (Fintech)',
+      description: 'Launched NLP and recommendation services in production on AWS',
     },
     {
-      year: '2010',
-      title: 'Software Engineering',
-      description: 'Full-stack development and system architecture',
+      year: '2011–2016',
+      title: 'Berklee Online',
+      description: 'Built data and software systems for a global education platform',
     },
   ]
 
@@ -71,7 +71,7 @@ export function Experience() {
             Track Record
           </Text>
           <Heading as="h2" size="2xl">
-            Experience & Expertise
+            Experience & Credibility
           </Heading>
         </VStack>
 

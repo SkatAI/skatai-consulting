@@ -36,22 +36,22 @@ function ServiceCard({ title, description, icon }: ServiceCardProps) {
 export function Services() {
   const services = [
     {
+      icon: '🧭',
+      title: 'Ideation → POC → Production',
+      description:
+        'Turn a business idea into a working AI product. I scope the opportunity, prototype quickly, validate with users, and build a path to production without over-engineering.',
+    },
+    {
+      icon: '📌',
+      title: 'AI Strategy & Delivery',
+      description:
+        'Clear decisions on what to build, why now, and how to deliver. I help set priorities, manage risks, and align stakeholders with a realistic plan.',
+    },
+    {
       icon: '⚙️',
-      title: 'MLOps',
+      title: 'Engineering & MLOps',
       description:
-        'End-to-end machine learning operations: from model development to deployment and monitoring. Build robust, scalable ML pipelines that deliver real business value.',
-    },
-    {
-      icon: '🎯',
-      title: 'AI Strategy',
-      description:
-        'Strategic guidance on AI adoption and implementation. Identify high-impact opportunities, assess technical feasibility, and create actionable roadmaps.',
-    },
-    {
-      icon: '🔧',
-      title: 'Custom ML Solutions',
-      description:
-        'Bespoke machine learning models tailored to your specific business needs. From natural language processing to computer vision and predictive analytics.',
+        'Production-grade implementation across data pipelines, model serving, and cloud infrastructure (GCP/AWS). Reliable systems, measurable outcomes.',
     },
   ]
 
@@ -66,14 +66,13 @@ export function Services() {
             letterSpacing="wider"
             fontSize="sm"
           >
-            What We Do
+            How I Help
           </Text>
           <Heading as="h2" size="2xl" color="var(--color-gray-800)">
-            Services
+            Consulting Services
           </Heading>
           <Text color="var(--color-gray-600)" fontSize="lg" maxW="2xl">
-            Comprehensive AI and ML consulting services to help your organization thrive in the age
-            of artificial intelligence.
+            Focused, senior-level help for startups and small teams building AI-enabled products.
           </Text>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>

@@ -51,27 +51,32 @@ export function Navigation() {
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <HStack justify="space-between" py={4}>
           <Link as={NextLink} href="/" _hover={{ textDecoration: 'none' }}>
-            <HStack gap={2}>
-              {/* <Box
-                width="36px"
-                height="36px"
-                bg="var(--color-overlay-light)"
-                borderRadius="full"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Image
-                  src="/images/woodpecker_02.png"
-                  alt="SkatAI Logo"
-                  width={28}
-                  height={28}
-                />
-              </Box> */}
-              <Text fontSize="xl" fontWeight="bold" color="var(--color-white)">
-                Skat<Text as="span" color="var(--color-brand-primary)">AI</Text>
+            <VStack align="flex-start" gap={0}>
+              <HStack gap={2}>
+                {/* <Box
+                  width="36px"
+                  height="36px"
+                  bg="var(--color-overlay-light)"
+                  borderRadius="full"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Image
+                    src="/images/woodpecker_02.png"
+                    alt="SkatAI Logo"
+                    width={28}
+                    height={28}
+                  />
+                </Box> */}
+                <Text fontSize="xl" fontWeight="bold" color="var(--color-white)">
+                  Skat<Text as="span" color="var(--color-brand-primary)">AI</Text>
+                </Text>
+              </HStack>
+              <Text fontSize="xs" color="var(--color-gray-400)" letterSpacing="wide">
+                AI from idea to production
               </Text>
-            </HStack>
+            </VStack>
           </Link>
 
           {/* Desktop Navigation */}

@@ -23,17 +23,18 @@ export function Hero() {
             letterSpacing="wider"
             fontSize="sm"
           >
-            AI & Machine Learning Consulting
+            Alexis Perrier, PhD · SkatAI
           </Text>
           <Heading as="h1" size="4xl" lineHeight="1.1" fontWeight="bold">
-            Transform Your Business with{' '}
+            AI systems that move from{' '}
             <Text as="span" color="var(--color-brand-primary)">
-              Intelligent Solutions
+              idea to production
             </Text>
           </Heading>
           <Text fontSize="xl" color="var(--color-gray-300)" maxW="2xl" lineHeight="tall">
-            Expert consulting in MLOps, AI Strategy, and Custom Machine Learning. We help
-            organizations leverage AI to drive innovation, efficiency, and growth.
+            I help startups and small teams design, build, and ship pragmatic AI products. From
+            strategy and POCs to production-grade delivery, I bring 25+ years of software and data
+            experience with deep expertise in GenAI, NLP, and MLOps.
           </Text>
           <HStack gap={4} pt={4}>
             <Link href="#contact">
@@ -44,7 +45,7 @@ export function Hero() {
                 _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                 transition="all 0.2s"
               >
-                Get in Touch
+                Start a Project
               </Button>
             </Link>
             <Link href="/courses">
