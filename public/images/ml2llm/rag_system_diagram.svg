@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .title { font-size: 28px; font-weight: bold; fill: #1a1a1a; }
+      .phase-title { font-size: 18px; font-weight: bold; fill: white; }
+      .step-title { font-size: 14px; font-weight: 600; fill: #1a1a1a; }
+      .step-text { font-size: 12px; fill: #333; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow-label { font-size: 11px; fill: #666; }
+      
+      .indexing-phase { fill: #e8f4f8; stroke: #0288d1; stroke-width: 2; }
+      .query-phase { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .prompting-phase { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      
+      .step-box { stroke-width: 2; }
+      .step-box-indexing { fill: #b3e5fc; stroke: #01579b; }
+      .step-box-query { fill: #ffe0b2; stroke: #e65100; }
+      .step-box-prompting { fill: #e1bee7; stroke: #4a148c; }
+    </style>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" class="title">RAG System Architecture</text>
+  
+  <!-- ============ INDEXING PHASE ============ -->
+  <rect x="50" y="70" width="550" height="750" rx="10" class="indexing-phase"/>
+  <rect x="60" y="75" width="530" height="35" rx="8" fill="#0288d1"/>
+  <text x="335" y="102" text-anchor="middle" class="phase-title">INDEXING PHASE</text>
+  
+  <!-- Step 1: Embedding Model Choice -->
+  <rect x="80" y="130" width="510" height="80" rx="8" class="step-box step-box-indexing"/>
+  <text x="90" y="155" class="step-title">1. Embedding Model Choice</text>
+  <text x="90" y="175" class="step-text">• Select pre-trained model (e.g., BGE, MiniLM, OpenAI)</text>
+  <text x="90" y="192" class="step-text">• Consider dimension size, speed, and quality trade-offs</text>
+  <text x="90" y="209" class="step-text">• Domain-specific vs. general-purpose models</text>
+  
+  <!-- Arrow -->
+  <path d="M 335 210 L 335 240" class="arrow"/>
+  
+  <!-- Step 2: Chunking -->
+  <rect x="80" y="240" width="510" height="80" rx="8" class="step-box step-box-indexing"/>
+  <text x="90" y="265" class="step-title">2. Document Chunking</text>
+  <text x="90" y="285" class="step-text">• Split documents into semantic chunks (sliding window, recursive)</text>
+  <text x="90" y="302" class="step-text">• Maintain chunk size balance (e.g., 256-1024 tokens)</text>
+  <text x="90" y="319" class="step-text">• Preserve context with chunk overlaps</text>
+  
+  <!-- Arrow -->
+  <path d="M 335 320 L 335 350" class="arrow"/>
+  
+  <!-- Step 3: Transformation -->
+  <rect x="80" y="350" width="510" height="100" rx="8" class="step-box step-box-indexing"/>
+  <text x="90" y="375" class="step-title">3. Text Transformation & Enhancement</text>
+  <text x="90" y="395" class="step-text">• Aggregation: Combine related chunks</text>
+  <text x="90" y="412" class="step-text">• Summarization: Extract key information</text>
+  <text x="90" y="429" class="step-text">• Information Extraction: Identify entities, relationships</text>
+  <text x="90" y="446" class="step-text">• Semantic Enhancements: Add metadata, expand context</text>
+  
+  <!-- Arrow -->
+  <path d="M 335 450 L 335 480" class="arrow"/>
+  
+  <!-- Step 4: Corpus Embedding -->
+  <rect x="80" y="480" width="510" height="80" rx="8" class="step-box step-box-indexing"/>
+  <text x="90" y="505" class="step-title">4. Corpus Embedding</text>
+  <text x="90" y="525" class="step-text">• Convert all chunks to vector embeddings using selected model</text>
+  <text x="90" y="542" class="step-text">• Dense vector representations (typically 300-1536 dimensions)</text>
+  <text x="90" y="559" class="step-text">• Batch processing for efficiency</text>
+  
+  <!-- Arrow -->
+  <path d="M 335 560 L 335 590" class="arrow"/>
+  
+  <!-- Step 5: Vector Store -->
+  <rect x="80" y="590" width="510" height="100" rx="8" class="step-box step-box-indexing"/>
+  <text x="90" y="615" class="step-title">5. Vector Store Storage</text>
+  <text x="90" y="635" class="step-text">• Index vectors in specialized store (Pinecone, Weaviate, Milvus)</text>
+  <text x="90" y="652" class="step-text">• Maintain mapping: embeddings ↔ original text + metadata</text>
+  <text x="90" y="669" class="step-text">• Create HNSW/IVF indexes for fast retrieval</text>
+  <text x="90" y="686" class="step-text">• Ready for query-time similarity search</text>
+  
+  <!-- ============ QUERY PHASE ============ -->
+  <rect x="800" y="70" width="550" height="450" rx="10" class="query-phase"/>
+  <rect x="810" y="75" width="530" height="35" rx="8" fill="#f57c00"/>
+  <text x="1075" y="102" text-anchor="middle" class="phase-title">QUERY PHASE</text>
+  
+  <!-- Query Input -->
+  <rect x="820" y="130" width="510" height="60" rx="8" style="fill: #fff9c4; stroke: #f57f17; stroke-width: 2;"/>
+  <text x="830" y="155" class="step-title">User Query</text>
+  <text x="830" y="175" class="step-text">"What are the main themes in the document?"</text>
+  
+  <!-- Arrow -->
+  <path d="M 1075 190 L 1075 220" class="arrow"/>
+  
+  <!-- Step 1: Query Embedding -->
+  <rect x="820" y="220" width="510" height="70" rx="8" class="step-box step-box-query"/>
+  <text x="830" y="243" class="step-title">1. Query Embedding</text>
+  <text x="830" y="263" class="step-text">• Embed query using same model as corpus</text>
+  <text x="830" y="280" class="step-text">• Transform to same vector space for comparison</text>
+  
+  <!-- Arrow -->
+  <path d="M 1075 290 L 1075 320" class="arrow"/>
+  
+  <!-- Step 2: Similarity Retrieval -->
+  <rect x="820" y="320" width="510" height="70" rx="8" class="step-box step-box-query"/>
+  <text x="830" y="343" class="step-title">2. Cosine Similarity Retrieval</text>
+  <text x="830" y="363" class="step-text">• Calculate similarity scores between query and corpus vectors</text>
+  <text x="830" y="380" class="step-text">• Retrieve top-k candidates (e.g., top 100)</text>
+  
+  <!-- Arrow -->
+  <path d="M 1075 390 L 1075 420" class="arrow"/>
+  
+  <!-- Step 3: Threshold Filtering -->
+  <rect x="820" y="420" width="510" height="70" rx="8" class="step-box step-box-query"/>
+  <text x="830" y="443" class="step-title">3. Threshold Filtering</text>
+  <text x="830" y="463" class="step-text">• Remove results below relevance threshold (e.g., > 0.6)</text>
+  <text x="830" y="480" class="step-text">• Reduce noise and improve result quality</text>
+  
+  <!-- Arrow -->
+  <path d="M 1075 490 L 1075 520" class="arrow"/>
+  
+  <!-- Step 4: Reranking -->
+  <rect x="820" y="520" width="510" height="80" rx="8" class="step-box step-box-query"/>
+  <text x="830" y="543" class="step-title">4. Reranking (Optional but Recommended)</text>
+  <text x="830" y="563" class="step-text">• Apply cross-encoder model for more precise ranking</text>
+  <text x="830" y="580" class="step-text">• Re-score results considering full query-document pairs</text>
+  <text x="830" y="597" class="step-text">• Return final top results (typically 3-10)</text>
+  
+  <!-- ============ PROMPTING PHASE ============ -->
+  <rect x="50" y="830" width="1300" height="50" rx="8" class="prompting-phase"/>
+  <rect x="60" y="835" width="1280" height="40" rx="8" fill="#7b1fa2"/>
+  <text x="700" y="865" text-anchor="middle" class="phase-title">PROMPTING & LLM GENERATION</text>
+  <text x="700" y="885" text-anchor="middle" class="step-text">Combine reranked context with user query in prompt → Send to LLM → Generate grounded response</text>
+  
+  <!-- ============ CONNECTIONS ============ -->
+  <!-- Indexing to Query Connection -->
+  <path d="M 630 410 L 800 310" class="arrow" stroke="#999" stroke-dasharray="5,5"/>
+  <text x="700" y="350" class="arrow-label" text-anchor="middle">Vector Store</text>
+  
+  <!-- Query to Prompting Connection -->
+  <path d="M 1075 600 L 700 830" class="arrow" stroke="#999" stroke-dasharray="5,5"/>
+  <text x="850" y="730" class="arrow-label">Retrieved Context</text>
+</svg>

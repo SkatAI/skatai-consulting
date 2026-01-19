@@ -1,0 +1,132 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="600" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">
+    Linear Storage in a Columnar (Column-Oriented) Database
+  </text>
+  
+  <!-- Column 1: ID -->
+  <g>
+    <text x="120" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#333">Column 1: ID</text>
+    
+    <!-- Page boundary -->
+    <rect x="50" y="80" width="140" height="280" fill="#f0f0f0" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="60" y="370" font-size="11" fill="#666">8 KB Page</text>
+    
+    <!-- Header -->
+    <rect x="60" y="90" width="120" height="25" fill="#ffcc99" stroke="#cc6600" stroke-width="1.5"/>
+    <text x="120" y="107" font-size="10" font-weight="bold" text-anchor="middle" fill="#000">HDR (col meta)</text>
+    
+    <!-- Column data -->
+    <rect x="60" y="115" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="120" y="145" font-size="10" text-anchor="middle" fill="#000">1, 2, 3, 4...</text>
+    
+    <rect x="60" y="165" width="120" height="30" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="120" y="182" font-size="9" text-anchor="middle" fill="#000">(many rows)</text>
+    
+    <rect x="60" y="195" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="120" y="225" font-size="10" text-anchor="middle" fill="#000">..., 999, 1000</text>
+    
+    <!-- Continuation indicator -->
+    <text x="120" y="265" font-size="14" font-weight="bold" text-anchor="middle" fill="#666">...</text>
+  </g>
+  
+  <!-- Column 2: Name -->
+  <g>
+    <text x="350" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#333">Column 2: Name</text>
+    
+    <!-- Page boundary -->
+    <rect x="280" y="80" width="140" height="280" fill="#f0f0f0" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Header -->
+    <rect x="290" y="90" width="120" height="25" fill="#ffcc99" stroke="#cc6600" stroke-width="1.5"/>
+    <text x="350" y="107" font-size="10" font-weight="bold" text-anchor="middle" fill="#000">HDR (col meta)</text>
+    
+    <!-- Column data -->
+    <rect x="290" y="115" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="350" y="145" font-size="9" text-anchor="middle" fill="#000">Alice, Bob,</text>
+    <text x="350" y="157" font-size="9" text-anchor="middle" fill="#000">Charlie, David...</text>
+    
+    <rect x="290" y="165" width="120" height="30" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="350" y="182" font-size="9" text-anchor="middle" fill="#000">(many rows)</text>
+    
+    <rect x="290" y="195" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="350" y="225" font-size="9" text-anchor="middle" fill="#000">..., Zoe, Zack</text>
+    
+    <!-- Continuation indicator -->
+    <text x="350" y="265" font-size="14" font-weight="bold" text-anchor="middle" fill="#666">...</text>
+  </g>
+  
+  <!-- Column 3: Age -->
+  <g>
+    <text x="580" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#333">Column 3: Age</text>
+    
+    <!-- Page boundary -->
+    <rect x="510" y="80" width="140" height="280" fill="#f0f0f0" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Header -->
+    <rect x="520" y="90" width="120" height="25" fill="#ffcc99" stroke="#cc6600" stroke-width="1.5"/>
+    <text x="580" y="107" font-size="10" font-weight="bold" text-anchor="middle" fill="#000">HDR (col meta)</text>
+    
+    <!-- Column data -->
+    <rect x="520" y="115" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="580" y="145" font-size="10" text-anchor="middle" fill="#000">28, 34, 45, 29...</text>
+    
+    <rect x="520" y="165" width="120" height="30" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="580" y="182" font-size="9" text-anchor="middle" fill="#000">(many rows)</text>
+    
+    <rect x="520" y="195" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="580" y="225" font-size="10" text-anchor="middle" fill="#000">..., 67, 51</text>
+    
+    <!-- Continuation indicator -->
+    <text x="580" y="265" font-size="14" font-weight="bold" text-anchor="middle" fill="#666">...</text>
+  </g>
+  
+  <!-- Column 4: Department -->
+  <g>
+    <text x="810" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#333">Column 4: Dept</text>
+    
+    <!-- Page boundary -->
+    <rect x="740" y="80" width="140" height="280" fill="#f0f0f0" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Header -->
+    <rect x="750" y="90" width="120" height="25" fill="#ffcc99" stroke="#cc6600" stroke-width="1.5"/>
+    <text x="810" y="107" font-size="10" font-weight="bold" text-anchor="middle" fill="#000">HDR (col meta)</text>
+    
+    <!-- Column data -->
+    <rect x="750" y="115" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="810" y="140" font-size="9" text-anchor="middle" fill="#000">Sales, HR,</text>
+    <text x="810" y="152" font-size="9" text-anchor="middle" fill="#000">IT, Finance...</text>
+    
+    <rect x="750" y="165" width="120" height="30" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="810" y="182" font-size="9" text-anchor="middle" fill="#000">(many rows)</text>
+    
+    <rect x="750" y="195" width="120" height="50" fill="#99ff99" stroke="#00cc00" stroke-width="1.5"/>
+    <text x="810" y="220" font-size="9" text-anchor="middle" fill="#000">..., Legal,</text>
+    <text x="810" y="232" font-size="9" text-anchor="middle" fill="#000">Operations</text>
+    
+    <!-- Continuation indicator -->
+    <text x="810" y="265" font-size="14" font-weight="bold" text-anchor="middle" fill="#666">...</text>
+  </g>
+  
+  <!-- Continuation -->
+  <text x="950" y="155" font-size="18" font-weight="bold" fill="#999">...</text>
+  
+  <!-- Legend -->
+  <g>
+    <rect x="50" y="300" width="1100" height="80" fill="#f9f9f9" stroke="#ddd" stroke-width="1" rx="5"/>
+    
+    <text x="60" y="320" font-size="12" font-weight="bold" fill="#333">Key Differences from Row Storage:</text>
+    
+    <text x="60" y="345" font-size="11" fill="#555">
+      • <tspan font-weight="bold">Separate storage per column:</tspan> Each column is stored independently in its own pages
+    </text>
+    
+    <text x="60" y="363" font-size="11" fill="#555">
+      • <tspan font-weight="bold">Compression:</tspan> Columnar data is highly compressible (e.g., all integers, all strings of similar length)
+    </text>
+    
+    <text x="60" y="381" font-size="11" fill="#555">
+      • <tspan font-weight="bold">Selective reads:</tspan> Only requested columns are read from disk (ideal for analytical queries on few columns)
+    </text>
+  </g>
+</svg>

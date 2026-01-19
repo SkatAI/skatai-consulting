@@ -1,0 +1,78 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <rect width="1000" height="500" fill="#f8fafc"/>
+  
+  <text x="500" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1e293b">RAG: Retrieval Augmented Generation</text>
+  
+  <g>
+    <rect x="50" y="100" width="200" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+    <text x="150" y="130" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Knowledge Base</text>
+    <rect x="70" y="145" width="160" height="60" rx="4" fill="white" stroke="#3b82f6" stroke-width="1"/>
+    <text x="150" y="165" font-size="12" text-anchor="middle" fill="#475569">Company docs</text>
+    <text x="150" y="182" font-size="12" text-anchor="middle" fill="#475569">Research papers</text>
+    <text x="150" y="199" font-size="12" text-anchor="middle" fill="#475569">Product manuals</text>
+  </g>
+  
+  <g>
+    <circle cx="150" cy="320" r="50" fill="#a5f3fc" stroke="#06b6d4" stroke-width="3"/>
+    <text x="150" y="315" font-size="14" font-weight="bold" text-anchor="middle" fill="#0e7490">Embed &amp;</text>
+    <text x="150" y="333" font-size="14" font-weight="bold" text-anchor="middle" fill="#0e7490">Store</text>
+  </g>
+  
+  <path d="M 150 220 L 150 270" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <g>
+    <rect x="380" y="100" width="240" height="120" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+    <text x="500" y="130" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">User Question</text>
+    <rect x="400" y="145" width="200" height="60" rx="4" fill="white" stroke="#f59e0b" stroke-width="1"/>
+    <text x="500" y="175" font-size="13" text-anchor="middle" fill="#475569" font-style="italic">"What are the benefits</text>
+    <text x="500" y="193" font-size="13" text-anchor="middle" fill="#475569" font-style="italic">of our premium plan?"</text>
+  </g>
+  
+  <g>
+    <circle cx="500" cy="320" r="50" fill="#fde68a" stroke="#f59e0b" stroke-width="3"/>
+    <text x="500" y="320" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">Embed</text>
+    <text x="500" y="338" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">Query</text>
+  </g>
+  
+  <path d="M 500 220 L 500 270" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <g>
+    <rect x="250" y="390" width="200" height="90" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="3"/>
+    <text x="350" y="420" font-size="16" font-weight="bold" text-anchor="middle" fill="#166534">Retrieve Top</text>
+    <text x="350" y="440" font-size="16" font-weight="bold" text-anchor="middle" fill="#166534">Matches</text>
+    <text x="350" y="465" font-size="11" text-anchor="middle" fill="#475569">Most relevant docs</text>
+  </g>
+  
+  <path d="M 200 320 L 260 390" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 450 320 L 390 390" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <g>
+    <rect x="550" y="390" width="200" height="90" rx="8" fill="#e9d5ff" stroke="#a855f7" stroke-width="3"/>
+    <text x="650" y="420" font-size="16" font-weight="bold" text-anchor="middle" fill="#6b21a8">LLM</text>
+    <text x="650" y="440" font-size="16" font-weight="bold" text-anchor="middle" fill="#6b21a8">Generation</text>
+    <text x="650" y="465" font-size="11" text-anchor="middle" fill="#475569">Query + Context</text>
+  </g>
+  
+  <path d="M 450 435 L 550 435" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <g>
+    <rect x="780" y="100" width="180" height="120" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="3"/>
+    <text x="870" y="130" font-size="18" font-weight="bold" text-anchor="middle" fill="#9f1239">Answer</text>
+    <rect x="800" y="145" width="140" height="60" rx="4" fill="white" stroke="#ec4899" stroke-width="1"/>
+    <text x="870" y="165" font-size="11" text-anchor="middle" fill="#475569">"Premium plan offers:</text>
+    <text x="870" y="180" font-size="11" text-anchor="middle" fill="#475569">unlimited storage,</text>
+    <text x="870" y="195" font-size="11" text-anchor="middle" fill="#475569">priority support..."</text>
+  </g>
+  
+  <path d="M 650 390 Q 870 320 870 220" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <rect x="50" y="450" width="900" height="35" rx="4" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="60" y="472" font-size="13" font-weight="bold" fill="#312e81">💡 Key Benefit:</text>
+  <text x="170" y="472" font-size="13" fill="#312e81">LLM answers using YOUR data, reducing hallucinations and providing accurate, source-backed responses</text>
+</svg>

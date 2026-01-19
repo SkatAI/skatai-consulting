@@ -1,0 +1,236 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; text-anchor: middle; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; }
+      .small-label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #666; }
+      .axis { stroke: #333; stroke-width: 2; fill: none; }
+      .grid { stroke: #ddd; stroke-width: 1; fill: none; stroke-dasharray: 2,2; }
+      .data-point-blue { fill: #2196F3; stroke: #1976D2; stroke-width: 1; }
+      .data-point-red { fill: #f44336; stroke: #d32f2f; stroke-width: 1; }
+      .fit-line-under { stroke: #FFA726; stroke-width: 3; fill: none; }
+      .fit-line-good { stroke: #4CAF50; stroke-width: 3; fill: none; }
+      .fit-line-over { stroke: #9C27B0; stroke-width: 3; fill: none; }
+      .boundary-fill-under { fill: #FFA726; opacity: 0.1; }
+      .boundary-fill-good { fill: #4CAF50; opacity: 0.1; }
+      .boundary-fill-over { fill: #9C27B0; opacity: 0.1; }
+      .error-text { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Main Title -->
+  <text x="450" y="30" class="title">Bias-Variance Tradeoff : Underfitting vs Overfitting</text>
+
+  <!-- Panel 1: Underfitting -->
+  <g transform="translate(50, 70)">
+    <!-- Background -->
+    <rect x="0" y="0" width="250" height="250" fill="#fff" stroke="#333" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="125" y="-10" class="subtitle">Underfitting</text>
+    <text x="125" y="280" class="label">High Bias - Low Variance</text>
+    
+    <!-- Grid -->
+    <line x1="0" y1="125" x2="250" y2="125" class="grid"/>
+    <line x1="125" y1="0" x2="125" y2="250" class="grid"/>
+    
+    <!-- Linear decision boundary (straight line) -->
+    <line x1="30" y1="180" x2="220" y2="70" class="fit-line-under"/>
+    
+    <!-- Shaded regions -->
+    <polygon points="30,180 220,70 220,0 0,0 0,180" class="boundary-fill-under"/>
+    
+    <!-- Data points -->
+    <!-- Class 1 (blue circles) -->
+    <circle cx="50" cy="60" r="5" class="data-point-blue"/>
+    <circle cx="80" cy="40" r="5" class="data-point-blue"/>
+    <circle cx="100" cy="70" r="5" class="data-point-blue"/>
+    <circle cx="120" cy="50" r="5" class="data-point-blue"/>
+    <circle cx="150" cy="35" r="5" class="data-point-blue"/>
+    <circle cx="180" cy="55" r="5" class="data-point-blue"/>
+    <circle cx="90" cy="90" r="5" class="data-point-blue"/>
+    <circle cx="140" cy="80" r="5" class="data-point-blue"/>
+    
+    <!-- Class 2 (red triangles represented as paths) -->
+    <path d="M 60,180 L 65,170 L 55,170 Z" class="data-point-red"/>
+    <path d="M 90,160 L 95,150 L 85,150 Z" class="data-point-red"/>
+    <path d="M 120,190 L 125,180 L 115,180 Z" class="data-point-red"/>
+    <path d="M 150,170 L 155,160 L 145,160 Z" class="data-point-red"/>
+    <path d="M 180,200 L 185,190 L 175,190 Z" class="data-point-red"/>
+    <path d="M 200,180 L 205,170 L 195,170 Z" class="data-point-red"/>
+    <path d="M 110,140 L 115,130 L 105,130 Z" class="data-point-red"/>
+    <path d="M 160,140 L 165,130 L 155,130 Z" class="data-point-red"/>
+    
+    <!-- Misclassified points (highlighted) -->
+    <circle cx="70" cy="110" r="5" class="data-point-blue"/>
+    <circle cx="70" cy="110" r="8" fill="none" stroke="red" stroke-width="2"/>
+    
+    <path d="M 130,100 L 135,90 L 125,90 Z" class="data-point-red"/>
+    <circle cx="130" cy="95" r="8" fill="none" stroke="red" stroke-width="2"/>
+    
+    <!-- Errors -->
+    <text x="125" y="300" class="error-text" fill="#FFA726">Train Error: High</text>
+    <text x="125" y="315" class="error-text" fill="#FFA726">Test Error: High</text>
+  </g>
+
+  <!-- Panel 2: Good Fit -->
+  <g transform="translate(325, 70)">
+    <!-- Background -->
+    <rect x="0" y="0" width="250" height="250" fill="#fff" stroke="#333" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="125" y="-10" class="subtitle">Good Fit</text>
+    <text x="125" y="280" class="label">Balanced Bias-Variance</text>
+    
+    <!-- Grid -->
+    <line x1="0" y1="125" x2="250" y2="125" class="grid"/>
+    <line x1="125" y1="0" x2="125" y2="250" class="grid"/>
+    
+    <!-- Non-linear decision boundary (smooth curve) -->
+    <path d="M 20,200 Q 80,160 125,120 T 230,60" class="fit-line-good"/>
+    
+    <!-- Shaded region -->
+    <path d="M 20,200 Q 80,160 125,120 T 230,60 L 230,0 L 0,0 L 0,200 Z" class="boundary-fill-good"/>
+    
+    <!-- Data points - same positions as panel 1 -->
+    <!-- Class 1 (blue circles) -->
+    <circle cx="50" cy="60" r="5" class="data-point-blue"/>
+    <circle cx="80" cy="40" r="5" class="data-point-blue"/>
+    <circle cx="100" cy="70" r="5" class="data-point-blue"/>
+    <circle cx="120" cy="50" r="5" class="data-point-blue"/>
+    <circle cx="150" cy="35" r="5" class="data-point-blue"/>
+    <circle cx="180" cy="55" r="5" class="data-point-blue"/>
+    <circle cx="90" cy="90" r="5" class="data-point-blue"/>
+    <circle cx="140" cy="80" r="5" class="data-point-blue"/>
+    <circle cx="70" cy="110" r="5" class="data-point-blue"/>
+    
+    <!-- Class 2 (red triangles) -->
+    <path d="M 60,180 L 65,170 L 55,170 Z" class="data-point-red"/>
+    <path d="M 90,160 L 95,150 L 85,150 Z" class="data-point-red"/>
+    <path d="M 120,190 L 125,180 L 115,180 Z" class="data-point-red"/>
+    <path d="M 150,170 L 155,160 L 145,160 Z" class="data-point-red"/>
+    <path d="M 180,200 L 185,190 L 175,190 Z" class="data-point-red"/>
+    <path d="M 200,180 L 205,170 L 195,170 Z" class="data-point-red"/>
+    <path d="M 110,140 L 115,130 L 105,130 Z" class="data-point-red"/>
+    <path d="M 160,140 L 165,130 L 155,130 Z" class="data-point-red"/>
+    <path d="M 130,100 L 135,90 L 125,90 Z" class="data-point-red"/>
+    
+    <!-- Errors -->
+    <text x="125" y="300" class="error-text" fill="#4CAF50">Train Error: Low</text>
+    <text x="125" y="315" class="error-text" fill="#4CAF50">Test Error: Low</text>
+  </g>
+
+  <!-- Panel 3: Overfitting -->
+  <g transform="translate(600, 70)">
+    <!-- Background -->
+    <rect x="0" y="0" width="250" height="250" fill="#fff" stroke="#333" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="125" y="-10" class="subtitle">Overfitting</text>
+    <text x="125" y="280" class="label">Low Bias - High Variance</text>
+    
+    <!-- Grid -->
+    <line x1="0" y1="125" x2="250" y2="125" class="grid"/>
+    <line x1="125" y1="0" x2="125" y2="250" class="grid"/>
+    
+    <!-- Complex decision boundary (very wiggly) -->
+    <path d="M 20,200 L 40,180 L 55,185 L 65,165 L 72,115 L 85,155 L 95,165 L 105,145 L 115,138 L 125,92 L 135,88 L 145,82 L 155,138 L 165,145 L 175,155 L 185,195 L 195,175 L 210,182 L 230,60" 
+          class="fit-line-over"/>
+    
+    <!-- Shaded region (complex) -->
+    <path d="M 20,200 L 40,180 L 55,185 L 65,165 L 72,115 L 85,155 L 95,165 L 105,145 L 115,138 L 125,92 L 135,88 L 145,82 L 155,138 L 165,145 L 175,155 L 185,195 L 195,175 L 210,182 L 230,60 L 230,0 L 0,0 L 0,200 Z" 
+          class="boundary-fill-over"/>
+    
+    <!-- Data points - same positions -->
+    <!-- Class 1 (blue circles) -->
+    <circle cx="50" cy="60" r="5" class="data-point-blue"/>
+    <circle cx="80" cy="40" r="5" class="data-point-blue"/>
+    <circle cx="100" cy="70" r="5" class="data-point-blue"/>
+    <circle cx="120" cy="50" r="5" class="data-point-blue"/>
+    <circle cx="150" cy="35" r="5" class="data-point-blue"/>
+    <circle cx="180" cy="55" r="5" class="data-point-blue"/>
+    <circle cx="90" cy="90" r="5" class="data-point-blue"/>
+    <circle cx="140" cy="80" r="5" class="data-point-blue"/>
+    <circle cx="70" cy="110" r="5" class="data-point-blue"/>
+    
+    <!-- Class 2 (red triangles) -->
+    <path d="M 60,180 L 65,170 L 55,170 Z" class="data-point-red"/>
+    <path d="M 90,160 L 95,150 L 85,150 Z" class="data-point-red"/>
+    <path d="M 120,190 L 125,180 L 115,180 Z" class="data-point-red"/>
+    <path d="M 150,170 L 155,160 L 145,160 Z" class="data-point-red"/>
+    <path d="M 180,200 L 185,190 L 175,190 Z" class="data-point-red"/>
+    <path d="M 200,180 L 205,170 L 195,170 Z" class="data-point-red"/>
+    <path d="M 110,140 L 115,130 L 105,130 Z" class="data-point-red"/>
+    <path d="M 160,140 L 165,130 L 155,130 Z" class="data-point-red"/>
+    <path d="M 130,100 L 135,90 L 125,90 Z" class="data-point-red"/>
+    
+    <!-- Errors -->
+    <text x="125" y="300" class="error-text" fill="#9C27B0">Train Error: ~0%</text>
+    <text x="125" y="315" class="error-text" fill="#9C27B0">Test Error: High</text>
+  </g>
+
+  <!-- Bottom Performance Curves -->
+  <g transform="translate(100, 420)">
+    <text x="350" y="0" class="subtitle">Performance vs Model Complexity</text>
+    
+    <!-- Axes -->
+    <line x1="50" y1="180" x2="650" y2="180" class="axis"/>
+    <line x1="50" y1="30" x2="50" y2="180" class="axis"/>
+    
+    <!-- X-axis labels -->
+    <text x="50" y="200" class="small-label">Simple</text>
+    <text x="350" y="200" class="small-label">Model Complexity</text>
+    <text x="650" y="200" class="small-label">Complex</text>
+    
+    <!-- Y-axis labels -->
+    <text x="30" y="35" class="small-label" text-anchor="end">0%</text>
+    <text x="30" y="180" class="small-label" text-anchor="end">100%</text>
+    <text x="20" y="105" class="small-label" text-anchor="end" transform="rotate(-90 20 105)">Error</text>
+    
+    <!-- Training error curve (decreasing) -->
+    <path d="M 50,150 Q 200,120 350,60 T 650,30" 
+          stroke="#2196F3" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+    <text x="520" y="25" class="label" fill="#2196F3">Training Error</text>
+    
+    <!-- Test/Validation error curve (U-shaped) -->
+    <path d="M 50,150 Q 200,100 300,70 Q 350,65 400,70 Q 500,90 650,140" 
+          stroke="#f44336" stroke-width="3" fill="none"/>
+    <text x="520" y="145" class="label" fill="#f44336">Test Error</text>
+    
+    <!-- Optimal point -->
+    <circle cx="350" cy="70" r="6" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
+    <line x1="350" y1="70" x2="350" y2="180" stroke="#4CAF50" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="350" y="220" class="small-label" fill="#4CAF50">Optimal</text>
+    
+    <!-- Regions -->
+    <text x="150" y="250" class="label" fill="#FFA726">Underfitting</text>
+    <text x="500" y="250" class="label" fill="#9C27B0">Overfitting</text>
+    
+    <!-- Arrows indicating regions -->
+    <path d="M 100,230 L 250,230" stroke="#FFA726" stroke-width="2" marker-end="url(#arrowOrange)"/>
+    <path d="M 450,230 L 600,230" stroke="#9C27B0" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#FFA726"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9C27B0"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <g transform="translate(320, 360)">
+    <rect x="0" y="0" width="260" height="40" fill="#f5f5f5" stroke="#333" stroke-width="1" rx="5"/>
+    <text x="130" y="15" class="small-label" font-weight="bold">Légende</text>
+    <circle cx="30" cy="25" r="4" class="data-point-blue"/>
+    <text x="40" y="30" class="small-label" text-anchor="start">Classe 1</text>
+    <path d="M 100,25 L 105,20 L 95,20 Z" class="data-point-red"/>
+    <text x="110" y="30" class="small-label" text-anchor="start">Classe 2</text>
+    <circle cx="170" cy="25" r="5" fill="none" stroke="red" stroke-width="2"/>
+    <text x="180" y="30" class="small-label" text-anchor="start">Erreur</text>
+  </g>
+</svg>

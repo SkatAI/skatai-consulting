@@ -1,0 +1,126 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <!-- Title bar gradient -->
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#004d7a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008793;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- SQL gradient -->
+    <linearGradient id="sqlGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6dd5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Compacting gradient -->
+    <linearGradient id="compactGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e063;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#56ab2f;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Core gradient -->
+    <linearGradient id="coreGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#56ccf2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2f80ed;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowRed" markerWidth="15" markerHeight="15" refX="14" refY="7.5" orient="auto">
+      <polygon points="0 0, 15 7.5, 0 15" fill="#e74c3c"/>
+    </marker>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with subtle gradient -->
+  <rect x="0" y="0" width="900" height="700" fill="#f7f9fc"/>
+  
+  <!-- Title Bar with gradient -->
+  <rect x="0" y="0" width="900" height="70" fill="url(#titleGradient)"/>
+  <text x="450" y="45" text-anchor="middle" font-size="32" font-weight="bold" fill="white" font-family="Arial, sans-serif">Component Families and Tools</text>
+  
+  <!-- Left Section Container -->
+  <g id="leftSection">
+    <!-- Background panel -->
+    <rect x="40" y="110" width="280" height="100" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#dropShadow)"/>
+    <text x="60" y="140" font-size="22" font-weight="bold" fill="#2c3e50" font-family="Arial, sans-serif">Data Manipulation</text>
+    <text x="60" y="170" font-size="16" fill="#546e7a" font-family="Arial, sans-serif">Internal: SQL</text>
+    <text x="60" y="195" font-size="16" fill="#546e7a" font-family="Arial, sans-serif">External: Import, Export</text>
+  </g>
+  
+  <!-- Right Section Container -->
+  <g id="rightSection">
+    <!-- Background panel -->
+    <rect x="580" y="110" width="280" height="100" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#dropShadow)"/>
+    <text x="600" y="140" font-size="22" font-weight="bold" fill="#2c3e50" font-family="Arial, sans-serif">Database Exploitation</text>
+    <text x="600" y="170" font-size="16" fill="#546e7a" font-family="Arial, sans-serif">Organize, store, or</text>
+    <text x="600" y="195" font-size="16" fill="#546e7a" font-family="Arial, sans-serif">make it faster</text>
+  </g>
+  
+  <!-- Central Components Container -->
+  <g id="centralComponents">
+    <!-- SQL Component with gradient and shadow -->
+    <rect x="250" y="280" width="180" height="70" fill="url(#sqlGradient)" rx="10" filter="url(#dropShadow)"/>
+    <text x="340" y="325" text-anchor="middle" font-size="28" font-weight="bold" fill="white" font-family="Arial, sans-serif">SQL</text>
+    
+    <!-- Compacting/Cold Recovery Component with gradient and shadow -->
+    <rect x="470" y="280" width="200" height="70" fill="url(#compactGradient)" rx="10" filter="url(#dropShadow)"/>
+    <text x="570" y="305" text-anchor="middle" font-size="18" font-weight="bold" fill="white" font-family="Arial, sans-serif">Compacting,</text>
+    <text x="570" y="330" text-anchor="middle" font-size="18" font-weight="bold" fill="white" font-family="Arial, sans-serif">Cold Recovery</text>
+  </g>
+  
+  <!-- Database Core Section -->
+  <g id="databaseCore">
+    <!-- Core label positioned to the left -->
+    <text x="50" y="430" font-size="20" font-weight="bold" fill="#2c3e50" font-family="Arial, sans-serif">Database Core</text>
+    
+    <!-- Tables, views, index box with gradient -->
+    <rect x="200" y="390" width="500" height="90" fill="url(#coreGradient)" rx="10" filter="url(#dropShadow)"/>
+    <text x="450" y="445" text-anchor="middle" font-size="28" font-weight="bold" fill="white" font-family="Arial, sans-serif">Tables, Views, Index</text>
+  </g>
+  
+  <!-- File System Section -->
+  <g id="fileSystem">
+    <!-- File System Box -->
+    <rect x="200" y="520" width="500" height="90" fill="white" stroke="#34495e" stroke-width="3" stroke-dasharray="10,5" rx="5"/>
+    <rect x="200" y="520" width="500" height="90" fill="rgba(52, 73, 94, 0.05)" rx="5"/>
+    <text x="450" y="575" text-anchor="middle" font-size="26" fill="#34495e" font-family="Arial, sans-serif">NTFS, NFS, ext4, APFS...</text>
+    
+    <!-- File system label positioned to the right -->
+    <text x="730" y="570" font-size="20" font-weight="bold" fill="#2c3e50" font-family="Arial, sans-serif">File System</text>
+  </g>
+  
+  <!-- Arrows with improved positioning -->
+  <g id="arrows">
+    <!-- Arrow from Data Manipulation to SQL -->
+    <path d="M 260 210 Q 300 250 330 280" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+    
+    <!-- Arrow from Database Exploitation to Compacting -->
+    <path d="M 640 210 Q 600 250 580 280" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+    
+    <!-- Arrow from Database Core label to Tables box -->
+    <path d="M 160 425 L 190 425" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+    
+    <!-- Arrow from File System box to label -->
+    <path d="M 700 565 L 720 565" stroke="#e74c3c" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <g id="decorative" opacity="0.1">
+    <circle cx="100" cy="350" r="40" fill="#3498db"/>
+    <circle cx="800" cy="250" r="30" fill="#2ecc71"/>
+    <circle cx="750" cy="450" r="25" fill="#9b59b6"/>
+  </g>
+</svg>

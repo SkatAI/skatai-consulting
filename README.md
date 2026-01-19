@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SkatAI Website
 
-## Getting Started
+Modern consulting services website built with Next.js 14+, React, TypeScript, and Chakra UI v3.
 
-First, run the development server:
+## Features
+
+- **Home Page**: Consulting pitch with Hero, Services, Experience, Projects, and Contact sections
+- **Blog**: MDX-based blog with full markdown support
+- **Courses**: 160+ course chapters across 9 courses
+- **Slides**: Full-screen presentation mode with keyboard/touch navigation
+- **SEO**: Automatic sitemap and RSS feed generation
+- **Static Export**: Fully static site for hosting on any CDN
+
+## Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production (generates static site in /out)
+npm run build
+
+# Format code
+npm run format
+
+# Lint code
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+skatai-next/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── page.tsx           # Home page
+│   │   ├── blog/              # Blog pages
+│   │   └── courses/           # Course pages
+│   ├── components/
+│   │   ├── home/              # Home page sections
+│   │   ├── layout/            # Navigation, Footer
+│   │   ├── slides/            # SlidePresentation component
+│   │   └── ui/                # Chakra provider
+│   ├── content/
+│   │   ├── blog/              # Blog posts (markdown)
+│   │   └── courses/           # Course content (markdown)
+│   └── lib/
+│       └── mdx.ts             # Content loading utilities
+├── public/
+│   └── images/                # Static images
+├── out/                       # Static build output
+└── scripts/
+    └── generate-rss.js        # RSS feed generator
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The site is configured for static export. After building:
 
-To learn more about Next.js, take a look at the following resources:
+1. The static files are in the `/out` directory
+2. Upload to any static hosting (Digital Ocean, Vercel, Netlify, etc.)
+3. Configure your domain to point to the hosting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Digital Ocean App Platform
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```yaml
+# app.yaml
+name: skatai
+services:
+  - name: web
+    source:
+      type: github
+      repo: your-username/skatai-next
+      branch: main
+    build_command: npm run build
+    output_dir: out
+```
 
-## Deploy on Vercel
+## Content Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding Blog Posts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create a new `.md` file in `src/content/blog/`:
+
+```markdown
+---
+title: "Post Title"
+date: 2024-01-01
+description: "Post description"
+tags: [AI, ML]
+---
+
+Content here...
+```
+
+### Adding Course Content
+
+Create or edit files in `src/content/courses/{course-name}/`:
+
+```markdown
+---
+layout: default
+title: "Chapter Title"
+---
+
+Content here...
+```
+
+For slides, use `layout: slides` and separate slides with `---`:
+
+```markdown
+---
+layout: slides
+title: "Presentation Title"
+---
+
+# Slide 1
+
+Content...
+
+---
+
+# Slide 2
+
+More content...
+```
+
+## Tech Stack
+
+- **Framework**: Next.js 14+ with App Router
+- **UI**: Chakra UI v3
+- **Content**: MDX with gray-matter
+- **Styling**: CSS + Chakra UI tokens
+- **Build**: Static export for CDN hosting

@@ -1,0 +1,141 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowRed" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+      <polygon points="0 0, 12 6, 0 12" fill="#dc2626"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="900" height="700" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-size="28" font-weight="bold" fill="#1e293b">Insertion Anomaly Illustrated</text>
+  
+  <!-- Problem Statement Box -->
+  <rect x="150" y="60" width="600" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="8"/>
+  <text x="450" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#991b1b">🚨 Problem: Cannot add a new teacher without assigning a course</text>
+  <text x="450" y="102" text-anchor="middle" font-size="13" fill="#7f1d1d">This violates database normalization principles</text>
+  
+  <!-- Current State Section -->
+  <g id="current-state">
+    <text x="250" y="150" text-anchor="middle" font-size="20" font-weight="bold" fill="#059669">Current Table State</text>
+    
+    <!-- Table -->
+    <rect x="50" y="170" width="400" height="180" fill="white" stroke="#6b7280" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    
+    <!-- Table Header -->
+    <rect x="50" y="170" width="400" height="35" fill="#374151" rx="5 5 0 0"/>
+    <text x="250" y="193" text-anchor="middle" font-size="14" font-weight="bold" fill="white">TEACHER_COURSE Table</text>
+    
+    <!-- Column Headers -->
+    <line x1="50" y1="205" x2="450" y2="205" stroke="#6b7280" stroke-width="2"/>
+    <rect x="50" y="205" width="80" height="30" fill="#e5e7eb"/>
+    <text x="90" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">ID</text>
+    
+    <line x1="130" y1="205" x2="130" y2="350" stroke="#d1d5db" stroke-width="1"/>
+    <rect x="130" y="205" width="120" height="30" fill="#e5e7eb"/>
+    <text x="190" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">Teacher</text>
+    
+    <line x1="250" y1="205" x2="250" y2="350" stroke="#d1d5db" stroke-width="1"/>
+    <rect x="250" y="205" width="200" height="30" fill="#e5e7eb"/>
+    <text x="350" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">Course</text>
+    
+    <!-- Data Rows -->
+    <line x1="50" y1="235" x2="450" y2="235" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 1 -->
+    <rect x="50" y="235" width="80" height="30" fill="#f9fafb"/>
+    <text x="90" y="255" text-anchor="middle" font-size="12" fill="#111827">1</text>
+    <rect x="130" y="235" width="120" height="30" fill="#f9fafb"/>
+    <text x="190" y="255" text-anchor="middle" font-size="12" fill="#111827">Bjorn</text>
+    <rect x="250" y="235" width="200" height="30" fill="#f9fafb"/>
+    <text x="350" y="255" text-anchor="middle" font-size="12" fill="#111827">Intermediate Database</text>
+    
+    <line x1="50" y1="265" x2="450" y2="265" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 2 -->
+    <rect x="50" y="265" width="80" height="30" fill="white"/>
+    <text x="90" y="285" text-anchor="middle" font-size="12" fill="#111827">2</text>
+    <rect x="130" y="265" width="120" height="30" fill="white"/>
+    <text x="190" y="285" text-anchor="middle" font-size="12" fill="#111827">Sofia</text>
+    <rect x="250" y="265" width="200" height="30" fill="white"/>
+    <text x="350" y="285" text-anchor="middle" font-size="12" fill="#111827">Crypto Currencies</text>
+    
+    <line x1="50" y1="295" x2="450" y2="295" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 3 -->
+    <rect x="50" y="295" width="80" height="30" fill="#f9fafb"/>
+    <text x="90" y="315" text-anchor="middle" font-size="12" fill="#111827">3</text>
+    <rect x="130" y="295" width="120" height="30" fill="#f9fafb"/>
+    <text x="190" y="315" text-anchor="middle" font-size="12" fill="#111827">Hussein</text>
+    <rect x="250" y="295" width="200" height="30" fill="#f9fafb"/>
+    <text x="350" y="315" text-anchor="middle" font-size="12" fill="#111827">Data Analytics</text>
+    
+    <line x1="50" y1="325" x2="450" y2="325" stroke="#d1d5db" stroke-width="1"/>
+  </g>
+  
+  <!-- Arrow pointing down -->
+  <path d="M 250 360 L 250 400" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+  <text x="270" y="385" font-size="14" fill="#dc2626" font-weight="bold">Trying to insert new teacher...</text>
+  
+  <!-- Problematic Insert Section -->
+  <g id="problem-insert">
+    <text x="250" y="440" text-anchor="middle" font-size="20" font-weight="bold" fill="#dc2626">❌ Insertion Anomaly</text>
+    
+    <!-- Table with NULL -->
+    <rect x="50" y="460" width="400" height="95" fill="white" stroke="#dc2626" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    
+    <!-- Column Headers -->
+    <rect x="50" y="460" width="80" height="30" fill="#fecaca"/>
+    <text x="90" y="480" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">ID</text>
+    
+    <line x1="130" y1="460" x2="130" y2="555" stroke="#fca5a5" stroke-width="1"/>
+    <rect x="130" y="460" width="120" height="30" fill="#fecaca"/>
+    <text x="190" y="480" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">Teacher</text>
+    
+    <line x1="250" y1="460" x2="250" y2="555" stroke="#fca5a5" stroke-width="1"/>
+    <rect x="250" y="460" width="200" height="30" fill="#fecaca"/>
+    <text x="350" y="480" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">Course</text>
+    
+    <line x1="50" y1="490" x2="450" y2="490" stroke="#fca5a5" stroke-width="1"/>
+    
+    <!-- New problematic row -->
+    <rect x="50" y="490" width="80" height="35" fill="#fef2f2"/>
+    <text x="90" y="512" text-anchor="middle" font-size="12" fill="#111827">4</text>
+    <rect x="130" y="490" width="120" height="35" fill="#fef2f2"/>
+    <text x="190" y="512" text-anchor="middle" font-size="12" fill="#111827">Alexis</text>
+    <rect x="250" y="490" width="200" height="35" fill="#fee2e2" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="350" y="512" text-anchor="middle" font-size="14" font-weight="bold" fill="#dc2626" font-style="italic">NULL</text>
+    
+    <line x1="50" y1="525" x2="450" y2="525" stroke="#fca5a5" stroke-width="1"/>
+  </g>
+  
+  <!-- Explanation Box -->
+  <rect x="480" y="430" width="380" height="130" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8" filter="url(#shadow)"/>
+  <text x="670" y="455" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">⚠️ Why This Is Bad:</text>
+  <text x="495" y="480" font-size="13" fill="#78350f">• Forces NULL values (violates entity integrity)</text>
+  <text x="495" y="505" font-size="13" fill="#78350f">• Mixes two different entities in one table</text>
+  <text x="495" y="530" font-size="13" fill="#78350f">• Cannot track teachers without courses</text>
+  <text x="495" y="555" font-size="13" fill="#78350f">• Violates normalization principles</text>
+  
+  <!-- Solution hint -->
+  <rect x="200" y="590" width="500" height="70" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="8"/>
+  <text x="450" y="615" text-anchor="middle" font-size="16" font-weight="bold" fill="#14532d">✅ Solution: Normalize the Database</text>
+  <text x="450" y="635" text-anchor="middle" font-size="13" fill="#166534">Split into two tables: TEACHERS (id, name) and COURSES (id, name, teacher_id)</text>
+  <text x="450" y="652" text-anchor="middle" font-size="13" fill="#166534">This allows teachers to exist independently of course assignments</text>
+</svg>

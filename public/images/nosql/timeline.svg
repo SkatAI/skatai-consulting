@@ -1,0 +1,309 @@
+<svg viewBox="0 0 1400 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .era-year { font-size: 24px; font-weight: bold; fill: #fff; }
+      .paradigm-name { font-size: 16px; font-weight: 600; fill: #fff; }
+      .db-type { font-size: 13px; fill: #fff; opacity: 0.9; }
+      .example { font-size: 11px; fill: #fff; opacity: 0.7; }
+      .era-label { font-size: 20px; font-weight: bold; fill: #333; }
+      .connection { stroke: #999; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .influence { stroke: #ccc; stroke-width: 1; fill: none; stroke-dasharray: 4,4; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#999" />
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1600" fill="#f8f8f8"/>
+
+  <!-- Title -->
+  <text x="700" y="50" font-size="32" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    The Evolution of Database Paradigms
+  </text>
+  <text x="700" y="80" font-size="14" text-anchor="middle" fill="#666">
+    From Monolithic Systems to Distributed, Specialized, and AI-Ready Platforms
+  </text>
+
+  <!-- TIMELINE BACKGROUND SECTIONS -->
+  <rect x="0" y="120" width="350" height="1450" fill="#f0f4f8" opacity="0.6"/>
+  <rect x="350" y="120" width="350" height="1450" fill="#f8f4f0" opacity="0.6"/>
+  <rect x="700" y="120" width="350" height="1450" fill="#f4f8f0" opacity="0.6"/>
+  <rect x="1050" y="120" width="350" height="1450" fill="#f8f0f4" opacity="0.6"/>
+
+  <!-- Era Labels -->
+  <text x="175" y="145" font-size="18" font-weight="bold" text-anchor="middle" fill="#555">1970s-1980s</text>
+  <text x="175" y="165" font-size="12" text-anchor="middle" fill="#888">Foundation</text>
+
+  <text x="525" y="145" font-size="18" font-weight="bold" text-anchor="middle" fill="#555">1990s-2000s</text>
+  <text x="525" y="165" font-size="12" text-anchor="middle" fill="#888">Expansion</text>
+
+  <text x="875" y="145" font-size="18" font-weight="bold" text-anchor="middle" fill="#555">2010s</text>
+  <text x="875" y="165" font-size="12" text-anchor="middle" fill="#888">Revolution</text>
+
+  <text x="1225" y="145" font-size="18" font-weight="bold" text-anchor="middle" fill="#555">2020s</text>
+  <text x="1225" y="165" font-size="12" text-anchor="middle" fill="#888">Specialization & AI</text>
+
+  <!-- ============ 1970s-1980s: RELATIONAL ERA ============ -->
+  
+  <!-- Main Relational Circle -->
+  <circle cx="175" cy="280" r="80" fill="#2E86AB" filter="url(#shadow)" opacity="0.9"/>
+  <text x="175" y="270" class="paradigm-name" text-anchor="middle">Relational Model</text>
+  <text x="175" y="290" class="db-type" text-anchor="middle">Structured Data</text>
+  <text x="175" y="310" class="db-type" text-anchor="middle">ACID Properties</text>
+  <text x="175" y="328" class="example" text-anchor="middle">Oracle, DB2, SQL</text>
+
+  <!-- Key characteristics -->
+  <g>
+    <circle cx="80" cy="400" r="35" fill="#1f5a7f" opacity="0.8"/>
+    <text x="80" y="405" class="db-type" text-anchor="middle" font-size="12">Tables &amp;</text>
+    <text x="80" y="418" class="db-type" text-anchor="middle" font-size="12">Relations</text>
+
+    <circle cx="270" cy="400" r="35" fill="#1f5a7f" opacity="0.8"/>
+    <text x="270" y="405" class="db-type" text-anchor="middle" font-size="12">SQL</text>
+    <text x="270" y="418" class="db-type" text-anchor="middle" font-size="12">Query</text>
+  </g>
+
+  <!-- Rising adoption curve -->
+  <path d="M 100 500 Q 130 450 170 420 Q 200 400 230 520" stroke="#2E86AB" stroke-width="3" fill="none" opacity="0.6"/>
+  <text x="140" y="480" font-size="12" fill="#2E86AB" font-weight="bold">Growing Adoption</text>
+
+  <!-- ============ 1990s-2000s: RELATIONAL DOMINANCE ============ -->
+
+  <!-- Relational Kingdom (Large) -->
+  <ellipse cx="525" cy="310" rx="100" ry="85" fill="#2E86AB" filter="url(#shadow)" opacity="0.85"/>
+  <text x="525" y="295" class="paradigm-name" text-anchor="middle" font-size="18">RDBMS</text>
+  <text x="525" y="318" class="paradigm-name" text-anchor="middle" font-size="18">Dominance</text>
+  <text x="525" y="340" class="example" text-anchor="middle">PostgreSQL, MySQL</text>
+  <text x="525" y="353" class="example" text-anchor="middle">SQL Server, Oracle</text>
+
+  <!-- Connection from 1970s -->
+  <path class="connection" d="M 255 280 L 425 280" stroke="#2E86AB" stroke-width="3"/>
+  <text x="340" y="270" font-size="11" fill="#2E86AB" font-weight="bold">Evolution</text>
+
+  <!-- Satellite: Web Era Drivers -->
+  <g transform="translate(525, 450)">
+    <rect x="-70" y="0" width="140" height="70" rx="8" fill="#E8A537" opacity="0.7"/>
+    <text x="0" y="25" class="db-type" text-anchor="middle">Web Scale</text>
+    <text x="0" y="40" class="db-type" text-anchor="middle">Requirements</text>
+    <text x="0" y="53" class="example" text-anchor="middle">LAMP Stack era</text>
+  </g>
+
+  <path class="influence" d="M 525 395 L 525 450"/>
+
+  <!-- ============ 2010s: THE BIG BANG ============ -->
+
+  <!-- Central Hub showing explosion -->
+  <circle cx="875" cy="280" r="75" fill="#FF6B35" filter="url(#shadow)" opacity="0.8"/>
+  <text x="875" y="270" class="paradigm-name" text-anchor="middle">Paradigm Shift</text>
+  <text x="875" y="295" class="db-type" text-anchor="middle">Distributed</text>
+  <text x="875" y="315" class="db-type" text-anchor="middle">Specialized</text>
+  <text x="875" y="333" class="example" text-anchor="middle">NoSQL, Analytics</text>
+
+  <!-- Connection from RDBMS dominance -->
+  <path class="connection" d="M 625 310 L 800 280" stroke="#FF6B35" stroke-width="3"/>
+  <text x="700" y="295" font-size="11" fill="#FF6B35" font-weight="bold">Need for Scale</text>
+
+  <!-- Explosion branches upward and outward -->
+  
+  <!-- Branch 1: Document/NoSQL Upper Left -->
+  <g>
+    <path class="influence" d="M 840 210 L 770 120"/>
+    <circle cx="750" cy="80" r="50" fill="#F18F01" opacity="0.85"/>
+    <text x="750" y="75" class="db-type" text-anchor="middle" font-size="14">Document Stores</text>
+    <text x="750" y="93" class="example" text-anchor="middle" font-size="10">MongoDB, CouchDB</text>
+  </g>
+
+  <!-- Branch 2: Columnar/Analytics Upper Right -->
+  <g>
+    <path class="influence" d="M 910 210 L 980 120"/>
+    <circle cx="1000" cy="80" r="50" fill="#D32F2F" opacity="0.85"/>
+    <text x="1000" y="75" class="db-type" text-anchor="middle" font-size="14">Column Stores</text>
+    <text x="1000" y="93" class="example" text-anchor="middle" font-size="10">BigQuery, Snowflake</text>
+  </g>
+
+  <!-- Branch 3: Graph/Specialized Right -->
+  <g>
+    <path class="influence" d="M 935 290 L 1050 290"/>
+    <circle cx="1090" cy="290" r="50" fill="#6A4C93" opacity="0.85"/>
+    <text x="1090" y="285" class="db-type" text-anchor="middle" font-size="14">Graph Databases</text>
+    <text x="1090" y="303" class="example" text-anchor="middle" font-size="10">Neo4j, relationships</text>
+  </g>
+
+  <!-- Branch 4: Time Series Lower Right -->
+  <g>
+    <path class="influence" d="M 920 360 L 1000 420"/>
+    <circle cx="1020" cy="460" r="50" fill="#00897B" opacity="0.85"/>
+    <text x="1020" y="455" class="db-type" text-anchor="middle" font-size="14">Time Series</text>
+    <text x="1020" y="473" class="example" text-anchor="middle" font-size="10">InfluxDB, IoT data</text>
+  </g>
+
+  <!-- Branch 5: In-Memory Cache Lower Left -->
+  <g>
+    <path class="influence" d="M 830 350 L 720 420"/>
+    <circle cx="700" cy="460" r="50" fill="#F39C12" opacity="0.85"/>
+    <text x="700" y="455" class="db-type" text-anchor="middle" font-size="14">In-Memory Stores</text>
+    <text x="700" y="473" class="example" text-anchor="middle" font-size="10">Redis, Memcached</text>
+  </g>
+
+  <!-- Branch 6: Key-Value Left -->
+  <g>
+    <path class="influence" d="M 805 240 L 720 140"/>
+    <circle cx="700" cy="100" r="50" fill="#FF7043" opacity="0.85"/>
+    <text x="700" y="100" class="db-type" text-anchor="middle" font-size="14">Key-Value Stores</text>
+    <text x="700" y="118" class="example" text-anchor="middle" font-size="10">DynamoDB, S3</text>
+  </g>
+
+  <!-- Convergence label -->
+  <text x="875" y="580" font-size="13" fill="#666" text-anchor="middle" font-weight="bold">Multiple Specialized Systems</text>
+  <text x="875" y="598" font-size="12" fill="#999" text-anchor="middle">for Different Workloads</text>
+
+  <!-- ============ 2020s: CONVERGENCE & AI ERA ============ -->
+
+  <!-- Central: Modern Polyglot Ecosystem -->
+  <rect x="1100" y="200" width="250" height="160" rx="15" fill="#06A77D" filter="url(#shadow)" opacity="0.8" stroke="#048856" stroke-width="2"/>
+  <text x="1225" y="225" class="paradigm-name" text-anchor="middle" font-size="16">Polyglot Persistence</text>
+  <text x="1225" y="245" class="db-type" text-anchor="middle">Multiple DBs for</text>
+  <text x="1225" y="262" class="db-type" text-anchor="middle">Different Purposes</text>
+  <text x="1225" y="282" class="example" text-anchor="middle">in One Application</text>
+  <text x="1225" y="298" class="example" text-anchor="middle">Microservices era</text>
+  <text x="1225" y="312" class="example" text-anchor="middle">Data mesh approach</text>
+
+  <!-- Connection from 2010s explosion -->
+  <path class="connection" d="M 950 400 Q 1050 350 1100 280" stroke="#06A77D" stroke-width="3"/>
+  <text x="1000" y="335" font-size="11" fill="#06A77D" font-weight="bold">Maturation</text>
+
+  <!-- Upper right: Vector/AI -->
+  <g>
+    <circle cx="1280" cy="100" r="60" fill="#FFB81C" filter="url(#shadow)" opacity="0.85"/>
+    <text x="1280" y="95" class="db-type" text-anchor="middle" font-size="14">Vector Databases</text>
+    <text x="1280" y="113" class="example" text-anchor="middle" font-size="10">AI/ML Embeddings</text>
+    <text x="1280" y="126" class="example" text-anchor="middle" font-size="10">LLM Era (2023+)</text>
+  </g>
+
+  <path class="influence" d="M 1225 200 L 1260 160"/>
+
+  <!-- Middle: Enhanced SQL/RDBMS -->
+  <g>
+    <circle cx="1280" cy="280" r="60" fill="#2E86AB" filter="url(#shadow)" opacity="0.85"/>
+    <text x="1280" y="275" class="db-type" text-anchor="middle" font-size="14">Modern SQL</text>
+    <text x="1280" y="293" class="db-type" text-anchor="middle" font-size="13">+ JSON/Vector</text>
+    <text x="1280" y="310" class="example" text-anchor="middle" font-size="10">PostgreSQL 14+</text>
+  </g>
+
+  <path class="influence" d="M 1250 240 L 1275 270"/>
+
+  <!-- Lower: Edge Computing -->
+  <g>
+    <circle cx="1280" cy="440" r="60" fill="#7B68EE" filter="url(#shadow)" opacity="0.85"/>
+    <text x="1280" y="430" class="db-type" text-anchor="middle" font-size="14">Edge/Embedded</text>
+    <text x="1280" y="448" class="db-type" text-anchor="middle" font-size="13">SQL Anywhere</text>
+    <text x="1280" y="465" class="example" text-anchor="middle" font-size="10">SQLite ubiquity</text>
+  </g>
+
+  <path class="influence" d="M 1250 330 L 1270 390"/>
+
+  <!-- ============ BOTTOM: CONVERGENCE ZONE ============ -->
+
+  <g transform="translate(0, 800)">
+    <text x="700" y="0" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Evolution of Core Concepts</text>
+    
+    <!-- Timeline showing concept evolution -->
+    <line x1="50" y1="50" x2="1350" y2="50" stroke="#ddd" stroke-width="2"/>
+    
+    <!-- 1970s: Rigid Structure -->
+    <circle cx="100" cy="50" r="8" fill="#2E86AB"/>
+    <text x="100" y="85" font-size="12" text-anchor="middle" font-weight="bold" fill="#333">Rigid Schema</text>
+    <text x="100" y="102" font-size="11" text-anchor="middle" fill="#666">Fixed structure</text>
+    <text x="100" y="117" font-size="11" text-anchor="middle" fill="#666">Normalized design</text>
+
+    <!-- 1990s: Optimization -->
+    <circle cx="350" cy="50" r="8" fill="#F39C12"/>
+    <text x="350" y="85" font-size="12" text-anchor="middle" font-weight="bold" fill="#333">Query Optimization</text>
+    <text x="350" y="102" font-size="11" text-anchor="middle" fill="#666">Indexing strategies</text>
+    <text x="350" y="117" font-size="11" text-anchor="middle" fill="#666">Scaling challenges</text>
+
+    <!-- 2010s: Flexibility -->
+    <circle cx="700" cy="50" r="8" fill="#FF6B35"/>
+    <text x="700" y="85" font-size="12" text-anchor="middle" font-weight="bold" fill="#333">Schema Flexibility</text>
+    <text x="700" y="102" font-size="11" text-anchor="middle" fill="#666">JSON, semi-structured</text>
+    <text x="700" y="117" font-size="11" text-anchor="middle" fill="#666">Horizontal scaling</text>
+
+    <!-- 2020s: Intelligence -->
+    <circle cx="1050" cy="50" r="8" fill="#06A77D"/>
+    <text x="1050" y="85" font-size="12" text-anchor="middle" font-weight="bold" fill="#333">Intelligent Data</text>
+    <text x="1050" y="102" font-size="11" text-anchor="middle" fill="#666">Vector operations</text>
+    <text x="1050" y="117" font-size="11" text-anchor="middle" fill="#666">ML-integrated systems</text>
+
+    <!-- 2030s: Predicted -->
+    <circle cx="1300" cy="50" r="8" fill="#9C27B0" opacity="0.6"/>
+    <text x="1300" y="85" font-size="12" text-anchor="middle" font-weight="bold" fill="#666">Autonomous?</text>
+    <text x="1300" y="102" font-size="11" text-anchor="middle" fill="#999">Self-optimizing</text>
+    <text x="1300" y="117" font-size="11" text-anchor="middle" fill="#999">AI-native systems</text>
+  </g>
+
+  <!-- ============ TECHNICAL DRIVERS ============ -->
+
+  <g transform="translate(0, 1050)">
+    <text x="700" y="0" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Key Technological Drivers</text>
+
+    <!-- Hardware Evolution -->
+    <g transform="translate(100, 50)">
+      <rect x="0" y="0" width="180" height="140" rx="8" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+      <text x="90" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Hardware</text>
+      <text x="90" y="55" font-size="11" text-anchor="middle" fill="#34495e">• Moore's Law slowdown</text>
+      <text x="90" y="72" font-size="11" text-anchor="middle" fill="#34495e">• Multi-core processors</text>
+      <text x="90" y="89" font-size="11" text-anchor="middle" fill="#34495e">• Cheap distributed compute</text>
+      <text x="90" y="106" font-size="11" text-anchor="middle" fill="#34495e">• Cloud infrastructure</text>
+      <text x="90" y="123" font-size="11" text-anchor="middle" fill="#34495e">• GPU acceleration</text>
+    </g>
+
+    <!-- Data Explosion -->
+    <g transform="translate(380, 50)">
+      <rect x="0" y="0" width="180" height="140" rx="8" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+      <text x="90" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Data Scale</text>
+      <text x="90" y="55" font-size="11" text-anchor="middle" fill="#34495e">• Internet growth</text>
+      <text x="90" y="72" font-size="11" text-anchor="middle" fill="#34495e">• IoT explosion</text>
+      <text x="90" y="89" font-size="11" text-anchor="middle" fill="#34495e">• Real-time requirements</text>
+      <text x="90" y="106" font-size="11" text-anchor="middle" fill="#34495e">• Unstructured data</text>
+      <text x="90" y="123" font-size="11" text-anchor="middle" fill="#34495e">• Mobile devices</text>
+    </g>
+
+    <!-- Architectural Change -->
+    <g transform="translate(660, 50)">
+      <rect x="0" y="0" width="180" height="140" rx="8" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+      <text x="90" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Architecture</text>
+      <text x="90" y="55" font-size="11" text-anchor="middle" fill="#34495e">• Microservices</text>
+      <text x="90" y="72" font-size="11" text-anchor="middle" fill="#34495e">• Event-driven systems</text>
+      <text x="90" y="89" font-size="11" text-anchor="middle" fill="#34495e">• Data mesh patterns</text>
+      <text x="90" y="106" font-size="11" text-anchor="middle" fill="#34495e">• Serverless computing</text>
+      <text x="90" y="123" font-size="11" text-anchor="middle" fill="#34495e">• Container orchestration</text>
+    </g>
+
+    <!-- AI/ML -->
+    <g transform="translate(940, 50)">
+      <rect x="0" y="0" width="180" height="140" rx="8" fill="#f39c12" opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+      <text x="90" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">AI/ML</text>
+      <text x="90" y="55" font-size="11" text-anchor="middle" fill="#34495e">• Deep learning boom</text>
+      <text x="90" y="72" font-size="11" text-anchor="middle" fill="#34495e">• NLP breakthroughs</text>
+      <text x="90" y="89" font-size="11" text-anchor="middle" fill="#34495e">• Transformer models</text>
+      <text x="90" y="106" font-size="11" text-anchor="middle" fill="#34495e">• LLMs emergence</text>
+      <text x="90" y="123" font-size="11" text-anchor="middle" fill="#34495e">• Embedding spaces</text>
+    </g>
+
+    <!-- Compliance/Security -->
+    <g transform="translate(1220, 50)">
+      <rect x="0" y="0" width="180" height="140" rx="8" fill="#9b59b6" opacity="0.15" stroke="#9b59b6" stroke-width="2"/>
+      <text x="90" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Governance</text>
+      <text x="90" y="55" font-size="11" text-anchor="middle" fill="#34495e">• GDPR/Privacy laws</text>
+      <text x="90" y="72" font-size="11" text-anchor="middle" fill="#34495e">• Data sovereignty</text>
+      <text x="90" y="89" font-size="11" text-anchor="middle" fill="#34495e">• Regulatory pressure</text>
+      <text x="90" y="106" font-size="11" text-anchor="middle" fill="#34495e">• Audit requirements</text>
+      <text x="90" y="123" font-size="11" text-anchor="middle" fill="#34495e">• AI ethics/transparency</text>
+    </g>
+  </g>
+
+</svg>

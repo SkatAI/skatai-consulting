@@ -1,0 +1,238 @@
+<svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Bitmap: Compact Row Identifier Structure
+  </text>
+  
+  <!-- Example Query -->
+  <rect x="250" y="50" width="400" height="50" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="450" y="72" font-size="13" font-weight="bold" text-anchor="middle" fill="#1976d2">
+    Query: SELECT * FROM trees WHERE height > 20
+  </text>
+  <text x="450" y="90" font-size="11" text-anchor="middle" fill="#666">
+    Bitmap represents which rows match this condition
+  </text>
+  
+  <!-- Section 1: Table Rows -->
+  <g id="table-section">
+    <text x="50" y="140" font-size="16" font-weight="bold" fill="#424242">Table Rows</text>
+    
+    <rect x="50" y="150" width="350" height="280" fill="#f5f5f5" stroke="#757575" stroke-width="2" rx="5"/>
+    
+    <!-- Headers -->
+    <text x="80" y="175" font-size="11" font-weight="bold" fill="#424242">Row #</text>
+    <text x="160" y="175" font-size="11" font-weight="bold" fill="#424242">Height</text>
+    <text x="260" y="175" font-size="11" font-weight="bold" fill="#424242">Match?</text>
+    <line x1="50" y1="180" x2="400" y2="180" stroke="#757575" stroke-width="2"/>
+    
+    <!-- Row data -->
+    <g id="row-1">
+      <rect x="60" y="190" width="330" height="25" fill="#ffebee" stroke="#ef5350" stroke-width="1" rx="3"/>
+      <text x="80" y="208" font-size="11" fill="#424242">1</text>
+      <text x="160" y="208" font-size="11" fill="#424242">15</text>
+      <text x="260" y="208" font-size="11" font-weight="bold" fill="#c62828">❌ NO (15 ≤ 20)</text>
+    </g>
+    
+    <g id="row-2">
+      <rect x="60" y="220" width="330" height="25" fill="#e8f5e9" stroke="#66bb6a" stroke-width="2" rx="3"/>
+      <text x="80" y="238" font-size="11" fill="#424242">2</text>
+      <text x="160" y="238" font-size="11" fill="#424242">25</text>
+      <text x="260" y="238" font-size="11" font-weight="bold" fill="#2e7d32">✓ YES (25 > 20)</text>
+    </g>
+    
+    <g id="row-3">
+      <rect x="60" y="250" width="330" height="25" fill="#ffebee" stroke="#ef5350" stroke-width="1" rx="3"/>
+      <text x="80" y="268" font-size="11" fill="#424242">3</text>
+      <text x="160" y="268" font-size="11" fill="#424242">12</text>
+      <text x="260" y="268" font-size="11" font-weight="bold" fill="#c62828">❌ NO (12 ≤ 20)</text>
+    </g>
+    
+    <g id="row-4">
+      <rect x="60" y="280" width="330" height="25" fill="#e8f5e9" stroke="#66bb6a" stroke-width="2" rx="3"/>
+      <text x="80" y="298" font-size="11" fill="#424242">4</text>
+      <text x="160" y="298" font-size="11" fill="#424242">30</text>
+      <text x="260" y="298" font-size="11" font-weight="bold" fill="#2e7d32">✓ YES (30 > 20)</text>
+    </g>
+    
+    <g id="row-5">
+      <rect x="60" y="310" width="330" height="25" fill="#ffebee" stroke="#ef5350" stroke-width="1" rx="3"/>
+      <text x="80" y="328" font-size="11" fill="#424242">5</text>
+      <text x="160" y="328" font-size="11" fill="#424242">18</text>
+      <text x="260" y="328" font-size="11" font-weight="bold" fill="#c62828">❌ NO (18 ≤ 20)</text>
+    </g>
+    
+    <g id="row-6">
+      <rect x="60" y="340" width="330" height="25" fill="#e8f5e9" stroke="#66bb6a" stroke-width="2" rx="3"/>
+      <text x="80" y="358" font-size="11" fill="#424242">6</text>
+      <text x="160" y="358" font-size="11" fill="#424242">22</text>
+      <text x="260" y="358" font-size="11" font-weight="bold" fill="#2e7d32">✓ YES (22 > 20)</text>
+    </g>
+    
+    <g id="row-7">
+      <rect x="60" y="370" width="330" height="25" fill="#ffebee" stroke="#ef5350" stroke-width="1" rx="3"/>
+      <text x="80" y="388" font-size="11" fill="#424242">7</text>
+      <text x="160" y="388" font-size="11" fill="#424242">10</text>
+      <text x="260" y="388" font-size="11" font-weight="bold" fill="#c62828">❌ NO (10 ≤ 20)</text>
+    </g>
+    
+    <g id="row-8">
+      <rect x="60" y="400" width="330" height="25" fill="#e8f5e9" stroke="#66bb6a" stroke-width="2" rx="3"/>
+      <text x="80" y="418" font-size="11" fill="#424242">8</text>
+      <text x="160" y="418" font-size="11" fill="#424242">28</text>
+      <text x="260" y="418" font-size="11" font-weight="bold" fill="#2e7d32">✓ YES (28 > 20)</text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 420 290 L 480 290" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  <text x="450" y="280" font-size="12" font-weight="bold" fill="#1976d2" text-anchor="middle">Converts to</text>
+  
+  <!-- Section 2: Bitmap Array -->
+  <g id="bitmap-section">
+    <text x="500" y="140" font-size="16" font-weight="bold" fill="#424242">Bitmap Array</text>
+    <text x="500" y="160" font-size="11" fill="#666">(1 bit per row)</text>
+    
+    <rect x="500" y="170" width="350" height="280" fill="#fff3e0" stroke="#f57c00" stroke-width="3" rx="5"/>
+    
+    <!-- Bitmap representation -->
+    <g id="bitmap-bits">
+      <text x="530" y="210" font-size="13" font-weight="bold" fill="#424242">Position:</text>
+      <text x="530" y="240" font-size="13" font-weight="bold" fill="#424242">Bit Value:</text>
+      <text x="530" y="270" font-size="13" font-weight="bold" fill="#424242">Meaning:</text>
+      
+      <!-- Bit 0 (row 1) -->
+      <g transform="translate(630, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">0</text>
+        <rect x="0" y="25" width="20" height="20" fill="#ffcdd2" stroke="#c62828" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">0</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Skip</text>
+      </g>
+      
+      <!-- Bit 1 (row 2) -->
+      <g transform="translate(660, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">1</text>
+        <rect x="0" y="25" width="20" height="20" fill="#a5d6a7" stroke="#2e7d32" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">1</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Fetch</text>
+      </g>
+      
+      <!-- Bit 2 (row 3) -->
+      <g transform="translate(690, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">2</text>
+        <rect x="0" y="25" width="20" height="20" fill="#ffcdd2" stroke="#c62828" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">0</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Skip</text>
+      </g>
+      
+      <!-- Bit 3 (row 4) -->
+      <g transform="translate(720, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">3</text>
+        <rect x="0" y="25" width="20" height="20" fill="#a5d6a7" stroke="#2e7d32" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">1</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Fetch</text>
+      </g>
+      
+      <!-- Bit 4 (row 5) -->
+      <g transform="translate(750, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">4</text>
+        <rect x="0" y="25" width="20" height="20" fill="#ffcdd2" stroke="#c62828" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">0</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Skip</text>
+      </g>
+      
+      <!-- Bit 5 (row 6) -->
+      <g transform="translate(780, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">5</text>
+        <rect x="0" y="25" width="20" height="20" fill="#a5d6a7" stroke="#2e7d32" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">1</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Fetch</text>
+      </g>
+      
+      <!-- Bit 6 (row 7) -->
+      <g transform="translate(810, 190)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">6</text>
+        <rect x="0" y="25" width="20" height="20" fill="#ffcdd2" stroke="#c62828" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#c62828">0</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Skip</text>
+      </g>
+      
+      <!-- Bit 7 (row 8) -->
+      <g transform="translate(630, 270)">
+        <text x="10" y="20" font-size="11" text-anchor="middle" fill="#666">7</text>
+        <rect x="0" y="25" width="20" height="20" fill="#a5d6a7" stroke="#2e7d32" stroke-width="2" rx="2"/>
+        <text x="10" y="40" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">1</text>
+        <text x="10" y="60" font-size="9" text-anchor="middle" fill="#666">Fetch</text>
+      </g>
+    </g>
+    
+    <!-- Compact representation -->
+    <rect x="520" y="350" width="300" height="50" fill="#fff" stroke="#ff6f00" stroke-width="2" rx="5"/>
+    <text x="670" y="370" font-size="11" font-weight="bold" text-anchor="middle" fill="#e65100">
+      Compact Binary: 01010101
+    </text>
+    <text x="670" y="388" font-size="10" text-anchor="middle" fill="#666">
+      8 rows = 8 bits = 1 byte!
+    </text>
+  </g>
+  
+  <!-- Benefits Section -->
+  <g id="benefits">
+    <text x="450" y="480" font-size="18" font-weight="bold" text-anchor="middle" fill="#424242">
+      Bitmap Operations
+    </text>
+    
+    <!-- AND Operation -->
+    <rect x="50" y="500" width="380" height="120" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2" rx="5"/>
+    <text x="60" y="520" font-size="13" font-weight="bold" fill="#1a237e">Combining Conditions (AND)</text>
+    
+    <text x="70" y="545" font-size="11" fill="#424242">height > 20:</text>
+    <text x="180" y="545" font-size="12" font-family="monospace" fill="#424242">0 1 0 1 0 1 0 1</text>
+    
+    <text x="70" y="570" font-size="11" fill="#424242">remarkable = true:</text>
+    <text x="180" y="570" font-size="12" font-family="monospace" fill="#424242">1 1 0 0 1 1 0 1</text>
+    
+    <line x1="180" y1="575" x2="270" y2="575" stroke="#3f51b5" stroke-width="2"/>
+    
+    <text x="70" y="595" font-size="11" font-weight="bold" fill="#1a237e">AND Result:</text>
+    <text x="180" y="595" font-size="12" font-family="monospace" font-weight="bold" fill="#1a237e">0 1 0 0 0 1 0 1</text>
+    
+    <text x="70" y="612" font-size="10" fill="#666">✓ Fast bitwise operation (microseconds)</text>
+    
+    <!-- OR Operation -->
+    <rect x="470" y="500" width="380" height="120" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <text x="480" y="520" font-size="13" font-weight="bold" fill="#e65100">Combining Conditions (OR)</text>
+    
+    <text x="490" y="545" font-size="11" fill="#424242">height > 20:</text>
+    <text x="600" y="545" font-size="12" font-family="monospace" fill="#424242">0 1 0 1 0 1 0 1</text>
+    
+    <text x="490" y="570" font-size="11" fill="#424242">circumference > 150:</text>
+    <text x="600" y="570" font-size="12" font-family="monospace" fill="#424242">0 0 1 1 0 0 1 0</text>
+    
+    <line x1="600" y1="575" x2="690" y2="575" stroke="#ff9800" stroke-width="2"/>
+    
+    <text x="490" y="595" font-size="11" font-weight="bold" fill="#e65100">OR Result:</text>
+    <text x="600" y="595" font-size="12" font-family="monospace" font-weight="bold" fill="#e65100">0 1 1 1 0 1 1 1</text>
+    
+    <text x="490" y="612" font-size="10" fill="#666">✓ Instant merge of multiple conditions</text>
+  </g>
+  
+  <!-- Efficiency note -->
+  <rect x="50" y="640" width="800" height="120" fill="#e8f5e9" stroke="#4caf50" stroke-width="3" rx="5"/>
+  <text x="450" y="665" font-size="16" font-weight="bold" text-anchor="middle" fill="#1b5e20">
+    Why Bitmaps Are Efficient
+  </text>
+  
+  <text x="70" y="690" font-size="12" fill="#424242">
+    <tspan x="70" dy="0">✓ Memory efficient: 1 million rows = 125 KB (1 bit per row)</tspan>
+    <tspan x="70" dy="20">✓ Fast operations: Bitwise AND/OR/NOT in CPU cycles</tspan>
+    <tspan x="70" dy="20">✓ Avoid unnecessary I/O: Only fetch rows where bit = 1</tspan>
+    <tspan x="70" dy="20">✓ Multiple indexes: Combine results from different indexes easily</tspan>
+  </text>
+  
+  <!-- Defs -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976d2" />
+    </marker>
+  </defs>
+</svg>

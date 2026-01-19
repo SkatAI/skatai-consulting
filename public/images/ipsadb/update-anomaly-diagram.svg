@@ -1,0 +1,182 @@
+<svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowRed" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto">
+      <polygon points="0 0, 12 6, 0 12" fill="#dc2626"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="1000" height="800" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" font-size="28" font-weight="bold" fill="#1e293b">Update Anomaly in Film Database</text>
+  
+  <!-- Problem Statement Box -->
+  <rect x="150" y="55" width="700" height="45" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="500" y="80" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">⚠️ Scenario: "Dharma Productions" changes name to "Dharma 2.0"</text>
+  <text x="500" y="95" text-anchor="middle" font-size="13" fill="#78350f">Problem: Must update multiple rows to maintain consistency</text>
+  
+  <!-- Original Table -->
+  <g id="original-table">
+    <text x="500" y="130" text-anchor="middle" font-size="20" font-weight="bold" fill="#059669">Original Table</text>
+    
+    <!-- Table -->
+    <rect x="50" y="145" width="900" height="250" fill="white" stroke="#6b7280" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    
+    <!-- Table Header -->
+    <rect x="50" y="145" width="900" height="35" fill="#374151" rx="5 5 0 0"/>
+    <text x="500" y="168" text-anchor="middle" font-size="14" font-weight="bold" fill="white">FILM_DIRECTOR_PRODUCTION Table</text>
+    
+    <!-- Column Headers -->
+    <line x1="50" y1="180" x2="950" y2="180" stroke="#6b7280" stroke-width="2"/>
+    <rect x="50" y="180" width="60" height="30" fill="#e5e7eb"/>
+    <text x="80" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">ID</text>
+    
+    <line x1="110" y1="180" x2="110" y2="395" stroke="#d1d5db" stroke-width="1"/>
+    <rect x="110" y="180" width="300" height="30" fill="#e5e7eb"/>
+    <text x="260" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Film</text>
+    
+    <line x1="410" y1="180" x2="410" y2="395" stroke="#d1d5db" stroke-width="1"/>
+    <rect x="410" y="180" width="240" height="30" fill="#e5e7eb"/>
+    <text x="530" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Director</text>
+    
+    <line x1="650" y1="180" x2="650" y2="395" stroke="#d1d5db" stroke-width="1"/>
+    <rect x="650" y="180" width="300" height="30" fill="#e5e7eb"/>
+    <text x="800" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Production House</text>
+    
+    <!-- Data Rows -->
+    <line x1="50" y1="210" x2="950" y2="210" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 1 -->
+    <text x="80" y="230" text-anchor="middle" font-size="11" fill="#111827">1</text>
+    <text x="260" y="230" text-anchor="middle" font-size="11" fill="#111827">Sholay</text>
+    <text x="530" y="230" text-anchor="middle" font-size="11" fill="#111827">Ramesh Sippy</text>
+    <text x="800" y="230" text-anchor="middle" font-size="11" fill="#111827">Sippy Films</text>
+    
+    <line x1="50" y1="240" x2="950" y2="240" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 2 -->
+    <rect x="50" y="240" width="900" height="30" fill="#f9fafb"/>
+    <text x="80" y="260" text-anchor="middle" font-size="11" fill="#111827">2</text>
+    <text x="260" y="260" text-anchor="middle" font-size="11" fill="#111827">Dilwale Dulhania Le Jayenge</text>
+    <text x="530" y="260" text-anchor="middle" font-size="11" fill="#111827">Aditya Chopra</text>
+    <text x="800" y="260" text-anchor="middle" font-size="11" fill="#111827">Yash Raj Films</text>
+    
+    <line x1="50" y1="270" x2="950" y2="270" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 3 - Highlight Dharma Productions -->
+    <rect x="50" y="270" width="900" height="30" fill="#fee2e2"/>
+    <text x="80" y="290" text-anchor="middle" font-size="11" fill="#111827">3</text>
+    <text x="260" y="290" text-anchor="middle" font-size="11" fill="#111827">Kabhi Khushi Kabhie Gham</text>
+    <text x="530" y="290" text-anchor="middle" font-size="11" fill="#111827">Karan Johar</text>
+    <rect x="650" y="270" width="300" height="30" fill="#fca5a5" stroke="#dc2626" stroke-width="2"/>
+    <text x="800" y="290" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">Dharma Productions</text>
+    
+    <line x1="50" y1="300" x2="950" y2="300" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 4 - Highlight Dharma Productions -->
+    <rect x="50" y="300" width="900" height="30" fill="#fee2e2"/>
+    <text x="80" y="320" text-anchor="middle" font-size="11" fill="#111827">4</text>
+    <text x="260" y="320" text-anchor="middle" font-size="11" fill="#111827">Kuch Kuch Hota Hai</text>
+    <text x="530" y="320" text-anchor="middle" font-size="11" fill="#111827">Karan Johar</text>
+    <rect x="650" y="300" width="300" height="30" fill="#fca5a5" stroke="#dc2626" stroke-width="2"/>
+    <text x="800" y="320" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">Dharma Productions</text>
+    
+    <line x1="50" y1="330" x2="950" y2="330" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 5 -->
+    <rect x="50" y="330" width="900" height="30" fill="#f9fafb"/>
+    <text x="80" y="350" text-anchor="middle" font-size="11" fill="#111827">5</text>
+    <text x="260" y="350" text-anchor="middle" font-size="11" fill="#111827">Lagaan</text>
+    <text x="530" y="350" text-anchor="middle" font-size="11" fill="#111827">Ashutosh Gowariker</text>
+    <text x="800" y="350" text-anchor="middle" font-size="11" fill="#111827">Aamir Khan Productions</text>
+    
+    <line x1="50" y1="360" x2="950" y2="360" stroke="#d1d5db" stroke-width="1"/>
+    
+    <!-- Row 6 -->
+    <text x="80" y="380" text-anchor="middle" font-size="11" fill="#111827">6</text>
+    <text x="260" y="380" text-anchor="middle" font-size="11" fill="#111827">Dangal</text>
+    <text x="530" y="380" text-anchor="middle" font-size="11" fill="#111827">Nitesh Tiwari</text>
+    <text x="800" y="380" text-anchor="middle" font-size="11" fill="#111827">Aamir Khan Productions</text>
+  </g>
+  
+  <!-- Arrow pointing down -->
+  <path d="M 500 410 L 500 450" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+  <text x="520" y="435" font-size="14" fill="#dc2626" font-weight="bold">Must update BOTH rows...</text>
+  
+  <!-- Updated Table Section -->
+  <g id="updated-table">
+    <text x="300" y="490" text-anchor="middle" font-size="20" font-weight="bold" fill="#16a34a">✅ If Updated Correctly</text>
+    
+    <!-- Correct update table (smaller) -->
+    <rect x="50" y="510" width="450" height="120" fill="white" stroke="#16a34a" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    
+    <!-- Show only relevant rows -->
+    <rect x="50" y="510" width="450" height="30" fill="#dcfce7"/>
+    <text x="80" y="530" text-anchor="middle" font-size="11" fill="#111827">3</text>
+    <text x="200" y="530" text-anchor="middle" font-size="11" fill="#111827">Kabhi Khushi...</text>
+    <text x="320" y="530" text-anchor="middle" font-size="11" fill="#111827">Karan Johar</text>
+    <rect x="380" y="510" width="120" height="30" fill="#86efac" stroke="#16a34a" stroke-width="2"/>
+    <text x="440" y="530" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">Dharma 2.0</text>
+    
+    <line x1="50" y1="540" x2="500" y2="540" stroke="#bbf7d0" stroke-width="1"/>
+    
+    <rect x="50" y="540" width="450" height="30" fill="#dcfce7"/>
+    <text x="80" y="560" text-anchor="middle" font-size="11" fill="#111827">4</text>
+    <text x="200" y="560" text-anchor="middle" font-size="11" fill="#111827">Kuch Kuch...</text>
+    <text x="320" y="560" text-anchor="middle" font-size="11" fill="#111827">Karan Johar</text>
+    <rect x="380" y="540" width="120" height="30" fill="#86efac" stroke="#16a34a" stroke-width="2"/>
+    <text x="440" y="560" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">Dharma 2.0</text>
+    
+    <text x="275" y="600" text-anchor="middle" font-size="13" fill="#16a34a">Both rows updated consistently ✓</text>
+  </g>
+  
+  <!-- Problem scenario -->
+  <g id="problem-scenario">
+    <text x="700" y="490" text-anchor="middle" font-size="20" font-weight="bold" fill="#dc2626">❌ If Only One Row Updated</text>
+    
+    <!-- Inconsistent update table -->
+    <rect x="520" y="510" width="450" height="120" fill="white" stroke="#dc2626" stroke-width="2" rx="5" filter="url(#shadow)"/>
+    
+    <rect x="520" y="510" width="450" height="30" fill="#fee2e2"/>
+    <text x="550" y="530" text-anchor="middle" font-size="11" fill="#111827">3</text>
+    <text x="670" y="530" text-anchor="middle" font-size="11" fill="#111827">Kabhi Khushi...</text>
+    <text x="790" y="530" text-anchor="middle" font-size="11" fill="#111827">Karan Johar</text>
+    <rect x="850" y="510" width="120" height="30" fill="#86efac" stroke="#16a34a" stroke-width="2"/>
+    <text x="910" y="530" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">Dharma 2.0</text>
+    
+    <line x1="520" y1="540" x2="970" y2="540" stroke="#fca5a5" stroke-width="1"/>
+    
+    <rect x="520" y="540" width="450" height="30" fill="#fee2e2"/>
+    <text x="550" y="560" text-anchor="middle" font-size="11" fill="#111827">4</text>
+    <text x="670" y="560" text-anchor="middle" font-size="11" fill="#111827">Kuch Kuch...</text>
+    <text x="790" y="560" text-anchor="middle" font-size="11" fill="#111827">Karan Johar</text>
+    <rect x="850" y="540" width="120" height="30" fill="#fca5a5" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="910" y="560" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">Dharma Productions</text>
+    
+    <text x="745" y="600" text-anchor="middle" font-size="13" fill="#dc2626">Data inconsistency! Same studio, different names ✗</text>
+  </g>
+  
+  <!-- Explanation Box -->
+  <rect x="200" y="650" width="600" height="120" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8" filter="url(#shadow)"/>
+  <text x="500" y="675" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">🚨 Update Anomaly Problems:</text>
+  <text x="220" y="700" font-size="13" fill="#78350f">• Redundant data storage - "Dharma Productions" stored multiple times</text>
+  <text x="220" y="720" font-size="13" fill="#78350f">• Risk of partial updates leading to inconsistent data</text>
+  <text x="220" y="740" font-size="13" fill="#78350f">• More storage space and maintenance overhead</text>
+  <text x="220" y="760" font-size="13" fill="#78350f">• Solution: Normalize into separate FILMS and PRODUCTION_HOUSES tables</text>
+</svg>

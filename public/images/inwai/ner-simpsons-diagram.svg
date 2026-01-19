@@ -1,0 +1,118 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Named Entity Recognition (NER) - Character Extraction
+  </text>
+  
+  <!-- Input Text Box -->
+  <rect x="50" y="60" width="800" height="80" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="60" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057">
+    Input Text:
+  </text>
+  <text x="60" y="110" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">
+    "Homer Simpson works at the Springfield Nuclear Power Plant. His boss,
+  </text>
+  <text x="60" y="130" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">
+    Mr. Burns, owns the facility. Marge and Bart often visit Homer there."
+  </text>
+  
+  <!-- Arrow pointing down -->
+  <path d="M 450 140 L 450 180" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="470" y="165" font-family="Arial, sans-serif" font-size="12" font-style="italic" fill="#7f8c8d">
+    NER Processing
+  </text>
+  
+  <!-- Annotated Text Box -->
+  <rect x="50" y="190" width="800" height="120" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="60" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057">
+    Annotated Text:
+  </text>
+  
+  <!-- Annotated text with colored boxes -->
+  <g transform="translate(60, 240)">
+    <!-- Homer Simpson -->
+    <rect x="0" y="-15" width="125" height="22" rx="3" fill="#3498db" opacity="0.3"/>
+    <text x="5" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Homer Simpson</text>
+    <text x="5" y="-18" font-family="Arial, sans-serif" font-size="10" fill="#2980b9" font-weight="bold">PERSON</text>
+    
+    <text x="130" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">works at the</text>
+    
+    <!-- Springfield -->
+    <rect x="235" y="-15" width="85" height="22" rx="3" fill="#e74c3c" opacity="0.3"/>
+    <text x="240" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Springfield</text>
+    <text x="240" y="-18" font-family="Arial, sans-serif" font-size="10" fill="#c0392b" font-weight="bold">LOCATION</text>
+    
+    <text x="325" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Nuclear Power Plant.</text>
+  </g>
+  
+  <g transform="translate(60, 270)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">His boss,</text>
+    
+    <!-- Mr. Burns -->
+    <rect x="70" y="-15" width="80" height="22" rx="3" fill="#3498db" opacity="0.3"/>
+    <text x="75" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Mr. Burns</text>
+    <text x="75" y="-18" font-family="Arial, sans-serif" font-size="10" fill="#2980b9" font-weight="bold">PERSON</text>
+    
+    <text x="155" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">, owns the facility.</text>
+    
+    <!-- Marge -->
+    <rect x="300" y="-15" width="50" height="22" rx="3" fill="#3498db" opacity="0.3"/>
+    <text x="305" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Marge</text>
+    <text x="305" y="-18" font-family="Arial, sans-serif" font-size="10" fill="#2980b9" font-weight="bold">PERSON</text>
+    
+    <text x="355" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">and</text>
+    
+    <!-- Bart -->
+    <rect x="390" y="-15" width="35" height="22" rx="3" fill="#3498db" opacity="0.3"/>
+    <text x="395" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Bart</text>
+    <text x="395" y="-18" font-family="Arial, sans-serif" font-size="10" fill="#2980b9" font-weight="bold">PERSON</text>
+    
+    <text x="430" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">often visit</text>
+    
+    <!-- Homer -->
+    <rect x="510" y="-15" width="50" height="22" rx="3" fill="#3498db" opacity="0.3"/>
+    <text x="515" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">Homer</text>
+    <text x="515" y="-18" font-family="Arial, sans-serif" font-size="10" fill="#2980b9" font-weight="bold">PERSON</text>
+    
+    <text x="565" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50">there.</text>
+  </g>
+  
+  <!-- Arrow pointing down -->
+  <path d="M 450 310 L 450 350" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Extracted Entities Box -->
+  <rect x="200" y="360" width="500" height="110" rx="10" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="450" y="385" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Extracted Entities
+  </text>
+  
+  <!-- Entity List -->
+  <g transform="translate(250, 410)">
+    <rect x="0" y="0" width="180" height="45" rx="5" fill="white" opacity="0.2"/>
+    <text x="90" y="15" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">PERSON (Characters)</text>
+    <text x="10" y="32" font-family="Arial, sans-serif" font-size="11" fill="white">• Homer Simpson • Mr. Burns</text>
+    <text x="10" y="42" font-family="Arial, sans-serif" font-size="11" fill="white">• Marge • Bart • Homer</text>
+  </g>
+  
+  <g transform="translate(450, 410)">
+    <rect x="0" y="0" width="150" height="45" rx="5" fill="white" opacity="0.2"/>
+    <text x="75" y="15" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">LOCATION</text>
+    <text x="10" y="32" font-family="Arial, sans-serif" font-size="11" fill="white">• Springfield</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 340)">
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Legend:</text>
+    <rect x="0" y="15" width="40" height="15" rx="2" fill="#3498db" opacity="0.3"/>
+    <text x="45" y="26" font-family="Arial, sans-serif" font-size="11" fill="#495057">PERSON</text>
+    <rect x="100" y="15" width="40" height="15" rx="2" fill="#e74c3c" opacity="0.3"/>
+    <text x="145" y="26" font-family="Arial, sans-serif" font-size="11" fill="#495057">LOCATION</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#34495e"/>
+    </marker>
+  </defs>
+</svg>

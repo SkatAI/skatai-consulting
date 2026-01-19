@@ -1,0 +1,175 @@
+<svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <!-- Gradients for each sub-language -->
+    <linearGradient id="ddlGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="dmlGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="dclGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="tclGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="dqlGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Central gradient -->
+    <radialGradient id="centerGradient">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="1000" height="800" fill="#f5f7fa"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" font-size="32" font-weight="bold" fill="#2c3e50" font-family="Arial, sans-serif">The 5 Sub-Languages of SQL</text>
+  
+  <!-- Central SQL Circle -->
+  <circle cx="500" cy="400" r="80" fill="url(#centerGradient)" stroke="#2c3e50" stroke-width="3" filter="url(#shadow)"/>
+  <text x="500" y="410" text-anchor="middle" font-size="36" font-weight="bold" fill="#2c3e50" font-family="Arial, sans-serif">SQL</text>
+  
+  <!-- DDL - Top -->
+  <g id="ddl">
+    <!-- Connection line -->
+    <line x1="500" y1="320" x2="500" y2="220" stroke="#764ba2" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Main box -->
+    <rect x="380" y="100" width="240" height="120" fill="url(#ddlGradient)" rx="15" filter="url(#shadow)"/>
+    <text x="500" y="135" text-anchor="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">DDL</text>
+    <text x="500" y="160" text-anchor="middle" font-size="14" fill="white" font-family="Arial, sans-serif">Data Definition Language</text>
+    
+    <!-- Commands -->
+    <rect x="360" y="180" width="280" height="35" fill="rgba(255,255,255,0.3)" rx="5"/>
+    <text x="500" y="202" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CREATE • ALTER • DROP • TRUNCATE</text>
+    
+    <!-- Description box -->
+    <rect x="650" y="100" width="320" height="120" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#shadow)"/>
+    <text x="660" y="125" font-size="13" font-weight="bold" fill="#764ba2">DDL - Structure Management</text>
+    <text x="660" y="145" font-size="11" fill="#555">• CREATE - Build new tables, indexes, views</text>
+    <text x="660" y="165" font-size="11" fill="#555">• ALTER - Modify existing structures</text>
+    <text x="660" y="185" font-size="11" fill="#555">• DROP - Remove database objects</text>
+    <text x="660" y="205" font-size="11" fill="#555">• TRUNCATE - Empty tables quickly</text>
+  </g>
+  
+  <!-- DML - Right -->
+  <g id="dml">
+    <!-- Connection line -->
+    <line x1="580" y1="400" x2="680" y2="400" stroke="#f5576c" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Main box -->
+    <rect x="680" y="340" width="240" height="120" fill="url(#dmlGradient)" rx="15" filter="url(#shadow)"/>
+    <text x="800" y="375" text-anchor="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">DML</text>
+    <text x="800" y="400" text-anchor="middle" font-size="14" fill="white" font-family="Arial, sans-serif">Data Manipulation Language</text>
+    
+    <!-- Commands -->
+    <rect x="660" y="420" width="280" height="35" fill="rgba(255,255,255,0.3)" rx="5"/>
+    <text x="800" y="442" text-anchor="middle" font-size="12" font-weight="bold" fill="white">INSERT • UPDATE • DELETE • MERGE</text>
+    
+    <!-- Description box -->
+    <rect x="650" y="480" width="320" height="120" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#shadow)"/>
+    <text x="660" y="505" font-size="13" font-weight="bold" fill="#f5576c">DML - Data Operations</text>
+    <text x="660" y="525" font-size="11" fill="#555">• INSERT - Add new rows to tables</text>
+    <text x="660" y="545" font-size="11" fill="#555">• UPDATE - Modify existing data</text>
+    <text x="660" y="565" font-size="11" fill="#555">• DELETE - Remove rows from tables</text>
+    <text x="660" y="585" font-size="11" fill="#555">• MERGE - Combine insert/update operations</text>
+  </g>
+  
+  <!-- DCL - Bottom Right -->
+  <g id="dcl">
+    <!-- Connection line -->
+    <line x1="550" y1="460" x2="620" y2="540" stroke="#155e75" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Main box -->
+    <rect x="520" y="540" width="240" height="120" fill="url(#dclGradient)" rx="15" filter="url(#shadow)"/>
+    <text x="640" y="575" text-anchor="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">DCL</text>
+    <text x="640" y="600" text-anchor="middle" font-size="14" fill="white" font-family="Arial, sans-serif">Data Control Language</text>
+    
+    <!-- Commands -->
+    <rect x="500" y="620" width="280" height="35" fill="rgba(255,255,255,0.3)" rx="5"/>
+    <text x="640" y="642" text-anchor="middle" font-size="12" font-weight="bold" fill="white">GRANT • REVOKE • DENY</text>
+    
+    <!-- Description box -->
+    <rect x="180" y="670" width="320" height="100" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#shadow)"/>
+    <text x="190" y="695" font-size="13" font-weight="bold" fill="#155e75">DCL - Security & Permissions</text>
+    <text x="190" y="715" font-size="11" fill="#555">• GRANT - Give permissions to users</text>
+    <text x="190" y="735" font-size="11" fill="#555">• REVOKE - Remove user permissions</text>
+    <text x="190" y="755" font-size="11" fill="#555">• DENY - Explicitly block access (MS SQL)</text>
+  </g>
+  
+  <!-- TCL - Bottom Left -->
+  <g id="tcl">
+    <!-- Connection line -->
+    <line x1="450" y1="460" x2="380" y2="540" stroke="#166534" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Main box -->
+    <rect x="240" y="540" width="240" height="120" fill="url(#tclGradient)" rx="15" filter="url(#shadow)"/>
+    <text x="360" y="575" text-anchor="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">TCL</text>
+    <text x="360" y="600" text-anchor="middle" font-size="14" fill="white" font-family="Arial, sans-serif">Transaction Control Language</text>
+    
+    <!-- Commands -->
+    <rect x="220" y="620" width="280" height="35" fill="rgba(255,255,255,0.3)" rx="5"/>
+    <text x="360" y="642" text-anchor="middle" font-size="12" font-weight="bold" fill="white">COMMIT • ROLLBACK • SAVEPOINT</text>
+    
+    <!-- Description box -->
+    <rect x="520" y="670" width="320" height="100" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#shadow)"/>
+    <text x="530" y="695" font-size="13" font-weight="bold" fill="#166534">TCL - Transaction Management</text>
+    <text x="530" y="715" font-size="11" fill="#555">• COMMIT - Save transaction permanently</text>
+    <text x="530" y="735" font-size="11" fill="#555">• ROLLBACK - Undo transaction changes</text>
+    <text x="530" y="755" font-size="11" fill="#555">• SAVEPOINT - Create transaction checkpoints</text>
+  </g>
+  
+  <!-- DQL - Left -->
+  <g id="dql">
+    <!-- Connection line -->
+    <line x1="420" y1="400" x2="320" y2="400" stroke="#d97706" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Main box -->
+    <rect x="80" y="340" width="240" height="120" fill="url(#dqlGradient)" rx="15" filter="url(#shadow)"/>
+    <text x="200" y="375" text-anchor="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">DQL</text>
+    <text x="200" y="400" text-anchor="middle" font-size="14" fill="white" font-family="Arial, sans-serif">Data Query Language</text>
+    
+    <!-- Commands -->
+    <rect x="60" y="420" width="280" height="35" fill="rgba(255,255,255,0.3)" rx="5"/>
+    <text x="200" y="442" text-anchor="middle" font-size="12" font-weight="bold" fill="white">SELECT • FROM • WHERE • JOIN</text>
+    
+    <!-- Description box -->
+    <rect x="30" y="240" width="320" height="100" fill="white" stroke="#e0e0e0" stroke-width="1" rx="10" filter="url(#shadow)"/>
+    <text x="40" y="265" font-size="13" font-weight="bold" fill="#d97706">DQL - Data Retrieval</text>
+    <text x="40" y="285" font-size="11" fill="#555">• SELECT - Retrieve data from tables</text>
+    <text x="40" y="305" font-size="11" fill="#555">• WHERE - Filter results with conditions</text>
+    <text x="40" y="325" font-size="11" fill="#555">• JOIN - Combine data from multiple tables</text>
+  </g>
+  
+  <!-- Note at bottom -->
+  <rect x="250" y="70" width="500" height="25" fill="#fff9c4" stroke="#f9a825" stroke-width="1" rx="5"/>
+  <text x="500" y="87" text-anchor="middle" font-size="11" fill="#f57c00" font-style="italic">Note: Some consider DQL part of DML, making it 4 sub-languages instead of 5</text>
+</svg>

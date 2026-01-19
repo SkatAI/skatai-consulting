@@ -1,0 +1,48 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .machine { fill: #e6f3ff; stroke: #0066cc; stroke-width: 2; }
+        .worker { fill: #ffebee; stroke: #c62828; stroke-width: 2; }
+        .arrow { stroke: #4caf50; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+        .text { font-family: Arial, sans-serif; font-size: 12px; }
+    </style>
+
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#4caf50" />
+        </marker>
+    </defs>
+
+    <!-- Machines -->
+    <rect x="50" y="50" width="100" height="60" class="machine" />
+    <rect x="200" y="50" width="100" height="60" class="machine" />
+    <rect x="350" y="50" width="100" height="60" class="machine" />
+    <rect x="500" y="50" width="100" height="60" class="machine" />
+
+    <text x="100" y="95" class="text" text-anchor="middle">Machine 1</text>
+    <text x="250" y="95" class="text" text-anchor="middle">Machine 2</text>
+    <text x="400" y="95" class="text" text-anchor="middle">Machine 3</text>
+    <text x="550" y="95" class="text" text-anchor="middle">Machine 4</text>
+
+    <!-- Workers -->
+    <rect x="150" y="200" width="100" height="60" class="worker" />
+    <rect x="350" y="200" width="100" height="60" class="worker" />
+
+    <text x="200" y="245" class="text" text-anchor="middle">Worker 1</text>
+    <text x="400" y="245" class="text" text-anchor="middle">Worker 2</text>
+
+    <!-- Arrows from Machines to Workers -->
+    <path d="M 100 110 L 150 180" class="arrow" />
+    <path d="M 250 110 L 200 180" class="arrow" />
+    <path d="M 400 110 L 350 180" class="arrow" />
+    <path d="M 550 110 L 400 180" class="arrow" />
+
+    <!-- Labels -->
+    <text x="300" y="30" class="text" font-size="16" font-weight="bold" text-anchor="middle">Distributed Hash Join in BigQuery</text>
+
+    <text x="300" y="350" class="text" text-anchor="middle" font-size="14">
+        Each machine hashes the join key (e.g., customer_id) and sends rows with the same hash to the same worker.
+    </text>
+    <text x="300" y="370" class="text" text-anchor="middle" font-size="14">
+        The worker joins only the matching rows it received.
+    </text>
+</svg>
