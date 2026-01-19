@@ -12,7 +12,7 @@ export function Navigation() {
 
   const navLinks = [
     { href: '/#services', label: 'Services' },
-    { href: '/#experience', label: 'Experience' },
+    { href: '/#projects', label: 'Projects' },
     { href: '/courses', label: 'Courses' },
     { href: '/blog', label: 'Blog' },
   ]
@@ -52,30 +52,17 @@ export function Navigation() {
         <HStack justify="space-between" py={4}>
           <Link as={NextLink} href="/" _hover={{ textDecoration: 'none' }}>
             <VStack align="flex-start" gap={0}>
-              <HStack gap={2}>
-                {/* <Box
-                  width="36px"
-                  height="36px"
-                  bg="var(--color-overlay-light)"
-                  borderRadius="full"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Image
-                    src="/images/woodpecker_02.png"
-                    alt="SkatAI Logo"
-                    width={28}
-                    height={28}
-                  />
-                </Box> */}
-                <Text fontSize="xl" fontWeight="bold" color="gray.900">
-                  Skat<Text as="span" color="orange.500">AI</Text>
-                </Text>
+              <HStack gap={3} align="center">
+                <Image src="/images/woodpecker_02.png" alt="SkatAI Logo" width={44} height={44} />
+                <VStack align="flex-start" gap={0}>
+                  <Text fontSize="xl" fontWeight="bold" color="gray.900">
+                    Skat<Text as="span" color="orange.500">AI</Text>
+                  </Text>
+                  <Text fontSize="xs" color="gray.500" letterSpacing="wide">
+                    AI from idea to production
+                  </Text>
+                </VStack>
               </HStack>
-              <Text fontSize="xs" color="gray.500" letterSpacing="wide">
-                AI from idea to production
-              </Text>
             </VStack>
           </Link>
 

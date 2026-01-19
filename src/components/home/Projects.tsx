@@ -85,7 +85,14 @@ export function Projects() {
   ]
 
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} bg="gray.50" id="projects">
+    <Box
+      as="section"
+      py={{ base: 16, md: 24 }}
+      bg="gray.50"
+      id="projects"
+      scrollMarginTop="96px"
+      minH="100vh"
+    >
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={4} mb={12} textAlign="center">
           <Text

@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
-import { Hero, Services, Experience, Projects, Contact } from '@/components/home'
+import { Hero, Services, Projects, Contact } from '@/components/home'
 
 export default function Home() {
   return (
@@ -10,7 +10,6 @@ export default function Home() {
       <Box pt="72px">
         <Hero />
         <Services />
-        <Experience />
         <Projects />
         <Contact />
       </Box>

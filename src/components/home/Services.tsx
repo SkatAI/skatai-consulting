@@ -56,7 +56,14 @@ export function Services() {
   ]
 
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} bg="gray.50" id="services">
+    <Box
+      as="section"
+      py={{ base: 16, md: 24 }}
+      bg="gray.50"
+      id="services"
+      scrollMarginTop="96px"
+      minH="100vh"
+    >
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={4} mb={12} textAlign="center">
           <Text
@@ -72,7 +79,7 @@ export function Services() {
             Consulting Services
           </Heading>
           <Text color="gray.600" fontSize="lg" maxW="2xl">
-            Focused, senior-level help for startups and small teams building AI-enabled products.
+            Focused, senior-level help for startups and small teams<br />building AI-enabled products.
           </Text>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>

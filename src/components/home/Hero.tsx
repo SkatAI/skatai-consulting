@@ -39,7 +39,7 @@ export function Hero() {
       bgGradient="linear(to-br, orange.50, white, gray.50)"
       color="gray.900"
       py={{ base: 20, md: 32 }}
-      minH="90vh"
+      minH="100vh"
       display="flex"
       alignItems="center"
     >
@@ -47,7 +47,7 @@ export function Hero() {
         <Box maxW="960px" mx="auto" w="100%">
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
-            gap={{ base: 12, lg: 10 }}
+            gap={{ base: 16, lg: 32 }}
             alignItems="start"
             w="100%"
           >
@@ -60,7 +60,7 @@ export function Hero() {
             >
               <VStack gap={6} align="flex-start">
                 <Heading as="h1" size="4xl" lineHeight="1.1" fontWeight="bold">
-                  AI: from{' '}
+                  AI from{' '}
                   <Text as="span" color="orange.500">
                     idea to production
                   </Text>
@@ -77,11 +77,12 @@ export function Hero() {
                 // textTransform="uppercase"
                 letterSpacing="wider"
                 fontSize={{ base: 'md', lg: 'lg' }}
+                alignSelf="flex-end"
               >
                 Alexis Perrier, PhD
               </Text>
             </VStack>
-            <Box w="100%">
+            <Box w="100%" pt={{ base: 6, lg: 16 }}>
               <SimpleGrid columns={1} gap={6}>
                 {stats.map((stat) => (
                   <Stat key={stat.label} {...stat} />

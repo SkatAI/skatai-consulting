@@ -7,7 +7,14 @@ import Image from 'next/image'
 
 export function Contact() {
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} bg="gray.50" id="contact">
+    <Box
+      as="section"
+      py={{ base: 16, md: 24 }}
+      bg="gray.50"
+      id="contact"
+      scrollMarginTop="96px"
+      minH="100vh"
+    >
       <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={16}>
           <VStack align="flex-start" gap={6}>
