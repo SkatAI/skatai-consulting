@@ -11,21 +11,21 @@ interface ServiceCardProps {
 function ServiceCard({ title, description, icon }: ServiceCardProps) {
   return (
     <Box
-      bg="white"
+      bg="var(--color-white)"
       p={8}
       borderRadius="xl"
       boxShadow="lg"
       transition="all 0.3s"
       _hover={{ transform: 'translateY(-4px)', boxShadow: 'xl' }}
       border="1px solid"
-      borderColor="gray.100"
+      borderColor="var(--color-gray-100)"
     >
       <VStack align="flex-start" gap={4}>
         <Text fontSize="4xl">{icon}</Text>
-        <Heading as="h3" size="lg" color="gray.800">
+        <Heading as="h3" size="lg" color="var(--color-gray-800)">
           {title}
         </Heading>
-        <Text color="gray.600" lineHeight="tall">
+        <Text color="var(--color-gray-600)" lineHeight="tall">
           {description}
         </Text>
       </VStack>
@@ -56,11 +56,11 @@ export function Services() {
   ]
 
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} bg="gray.50" id="services">
-      <Container maxW="container.xl">
+    <Box as="section" py={{ base: 16, md: 24 }} bg="var(--color-gray-300)" id="services">
+      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
         <VStack gap={4} mb={12} textAlign="center">
           <Text
-            color="orange.500"
+            color="var(--color-brand-secondary)"
             fontWeight="semibold"
             textTransform="uppercase"
             letterSpacing="wider"
@@ -68,10 +68,10 @@ export function Services() {
           >
             What We Do
           </Text>
-          <Heading as="h2" size="2xl" color="gray.800">
+          <Heading as="h2" size="2xl" color="var(--color-gray-800)">
             Services
           </Heading>
-          <Text color="gray.600" fontSize="lg" maxW="2xl">
+          <Text color="var(--color-gray-600)" fontSize="lg" maxW="2xl">
             Comprehensive AI and ML consulting services to help your organization thrive in the age
             of artificial intelligence.
           </Text>

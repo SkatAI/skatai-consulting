@@ -189,7 +189,7 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
           bottom="70px"
           right="30px"
           fontSize="12px"
-          color="#666"
+          color="var(--color-slide-button)"
         >
           {footer}
         </Text>
@@ -203,16 +203,16 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         transform="translateX(-50%)"
         zIndex={100}
         gap={2}
-        bg="rgba(0, 0, 0, 0.7)"
+        bg="var(--color-overlay-dark)"
         p={2}
         borderRadius="25px"
       >
         {courseHome && (
           <Button
             size="sm"
-            bg="#666"
-            color="white"
-            _hover={{ bg: '#8263ff' }}
+            bg="var(--color-slide-button)"
+            color="var(--color-white)"
+            _hover={{ bg: 'var(--color-slide-button-hover)' }}
             onClick={() => (window.location.href = courseHome)}
           >
             🏠
@@ -220,18 +220,18 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         )}
         <Button
           size="sm"
-          bg="#666"
-          color="white"
-          _hover={{ bg: '#8263ff' }}
+          bg="var(--color-slide-button)"
+          color="var(--color-white)"
+          _hover={{ bg: 'var(--color-slide-button-hover)' }}
           onClick={() => goToSlide(0)}
         >
           ⏮
         </Button>
         <Button
           size="sm"
-          bg="#666"
-          color="white"
-          _hover={{ bg: '#8263ff' }}
+          bg="var(--color-slide-button)"
+          color="var(--color-white)"
+          _hover={{ bg: 'var(--color-slide-button-hover)' }}
           onClick={prevSlide}
           disabled={currentSlide === 0}
         >
@@ -239,9 +239,9 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         </Button>
         <Button
           size="sm"
-          bg="#666"
-          color="white"
-          _hover={{ bg: '#8263ff' }}
+          bg="var(--color-slide-button)"
+          color="var(--color-white)"
+          _hover={{ bg: 'var(--color-slide-button-hover)' }}
           onClick={nextSlide}
           disabled={currentSlide === slides.length - 1}
         >
@@ -249,18 +249,18 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         </Button>
         <Button
           size="sm"
-          bg="#666"
-          color="white"
-          _hover={{ bg: '#8263ff' }}
+          bg="var(--color-slide-button)"
+          color="var(--color-white)"
+          _hover={{ bg: 'var(--color-slide-button-hover)' }}
           onClick={() => goToSlide(slides.length - 1)}
         >
           ⏭
         </Button>
         <Button
           size="sm"
-          bg="#666"
-          color="white"
-          _hover={{ bg: '#8263ff' }}
+          bg="var(--color-slide-button)"
+          color="var(--color-white)"
+          _hover={{ bg: 'var(--color-slide-button-hover)' }}
           onClick={toggleFullscreen}
         >
           ⛶
@@ -273,8 +273,8 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         bottom="20px"
         right="20px"
         zIndex={100}
-        bg="rgba(0, 0, 0, 0.7)"
-        color="white"
+        bg="var(--color-overlay-dark)"
+        color="var(--color-white)"
         px={3}
         py={1}
         borderRadius="15px"
@@ -289,14 +289,14 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         top="20px"
         right="20px"
         zIndex={100}
-        bg="rgba(0, 0, 0, 0.8)"
-        color="white"
+        bg="var(--color-overlay-dark-heavy)"
+        color="var(--color-white)"
         px={3}
         py={2}
         borderRadius="8px"
         fontSize="11px"
         opacity={0.8}
-        border="1px solid rgba(255, 255, 255, 0.2)"
+        border="1px solid var(--color-border-light)"
       >
         ← → arrow keys | Space
       </Box>

@@ -24,6 +24,13 @@ This is a **static content site** built with Next.js App Router, configured for 
 - MDX for content with gray-matter for frontmatter parsing
 - TypeScript with strict mode
 
+### Chakra UI Documentation
+For Chakra UI v3 questions, consult the local documentation in `docs/chakra-ui/`:
+- `llms.txt` - General overview
+- `llms-components.txt` - Component usage
+- `llms-styling.txt` - Styling patterns
+- `llms-theming.txt` - Theming configuration
+
 ### Key Directories
 - `src/app/` - Next.js routes (uses App Router, not Pages Router)
 - `src/components/` - Reusable components organized by feature (home/, layout/, slides/, ui/)

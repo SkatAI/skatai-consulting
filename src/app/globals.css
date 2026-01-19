@@ -1,3 +1,5 @@
+@import './colors.css';
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,6 +17,7 @@ body {
     'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-gray-300);
 }
 
 a {

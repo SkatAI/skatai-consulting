@@ -1,0 +1,40 @@
+:root {
+  /* Brand colors */
+  --color-brand-primary: #fb923c;
+  --color-brand-secondary: #f97316;
+
+  /* Grays */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-700: #3f3f46;
+  --color-gray-800: #27272a;
+  --color-gray-900: #18181b;
+
+  /* Base colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Dark theme backgrounds */
+  --color-bg-dark-primary: #1a1a2e;
+  --color-bg-dark-secondary: #16213e;
+  --color-bg-dark-tertiary: #0f3460;
+
+  /* Transparent overlays */
+  --color-overlay-light: #ffffff0f;
+  --color-overlay-light-hover: #ffffff14;
+  --color-overlay-dark: #000000b3;
+  --color-overlay-dark-heavy: #000000cc;
+  --color-border-light: #ffffff33;
+
+  /* Navigation */
+  --color-nav-bg: #1a1a2ef2;
+
+  /* Slide presentation */
+  --color-slide-button: #666666;
+  --color-slide-button-hover: #8263ff;
+}
