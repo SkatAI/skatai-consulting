@@ -1,6 +1,7 @@
 'use client'
 
-import { Box, Container, Heading, Text, VStack, HStack, SimpleGrid } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, HStack, SimpleGrid } from '@chakra-ui/react'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 interface StatProps {
   value: string
@@ -43,7 +44,7 @@ export function Hero() {
       display="flex"
       alignItems="center"
     >
-      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
+      <SiteContainer>
         <Box maxW="960px" mx="auto" w="100%">
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
@@ -91,7 +92,7 @@ export function Hero() {
             </Box>
           </SimpleGrid>
         </Box>
-      </Container>
+      </SiteContainer>
     </Box>
   )
 }

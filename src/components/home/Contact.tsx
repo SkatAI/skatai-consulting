@@ -1,9 +1,10 @@
 'use client'
 
-import { Box, Container, Heading, Text, VStack, HStack, Link, SimpleGrid } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, HStack, Link, SimpleGrid } from '@chakra-ui/react'
 import { FaLinkedin, FaMedium } from 'react-icons/fa'
 import { SiBluesky } from 'react-icons/si'
 import Image from 'next/image'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export function Contact() {
   return (
@@ -15,7 +16,7 @@ export function Contact() {
       scrollMarginTop="96px"
       minH="100vh"
     >
-      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
+      <SiteContainer>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={16}>
           <VStack align="flex-start" gap={6}>
             <Text
@@ -125,7 +126,7 @@ export function Contact() {
             </VStack>
           </VStack>
         </SimpleGrid>
-      </Container>
+      </SiteContainer>
     </Box>
   )
 }

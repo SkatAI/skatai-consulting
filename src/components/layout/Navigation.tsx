@@ -1,11 +1,11 @@
 'use client'
 
-import { Box, Container, HStack, Link, Text, IconButton, VStack } from '@chakra-ui/react'
+import { Box, HStack, Link, Text, IconButton, VStack } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { FaLinkedin } from 'react-icons/fa'
-import { SiBluesky } from 'react-icons/si'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,17 +20,12 @@ export function Navigation() {
   const socialLinks = [
     {
       href: 'https://www.linkedin.com/in/alexisperrier',
-      icon: <FaLinkedin size={18} color="#0077B5" />,
+      icon: <FaLinkedin size={20} color="#0077B5" />,
       label: 'LinkedIn',
     },
     {
-      href: 'https://bsky.app/profile/alexisperrier.bsky.social',
-      icon: <SiBluesky size={18} color="#1185FE" />,
-      label: 'Bluesky',
-    },
-    {
       href: 'https://www.malt.fr/profile/alexisperrier',
-      icon: <Image src="/images/malt-logo-red.svg" alt="Malt" width={50} height={14} />,
+      icon: <Image src="/images/malt-logo-red.svg" alt="Malt" width={60} height={18} />,
       label: 'Malt',
     },
   ]
@@ -48,17 +43,17 @@ export function Navigation() {
       borderBottom="1px solid"
       borderColor="gray.200"
     >
-      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
+      <SiteContainer>
         <HStack justify="space-between" py={4}>
           <Link as={NextLink} href="/" _hover={{ textDecoration: 'none' }}>
             <VStack align="flex-start" gap={0}>
               <HStack gap={3} align="center">
-                <Image src="/images/woodpecker_02.png" alt="SkatAI Logo" width={44} height={44} />
+                <Image src="/images/woodpecker_02.png" alt="SkatAI Logo" width={56} height={56} />
                 <VStack align="flex-start" gap={0}>
-                  <Text fontSize="xl" fontWeight="bold" color="gray.900">
+                  <Text fontSize="2xl" fontWeight="bold" color="gray.900">
                     Skat<Text as="span" color="orange.500">AI</Text>
                   </Text>
-                  <Text fontSize="xs" color="gray.500" letterSpacing="wide">
+                  <Text fontSize="sm" color="gray.500" letterSpacing="wide">
                     AI from idea to production
                   </Text>
                 </VStack>
@@ -74,7 +69,7 @@ export function Navigation() {
                 as={NextLink}
                 href={link.href}
                 color="gray.700"
-                fontSize="sm"
+                fontSize="md"
                 fontWeight="medium"
                 _hover={{ color: 'orange.500' }}
                 transition="color 0.2s"
@@ -86,7 +81,7 @@ export function Navigation() {
               as={NextLink}
               href="/#contact"
               color="gray.700"
-              fontSize="sm"
+              fontSize="md"
               fontWeight="medium"
               _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
@@ -119,7 +114,7 @@ export function Navigation() {
             color="gray.900"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <Text fontSize="xl">{isOpen ? '✕' : '☰'}</Text>
+            <Text fontSize="2xl">{isOpen ? '✕' : '☰'}</Text>
           </IconButton>
         </HStack>
 
@@ -138,7 +133,7 @@ export function Navigation() {
                 as={NextLink}
                 href={link.href}
                 color="gray.700"
-                fontSize="sm"
+                fontSize="md"
                 fontWeight="medium"
                 _hover={{ color: 'orange.500' }}
                 onClick={() => setIsOpen(false)}
@@ -150,7 +145,7 @@ export function Navigation() {
               as={NextLink}
               href="/#contact"
               color="gray.700"
-              fontSize="sm"
+              fontSize="md"
               fontWeight="medium"
               _hover={{ color: 'orange.500' }}
               onClick={() => setIsOpen(false)}
@@ -174,7 +169,7 @@ export function Navigation() {
             </HStack>
           </VStack>
         )}
-      </Container>
+      </SiteContainer>
     </Box>
   )
 }

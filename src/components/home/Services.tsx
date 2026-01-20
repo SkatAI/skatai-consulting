@@ -1,6 +1,7 @@
 'use client'
 
-import { Box, Container, Heading, Text, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, VStack } from '@chakra-ui/react'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 interface ServiceCardProps {
   title: string
@@ -64,7 +65,7 @@ export function Services() {
       scrollMarginTop="96px"
       minH="100vh"
     >
-      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
+      <SiteContainer>
         <VStack gap={4} mb={12} textAlign="center">
           <Text
             color="orange.600"
@@ -87,7 +88,7 @@ export function Services() {
             <ServiceCard key={service.title} {...service} />
           ))}
         </SimpleGrid>
-      </Container>
+      </SiteContainer>
     </Box>
   )
 }

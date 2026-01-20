@@ -1,14 +1,15 @@
 'use client'
 
-import { Box, Container, HStack, VStack, Text, Link } from '@chakra-ui/react'
+import { Box, HStack, VStack, Text, Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
     <Box as="footer" bg="gray.100" color="gray.600" py={12}>
-      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
+      <SiteContainer>
         <VStack gap={8}>
           <HStack gap={8} flexWrap="wrap" justify="center">
             <Link
@@ -62,7 +63,7 @@ export function Footer() {
             <Text fontSize="sm">© {currentYear} SkatAI. All rights reserved.</Text>
           </Box>
         </VStack>
-      </Container>
+      </SiteContainer>
     </Box>
   )
 }

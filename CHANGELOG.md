@@ -12,6 +12,8 @@
 - Added the SkatAI woodpecker logo and stacked brand + tagline.
 - Updated nav links to include Projects.
 - Switched to light theme styling across navigation and footer.
+- Removed Bluesky from navigation social links.
+- Increased navigation typography and icon sizes, including the logo.
 
 ### Blog
 - Centered blog post layout with a 3xl content width.
@@ -24,3 +26,7 @@
 
 ### Styles
 - Lightened global backgrounds and MDX/prose code blocks to match the light theme.
+- Centralized site container sizing/padding to keep left/right gutters consistent across pages.
+
+### Docs
+- Added a postmortem on horizontal alignment issues.

@@ -1,7 +1,8 @@
 'use client'
 
-import { Box, Container, Heading, Text, SimpleGrid, VStack, Badge, HStack, Link } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, VStack, Badge, HStack, Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 interface ProjectCardProps {
   title: string
@@ -116,7 +117,7 @@ export function Projects() {
       scrollMarginTop="96px"
       minH="100vh"
     >
-      <Container maxW="container.xl" px={{ base: 4, md: 8, lg: 16 }}>
+      <SiteContainer>
         <VStack gap={4} mb={12} textAlign="center">
           <Heading
             color="orange.600"
@@ -138,7 +139,7 @@ export function Projects() {
             <ProjectCard key={project.title} {...project} />
           ))}
         </SimpleGrid>
-      </Container>
+      </SiteContainer>
     </Box>
   )
 }

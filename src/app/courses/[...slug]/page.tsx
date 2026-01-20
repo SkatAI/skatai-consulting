@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, VStack, HStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import { MDXRemote } from '@/components/MDXRemote'
 import { SlidePresentation } from '@/components/slides/SlidePresentation'
 import '../../prose.css'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 interface Props {
   params: Promise<{ slug: string[] }>
@@ -69,7 +70,7 @@ export default async function CoursePage({ params }: Props) {
       <Box>
         <Navigation />
         <Box pt="72px" minH="100vh" bg="gray.50">
-          <Container maxW="container.xl" py={16}>
+          <SiteContainer py={16}>
             <VStack align="flex-start" gap={6} mb={8}>
               <Link href="/courses">
                 <Text color="orange.500" fontSize="sm" _hover={{ textDecoration: 'underline' }}>
@@ -106,7 +107,7 @@ export default async function CoursePage({ params }: Props) {
                 </Link>
               ))}
             </VStack>
-          </Container>
+          </SiteContainer>
         </Box>
         <Footer />
       </Box>
@@ -144,7 +145,7 @@ export default async function CoursePage({ params }: Props) {
     <Box>
       <Navigation />
       <Box pt="72px" minH="100vh" bg="white">
-        <Container maxW="container.md" py={16}>
+        <SiteContainer maxW="container.md" py={16}>
           <VStack align="flex-start" gap={4} mb={8}>
             <Link href={`/courses/${courseName}`}>
               <Text color="orange.500" fontSize="sm" _hover={{ textDecoration: 'underline' }}>
@@ -192,7 +193,7 @@ export default async function CoursePage({ params }: Props) {
               </Link>
             )}
           </HStack>
-        </Container>
+        </SiteContainer>
       </Box>
       <Footer />
     </Box>

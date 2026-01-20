@@ -1,10 +1,11 @@
-import { Box, Container, Heading, Text, VStack, Badge, HStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, Badge, HStack } from '@chakra-ui/react'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
 import { getPostBySlug, getPostSlugs } from '@/lib/mdx'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from '@/components/MDXRemote'
 import '../../prose.css'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -46,7 +47,7 @@ export default async function BlogPostPage({ params }: Props) {
     <Box>
       <Navigation />
       <Box pt="72px" minH="100vh" bg="white">
-        <Container maxW="full" py={16}>
+        <SiteContainer maxW="full" py={16}>
           <Box maxW="3xl" mx="auto" w="100%">
             <VStack align="center" textAlign="center" gap={6} mb={8}>
               <Text color="gray.400" fontSize="sm">
@@ -81,7 +82,7 @@ export default async function BlogPostPage({ params }: Props) {
               <MDXRemote source={post.content} />
             </Box>
           </Box>
-        </Container>
+        </SiteContainer>
       </Box>
       <Footer />
     </Box>

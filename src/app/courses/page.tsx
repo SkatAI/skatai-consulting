@@ -1,8 +1,9 @@
-import { Box, Container, Heading, Text, VStack, SimpleGrid, Badge, HStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, SimpleGrid, Badge, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
 import { getAllCourses, getCourseStructure } from '@/lib/mdx'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
   title: 'Courses - SkatAI',
@@ -86,7 +87,7 @@ export default function CoursesPage() {
     <Box>
       <Navigation />
       <Box pt="72px" minH="100vh" bg="var(--color-gray-300)">
-        <Container maxW="container.xl" py={16}>
+        <SiteContainer py={16}>
           <VStack gap={4} mb={12} textAlign="center">
             <Text
               color="orange.500"
@@ -147,7 +148,7 @@ export default function CoursesPage() {
               ))}
             </SimpleGrid>
           )}
-        </Container>
+        </SiteContainer>
       </Box>
       <Footer />
     </Box>

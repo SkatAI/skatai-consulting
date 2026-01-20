@@ -1,9 +1,10 @@
-import { Box, Container, Heading, Text, VStack, SimpleGrid, Badge, HStack, Link as ChakraLink } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, SimpleGrid, Badge, HStack, Link as ChakraLink } from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
 import { getAllPosts } from '@/lib/mdx'
+import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
   title: 'Blog - SkatAI',
@@ -17,7 +18,7 @@ export default function BlogPage() {
     <Box>
       <Navigation />
       <Box pt="72px" minH="100vh" bg="gray.50">
-        <Container maxW="7xl" py={16}>
+        <SiteContainer py={16}>
           <VStack gap={4} mb={12} textAlign="center">
             <Text
               color="orange.500"
@@ -134,7 +135,7 @@ export default function BlogPage() {
               ))}
             </SimpleGrid>
           )}
-        </Container>
+        </SiteContainer>
       </Box>
       <Footer />
     </Box>
