@@ -2,7 +2,6 @@ FROM node:20-bookworm-slim
 
 WORKDIR /app
 
-
 # Copy package files
 COPY package*.json ./
 
