@@ -14,6 +14,7 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ title, project_description, tags, image: _image, link, linkText }: ProjectCardProps) {
+  void _image
   const content = (
     <Box
       bg="white"

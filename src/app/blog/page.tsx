@@ -1,4 +1,15 @@
-import { Box, Heading, Text, VStack, SimpleGrid, Badge, HStack, Link as ChakraLink } from '@chakra-ui/react'
+import {
+  Box,
+  Heading,
+  Text,
+  VStack,
+  SimpleGrid,
+  Badge,
+  HStack,
+  Link as ChakraLink,
+  LinkBox,
+  LinkOverlay,
+} from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation } from '@/components/layout/Navigation'
@@ -44,7 +55,7 @@ export default function BlogPage() {
           ) : (
             <SimpleGrid columns={1} gap={8}>
               {posts.map((post) => (
-                <Link key={post.meta.slug} href={`/blog/${post.meta.slug}`}>
+                <LinkBox key={post.meta.slug} as="article" maxW="5xl" mx="auto" w="100%">
                   <Box
                     bg="white"
                     borderRadius="xl"
@@ -54,8 +65,7 @@ export default function BlogPage() {
                     border="1px solid"
                     borderColor="gray.100"
                     height="100%"
-                    maxW="5xl"
-                    mx="auto"
+                    w="100%"
                     overflow="hidden"
                   >
                     <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} alignItems="center">
@@ -71,14 +81,16 @@ export default function BlogPage() {
                             {post.meta.readingTime}
                           </Text>
                           <Heading as="h2" size="md" color="gray.800">
-                            {post.meta.title}
+                            <LinkOverlay asChild>
+                              <Link href={`/blog/${post.meta.slug}`}>{post.meta.title}</Link>
+                            </LinkOverlay>
                           </Heading>
                           {post.meta.description && (
                             <Text color="gray.600" fontSize="sm" lineHeight="tall">
                               {post.meta.description}
                             </Text>
                           )}
-                          {post.meta.link && (
+                          {Boolean(post.meta.link) && (
                             <ChakraLink
                               href={post.meta.link as string}
                               color="orange.600"
@@ -120,7 +132,7 @@ export default function BlogPage() {
                         overflow="hidden"
                         bg="gray.100"
                       >
-                        {post.meta.image && (
+                        {Boolean(post.meta.image) && (
                           <Image
                             src={post.meta.image as string}
                             alt={post.meta.title}
@@ -131,7 +143,7 @@ export default function BlogPage() {
                       </Box>
                     </SimpleGrid>
                   </Box>
-                </Link>
+                </LinkBox>
               ))}
             </SimpleGrid>
           )}

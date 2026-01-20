@@ -20,6 +20,7 @@
 - Use 2-space indentation (default Prettier) and TypeScript for app code.
 - Follow Next.js App Router conventions for route structure under `src/app/`.
 - Content files are Markdown/MDX with frontmatter, e.g. `src/content/blog/my-post.md` and course chapters under `src/content/courses/{course-name}/`.
+- When Chakra UI behavior is unexpected, read the Chakra UI documentation files in `docs/chakra-ui` before making changes.
 
 ## Testing Guidelines
 - No automated test framework is configured. If you add tests, document the runner and add a `npm run test` script.

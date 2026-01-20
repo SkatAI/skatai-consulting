@@ -1,0 +1,29 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: skatai-web
+    ports:
+      - "3000:3000"
+    # env_file:
+    #   - .env.local
+    environment:
+      NODE_ENV: development
+      NEXT_RUNTIME_LOGGING: debug
+      # NEXT_DISABLE_TURBOPACK: "1"
+    extra_hosts:
+      # Enable host.docker.internal on Linux (macOS/Windows have it by default)
+      - "host.docker.internal:host-gateway"
+    volumes:
+      # Mount source code for hot reload
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./src/content:/app/src/content
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./next.config.ts:/app/next.config.ts
+      - ./eslint.config.mjs:/app/eslint.config.mjs
+
+      # Prevent overwriting these (use container's built versions)
+      - /app/node_modules
+      - /app/.next

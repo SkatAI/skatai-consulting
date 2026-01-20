@@ -8,34 +8,8 @@ help: ## Show available make targets.
 	@echo "Available make targets:"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?##' $(MAKEFILE_LIST) | awk 'BEGIN {FS=":.*?## "}{printf "  %-16s %s\n", $$1, $$2}'
 
-# Setup & Startup
-
-# setup: ## Install dependencies and copy environment template.
-# 	npm install
-# 	cp .env.local.example .env.local
-# 	@echo "✓ Setup complete. Run 'make start' to begin development."
-
-# start: ## Start Supabase and Next.js dev server concurrently.
-# 	@echo "Starting Supabase and Next.js dev server..."
-# 	@echo "Supabase Studio: http://localhost:54323"
-# 	@echo "Next.js App: http://localhost:3000"
-# 	@echo "Press Ctrl+C to stop"
-# 	supabase start & npm run dev
-
-# start-logs: ## Start Supabase and Next.js with logs streamed to logs/dev.log
-# 	@mkdir -p logs
-# 	@echo "Starting Supabase and Next.js dev server with logging..."
-# 	@echo "Logs will be written to: logs/dev.log"
-# 	@echo "Supabase Studio: http://localhost:54323"
-# 	@echo "Next.js App: http://localhost:3000"
-# 	@echo "Press Ctrl+C to stop"
-# 	(supabase start & npm run dev 2>&1) | tee -a logs/dev.log
-
 dev: ## Start Next.js dev server only (Supabase must be running separately).
 	npm run dev
-
-# devrun: ## Start Panda watcher + Next.js dev server (alias for dev).
-# 	@$(MAKE) dev
 
 build: ## Build the application for production.
 	npm run build
@@ -48,42 +22,22 @@ lint: ## Run ESLint and TypeScript checks.
 format: ## Check code formatting with Prettier.
 	npm run format
 
-# format-fix: ## Auto-format code with Prettier.
-# 	npm run format:fix
-
-# pretty: ## Auto-format code with Prettier (alias for format-fix).
-# 	@$(MAKE) format-fix
-
 # Docker
 
-# docker-build: ## Run development environment in Docker with hot reload.
-# 	docker compose -f docker-compose.yaml up --build
+docker-build: ## Run development environment in Docker with hot reload.
+	docker compose -f docker-compose.yaml up --build
 
-# docker-up-detached: ## Run development environment in Docker with hot reload (detached).
-# 	docker compose -f docker-compose.yaml up -d
+docker-up-detached: ## Run development environment in Docker with hot reload (detached).
+	docker compose -f docker-compose.yaml up -d
 
-# docker-build-detached: ## Run development environment in Docker with hot reload.
-# 	docker compose -f docker-compose.yaml up -d --build
+docker-build-detached: ## Run development environment in Docker with hot reload.
+	docker compose -f docker-compose.yaml up -d --build
 
-# docker-down: ## Stop all Docker containers.
-# 	docker compose -f docker-compose.yaml down
-# 	docker compose -f docker-compose.prod.yaml down 2>/dev/null || true
+docker-down: ## Stop all Docker containers.
+	docker compose -f docker-compose.yaml down
 
-# docker-logs: ## Tail Docker logs.
-# 	docker compose -f docker-compose.yaml logs -f
-
-# Database
-
-# supa-start: ## Start Supabase locally.
-# 	supabase start
-
-# supa-stop: ## Stop Supabase.
-# 	supabase stop
-
-# supa-reset: ## Reset Supabase (clears all data, re-applies migrations).
-# 	supabase stop
-# 	rm -rf .supabase/
-# 	supabase start
+docker-logs: ## Tail Docker logs.
+	docker compose -f docker-compose.yaml logs -f
 
 # Cleanup
 
