@@ -34,6 +34,36 @@ export interface CourseIndexItem {
   status?: 'live' | 'draft' | 'archived'
 }
 
+export interface CourseSessionItem {
+  slug: string
+  title: string
+  description?: string
+  order: number
+  file?: string
+  status?: 'live' | 'draft' | 'archived'
+}
+
+export interface CourseContentIndex {
+  title?: string
+  description?: string
+  tags?: string[]
+  status?: 'live' | 'draft' | 'archived'
+  order?: number
+  index?: {
+    file?: string
+    title?: string
+    description?: string
+  }
+  sessions?: Array<{
+    slug?: string
+    title?: string
+    description?: string
+    order?: number
+    file?: string
+    status?: 'live' | 'draft' | 'archived'
+  }>
+}
+
 export function getPostSlugs(directory: string): string[] {
   const fullPath = path.join(contentDirectory, directory)
   if (!fs.existsSync(fullPath)) {
@@ -106,29 +136,77 @@ export function getAllPosts(directory: string): Post[] {
 }
 
 export function getCourseStructure(courseName: string): {
-  chapters: { slug: string; title: string; order: number }[]
+  chapters: CourseSessionItem[]
+  index?: { title: string; description?: string; file?: string }
 } {
   const coursePath = path.join(contentDirectory, 'courses', courseName)
   if (!fs.existsSync(coursePath)) {
     return { chapters: [] }
   }
 
-  const files = fs.readdirSync(coursePath).filter((file) => /\.(md|mdx)$/.test(file))
-  const chapters = files.map((file) => {
-    const slug = file.replace(/\.(md|mdx)$/, '')
-    const fullPath = path.join(coursePath, file)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const { data } = matter(fileContents)
+  const contentIndex = getCourseContentIndex(courseName)
+  const usedSlugs = new Map<string, number>()
+  const chaptersFromIndex = contentIndex?.sessions
+    ? contentIndex.sessions
+        .filter(Boolean)
+        .map((item, index) => {
+          const file = typeof item?.file === 'string' ? item.file : undefined
+          const baseSlug = deriveCourseSlug(courseName, item?.slug, file)
+          const slug = ensureUniqueSlug(baseSlug, usedSlugs)
+          const { title: fileTitle, description: fileDescription } = file
+            ? getCourseFileMeta(courseName, file)
+            : { title: slug, description: undefined }
+          const title = typeof item?.title === 'string' ? item.title : fileTitle
+          const description =
+            typeof item?.description === 'string' ? item.description : fileDescription
+          const rawOrder = item?.order
+          const order = typeof rawOrder === 'number' ? rawOrder : Number(rawOrder)
+          const status =
+            item?.status === 'live' || item?.status === 'draft' || item?.status === 'archived'
+              ? item.status
+              : 'live'
 
-    // Handle various title formats
-    const title = data.page_title || data.title || slug
+          return {
+            slug,
+            title,
+            description,
+            order: Number.isFinite(order) ? order : index + 1,
+            file,
+            status,
+          }
+        })
+    : []
 
+  if (chaptersFromIndex.length > 0) {
     return {
-      slug,
-      title,
-      order: data.order || data.chapitre || extractOrderFromSlug(slug),
+      chapters: chaptersFromIndex.sort((a, b) => a.order - b.order),
+      index: contentIndex?.index
+        ? {
+            title: contentIndex.index.title || contentIndex.title || courseName,
+            description: contentIndex.index.description || contentIndex.description,
+            file: contentIndex.index.file,
+          }
+        : contentIndex?.title
+          ? { title: contentIndex.title, description: contentIndex.description }
+          : undefined,
     }
-  })
+  }
+
+  const files = fs.readdirSync(coursePath).filter((file) => /\.(md|mdx)$/.test(file))
+  const chapters = files
+    .filter((file) => /^S\d{2}\.\d{2}\./.test(file))
+    .map((file, index) => {
+      const slug = ensureUniqueSlug(deriveCourseSlug(courseName, undefined, file), usedSlugs)
+      const { title, description } = getCourseFileMeta(courseName, file)
+      return {
+        slug,
+        title,
+        description,
+        order: extractOrderFromSlug(file.replace(/\.(md|mdx)$/, '')) || index + 1,
+        file,
+        status: 'live' as const,
+      }
+    })
 
   return {
     chapters: chapters.sort((a, b) => a.order - b.order),
@@ -148,40 +226,143 @@ export function getAllCourses(): string[] {
 
 export function getCourseIndex(): CourseIndexItem[] {
   const indexPath = path.join(contentDirectory, 'courses', 'index.yaml')
-  if (!fs.existsSync(indexPath)) {
-    return []
+  const courseDirs = getAllCourses()
+  const courseIndexBySlug = new Map<string, CourseIndexItem>()
+
+  if (fs.existsSync(indexPath)) {
+    const fileContents = fs.readFileSync(indexPath, 'utf8')
+    let data: unknown
+    try {
+      data = parseYaml(fileContents)
+    } catch {
+      data = null
+    }
+    const rawCourses = Array.isArray(data) ? data : (data as { courses?: unknown })?.courses
+
+    if (Array.isArray(rawCourses)) {
+      rawCourses
+        .filter(Boolean)
+        .forEach((item) => {
+          const slug = typeof item?.slug === 'string' ? item.slug : ''
+          if (!slug) {
+            return
+          }
+          const title = typeof item?.title === 'string' ? item.title : slug
+          const description = typeof item?.description === 'string' ? item.description : ''
+          const tags = Array.isArray(item?.tags) ? item.tags.map(String) : []
+          const status =
+            item?.status === 'live' || item?.status === 'draft' || item?.status === 'archived'
+              ? item.status
+              : 'live'
+          const rawOrder = item?.order
+          const order = typeof rawOrder === 'number' ? rawOrder : Number(rawOrder)
+
+          courseIndexBySlug.set(slug, {
+            slug,
+            title,
+            description,
+            tags,
+            order: Number.isFinite(order) ? order : undefined,
+            status,
+          })
+        })
+    }
   }
 
-  const fileContents = fs.readFileSync(indexPath, 'utf8')
-  const data = parseYaml(fileContents)
-  const rawCourses = Array.isArray(data) ? data : data?.courses
+  courseDirs.forEach((slug) => {
+    const courseMeta = getCourseContentIndex(slug)
+    if (!courseMeta) {
+      return
+    }
+    const existing = courseIndexBySlug.get(slug)
+    const status =
+      courseMeta.status === 'live' || courseMeta.status === 'draft' || courseMeta.status === 'archived'
+        ? courseMeta.status
+        : existing?.status ?? 'live'
+    const rawOrder = courseMeta.order
+    const order = typeof rawOrder === 'number' ? rawOrder : Number(rawOrder)
 
-  if (!Array.isArray(rawCourses)) {
-    return []
-  }
-
-  return rawCourses
-    .filter(Boolean)
-    .map((item) => {
-      const slug = typeof item?.slug === 'string' ? item.slug : ''
-      const title = typeof item?.title === 'string' ? item.title : slug
-      const description = typeof item?.description === 'string' ? item.description : ''
-      const tags = Array.isArray(item?.tags) ? item.tags.map(String) : []
-      const status =
-        item?.status === 'live' || item?.status === 'draft' || item?.status === 'archived'
-          ? item.status
-          : 'live'
-      const rawOrder = item?.order
-      const order = typeof rawOrder === 'number' ? rawOrder : Number(rawOrder)
-
-      return {
+    if (existing) {
+      courseIndexBySlug.set(slug, {
+        ...existing,
+        title: existing.title || courseMeta.title || slug,
+        description: existing.description || courseMeta.description || '',
+        tags: existing.tags?.length ? existing.tags : courseMeta.tags,
+        order: existing.order ?? (Number.isFinite(order) ? order : undefined),
+        status,
+      })
+    } else {
+      courseIndexBySlug.set(slug, {
         slug,
-        title,
-        description,
-        tags,
+        title: courseMeta.title || slug,
+        description: courseMeta.description || '',
+        tags: courseMeta.tags || [],
         order: Number.isFinite(order) ? order : undefined,
         status,
-      }
-    })
-    .filter((item) => item.slug.length > 0)
+      })
+    }
+  })
+
+  return Array.from(courseIndexBySlug.values()).filter((item) => item.slug.length > 0)
+}
+
+export function getCourseContentIndex(courseName: string): CourseContentIndex | null {
+  const indexPath = path.join(contentDirectory, 'courses', courseName, 'index.yaml')
+  if (!fs.existsSync(indexPath)) {
+    return null
+  }
+  const fileContents = fs.readFileSync(indexPath, 'utf8')
+  let data: unknown
+  try {
+    data = parseYaml(fileContents)
+  } catch {
+    return null
+  }
+  if (!data || typeof data !== 'object') {
+    return null
+  }
+  return data as CourseContentIndex
+}
+
+export function getCourseSessionBySlug(courseName: string, slug: string): CourseSessionItem | null {
+  const { chapters } = getCourseStructure(courseName)
+  const liveChapters = chapters.filter((chapter) => chapter.status !== 'draft' && chapter.status !== 'archived')
+  return liveChapters.find((chapter) => chapter.slug === slug) || null
+}
+
+function deriveCourseSlug(courseName: string, explicitSlug?: string, file?: string): string {
+  if (explicitSlug && typeof explicitSlug === 'string') {
+    return explicitSlug
+  }
+  if (!file) {
+    return courseName
+  }
+  let base = file.replace(/\.(md|mdx)$/, '')
+  base = base.replace(/^S\d{2}\.\d{2}\./, '')
+  base = base.replace(/^00[-_.]?/, '')
+  base = base.replace(new RegExp(`^${courseName}\\.`, 'i'), '')
+  return base
+}
+
+function ensureUniqueSlug(slug: string, registry: Map<string, number>): string {
+  const count = registry.get(slug) ?? 0
+  registry.set(slug, count + 1)
+  if (count === 0) {
+    return slug
+  }
+  return `${slug}-${count + 1}`
+}
+
+function getCourseFileMeta(courseName: string, file: string): { title: string; description?: string } {
+  const coursePath = path.join(contentDirectory, 'courses', courseName)
+  const fullPath = path.join(coursePath, file)
+  if (!fs.existsSync(fullPath)) {
+    return { title: file.replace(/\.(md|mdx)$/, '') }
+  }
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const { data } = matter(fileContents)
+  const slug = file.replace(/\.(md|mdx)$/, '')
+  const title = data.page_title || data.title || slug
+  const description = data.summary || data.description
+  return { title, description }
 }

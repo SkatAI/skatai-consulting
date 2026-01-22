@@ -1,0 +1,22 @@
+title: Investigating with AI
+description: Using AI tools for investigation, analysis, and research.
+index:
+  file: 00-inwai.md
+sessions:
+  - file: S01.01.inwai.welcome.md
+  - file: S02.01.json_pandas.md
+  - file: S03.01.api.md
+  - file: S04.01.classic-nlp.md
+  - file: S05.01.modern-nlp.md
+  - file: S06.01.build-a-website.md
+  - file: S06.02.deploy-streamlit.md
+  - file: S06.03.deploy-streamlit.md
+  - file: S07.01.llms-to-agents.md
+  - file: S07.02.automation.md
+  - file: S07.03.state_of_ai_oct25.md
+  - file: S08.01.sovereignty.md
+  - file: S09.01.machine_learning.md
+  - file: S09.02.inference.md
+  - file: S10.01.dataviz.md
+  - file: S11.01.future.md
+  - file: S12.01.conclusion.md

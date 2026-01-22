@@ -2,7 +2,13 @@ import { Box, Heading, Text, VStack, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
-import { getCourseIndex, getCourseStructure, getPostBySlug } from '@/lib/mdx'
+import {
+  getCourseContentIndex,
+  getCourseIndex,
+  getCourseSessionBySlug,
+  getCourseStructure,
+  getPostBySlug,
+} from '@/lib/mdx'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from '@/components/MDXRemote'
 import { SlidePresentation } from '@/components/slides/SlidePresentation'
@@ -23,7 +29,10 @@ export async function generateStaticParams() {
 
     // Chapter pages
     const structure = getCourseStructure(course.slug)
-    for (const chapter of structure.chapters) {
+    const chapters = structure.chapters.filter(
+      (chapter) => chapter.status !== 'draft' && chapter.status !== 'archived',
+    )
+    for (const chapter of chapters) {
       params.push({ slug: [course.slug, chapter.slug] })
     }
   }
@@ -34,10 +43,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const [courseName, chapterSlug] = slug
+  const courseMeta = getCourseContentIndex(courseName)
 
   if (chapterSlug) {
     try {
-      const post = getPostBySlug(`courses/${courseName}`, chapterSlug)
+      const session = getCourseSessionBySlug(courseName, chapterSlug)
+      if (!session) {
+        return { title: 'Chapter Not Found - SkatAI' }
+      }
+      const fileSlug = session?.file?.replace(/\.(md|mdx)$/, '') || chapterSlug
+      const post = getPostBySlug(`courses/${courseName}`, fileSlug)
       return {
         title: `${post.meta.title} - SkatAI`,
         description: post.meta.description || post.meta.title,
@@ -48,8 +63,8 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title: `${courseName} Course - SkatAI`,
-    description: `Course content for ${courseName}`,
+    title: `${courseMeta?.title || courseName} Course - SkatAI`,
+    description: courseMeta?.description || `Course content for ${courseName}`,
   }
 }
 
@@ -63,9 +78,59 @@ export default async function CoursePage({ params }: Props) {
   }
 
   const structure = getCourseStructure(courseName)
+  const courseMeta = getCourseContentIndex(courseName)
+  const chapters = structure.chapters.filter(
+    (chapter) => chapter.status !== 'draft' && chapter.status !== 'archived',
+  )
+  const indexFile = structure.index?.file
+  const indexMeta = structure.index
 
   // If no chapter slug, show course index
   if (!chapterSlug) {
+    if (indexFile) {
+      let indexPost
+      try {
+        indexPost = getPostBySlug(`courses/${courseName}`, indexFile.replace(/\.(md|mdx)$/, ''))
+      } catch {
+        notFound()
+      }
+
+      const rewrittenContent = indexPost.content.replaceAll(
+        `/${courseName}/`,
+        `/courses/${courseName}/`,
+      )
+
+      return (
+        <Box>
+          <Navigation />
+          <Box pt="72px" minH="100vh" bg="white">
+            <SiteContainer maxW="container.md" py={16}>
+              <VStack align="flex-start" gap={4} mb={8}>
+                <Link href="/courses">
+                  <Text color="orange.500" fontSize="sm" _hover={{ textDecoration: 'underline' }}>
+                    ← Back to Courses
+                  </Text>
+                </Link>
+                <Heading as="h1" size="2xl" color="gray.800" lineHeight="1.2">
+                  {indexMeta?.title || indexPost.meta.title}
+                </Heading>
+                {(indexMeta?.description || indexPost.meta.description) && (
+                  <Text color="gray.400" fontSize="sm">
+                    {indexMeta?.description || indexPost.meta.description}
+                  </Text>
+                )}
+              </VStack>
+
+              <Box className="prose">
+                <MDXRemote source={rewrittenContent} />
+              </Box>
+            </SiteContainer>
+          </Box>
+          <Footer />
+        </Box>
+      )
+    }
+
     return (
       <Box>
         <Navigation />
@@ -78,12 +143,13 @@ export default async function CoursePage({ params }: Props) {
                 </Text>
               </Link>
               <Heading as="h1" size="2xl" color="gray.800">
-                {courseName.toUpperCase().replace(/-/g, ' ')}
+                {courseMeta?.title || courseName.toUpperCase().replace(/-/g, ' ')}
               </Heading>
+              {courseMeta?.description && <Text color="gray.600">{courseMeta.description}</Text>}
             </VStack>
 
             <VStack align="stretch" gap={3}>
-              {structure.chapters.map((chapter, index) => (
+              {chapters.map((chapter, index) => (
                 <Link key={chapter.slug} href={`/courses/${courseName}/${chapter.slug}`}>
                   <Box
                     bg="white"
@@ -99,9 +165,16 @@ export default async function CoursePage({ params }: Props) {
                       <Text color="orange.500" fontWeight="bold" fontSize="lg" minW="40px">
                         {(index + 1).toString().padStart(2, '0')}
                       </Text>
-                      <Text color="gray.700" fontWeight="medium">
-                        {chapter.title}
-                      </Text>
+                      <VStack align="flex-start" gap={0}>
+                        <Text color="gray.700" fontWeight="medium">
+                          {chapter.title}
+                        </Text>
+                        {chapter.description && (
+                          <Text color="gray.500" fontSize="sm">
+                            {chapter.description}
+                          </Text>
+                        )}
+                      </VStack>
                     </HStack>
                   </Box>
                 </Link>
@@ -117,15 +190,19 @@ export default async function CoursePage({ params }: Props) {
   // Show chapter content
   let post
   try {
-    post = getPostBySlug(`courses/${courseName}`, chapterSlug)
+    const session = getCourseSessionBySlug(courseName, chapterSlug)
+    if (!session) {
+      notFound()
+    }
+    const fileSlug = session?.file?.replace(/\.(md|mdx)$/, '') || chapterSlug
+    post = getPostBySlug(`courses/${courseName}`, fileSlug)
   } catch {
     notFound()
   }
 
-  const currentIndex = structure.chapters.findIndex((c) => c.slug === chapterSlug)
-  const prevChapter = currentIndex > 0 ? structure.chapters[currentIndex - 1] : null
-  const nextChapter =
-    currentIndex < structure.chapters.length - 1 ? structure.chapters[currentIndex + 1] : null
+  const currentIndex = chapters.findIndex((c) => c.slug === chapterSlug)
+  const prevChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null
+  const nextChapter = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null
 
   // Check if this is a slides layout
   const isSlides = post.meta.layout === 'slides'
