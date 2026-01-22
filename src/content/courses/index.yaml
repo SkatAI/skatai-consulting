@@ -1,0 +1,76 @@
+courses:
+  - slug: inwai
+    title: Investigating with AI
+    description: "Using AI tools for investigation, analysis, and research."
+    tags:
+      - AI
+      - Analysis
+      - Research
+    order: 1
+    status: live
+  - slug: iabiz
+    title: AI for Business
+    description: "Strategic frameworks for identifying AI opportunities and implementing solutions."
+    tags:
+      - Strategy
+      - Business
+      - AI
+    order: 5
+    status: live
+  - slug: initml
+    title: Introduction to ML
+    description: "Fundamentals of machine learning: algorithms, techniques, and practical applications."
+    tags:
+      - ML
+      - Python
+      - Scikit-learn
+    order: 6
+    status: live
+
+  - slug: ml2llm
+    title: Machine Learning to LLM
+    description: "Transition from traditional machine learning to large language models and generative AI."
+    tags:
+      - LLMs
+      - NLP
+      - Transformers
+    order: 30
+    status: live
+
+
+  - slug: nosql
+    title: NoSQL Databases
+    description: "Deep dive into NoSQL database systems and data modeling patterns."
+    tags:
+      - MongoDB
+      - Neo4j
+      - Redis
+    order: 40
+    status: live
+  - slug: dbsql
+    title: SQL Databases
+    description: "Comprehensive course on SQL databases, queries, and optimization."
+    tags:
+      - SQL
+      - PostgreSQL
+      - Database
+    order: 45
+    status: live
+
+
+  - slug: mlops-dpe
+    title: MLOps (wip)
+    description: "End-to-end machine learning operations: from model development to deployment and monitoring."
+    tags:
+      - MLOps
+      - Python
+      - Docker
+    order: 50
+    status: live
+
+  - slug: python
+    order: 91
+    status: archived
+  - slug: ipsadb
+    order: 90
+    status: archived

@@ -2,7 +2,7 @@ import { Box, Heading, Text, VStack, SimpleGrid, Badge, HStack } from '@chakra-u
 import Link from 'next/link'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
-import { getAllCourses, getCourseStructure } from '@/lib/mdx'
+import { getCourseIndex, getCourseStructure } from '@/lib/mdx'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
@@ -18,70 +18,26 @@ interface CourseInfo {
   chapters: number
 }
 
-const courseMetadata: Record<string, Omit<CourseInfo, 'slug' | 'chapters'>> = {
-  'mlops-dpe': {
-    title: 'MLOps',
-    description: 'End-to-end machine learning operations: from model development to deployment and monitoring.',
-    tags: ['MLOps', 'Python', 'Docker'],
-  },
-  'ml2llm': {
-    title: 'ML to LLM',
-    description: 'Transition from traditional machine learning to large language models and generative AI.',
-    tags: ['LLMs', 'NLP', 'Transformers'],
-  },
-  'nosql': {
-    title: 'NoSQL Databases',
-    description: 'Deep dive into NoSQL database systems and data modeling patterns.',
-    tags: ['MongoDB', 'Neo4j', 'Redis'],
-  },
-  'dbsql': {
-    title: 'SQL Databases',
-    description: 'Comprehensive course on SQL databases, queries, and optimization.',
-    tags: ['SQL', 'PostgreSQL', 'Database'],
-  },
-  'iabiz': {
-    title: 'AI for Business',
-    description: 'Strategic frameworks for identifying AI opportunities and implementing solutions.',
-    tags: ['Strategy', 'Business', 'AI'],
-  },
-  'initml': {
-    title: 'Introduction to ML',
-    description: 'Fundamentals of machine learning: algorithms, techniques, and practical applications.',
-    tags: ['ML', 'Python', 'Scikit-learn'],
-  },
-  'inwai': {
-    title: 'Investigating with AI',
-    description: 'Using AI tools for investigation, analysis, and research.',
-    tags: ['AI', 'Analysis', 'Research'],
-  },
-  'python': {
-    title: 'Python Programming',
-    description: 'Python programming fundamentals for data science and ML.',
-    tags: ['Python', 'Programming'],
-  },
-  'ipsadb': {
-    title: 'IPSA Databases',
-    description: 'Database fundamentals and advanced concepts.',
-    tags: ['SQL', 'Database', 'Design'],
-  },
-}
-
 export default function CoursesPage() {
-  const courseSlugs = getAllCourses()
-
-  const courses: CourseInfo[] = courseSlugs.map((slug) => {
-    const structure = getCourseStructure(slug)
-    const meta = courseMetadata[slug] || {
-      title: slug,
-      description: 'Course content',
-      tags: [],
-    }
-    return {
-      slug,
-      ...meta,
-      chapters: structure.chapters.length,
-    }
-  })
+  const courseIndex = getCourseIndex()
+  const courses: CourseInfo[] = courseIndex
+    .filter((course) => course.status === 'live')
+    .slice()
+    .sort((a, b) => {
+      const orderA = a.order ?? Number.POSITIVE_INFINITY
+      const orderB = b.order ?? Number.POSITIVE_INFINITY
+      return orderA - orderB || a.title.localeCompare(b.title)
+    })
+    .map((course) => {
+      const structure = getCourseStructure(course.slug)
+      return {
+        slug: course.slug,
+        title: course.title,
+        description: course.description,
+        tags: course.tags ?? [],
+        chapters: structure.chapters.length,
+      }
+    })
 
   return (
     <Box>

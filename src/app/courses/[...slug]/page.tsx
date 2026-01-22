@@ -2,7 +2,7 @@ import { Box, Heading, Text, VStack, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
-import { getAllCourses, getCourseStructure, getPostBySlug } from '@/lib/mdx'
+import { getCourseIndex, getCourseStructure, getPostBySlug } from '@/lib/mdx'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from '@/components/MDXRemote'
 import { SlidePresentation } from '@/components/slides/SlidePresentation'
@@ -14,17 +14,17 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const courses = getAllCourses()
+  const courses = getCourseIndex().filter((course) => course.status === 'live')
   const params: { slug: string[] }[] = []
 
   for (const course of courses) {
     // Course index page
-    params.push({ slug: [course] })
+    params.push({ slug: [course.slug] })
 
     // Chapter pages
-    const structure = getCourseStructure(course)
+    const structure = getCourseStructure(course.slug)
     for (const chapter of structure.chapters) {
-      params.push({ slug: [course, chapter.slug] })
+      params.push({ slug: [course.slug, chapter.slug] })
     }
   }
 
@@ -57,8 +57,8 @@ export default async function CoursePage({ params }: Props) {
   const { slug } = await params
   const [courseName, chapterSlug] = slug
 
-  const courses = getAllCourses()
-  if (!courses.includes(courseName)) {
+  const courses = getCourseIndex().filter((course) => course.status === 'live')
+  if (!courses.some((course) => course.slug === courseName)) {
     notFound()
   }
 

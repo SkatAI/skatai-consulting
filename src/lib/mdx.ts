@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
+import { parse as parseYaml } from 'yaml'
 
 const contentDirectory = path.join(process.cwd(), 'src/content')
 
@@ -22,6 +23,15 @@ export interface PostMeta {
 export interface Post {
   meta: PostMeta
   content: string
+}
+
+export interface CourseIndexItem {
+  slug: string
+  title: string
+  description: string
+  tags?: string[]
+  order?: number
+  status?: 'live' | 'draft' | 'archived'
 }
 
 export function getPostSlugs(directory: string): string[] {
@@ -134,4 +144,44 @@ export function getAllCourses(): string[] {
     const itemPath = path.join(coursesPath, item)
     return fs.statSync(itemPath).isDirectory()
   })
+}
+
+export function getCourseIndex(): CourseIndexItem[] {
+  const indexPath = path.join(contentDirectory, 'courses', 'index.yaml')
+  if (!fs.existsSync(indexPath)) {
+    return []
+  }
+
+  const fileContents = fs.readFileSync(indexPath, 'utf8')
+  const data = parseYaml(fileContents)
+  const rawCourses = Array.isArray(data) ? data : data?.courses
+
+  if (!Array.isArray(rawCourses)) {
+    return []
+  }
+
+  return rawCourses
+    .filter(Boolean)
+    .map((item) => {
+      const slug = typeof item?.slug === 'string' ? item.slug : ''
+      const title = typeof item?.title === 'string' ? item.title : slug
+      const description = typeof item?.description === 'string' ? item.description : ''
+      const tags = Array.isArray(item?.tags) ? item.tags.map(String) : []
+      const status =
+        item?.status === 'live' || item?.status === 'draft' || item?.status === 'archived'
+          ? item.status
+          : 'live'
+      const rawOrder = item?.order
+      const order = typeof rawOrder === 'number' ? rawOrder : Number(rawOrder)
+
+      return {
+        slug,
+        title,
+        description,
+        tags,
+        order: Number.isFinite(order) ? order : undefined,
+        status,
+      }
+    })
+    .filter((item) => item.slug.length > 0)
 }
