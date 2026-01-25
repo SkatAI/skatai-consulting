@@ -188,15 +188,15 @@ Conventions: dans la suite on note
 - MSE (Mean Squared Error)
 
 
-<img src="/assets/images/initml/mse_equation.webp" alt="mse" width="80%" style = "padding:20px; display: block; margin: auto;">
+<img src="/public/images/initml/mse_equation.webp" alt="mse" width="80%" style = "padding:20px; display: block; margin: auto;">
 
 - RMSE = Root Mean Squared Error
 
-<img src="/assets/images/initml/rmse_equation.webp" alt="mse" width="80%" style = "padding:20px; display: block; margin: auto;">
+<img src="/public/images/initml/rmse_equation.webp" alt="mse" width="80%" style = "padding:20px; display: block; margin: auto;">
 
 - MAPE = Mean Absolute Percentage Error
 
-<img src="/assets/images/initml/mape_equation.webp" alt="mape" width="80%" style = "padding:20px; display: block; margin: auto;">
+<img src="/public/images/initml/mape_equation.webp" alt="mape" width="80%" style = "padding:20px; display: block; margin: auto;">
 
 Comme la RMSE ou la MAPE sont des valeurs absolues, et non pas comprises entre 0 et 1 par ex, la comparaison entre des modèles dans des contextes différents est difficile.
 
@@ -204,7 +204,7 @@ On peut donc aussi considérer des variantes relatives de ces métriques ou l'on
 
 - relative RMSE
 
-<img src="/assets/images/initml/rmse_relative_equation.webp" alt="relative rmse" width="80%" style = "padding:20px; display: block; margin: auto;">
+<img src="/public/images/initml/rmse_relative_equation.webp" alt="relative rmse" width="80%" style = "padding:20px; display: block; margin: auto;">
 
 de meme on a :
 - relative MAPE
@@ -220,7 +220,7 @@ Dans notre exemple précédent de regression sur le dataset enfants, age, poids,
 
 En voici la definition
 
-<img src="/assets/images/initml/r2_equation.webp" alt="R^2 coefficient of determination" width="80%" style = "padding:20px; display: block; margin: auto;">
+<img src="/public/images/initml/r2_equation.webp" alt="R^2 coefficient of determination" width="80%" style = "padding:20px; display: block; margin: auto;">
 
 
 Le R^2 est une adapté a la regression lineaire.

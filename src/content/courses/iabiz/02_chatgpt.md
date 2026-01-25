@@ -1,8 +1,8 @@
 ---
 layout: slides
 title: "IA for Business"
-slides_project_home: /iabiz/chatgpt/
-footer: 'Alexis Perrier - SkatAI.com/iabiz/chatgpt/'
+slides_project_home: /courses/iabiz/chatgpt/
+footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/chatgpt/'
 ---
 <!--
 _class: centered
@@ -23,4 +23,3 @@ _class: centered
 - style d'ecriture
 
 - agent tools: a visual browser that interacts with the web through a graphical-user interface, a text-based browser for simpler reasoning-based web queries, a terminal, and direct API access
-

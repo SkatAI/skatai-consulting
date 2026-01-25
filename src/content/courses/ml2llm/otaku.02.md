@@ -84,7 +84,7 @@ de R -> [0,1]
 
 f(x) = 1/(1 + e^(-x))
 
-![sigmoid](/assets/images/initml/sigmoid.svg)
+![sigmoid](/public/images/initml/sigmoid.svg)
 
 ---
 
@@ -94,7 +94,7 @@ Modèle linéaire : y = b₀ + b₁x
 
 Modèle logistique : p = 1/(1 + e^(-(b₀ + b₁x)))
 
-![logistic](/assets/images/initml/sigmoid-logit.png)
+![logistic](/public/images/initml/sigmoid-logit.png)
 
 ---
 
@@ -104,7 +104,7 @@ Modèle logistique : p = 1/(1 + e^(-(b₀ + b₁x)))
 
 **3D** : ŷ = a_1 x_1 + a_2 x_2 + a_0
 
-![linear-vs-logistic](/assets/images/initml/hyperplane_3d.png)
+![linear-vs-logistic](/public/images/initml/hyperplane_3d.png)
 
 ---
 
@@ -149,7 +149,7 @@ default ~ income + balance
 - F-statistique
 - t-statistique
 
-![summary](/assets/images/initml/logistic-regression-statsmodel-credit-default.png)
+![summary](/public/images/initml/logistic-regression-statsmodel-credit-default.png)
 
 ---
 
@@ -215,7 +215,7 @@ y_proba = results.predict(df[['income', 'balance']])
   - p < 0.5 : Défaut : Non
   - p > 0.5 : Défaut : Oui
 
-![histogram](/assets/images/initml/histogram_probabilities.png)
+![histogram](/public/images/initml/histogram_probabilities.png)
 
 ---
 
@@ -240,7 +240,7 @@ print(predicted_class)
 
 4 cas possibles
 
-![confusion matrix](/assets/images/initml/confusion_matrix.png)
+![confusion matrix](/public/images/initml/confusion_matrix.png)
 
 2 corrects :
 - 1 classifié comme 1
@@ -299,7 +299,7 @@ Nous pouvons définir plusieurs métriques en utilisant la matrice de confusion
 
 de la page [Wikipedia Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix)
 
-![confusion matrix](/assets/images/initml/confusion_matrix_wikipedia.png)
+![confusion matrix](/public/images/initml/confusion_matrix_wikipedia.png)
 
 ---
 
@@ -338,7 +338,7 @@ La matrice de confusion et les métriques associées changent également.
 
 Tracer la courbe TPR vs FPR en faisant varier le seuil de 0 à 1 donne la courbe ROC.
 
-![roc curve](/assets/images/initml/good_bad_ROC.jpg)
+![roc curve](/public/images/initml/good_bad_ROC.jpg)
 
 L'aire sous la courbe (AUC) est une métrique plus robuste que la précision.
 
@@ -441,13 +441,13 @@ L'algorithme SMOTE génère des échantillons artificiels en trois étapes :
 3. Enfin, un nouvel échantillon est créé en interpolant aléatoirement deux échantillons
 
 
-![smote](/assets/images/initml/smote.png)
+![smote](/public/images/initml/smote.png)
 
 ---
 
 ## SMOTE ne fonctionne pas !
 
-![smote does not work](/assets/images/initml/smote_does_not_work.png)
+![smote does not work](/public/images/initml/smote_does_not_work.png)
 
 "Parce que cela ne fonctionne pas.
 
@@ -602,7 +602,7 @@ Un ensemble de transformateurs de style scikit-learn pour encoder les variables 
 
 **One vs One**
 
-![](/assets/images/initml/multiclass_onevsone.png)
+![](/public/images/initml/multiclass_onevsone.png)
 
 Pour N catégories on construit N modèles
 Le modèle final est obtenu par vote ou par moyenne
@@ -617,7 +617,7 @@ M3 : chiens vs chats
 
 **One vs Rest**
 
-![](/assets/images/initml/multiclass_onevsrest.png)
+![](/public/images/initml/multiclass_onevsrest.png)
 
 
 N-1 modèles sont nécessaires

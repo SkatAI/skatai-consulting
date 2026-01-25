@@ -16,7 +16,7 @@ This is your first day working with SQL (Structured Query Language), the standar
 
 The moviesdb database contains **6 tables** that work together to store movie information:
 
-<img src="../../assets/images/ipsadb/imdb_schema.png" alt="IMDB Schema">
+<img src="../../public/images/ipsadb/imdb_schema.png" alt="IMDB Schema">
 
 
 ### Main Tables (Storing Core Data)

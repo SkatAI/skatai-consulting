@@ -1,8 +1,8 @@
 ---
 layout: slides
 title: "IA for Business"
-slides_project_home: /iabiz/overview/
-footer: 'Alexis Perrier - SkatAI.com/iabiz/overview/'
+slides_project_home: /courses/iabiz/overview/
+footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/overview/'
 ---
 <!--
 _class: centered
@@ -25,11 +25,11 @@ Notion de jagged frontier.
 
 
 ce matin:
-<img src="/assets/images/iabiz/strawberry.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/iabiz/strawberry.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 ---
 
-<img src="/assets/images/iabiz/strawberry_take_2.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/iabiz/strawberry_take_2.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 ---
 
@@ -131,7 +131,7 @@ même prompt depuis 2021
 
 ---
 
-<img src="/assets/images/inwai/history_nlp_timeline.webp" alt="nlp history" width=1200 class="center">
+<img src="/public/images/inwai/history_nlp_timeline.webp" alt="nlp history" width=1200 class="center">
 
 [NLP Timeline](https://blog.dataiku.com/nlp-metamorphosis)
 
@@ -256,10 +256,10 @@ _"Like everyone, we have definitely felt the impact of AI Overviews. There is on
 
 <div class="columns" markdown="1">
 <div markdown="1">
-<img src="/assets/images/inwai/google_NLP_demo_POS_start.jpg" width=600 class="center">
+<img src="/public/images/inwai/google_NLP_demo_POS_start.jpg" width=600 class="center">
 </div>
 <div markdown="1">
-<img src="/assets/images/inwai/google_NLP_demo_POS_end.jpg" width=600 class="center">
+<img src="/public/images/inwai/google_NLP_demo_POS_end.jpg" width=600 class="center">
 </div>
 </div>
 
@@ -282,7 +282,7 @@ Malheureusement, cette fonctionnalité n'est plus disponible dans la démo NLP d
 
 [https://openai.com/api/pricing/](https://openai.com/api/pricing/)
 
-<img src="/assets/images/inwai/openai_pricing_tokens.png" alt="openai pricing" width=800 class="center">
+<img src="/public/images/inwai/openai_pricing_tokens.png" alt="openai pricing" width=800 class="center">
 
 ---
 
@@ -312,7 +312,7 @@ _class: centered
 
 - prediction du prochain token suivant une distribution de probabilité
 
-<img src="/assets/images/inwai/agents_001.webp" alt="Generation" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/inwai/agents_001.webp" alt="Generation" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 Autre exemple
 
@@ -358,7 +358,7 @@ _Hier soir j'ai mangé_
 ---
 # token based pricing
 
-<img src="/assets/images/inwai/openai_pricing_tokens.png" alt="OpenAI Pricing" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/inwai/openai_pricing_tokens.png" alt="OpenAI Pricing" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 [OpenAI pricing](https://openai.com/api/pricing/)
 
@@ -370,7 +370,7 @@ _Hier soir j'ai mangé_
 - similarité sémantique : `d(chat, chien)  < d(chat, banane)`
 - il y a des modèles exclusivement dédiés à la création d'embeddings
 
-<img src="/assets/images/inwai/word-embeddings.png" alt="Word Embeddings" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/inwai/word-embeddings.png" alt="Word Embeddings" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 
 ---
@@ -461,7 +461,7 @@ Voici une **liste élargie de plateformes et services d’IA spécialisés**, cl
 # Pléthore de modèles
 
 
-<img src="/assets/images/inwai/huggingface-2024-ai-timeline.png" alt="2024 AI Timeline" width =800 style = "background-color: #FFF; padding:20px; display: block; margin: auto;">
+<img src="/public/images/inwai/huggingface-2024-ai-timeline.png" alt="2024 AI Timeline" width =800 style = "background-color: #FFF; padding:20px; display: block; margin: auto;">
 
 [2024 AI Timeline - Hugginface release dashboards](https://huggingface.co/spaces/reach-vb/2024-ai-timeline)
 
@@ -480,7 +480,7 @@ Distinction majeure entre les modèles open source et closed source
 - Linux, OpenOffice, Firefox, Chromium, Python, grandes bases de données,
 - Peut être copié et modifié par **n'importe qui**
 
-<img src="/assets/images/inwai/linux-logo.png" alt="Open source" width = 400 style = "background-color: #FFF; padding:20px">
+<img src="/public/images/inwai/linux-logo.png" alt="Open source" width = 400 style = "background-color: #FFF; padding:20px">
 
 </div>
 <div>
@@ -491,7 +491,7 @@ Distinction majeure entre les modèles open source et closed source
 - Windows, Word, Chrome, Edge, Oracle
 - nécessite une licence pour utiliser, boîte noire
 
-<img src="/assets/images/inwai/windows.jpg" alt="Closed source" width = 200 style = "background-color: #FFF; padding:20px">
+<img src="/public/images/inwai/windows.jpg" alt="Closed source" width = 200 style = "background-color: #FFF; padding:20px">
 
 </div>
 </div>
@@ -561,7 +561,7 @@ Ceux-ci représentent **les limites cognitives de l'humanité**
 # Artificial Analysis Intellligence Index
 
 
-<img src="/assets/images/inwai/aaai.png" alt="AI Index" width="1100">
+<img src="/public/images/inwai/aaai.png" alt="AI Index" width="1100">
 
 
 [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index) combine les performances sur sept évaluations : MMLU-Pro, GPQA Diamond, Humanity's Last Exam, LiveCodeBench, SciCode, AIME 2025, et IFBench.
@@ -570,26 +570,26 @@ Ceux-ci représentent **les limites cognitives de l'humanité**
 
 # Score vs release date
 
-<img src="/assets/images/inwai/aaai_score_date.png" alt="AI Index" width="1100">
+<img src="/public/images/inwai/aaai_score_date.png" alt="AI Index" width="1100">
 
 
 
 ---
 # La course: open source vs propriétaires
 
-![Closed-source vs. Open-weight models (MMLU, 5-shot) performance comparison over time from 2022-04 to 2024-04](/assets/images/inwai/OS_perf_vs_closed.jpg)
+![Closed-source vs. Open-weight models (MMLU, 5-shot) performance comparison over time from 2022-04 to 2024-04](/public/images/inwai/OS_perf_vs_closed.jpg)
 
 **Les modèles open source rattrapent les modèles closed source**
 
 ---
 # Performance vs Cost - 08/2025
 
-<img src="/assets/images/inwai/perf_vs_cost_updated_082025.jpg" alt="Performance vs Cost" width ="80%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/inwai/perf_vs_cost_updated_082025.jpg" alt="Performance vs Cost" width ="80%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 ---
 # LM arena
 
-<img src="/assets/images/inwai/lmarena_leaderboard_20250825.png" alt="LM arena" width ="100%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/public/images/inwai/lmarena_leaderboard_20250825.png" alt="LM arena" width ="100%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 [LM arena](https://lmarena.ai/leaderboard/)
 

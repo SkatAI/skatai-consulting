@@ -1,8 +1,8 @@
 ---
 layout: default_en
 title: "IA for Business"
-slides_project_home: /iabiz/
-footer: 'Alexis Perrier - SkatAI.com/iabiz/ia_souveraine/'
+slides_project_home: /courses/iabiz/
+footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/ia_souveraine/'
 ---
 
 # Solutions IA Souveraines
@@ -201,7 +201,7 @@ Services SaaS d'entreprises européennes, données hébergées en EU, conformit�
 - [camocopy.com](https://www.camocopy.com/privacy-ai/)
 
 
-![CamoCopy](/assets/images/iabiz/camocopy_chat.png)
+![CamoCopy](/public/images/iabiz/camocopy_chat.png)
 
 
 #### **Langdock** 🇩🇪
@@ -421,14 +421,14 @@ Assez proche de chatgpt en terme de fonctionnalités
 - prix equivalent à chatgpt, claude.ai : 20 Euro / mois pour individu
 
 
-![Langdock](/assets/images/iabiz/langdock.png)
+![Langdock](/public/images/iabiz/langdock.png)
 
 *Sources : [Mistral Review - DataCamp](https://www.datacamp.com/blog/mistral-le-chat), [Langdock Review](https://www.ki-company.ai/en/blog-beitraege/langdock-put-to-the-test-the-privacy-compliant-ai-tool-for-companies)*
 
 
 # Camcopy
 
-![CamoCopy](/assets/images/iabiz/camocopy_chat.png)
+![CamoCopy](/public/images/iabiz/camocopy_chat.png)
 
 prompt: "explique la difference entre camocopy et ChatGPt"
 

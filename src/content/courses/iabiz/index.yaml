@@ -1,0 +1,13 @@
+title: IA for Business
+description: "Panorama des usages de l'IA générative pour les métiers, de l'analyse des LLMs à l'automatisation."
+index:
+  file: 00_iabiz.md
+sessions:
+  - file: 01_overview.md
+    slug: overview
+  - file: 02_chatgpt.md
+    slug: chatgpt
+  - file: 04_automatisation.md
+    slug: automatisation
+  - file: 05_IA_souveraine.md
+    slug: ia_souveraine

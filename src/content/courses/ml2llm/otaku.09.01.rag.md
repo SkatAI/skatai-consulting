@@ -95,7 +95,7 @@ L'utilisateur pose sa question : la query
 
 distance entre deux textes vectorisés : cosine similarity
 
-![](/assets/images/inwai/word2vec_003_cosine.jpg)
+![](/public/images/inwai/word2vec_003_cosine.jpg)
 
 
 A ce stade on a 2 questions non résolues
@@ -211,13 +211,13 @@ Ces modeles sont generiques et utiles pour vectoriser de grande quantité de doc
 - **Précision supérieure** : capte les interactions fines (ordre des mots, négation, co-références).
 - **Coût CPU/GPU élevé** : impossible d’encoder tout le corpus ; utilisé seulement pour **reranker les top-k** candidats fournis par l’embedding.
 
-![](/assets/images/ml2llm/cross_encoders.webp)
+![](/public/images/ml2llm/cross_encoders.webp)
 
 ---
 
 ## recap
 
-![](/assets/images/ml2llm/rag_system_diagram.png)
+![](/public/images/ml2llm/rag_system_diagram.png)
 
 ---
 

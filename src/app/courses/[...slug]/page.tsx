@@ -95,10 +95,11 @@ export default async function CoursePage({ params }: Props) {
         notFound()
       }
 
-      const rewrittenContent = indexPost.content.replaceAll(
-        `/${courseName}/`,
-        `/courses/${courseName}/`,
-      )
+      const marker = '__COURSE_PATH__'
+      const rewrittenContent = indexPost.content
+        .replaceAll(`/courses/${courseName}/`, marker)
+        .replaceAll(`/${courseName}/`, `/courses/${courseName}/`)
+        .replaceAll(marker, `/courses/${courseName}/`)
 
       return (
         <Box>

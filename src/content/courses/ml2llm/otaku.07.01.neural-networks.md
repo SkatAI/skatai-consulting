@@ -28,7 +28,7 @@ _class: centered
 # Fonction de cout
 
 
-<img src="/assets/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
+<img src="/public/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
 
 ---
 
@@ -50,7 +50,7 @@ Article : [Réseaux de neurones sur Wikipedia](https://fr.wikipedia.org/wiki/R%C
 
 Équivalent à une régression linéaire.
 
-<img src="/assets/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="90%" class="center">
+<img src="/public/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="90%" class="center">
 
 ```
 y = F(x1 .w1 + x2.w2 + ... + xN.wN + b)
@@ -153,7 +153,7 @@ Exemple : 3 neurones pour reconnaître A, B, C
 
 # XOR vs AND
 
-<img src="/assets/images/ml2llm/xor_or_and.png" alt="xor or and" width="90%" class="center">
+<img src="/public/images/ml2llm/xor_or_and.png" alt="xor or and" width="90%" class="center">
 
 
 ---
@@ -179,7 +179,7 @@ Notebook: [XOR vs AND](https://github.com/SkatAI/deeplearning/blob/master/notebo
 
 # Multi layer perceptron
 
-<img src="/assets/images/ml2llm/nn_mlp.jpg" alt="mlp" width="90%" class="center">
+<img src="/public/images/ml2llm/nn_mlp.jpg" alt="mlp" width="90%" class="center">
 
 ---
 
@@ -197,7 +197,7 @@ Notebook: [XOR vs AND](https://github.com/SkatAI/deeplearning/blob/master/notebo
 ## MLP avec scikit-learn
 
 
-<img src="/assets/images/ml2llm/sklearn_ml-classifier.png" alt="mlp sklearn" width="90%" class="center">
+<img src="/public/images/ml2llm/sklearn_ml-classifier.png" alt="mlp sklearn" width="90%" class="center">
 
 [MLPClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)
 
@@ -398,7 +398,7 @@ Exemple avec des chiffres : [a-step-by-step-backpropagation-example](https://mat
 - ReLU [0,∞] → simple, rapide, favorise convergence (souvent le choix)
 
 
-<img src="/assets/images/ml2llm/fonctions_activations.png" alt="fonctions activations" width="90%" class="center">
+<img src="/public/images/ml2llm/fonctions_activations.png" alt="fonctions activations" width="90%" class="center">
 
 Chaque fonction introduit une **non-linéarité** différente qui impact la **vitesse d'apprentissage** et la convergence.
 
@@ -461,9 +461,9 @@ le probleme avec la sigmoide et la tanh est que le gradient est très petit aux 
 
 Comme on multiple par la derivée en x de couche en couche il y a propagation de la multiplication par une valeur petite => la maj devient super petite et le gradient disparaît
 
-<img src="/assets/images/ml2llm/derivee_sigmoide.png" alt="derivee sigmoide" width="90%" class="center">
+<img src="/public/images/ml2llm/derivee_sigmoide.png" alt="derivee sigmoide" width="90%" class="center">
 
-<img src="/assets/images/ml2llm/derivee_tanh.png" alt="derivee sigmoide" width="90%" class="center">
+<img src="/public/images/ml2llm/derivee_tanh.png" alt="derivee sigmoide" width="90%" class="center">
 
 **Vanishing Gradient** = les gradients deviennent de plus en plus **petits** en remontant dans le réseau.
 
@@ -658,7 +658,7 @@ Ajouter une contrainte pour empêcher le modèle de coller trop aux données d�
 - annule aléatoirement des neurones (ex: p=0.2)
 - simple & efficace, force le réseau à être redondant
 
-<img src="/assets/images/ml2llm/nn_dropout.png" alt="nn dropout" width="90%" class="center">
+<img src="/public/images/ml2llm/nn_dropout.png" alt="nn dropout" width="90%" class="center">
 
 ## Batch normalization
 

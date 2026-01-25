@@ -280,7 +280,7 @@ plt.show()
 
 Cela donne la figure suivante
 
-<img src="/assets/images/initml/initml_convergence_sqrt2.png" alt="figure" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;" />
+<img src="/public/images/initml/initml_convergence_sqrt2.png" alt="figure" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;" />
 
 ou `nitr` correspond au nombre d'itération nécessaire pour converger, atteindre la précision souhaitée.
 

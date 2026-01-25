@@ -17,7 +17,7 @@ _class: centered
 
 [https://www.deeplearningbook.org/](https://www.deeplearningbook.org/)
 
-![deeplearningbook](/assets/images/ml2llm/deep_learning_book_goodfellow.png)
+![deeplearningbook](/public/images/ml2llm/deep_learning_book_goodfellow.png)
 
 ---
 
@@ -45,7 +45,7 @@ Classification, régression, reconnaissance de patterns simples.
 > Réseaux avec connexions cycliques permettant de traiter des séquences temporelles.
 - hidden state : Au lieu d'oublier chaque entrée après l'avoir traitée, un RNN maintient un état caché qui persiste et se met à jour à chaque étape.
 
-![RNN](/assets/images/ml2llm/rnn.png)
+![RNN](/public/images/ml2llm/rnn.png)
 
 **Cas d'utilisation:**
 Traitement du langage naturel, prédiction de séries temporelles, génération de texte simple, traduction.
@@ -88,7 +88,7 @@ NLP (BERT, GPT), vision (Vision Transformers), génération, traduction, modèle
 - Pooling:  réduction dimensionnelle en extrayant les informations les plus importantes d'une région (max sur une zone de pixels).
 
 
-![convnet](/assets/images/ml2llm/convnet.jpg)
+![convnet](/public/images/ml2llm/convnet.jpg)
 
 **Cas d'utilisation:**
 Vision par ordinateur, reconnaissance d'images, détection d'objets, segmentation sémantique.
@@ -129,13 +129,13 @@ Vision par ordinateur, reconnaissance d'images, détection d'objets, segmentatio
 
 # Inception (2014)
 
-![inception](/assets/images/ml2llm/inception.jpg)
+![inception](/public/images/ml2llm/inception.jpg)
 
 [Inception (2014)](https://medium.com/@abheerchrome/inception-v1-architecture-explained-454b2eb66baf)
 
 ---
 
-![](/assets/images/ml2llm/hist_training_compute.jpg)
+![](/public/images/ml2llm/hist_training_compute.jpg)
 
 avec la relation suivante entre paramètres et FLOPs (Floating Point Operations):
 
@@ -182,7 +182,7 @@ MLP pas fantastique pour les images
 
 capture l'information spatiale, les spécificités locales
 
-![cnn](/assets/images/ml2llm/cnn_cat.png)
+![cnn](/public/images/ml2llm/cnn_cat.png)
 
 parfait pour :
 - la classification d'images
@@ -207,7 +207,7 @@ Décomposition de l'image de pixel en pixel, par petit carrés (3x3, 5x5)
 
 Filtrage des regions par un filtre (tenseur rang 2 de dimension 3x3 ou 5x5, …).
 
-![convolution](/assets/images/ml2llm/convolution-layer-a.gif)
+![convolution](/public/images/ml2llm/convolution-layer-a.gif)
 
 le calcul de "convolution"
 
@@ -224,7 +224,7 @@ L'idée principale reste la suivante : un noyau (**filtre**) est appliqué à un
 
 Reduction de dimension (downsampling) : max ou moyenne des valeurs sur une region (2x2, 3x3, 4x4, etc.)
 
-![pooling](/assets/images/ml2llm/max-pooling-a.png)
+![pooling](/public/images/ml2llm/max-pooling-a.png)
 
 Voir le cours de [Stanford sur les CNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
 
@@ -242,7 +242,7 @@ But :
 - prendre le max (plus fréquent)
 - prendre la moyenne
 
-![pooling](/assets/images/ml2llm/pooling.png)
+![pooling](/public/images/ml2llm/pooling.png)
 
 ---
 
@@ -255,7 +255,7 @@ Combiner plusieurs couches de convolution + pooling permet d'extraire des caract
 On peut enchaîner les couches de convolution sans avoir à chaque fois une couche de pooling
 
 
-![convolution](/assets/images/ml2llm/typical_cnn.jpg)
+![convolution](/public/images/ml2llm/typical_cnn.jpg)
 
 
 ---
@@ -720,7 +720,7 @@ On va utiliser le modèle InceptionV3
 Total params: 21802784 (83.17 MB)
 311 layers!!!
 
-![](/assets/images/ml2llm/inceptionV3.png)
+![](/public/images/ml2llm/inceptionV3.png)
 
 Inception V3
 Introduit en 2015

@@ -107,7 +107,7 @@ A **digital twin** is a **virtual model** of a physical object, system, or proce
 
 It’s not just a simulation — it’s a living, data-driven model that mirrors the current state, behavior, and performance of its real-world counterpart.
 
-<img src="/assets/images/ipsadb/the_three_elements_of_a_digital_twin-f.png" width='70%' style='display: block; margin: auto; ' alt= "aerospace digital twins">
+<img src="/public/images/ipsadb/the_three_elements_of_a_digital_twin-f.png" width='70%' style='display: block; margin: auto; ' alt= "aerospace digital twins">
 
 
 
@@ -147,7 +147,7 @@ It’s not just a simulation — it’s a living, data-driven model that mirrors
 * **Airbus**: Connects design (CAD), simulation, and IoT sensor data into **SQL-backed databases** for lifecycle digital twins of aircraft systems.
 * **ESA**: [Spacecraft twins](https://www.mdpi.com/2072-4292/16/16/3023) rely on SQL schemas to integrate satellite telemetry with orbital simulations for real-time monitoring.
 
-<img src="/assets/images/ipsadb/remotesensing-16-03023-g002.png" width='70%' style='display: block; margin: auto; ' alt= "ESA digital twin">
+<img src="/public/images/ipsadb/remotesensing-16-03023-g002.png" width='70%' style='display: block; margin: auto; ' alt= "ESA digital twin">
 
 ---
 
@@ -182,7 +182,7 @@ Why use a database instead of just a spreadsheet or files like json or csv ?
 
 # What is a database?
 
-<img src="/assets/images/what-is-a-database.png" width='50%' style='display: block; margin: auto; ' alt= "what is a database asks Sheldon?">
+<img src="/public/images/what-is-a-database.png" width='50%' style='display: block; margin: auto; ' alt= "what is a database asks Sheldon?">
 
 
 Sometimes we hear the word `database` used to describe an `Excel` file. How can we put something as simple as a CSV or Excel file on the same level as these engineering marvels that are **PostgreSQL**, **Weaviate**, **MongoDB**, **Neo4j**, **Redis**, **MySQL**, etc...
@@ -275,11 +275,11 @@ _class: centered
 
 ---
 
-<img src="/assets/images/evolution-of-databases.png" width='80%' style='display: block; margin: auto; ' alt= "Evolution of database from 1970 to 2025">
+<img src="/public/images/evolution-of-databases.png" width='80%' style='display: block; margin: auto; ' alt= "Evolution of database from 1970 to 2025">
 
 ---
 
-<img src="/assets/images/dbsql/database_timeline_claude.png" width='80%' style='display: block; margin: auto; ' alt= "Evolution of database from 1970 to 2025">
+<img src="/public/images/dbsql/database_timeline_claude.png" width='80%' style='display: block; margin: auto; ' alt= "Evolution of database from 1970 to 2025">
 
 ---
 
@@ -317,10 +317,10 @@ More inportantly:
 And in **2009**, 2 new NoSQL databases are launched: 🥭 MongoDB 🥭 and  🎉 Neo4j 🎉
 
 
-<img src="/assets/images/ipsadb/MongoDB.jpg" width='20%' style='display: block; margin: auto; ' alt= "MongoDB logo">
+<img src="/public/images/ipsadb/MongoDB.jpg" width='20%' style='display: block; margin: auto; ' alt= "MongoDB logo">
 
 
-<img src="/assets/images/ipsadb/Neo4j-logo_color.png" width='20%' style='background-color: #FFF; padding:20px; display: block; margin: auto; ' alt= "Neo4j logo">
+<img src="/public/images/ipsadb/Neo4j-logo_color.png" width='20%' style='background-color: #FFF; padding:20px; display: block; margin: auto; ' alt= "Neo4j logo">
 
 ---
 
@@ -363,7 +363,7 @@ and meanwhile, in 2013, **Docker** containers revolutionize database deployment
 
 [Vector search](https://www.couchbase.com/blog/what-is-vector-search/) is booming and most existing DBMS, including PostgreSQL, MongoDB, and Neo4j are integrating vector search capabilities.
 
-<img src="/assets/images/ipsadb/vector_search.png" width='60%' style='display: block; margin: auto; ' alt= "VectorDB logo">
+<img src="/public/images/ipsadb/vector_search.png" width='60%' style='display: block; margin: auto; ' alt= "VectorDB logo">
 
 ---
 
@@ -385,7 +385,7 @@ A **relational** database stores information in **tables** made up of `rows` and
 
 That’s why it’s called **relational**, the power comes from defining and using these relationships.
 
-<img src="/assets/images/ipsadb/relational_database.png" width='60%' style='display: block; margin: auto; ' alt= "Relational database">
+<img src="/public/images/ipsadb/relational_database.png" width='60%' style='display: block; margin: auto; ' alt= "Relational database">
 
 ---
 **Main Categories of Databases Today**
@@ -430,7 +430,7 @@ Also see this interactive map that lists all players in 2023.
 
 ---
 
-![Database Market Map 2024](/assets/images/dbsql/Database-Market-Map-1.png)
+![Database Market Map 2024](/public/images/dbsql/Database-Market-Map-1.png)
 
 ---
 
@@ -528,7 +528,7 @@ Modeling makes it possible to:
 
 ---
 
-<img src="/assets/images/ipsadb/ipsa_slide_001.png" width='100%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src="/public/images/ipsadb/ipsa_slide_001.png" width='100%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 ---
 <!--
@@ -653,7 +653,7 @@ Merise aims to provide representations suited to each level with:
 
 6 models
 
-<img src="/assets/images/ipsadb/ipsa_slide_002.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src="/public/images/ipsadb/ipsa_slide_002.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 ---
 
@@ -683,7 +683,7 @@ At the start of database design, the CDM then leads to the PDM and LDM
 * **Associations**: descriptions of how entities are linked (ovals and their connecting lines)
 * The numbers above the “lines” are called **cardinalities**
 
-<img src="/assets/images/ipsadb/exemple-MCD.jpg" width='70%' style='display: block; margin: auto; ' alt= "MCD">
+<img src="/public/images/ipsadb/exemple-MCD.jpg" width='70%' style='display: block; margin: auto; ' alt= "MCD">
 
 
 
@@ -780,7 +780,7 @@ MCD – Basic Concepts (continued)
 
 
 
-<img src="/assets/images/ipsadb/ipsa_slide_003.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src="/public/images/ipsadb/ipsa_slide_003.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 
 
@@ -839,7 +839,7 @@ MCD – Basic Concepts (continued)
 Graphical representation of the CDM
 **Entity – Relation**
 
-<img src = "/assets/images/ipsadb/mcd_001.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src = "/public/images/ipsadb/mcd_001.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 ---
 
@@ -849,7 +849,7 @@ Graphical representation of the CDM
 
 * Unary relation
 
-<img src = "/assets/images/ipsadb/mcd_002.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src = "/public/images/ipsadb/mcd_002.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 
 ---
@@ -860,7 +860,7 @@ Graphical representation of the CDM
 
 * Binary relation
 
-<img src = "/assets/images/ipsadb/mcd_003.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src = "/public/images/ipsadb/mcd_003.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 
 ---
@@ -871,7 +871,7 @@ Graphical representation of the CDM
 
 * Ternary relation
 
-<img src = "/assets/images/ipsadb/mcd_004.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src = "/public/images/ipsadb/mcd_004.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 
 ---
@@ -997,7 +997,7 @@ CREATE TABLE Passport (
 
 More transformation rules from CDM to LDM.
 
-<img src = "/assets/images/ipsadb/mcd_mld_001.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
+<img src = "/public/images/ipsadb/mcd_mld_001.png" width='80%' style='display: block; margin: auto; ' alt= "Database modelisation">
 
 ---
 
@@ -1049,7 +1049,7 @@ create the MCD and MLD for this database.
 intermission
 
 
-<video src="/assets/images/ipsadb/teaching_merise.mp4" controls width = "60%"></video>
+<video src="/public/images/ipsadb/teaching_merise.mp4" controls width = "60%"></video>
 
 ---
 <!--

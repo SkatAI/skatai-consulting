@@ -11,16 +11,16 @@ Parcours d'introduction aux usages de l'IA générative pour les équipes métie
 
 **Module 1 — Comprendre l'écosystème**
 
-- [Overview des concepts](/iabiz/overview/) — Panorama multi-modalité, notion de tokens, tarification, benchmarks et distinction open source vs modèles propriétaires.
+- [Overview des concepts](/courses/iabiz/overview/) — Panorama multi-modalité, notion de tokens, tarification, benchmarks et distinction open source vs modèles propriétaires.
 
 **Module 2 — Exploiter ChatGPT en entreprise**
 
-- [Focus sur ChatGPT](/iabiz/chatgpt/) — Tour d'horizon de GPT-5, agents OpenAI, outils opérateur, connecteurs métiers et bonnes pratiques de prompting.
+- [Focus sur ChatGPT](/courses/iabiz/chatgpt/) — Tour d'horizon de GPT-5, agents OpenAI, outils opérateur, connecteurs métiers et bonnes pratiques de prompting.
 
 **Module 3 — Automatiser les processus**
 
-- [Automatisation avec l'IA](/iabiz/automatisation/) — Étude des workflows ETL, plateformes drag-and-drop, intégration des modèles et cas d'usage de transformation des données.
+- [Automatisation avec l'IA](/courses/iabiz/automatisation/) — Étude des workflows ETL, plateformes drag-and-drop, intégration des modèles et cas d'usage de transformation des données.
 
 **Module 4 — EU compliance**
 
-- [EU compliance](/iabiz/ia_souveraine/) : Solutions IA Souveraines; Protection des Données Confidentielles & Conformité Européenne
+- [EU compliance](/courses/iabiz/ia_souveraine/) : Solutions IA Souveraines; Protection des Données Confidentielles & Conformité Européenne

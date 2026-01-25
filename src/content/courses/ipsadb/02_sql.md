@@ -47,7 +47,7 @@ _class: centered
 ---
 
 <div class="center">
-<img src="/assets/images/ipsadb/rdbms_architecture.png" width='70%' style='display: block; margin: auto; ' alt= "RDBMS Architecture">
+<img src="/public/images/ipsadb/rdbms_architecture.png" width='70%' style='display: block; margin: auto; ' alt= "RDBMS Architecture">
 
 Created by Claude Opus 4.1 with prompt <br />_"a simple sketch or diagram of an RDBMS architecture, keep it simple"_
 
@@ -92,7 +92,7 @@ WHERE tr.circumference > 50 and sp.species = 'tomentosa';
 ```
 
 
-<img src="/assets/images/ipsadb/query_plan_trees.png" width='100%' style='display: block; margin: auto; ' alt= "Query Processor">
+<img src="/public/images/ipsadb/query_plan_trees.png" width='100%' style='display: block; margin: auto; ' alt= "Query Processor">
 
 ---
 ## **Storage Engine**
@@ -104,7 +104,7 @@ It handles different storage structures like heap files, `B-trees` for indexes, 
 
 ---
 
-<img src="/assets/images/ipsadb/storage-engine-diagram.svg" width='100%' style='display: block; margin: auto; ' alt= "Storage Engine">
+<img src="/public/images/ipsadb/storage-engine-diagram.svg" width='100%' style='display: block; margin: auto; ' alt= "Storage Engine">
 
 ---
 
@@ -151,7 +151,7 @@ Ensures database transactions are
 
 # Components
 
-<img src="/assets/images/ipsadb/component-families-diagram.svg" width='70%' style='display: block; margin: auto; ' alt= "Component families and tools">
+<img src="/public/images/ipsadb/component-families-diagram.svg" width='70%' style='display: block; margin: auto; ' alt= "Component families and tools">
 
 ---
 
@@ -213,7 +213,7 @@ add : functions, triggers, sequences, etc
 _class: centered
  -->
 
-<img src="/assets/images/ipsadb/SQL-logo.png" width='70%' style='display: block; margin: auto; ' alt= "SQL Evolution">
+<img src="/public/images/ipsadb/SQL-logo.png" width='70%' style='display: block; margin: auto; ' alt= "SQL Evolution">
 
 
 ---
@@ -245,7 +245,7 @@ _class: centered
 
 ---
 
-<img src="/assets/images/ipsadb/sql-evolution-timeline.svg" width='100%' style='display: block; margin: auto; ' alt= "SQL Evolution">
+<img src="/public/images/ipsadb/sql-evolution-timeline.svg" width='100%' style='display: block; margin: auto; ' alt= "SQL Evolution">
 
 ---
 # Evolution since the 1970s
@@ -385,7 +385,7 @@ model.train(df)
 
 ### SQL Security: Bobby Tables
 
-<img src="/assets/images/ipsadb/exploits_of_a_mom_2x.png" width='100%' style='display: block; margin: auto; ' alt= "xkcd SQL injection">
+<img src="/public/images/ipsadb/exploits_of_a_mom_2x.png" width='100%' style='display: block; margin: auto; ' alt= "xkcd SQL injection">
 
 
 from [XKCD comics](https://xkcd.com/327/)
@@ -415,7 +415,7 @@ Boom! no more user table!
 
 animate this cartoon
 
-<video src="/assets/images/ipsadb/exploits_of_a_mom.mp4" width='100%' controls></video>
+<video src="/public/images/ipsadb/exploits_of_a_mom.mp4" width='100%' controls></video>
 
 
 ---
@@ -436,7 +436,7 @@ animate this cartoon
 
 
 ---
-<img src="/assets/images/ipsadb/sql_sub_languages.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Sub Languages">
+<img src="/public/images/ipsadb/sql_sub_languages.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Sub Languages">
 
 ---
 
@@ -510,7 +510,7 @@ adding `db` or `.db` as suffix is good practice
 ---
 # create table in sqlite
 
-<img src="/assets/images/ipsadb/sqlite_create_table.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Create Table">
+<img src="/public/images/ipsadb/sqlite_create_table.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Create Table">
 
 [create table](https://sqlite.org/lang_createtable.html)
 
@@ -594,7 +594,7 @@ CREATE TABLE employees (
 
 Let's look at the postgresql documentation for the create table statement:
 
-<img src="/assets/images/ipsadb/create_table_documentation_postgresql.png" width='100%' style='display: block; margin: auto; ' alt= "Create Table">
+<img src="/public/images/ipsadb/create_table_documentation_postgresql.png" width='100%' style='display: block; margin: auto; ' alt= "Create Table">
 
 [https://www.postgresql.org/docs/current/sql-createtable.html](https://www.postgresql.org/docs/current/sql-createtable.html)
 
@@ -882,7 +882,7 @@ LIMIT      -- How many?
 <!--
 _class: centered
  -->
-<img src="/assets/images/ipsadb/dilbert_made_up_numbers.png" width='1000' style='display: block; margin: auto; ' alt= "Dilbert made up numbers">
+<img src="/public/images/ipsadb/dilbert_made_up_numbers.png" width='1000' style='display: block; margin: auto; ' alt= "Dilbert made up numbers">
 
 ---
 
@@ -975,7 +975,7 @@ ON table1.column = table2.column;
 ---
 ### Example : the tree database
 
-<img src="/assets/images/ipsadb/ERD-trees-normalized.png" width="100%" style="display: block; margin: auto; " alt="ERD trees normalized" />
+<img src="/public/images/ipsadb/ERD-trees-normalized.png" width="100%" style="display: block; margin: auto; " alt="ERD trees normalized" />
 
 ---
 
@@ -1174,7 +1174,7 @@ CROSS JOIN products;
 
 ---
 
-<img src ="/assets/images/ipsadb/sql-joins-diagram.svg" width="100%" style="display: block; margin: auto; " alt="ERD customers orders" />
+<img src ="/public/images/ipsadb/sql-joins-diagram.svg" width="100%" style="display: block; margin: auto; " alt="ERD customers orders" />
 
 
 ---
@@ -1244,7 +1244,7 @@ More generally:
 
 ---
 
-<img src="/assets/images/ipsadb/insertion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Insertion Anomaly">
+<img src="/public/images/ipsadb/insertion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Insertion Anomaly">
 
 
 ---
@@ -1284,7 +1284,7 @@ By moving the production house data in its own separate table, then updating its
 
 ---
 
-<img src="/assets/images/ipsadb/update-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Update Anomaly">
+<img src="/public/images/ipsadb/update-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Update Anomaly">
 
 ---
 
@@ -1309,7 +1309,7 @@ So by deleting an attribute we also remove certain valus of other attributes.
 
 ---
 
-<img src="/assets/images/ipsadb/deletion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Deletion Anomaly">
+<img src="/public/images/ipsadb/deletion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Deletion Anomaly">
 
 
 ---
@@ -1338,7 +1338,7 @@ So avoid NULL values if you can!
 
 ---
 
-<img src="/assets/images/dbsql/null-values-headache.png" width='60%' style='display: block; margin: auto; ' alt= "Null Values Headache">
+<img src="/public/images/dbsql/null-values-headache.png" width='60%' style='display: block; margin: auto; ' alt= "Null Values Headache">
 
 
 ---
@@ -1348,7 +1348,7 @@ _class: centered
 
 # SQLITE
 
-<img src="/assets/images/ipsadb/SQLite370.png" width='100%' style='background-color: #FFF; display: block; margin: auto; ' alt= "Create Table">
+<img src="/public/images/ipsadb/SQLite370.png" width='100%' style='background-color: #FFF; display: block; margin: auto; ' alt= "Create Table">
 
 [https://sqlite.org](https://sqlite.org)
 
@@ -1450,7 +1450,7 @@ winget install SQLite.SQLite
 - [https://sqlitestudio.pl/](https://sqlitestudio.pl/)
 
 
-<img src="/assets/images/ipsadb/dbbrowser_sqlite.png" width='80%' style='display: block; margin: auto; ' alt= "sqlitebrowser">
+<img src="/public/images/ipsadb/dbbrowser_sqlite.png" width='80%' style='display: block; margin: auto; ' alt= "sqlitebrowser">
 
 ---
 
@@ -1547,7 +1547,7 @@ sqlite3 imdb_raw.db
 
 this creates the database `imdb_raw.db` in the current directory. It's empty
 
-<img src="/assets/images/ipsadb/create_empty_sqlitedb.png" width='80%' style='display: block; margin: auto; ' alt= "sqlite3">
+<img src="/public/images/ipsadb/create_empty_sqlitedb.png" width='80%' style='display: block; margin: auto; ' alt= "sqlite3">
 
 
 Let's go back to the database in sqlite
