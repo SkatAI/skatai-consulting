@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: "Otaku - Day 3"
+title: "Day 3"
 page_title: "Random forest, biais variance"
 summary: "Random forest, biais variance"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'

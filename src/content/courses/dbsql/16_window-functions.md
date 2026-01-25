@@ -82,7 +82,7 @@ ORDER BY movie_count DESC;
 
 ---
 
-#What are Window functions ?
+# What are Window functions ?
 
 > **Window Functions** perform calculations across a set of rows that are related to the current row, but unlike GROUP BY, _they don't collapse the rows into a single output row_.
 > Each row keeps its identity while gaining additional calculated information.

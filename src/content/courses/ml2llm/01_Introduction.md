@@ -1,6 +1,6 @@
 ---
 layout: default_en
-title: "Otaku - Day 1"
+title: "Day 1"
 page_title: "Introduction au Machine Learning"
 summary: "Apprendre à entraîner un modèle de régression linéaire"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'
@@ -8,7 +8,7 @@ slides_project_home: /ml2llm/
 ---
 
 
-# Optima Otaku - Day 1
+# Day 1
 
 ## [welcome slides](https://docs.google.com/presentation/d/1AlWWC7qnsAA0VvYOXJqpTWmhGn0dC3yxLRATP45Jqn4/edit?slide=id.p#slide=id.p)
 

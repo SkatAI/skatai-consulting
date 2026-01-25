@@ -1,6 +1,6 @@
 ---
 layout: default_en
-title: "Otaku - Day 2"
+title: "Day 2"
 page_title: "Classification - Regression logistique"
 summary: "Classification avec la regression logistique"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'

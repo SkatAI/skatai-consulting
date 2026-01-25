@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: "Otaku - Day 5"
+title: "Day 5"
 page_title: "Gradient stochastique"
 summary: "gradient stochastique"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'

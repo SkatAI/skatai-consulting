@@ -1,6 +1,6 @@
 ---
 layout: default_en
-title: "Otaku - Day 4"
+title: "Day 4"
 page_title: "Kaggle housing prices competition"
 summary: "Kaggle housing prices competition"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'

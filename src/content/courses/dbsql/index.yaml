@@ -1,0 +1,117 @@
+title: Relational databases - SQL and postgresql
+description: A course in intermediate databases and postgresql taught at Epita
+index:
+  file: 00-dbsql.md
+sessions:
+  - file: 01_dbsql_welcome.md
+    slug: dbsql_welcome
+  - file: 02_dbsql_install.md
+    slug: dbsql_install
+  - file: 03_dbsql_wrapup.md
+    slug: dbsql_wrapup
+  - file: 04_dbsql_server.md
+    slug: dbsql_server
+  - file: 05_RDBMS.md
+    slug: rdbms
+  - file: 06_dbsql_loading_dataset.md
+    slug: dbsql_loading_dataset
+  - file: 07_dbsql_wrapup.md
+    slug: dbsql_wrapup-2
+  - file: 08_select_imdb.md
+    slug: select_imdb
+  - file: 09_dbsql_improve_trees.md
+    slug: dbsql_improve_trees
+  - file: 10_database-design-normalization.md
+    slug: database-design-normalization
+  - file: 11_normalization_lab.md
+    slug: normalization_lab
+  - file: 12_normalization_lab_solution.md
+    slug: normalization_lab_solution
+  - file: 13_normalize-treesdb.md
+    slug: normalize-treesdb
+  - file: 14_normalize-treesdb_solution.md
+    slug: normalize-treesdb_solution
+  - file: 15_window-fct-CTE_intro.md
+    slug: window-fct-cte_intro
+  - file: 16_window-functions.md
+    slug: window-functions
+  - file: 17_02_window-functions_lab.md
+    slug: 02_window-functions_lab
+  - file: 18_02_window-functions_lab_solutions.md
+    slug: 02_window-functions_lab_solutions
+  - file: 19_zz_window-functions_lab.md
+    slug: zz_window-functions_lab
+  - file: 20_zz_window-functions_lab_solutions.md
+    slug: zz_window-functions_lab_solutions
+  - file: 21_CTEs-with-clause.md
+    slug: ctes-with-clause
+  - file: 22_worklab-window-fct-CTE-treesdb.md
+    slug: worklab-window-fct-cte-treesdb
+  - file: 23_worklab-window-fct-CTE-treesdb_solution.md
+    slug: worklab-window-fct-cte-treesdb_solution
+  - file: 24_worklab-window-fct-CTE-treesdb_normalized.md
+    slug: worklab-window-fct-cte-treesdb_normalized
+  - file: 25_worklab-window-fct-CTE-treesdb_normalized_solution.md
+    slug: worklab-window-fct-cte-treesdb_normalized_solution
+  - file: 26_explain-scans_intro.md
+    slug: explain-scans_intro
+  - file: 27_sql_relational_algebra.md
+    slug: sql_relational_algebra
+  - file: 28_explain_query_performance.md
+    slug: explain_query_performance
+  - file: 29_extra_content_Bitmap.md
+    slug: extra_content_bitmap
+  - file: 30_indexes_intro.md
+    slug: indexes_intro
+  - file: 31_algorithms_quiz.md
+    slug: algorithms_quiz
+  - file: 32_indexes.md
+    slug: indexes
+  - file: 33_lab-on-indexes.md
+    slug: lab-on-indexes
+  - file: 34_views_functions_pslsql_intro.md
+    slug: views_functions_pslsql_intro
+  - file: 35_views.md
+    slug: views
+  - file: 36_views_exercise.md
+    slug: views_exercise
+  - file: 37_views_exercise_solution.md
+    slug: views_exercise_solution
+  - file: 38_SQL-functions.md
+    slug: sql-functions
+  - file: 39_SQL-functions_solutions.md
+    slug: sql-functions_solutions
+  - file: 40_PLpgSQL-functions.md
+    slug: plpgsql-functions
+  - file: 41_writing-functions.md
+    slug: writing-functions
+  - file: 42_functions_worksheet_BAN_API.md
+    slug: functions_worksheet_ban_api
+  - file: 43_functions_worksheet.md
+    slug: functions_worksheet
+  - file: 44_bigquery.md
+    slug: bigquery
+  - file: 45_sql_anti_patterns.md
+    slug: sql_anti_patterns
+  - file: 46_new_york_trees.md
+    slug: new_york_trees
+  - file: 47_new_york_trees_exam.md
+    slug: new_york_trees_exam
+  - file: 48_ademe_worksheet.md
+    slug: ademe_worksheet
+  - file: 49_new_york_trees_exam_claude.md
+    slug: new_york_trees_exam_claude
+  - file: 50_whats-left.md
+    slug: whats-left
+  - file: 51_energy-db-a-new-database.md
+    slug: energy-db-a-new-database
+  - file: 52_triggers-procedures.md
+    slug: triggers-procedures
+  - file: 53_authentication.md
+    slug: authentication
+  - file: 54_roles.md
+    slug: roles
+  - file: 55_final-lab.md
+    slug: final-lab
+  - file: 56_install-http-ext-windows11.md
+    slug: install-http-ext-windows11
