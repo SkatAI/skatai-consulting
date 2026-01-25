@@ -6,12 +6,11 @@ summary: "gradient stochastique"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
+<TitleSlide>
 
-<!--
-_class: centered
- -->
 # Gradient stochastique
 
+</TitleSlide>
 ---
 
 contenu

@@ -4,9 +4,7 @@ title: "Du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'DistillGPT2 architecture'
 ---
-<!--
-_class: centered
--->
+<TitleSlide>
 
 ## Structure de GPT2
 
@@ -17,6 +15,7 @@ _class: centered
 - transformer block
 - mécanisme d'attention
 
+</TitleSlide>
 ---
 # Modèles bidirectionnels vs unidirectionnels
 
@@ -204,7 +203,7 @@ La couche d'embedding est essentiellement une matrice de poids, souvent notée E
 
 Enfin on passe le tout aux blocks GPT2 Transformer
 
-![](/public/images/ml2llm/GPT2_structure).png)
+![](/images/ml2llm/GPT2_structure).png)
 
 Un bloc GPT2Block Transformer contient quatre composants qui apparaissent dans cet ordre :
 - la couche ln_1 (normalisation avant le mécanisme d'attention),
@@ -351,7 +350,7 @@ La **largeur** fait référence à la taille des couches internes, spécifiqueme
 Dans notre DistilGPT2, la largeur est 3072 neurones. Cette dimension détermine la capacité du modèle à traiter les connaissances à chaque étape. Réduire la capacité d'expansion avec le **Width Pruning** affecte directement le nombre de paramètres et la consommation de mémoire.
 
 
-![](/public/images/ml2llm/transformers_shape_of_models.png)
+![](/images/ml2llm/transformers_shape_of_models.png)
 
 
 

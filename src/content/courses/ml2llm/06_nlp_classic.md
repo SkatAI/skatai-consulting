@@ -4,14 +4,13 @@ title: "NLP classique"
 slides_project_home: /ml2llm/nlp-classic/
 footer: 'NLP classique - https://skatai.com/ml2llm/nlp-classic/'
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # NLP
 ## Natural Language Processing
 ### _Style classique_
 
+</TitleSlide>
 ---
 
 # Aujourd'hui
@@ -34,7 +33,7 @@ _class: centered
 
 <div class="center">
 **Ferdinand de Saussure 1916**
-<img src="/public/images/inwai/cours-de-linguistique-generale.jpg" alt="cours de linguistique générale" width=300 class="center">
+<img src="/images/inwai/cours-de-linguistique-generale.jpg" alt="cours de linguistique générale" width=300 class="center">
 </div>
 </div>
 
@@ -60,7 +59,7 @@ En bref : la **linguistique** étudie le langage, le **NLP** fait travailler les
 1957 **Benveniste** : Problèmes de linguistique générale
 <div class="center">
 
-<img src="/public/images/inwai/Benveniste-Emile-Problemes-De-Linguistique-Generale-Livre-684848349_L.jpg" alt="1957 Benveniste : Problemes de linguistique générale" width=300 class="center">
+<img src="/images/inwai/Benveniste-Emile-Problemes-De-Linguistique-Generale-Livre-684848349_L.jpg" alt="1957 Benveniste : Problemes de linguistique générale" width=300 class="center">
 
 </div>
 </div>
@@ -73,7 +72,7 @@ voir [wikipedia Chomsky](https://en.wikipedia.org/wiki/Noam_Chomsky)
 _La base de la théorie linguistique de Chomsky réside dans la **biolinguistique**, l'école linguistique qui soutient que les principes sous-tendant la structure du langage sont biologiquement prédéfinis dans l'esprit humain et donc génétiquement hérités. Il soutient que tous les humains partagent la même structure linguistique sous-jacente, indépendamment des différences socioculturelles._
 
 <div class="center">
-<img src="/public/images/inwai/Syntactic_Structures_Noam_Chomsky_cover.jpg" alt="1957 Chomsky : syntactic structures" width=300 class="center">
+<img src="/images/inwai/Syntactic_Structures_Noam_Chomsky_cover.jpg" alt="1957 Chomsky : syntactic structures" width=300 class="center">
 
 </div>
 </div>
@@ -84,7 +83,7 @@ _La base de la théorie linguistique de Chomsky réside dans la **biolinguistiqu
 # Speech and Language Processing
 
 
-<img src="/public/images/inwai/speech_lang_proc_jurafsky.jpg" alt="speech and language processing" width=300 class="center">
+<img src="/images/inwai/speech_lang_proc_jurafsky.jpg" alt="speech and language processing" width=300 class="center">
 
 [Speech and Language Processing (3rd ed. draft) Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
 
@@ -93,7 +92,7 @@ Dernière version : 24 août 2025 !!
 ---
 
 # Chronologie
-<img src="/public/images/inwai/history_nlp_timeline.webp" alt="nlp history" width=1200 class="center">
+<img src="/images/inwai/history_nlp_timeline.webp" alt="nlp history" width=1200 class="center">
 
 [NLP Timeline](https://blog.dataiku.com/nlp-metamorphosis)
 
@@ -255,7 +254,7 @@ etc
 
 ---
 
-<img src="/public/images/inwai/nlp-workflow-diagram.svg" alt="nlp workflow diagram" width="100%" class="center" style = "display: block; margin: auto; padding: 10px; background-color: #DDF;">
+<img src="/images/inwai/nlp-workflow-diagram.svg" alt="nlp workflow diagram" width="100%" class="center" style = "display: block; margin: auto; padding: 10px; background-color: #DDF;">
 
 ---
 
@@ -286,7 +285,7 @@ Le NER utilise
 Les modèles et règles NER sont spécifiques à chaque langue
 
 
-<img src="/public/images/inwai/ner-simpsons-diagram.svg" alt="ner simpsons diagram" width="100%" class="center" style = "display: block; margin: auto; padding: 10px; background-color: #DDF;">
+<img src="/images/inwai/ner-simpsons-diagram.svg" alt="ner simpsons diagram" width="100%" class="center" style = "display: block; margin: auto; padding: 10px; background-color: #DDF;">
 
 
 ---
@@ -302,7 +301,7 @@ Le POS utilise :
 
 Les modèles et règles POS sont également spécifiques à chaque langue
 
-<img src="/public/images/inwai/pos-shakespeare-diagram.svg" alt="pos shakespeare diagram" width="100%" class="center" style = "display: block; margin: auto; padding: 10px; background-color: #DDF;">
+<img src="/images/inwai/pos-shakespeare-diagram.svg" alt="pos shakespeare diagram" width="100%" class="center" style = "display: block; margin: auto; padding: 10px; background-color: #DDF;">
 
 ---
 
@@ -318,7 +317,7 @@ _"Like everyone, we have definitely felt the impact of AI Overviews. There is on
 
 # NER
 
-<img src="/public/images/inwai/google_NLP_demo_NER.png" width=600 class="center">
+<img src="/images/inwai/google_NLP_demo_NER.png" width=600 class="center">
 
 ---
 
@@ -328,7 +327,7 @@ _"Like everyone, we have definitely felt the impact of AI Overviews. There is on
 - catégories
 - Modération
 
-<img src="/public/images/inwai/google_NLP_demo_Categories.png" width=600 class="center">
+<img src="/images/inwai/google_NLP_demo_Categories.png" width=600 class="center">
 
 ---
 
@@ -336,10 +335,10 @@ _"Like everyone, we have definitely felt the impact of AI Overviews. There is on
 
 <div class="columns" markdown="1">
 <div markdown="1">
-<img src="/public/images/inwai/google_NLP_demo_POS_start.jpg" width=600 class="center">
+<img src="/images/inwai/google_NLP_demo_POS_start.jpg" width=600 class="center">
 </div>
 <div markdown="1">
-<img src="/public/images/inwai/google_NLP_demo_POS_end.jpg" width=600 class="center">
+<img src="/images/inwai/google_NLP_demo_POS_end.jpg" width=600 class="center">
 </div>
 </div>
 
@@ -363,7 +362,7 @@ Malheureusement, cette fonctionnalité n'est plus disponible dans la démo NLP d
 
 [https://openai.com/api/pricing/](https://openai.com/api/pricing/)
 
-<img src="/public/images/inwai/openai_pricing_tokens.png" alt="openai pricing" width=800 class="center">
+<img src="/images/inwai/openai_pricing_tokens.png" alt="openai pricing" width=800 class="center">
 
 ---
 
@@ -423,15 +422,13 @@ for entity in doc.ents:
 
 
 ---
-
-<!--
-_class: centered
--->
+<TitleSlide>
 
 # Pratique
 
 Construire un dataset en utilisant l'API NYT
 
+</TitleSlide>
 ---
 
 # API NYT
@@ -445,7 +442,7 @@ suivez les instructions sur [developer.nytimes.com/get-started](https://develope
 - obtenez une clé API
 
 
-<img src="/public/images/inwai/nyt_api_key.png" alt="nyt api key" width=1200 class="center">
+<img src="/images/inwai/nyt_api_key.png" alt="nyt api key" width=1200 class="center">
 
 ---
 

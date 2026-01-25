@@ -4,9 +4,7 @@ title: "Intro to databases - Aero 2025-26 - IPSA"
 slides_project_home: /ipsadb/sql/
 footer: 'Alexis Perrier - In311 - Intro to databases - Aero 2025-26 - IPSA'
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # In311 - Intro to databases
 ## Aero 2025-26 - IPSA
@@ -17,6 +15,7 @@ _class: centered
 <br />
 </div>
 
+</TitleSlide>
 ---
 
 # Course outline
@@ -47,7 +46,7 @@ _class: centered
 ---
 
 <div class="center">
-<img src="/public/images/ipsadb/rdbms_architecture.png" width='70%' style='display: block; margin: auto; ' alt= "RDBMS Architecture">
+<img src="/images/ipsadb/rdbms_architecture.png" width='70%' style='display: block; margin: auto; ' alt= "RDBMS Architecture">
 
 Created by Claude Opus 4.1 with prompt <br />_"a simple sketch or diagram of an RDBMS architecture, keep it simple"_
 
@@ -92,7 +91,7 @@ WHERE tr.circumference > 50 and sp.species = 'tomentosa';
 ```
 
 
-<img src="/public/images/ipsadb/query_plan_trees.png" width='100%' style='display: block; margin: auto; ' alt= "Query Processor">
+<img src="/images/ipsadb/query_plan_trees.png" width='100%' style='display: block; margin: auto; ' alt= "Query Processor">
 
 ---
 ## **Storage Engine**
@@ -104,7 +103,7 @@ It handles different storage structures like heap files, `B-trees` for indexes, 
 
 ---
 
-<img src="/public/images/ipsadb/storage-engine-diagram.svg" width='100%' style='display: block; margin: auto; ' alt= "Storage Engine">
+<img src="/images/ipsadb/storage-engine-diagram.svg" width='100%' style='display: block; margin: auto; ' alt= "Storage Engine">
 
 ---
 
@@ -151,7 +150,7 @@ Ensures database transactions are
 
 # Components
 
-<img src="/public/images/ipsadb/component-families-diagram.svg" width='70%' style='display: block; margin: auto; ' alt= "Component families and tools">
+<img src="/images/ipsadb/component-families-diagram.svg" width='70%' style='display: block; margin: auto; ' alt= "Component families and tools">
 
 ---
 
@@ -209,13 +208,11 @@ add : functions, triggers, sequences, etc
   - NTFS (Windows)
 
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
-<img src="/public/images/ipsadb/SQL-logo.png" width='70%' style='display: block; margin: auto; ' alt= "SQL Evolution">
+<img src="/images/ipsadb/SQL-logo.png" width='70%' style='display: block; margin: auto; ' alt= "SQL Evolution">
 
-
+</TitleSlide>
 ---
 
 # Why Learn SQL in 2025?
@@ -245,7 +242,7 @@ _class: centered
 
 ---
 
-<img src="/public/images/ipsadb/sql-evolution-timeline.svg" width='100%' style='display: block; margin: auto; ' alt= "SQL Evolution">
+<img src="/images/ipsadb/sql-evolution-timeline.svg" width='100%' style='display: block; margin: auto; ' alt= "SQL Evolution">
 
 ---
 # Evolution since the 1970s
@@ -385,7 +382,7 @@ model.train(df)
 
 ### SQL Security: Bobby Tables
 
-<img src="/public/images/ipsadb/exploits_of_a_mom_2x.png" width='100%' style='display: block; margin: auto; ' alt= "xkcd SQL injection">
+<img src="/images/ipsadb/exploits_of_a_mom_2x.png" width='100%' style='display: block; margin: auto; ' alt= "xkcd SQL injection">
 
 
 from [XKCD comics](https://xkcd.com/327/)
@@ -415,7 +412,7 @@ Boom! no more user table!
 
 animate this cartoon
 
-<video src="/public/images/ipsadb/exploits_of_a_mom.mp4" width='100%' controls></video>
+<video src="/images/ipsadb/exploits_of_a_mom.mp4" width='100%' controls></video>
 
 
 ---
@@ -436,7 +433,7 @@ animate this cartoon
 
 
 ---
-<img src="/public/images/ipsadb/sql_sub_languages.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Sub Languages">
+<img src="/images/ipsadb/sql_sub_languages.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Sub Languages">
 
 ---
 
@@ -510,7 +507,7 @@ adding `db` or `.db` as suffix is good practice
 ---
 # create table in sqlite
 
-<img src="/public/images/ipsadb/sqlite_create_table.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Create Table">
+<img src="/images/ipsadb/sqlite_create_table.png" width='80%' style='display: block; margin: auto; ' alt= "SQL Create Table">
 
 [create table](https://sqlite.org/lang_createtable.html)
 
@@ -594,7 +591,7 @@ CREATE TABLE employees (
 
 Let's look at the postgresql documentation for the create table statement:
 
-<img src="/public/images/ipsadb/create_table_documentation_postgresql.png" width='100%' style='display: block; margin: auto; ' alt= "Create Table">
+<img src="/images/ipsadb/create_table_documentation_postgresql.png" width='100%' style='display: block; margin: auto; ' alt= "Create Table">
 
 [https://www.postgresql.org/docs/current/sql-createtable.html](https://www.postgresql.org/docs/current/sql-createtable.html)
 
@@ -879,11 +876,11 @@ LIMIT      -- How many?
 
 
 ---
-<!--
-_class: centered
- -->
-<img src="/public/images/ipsadb/dilbert_made_up_numbers.png" width='1000' style='display: block; margin: auto; ' alt= "Dilbert made up numbers">
+<TitleSlide>
 
+<img src="/images/ipsadb/dilbert_made_up_numbers.png" width='1000' style='display: block; margin: auto; ' alt= "Dilbert made up numbers">
+
+</TitleSlide>
 ---
 
 # SQL Reads Like English
@@ -949,11 +946,11 @@ WHERE u.id = 42;
 </div>
 
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
+
 # Joins
 
+</TitleSlide>
 ---
 
 
@@ -975,7 +972,7 @@ ON table1.column = table2.column;
 ---
 ### Example : the tree database
 
-<img src="/public/images/ipsadb/ERD-trees-normalized.png" width="100%" style="display: block; margin: auto; " alt="ERD trees normalized" />
+<img src="/images/ipsadb/ERD-trees-normalized.png" width="100%" style="display: block; margin: auto; " alt="ERD trees normalized" />
 
 ---
 
@@ -1174,7 +1171,7 @@ CROSS JOIN products;
 
 ---
 
-<img src ="/public/images/ipsadb/sql-joins-diagram.svg" width="100%" style="display: block; margin: auto; " alt="ERD customers orders" />
+<img src ="/images/ipsadb/sql-joins-diagram.svg" width="100%" style="display: block; margin: auto; " alt="ERD customers orders" />
 
 
 ---
@@ -1196,15 +1193,12 @@ CROSS JOIN products;
 
 
 ---
-<!--
-_class: centered
- -->
-
+<TitleSlide>
 
 # Why normalize ?
 ## to avoid anomalies
 
-
+</TitleSlide>
 ---
 
 
@@ -1244,7 +1238,7 @@ More generally:
 
 ---
 
-<img src="/public/images/ipsadb/insertion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Insertion Anomaly">
+<img src="/images/ipsadb/insertion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Insertion Anomaly">
 
 
 ---
@@ -1284,7 +1278,7 @@ By moving the production house data in its own separate table, then updating its
 
 ---
 
-<img src="/public/images/ipsadb/update-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Update Anomaly">
+<img src="/images/ipsadb/update-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Update Anomaly">
 
 ---
 
@@ -1309,7 +1303,7 @@ So by deleting an attribute we also remove certain valus of other attributes.
 
 ---
 
-<img src="/public/images/ipsadb/deletion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Deletion Anomaly">
+<img src="/images/ipsadb/deletion-anomaly-diagram.svg" width='80%' style='display: block; margin: auto; ' alt= "Deletion Anomaly">
 
 
 ---
@@ -1338,20 +1332,19 @@ So avoid NULL values if you can!
 
 ---
 
-<img src="/public/images/dbsql/null-values-headache.png" width='60%' style='display: block; margin: auto; ' alt= "Null Values Headache">
+<img src="/images/dbsql/null-values-headache.png" width='60%' style='display: block; margin: auto; ' alt= "Null Values Headache">
 
 
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # SQLITE
 
-<img src="/public/images/ipsadb/SQLite370.png" width='100%' style='background-color: #FFF; display: block; margin: auto; ' alt= "Create Table">
+<img src="/images/ipsadb/SQLite370.png" width='100%' style='background-color: #FFF; display: block; margin: auto; ' alt= "Create Table">
 
 [https://sqlite.org](https://sqlite.org)
 
+</TitleSlide>
 ---
 
 # SQLITE
@@ -1450,7 +1443,7 @@ winget install SQLite.SQLite
 - [https://sqlitestudio.pl/](https://sqlitestudio.pl/)
 
 
-<img src="/public/images/ipsadb/dbbrowser_sqlite.png" width='80%' style='display: block; margin: auto; ' alt= "sqlitebrowser">
+<img src="/images/ipsadb/dbbrowser_sqlite.png" width='80%' style='display: block; margin: auto; ' alt= "sqlitebrowser">
 
 ---
 
@@ -1503,12 +1496,11 @@ sqlite3 <database_name>
 and then run your queries and commands
 
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
+
 # lets go !
 
-
+</TitleSlide>
 ---
 
 # Normalize imdb dataset
@@ -1547,7 +1539,7 @@ sqlite3 imdb_raw.db
 
 this creates the database `imdb_raw.db` in the current directory. It's empty
 
-<img src="/public/images/ipsadb/create_empty_sqlitedb.png" width='80%' style='display: block; margin: auto; ' alt= "sqlite3">
+<img src="/images/ipsadb/create_empty_sqlitedb.png" width='80%' style='display: block; margin: auto; ' alt= "sqlite3">
 
 
 Let's go back to the database in sqlite
@@ -1636,13 +1628,13 @@ SELECT COUNT(*) FROM imdb_raw;
 This should return 1000.
 
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
+
 # Primary keys & data types
 
 All columns have text for type for now. We need to change that
 
+</TitleSlide>
 ---
 
 # SQlite is limited on DML
@@ -1743,12 +1735,11 @@ we want to change the types of some columns.
 
 
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # Normalization
 
+</TitleSlide>
 ---
 
 # Normalization

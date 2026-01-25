@@ -1,0 +1,29 @@
+title: du Machine learning aux LLMs
+description: Introduction complète au Machine Learning moderne, des fondamentaux de la régression aux techniques avancées de NLP, avec des exercices pratiques.
+index:
+  file: 00_index.md
+sessions:
+  - file: 01_Introduction.md
+    slug: introduction
+  - file: 02_logistic_regression.md
+    slug: logistic_regression
+  - file: 03_arbres_overfit.md
+    slug: arbres_overfit
+  - file: 04_kaggle.md
+    slug: kaggle
+  - file: 05_gradient_stochastique.md
+    slug: gradient_stochastique
+  - file: 06_nlp_classic.md
+    slug: nlp_classic
+  - file: 07_nlp_modern.md
+    slug: nlp_modern
+  - file: 08_neural_networks.md
+    slug: neural_networks
+  - file: 09_cnn_rnn.md
+    slug: cnn_rnn
+  - file: 10_huggingface.md
+    slug: huggingface
+  - file: 11_llms.md
+    slug: llms
+  - file: 12_rag.md
+    slug: rag

@@ -169,7 +169,7 @@ pg_restore --host "localhost" \
 
 while the db is restored, look at the process
 
-![](/public/images/dbsql/pgAdmin-process-restore.png)
+![](/images/dbsql/pgAdmin-process-restore.png)
 
 
 Then check that the tree table has been created in the public schema of the treesdb_02 database

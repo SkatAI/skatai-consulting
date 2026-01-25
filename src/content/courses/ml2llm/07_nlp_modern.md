@@ -4,22 +4,19 @@ title: "modern NLP"
 slides_project_home: /ml2llm/
 footer: 'Modern NLP '
 ---
-<!--
-_class: centered
--->
+<TitleSlide>
 
 # NLP
 ## Natural Language Processing
 ### _Style moderne_
 
+</TitleSlide>
 ---
-
-<!--
-_class: centered
--->
+<TitleSlide>
 
 # NLP moderne - Embeddings
 
+</TitleSlide>
 ---
 # Embeddings
 
@@ -69,7 +66,7 @@ mais toujours pas de **désambiguïsation contextuelle** : les **vers** de terre
 
 </div>
 <div markdown="1">
-<img src="/public/images/inwai/word2vec_001.png" alt="word2vec" width=400 class="center">
+<img src="/images/inwai/word2vec_001.png" alt="word2vec" width=400 class="center">
 </div>
 </div>
 
@@ -79,7 +76,7 @@ mais toujours pas de **désambiguïsation contextuelle** : les **vers** de terre
 
 Chaque mot est un vecteur de grande dimension
 
-<img src="/public/images/inwai/word2vec_002.jpg" alt="word2vec" width=1200 class="center">
+<img src="/images/inwai/word2vec_002.jpg" alt="word2vec" width=1200 class="center">
 
 ---
 # CBOW vs skip-gram
@@ -88,7 +85,7 @@ Chaque mot est un vecteur de grande dimension
 - skip-gram: Predict the context words from the target word (center word).
 
 
-<img src="/public/images/inwai/cbow_skip_gram.webp" alt="cbow skip gram" width=1200 class="center">
+<img src="/images/inwai/cbow_skip_gram.webp" alt="cbow skip gram" width=1200 class="center">
 
 [cbow-skipgram](https://medium.com/@fraidoonomarzai99/word2vec-cbow-skip-gram-in-depth-88d9cc340a50)
 
@@ -98,9 +95,9 @@ Chaque mot est un vecteur de grande dimension
 
 Une fois que vous avez les embeddings (vecteurs, séries de nombres) de 2 textes (phrases, mots, tokens, ...), leur distance est donnée par la similarité cosinus de leurs embeddings
 
-<img src="/public/images/inwai/word2vec_003_cosine.jpg" alt="word2vec cosine similarity" width=400 class="center">
+<img src="/images/inwai/word2vec_003_cosine.jpg" alt="word2vec cosine similarity" width=400 class="center">
 
-<img src="/public/images/inwai/word2vec_004.jpg" alt="word2vec cosine similarity" width=800 class="center">
+<img src="/images/inwai/word2vec_004.jpg" alt="word2vec cosine similarity" width=800 class="center">
 
 
 
@@ -146,7 +143,7 @@ Une fois que vous avez les embeddings (vecteurs, séries de nombres) de 2 textes
 
 ---
 
-<img src="/public/images/inwai/attention-mechanism-diagram.svg" alt="attention mechanism diagram" width=1200 class="center">
+<img src="/images/inwai/attention-mechanism-diagram.svg" alt="attention mechanism diagram" width=1200 class="center">
 
 ---
 
@@ -159,7 +156,7 @@ Une fois que vous avez les embeddings (vecteurs, séries de nombres) de 2 textes
 4. Utiliser ces embeddings pour la tâche en aval.
 
 
-<img src="/public/images/inwai/embedding-workflow.png" alt="Embedding workflow" width="100%" class="center">
+<img src="/images/inwai/embedding-workflow.png" alt="Embedding workflow" width="100%" class="center">
 
 
 ---
@@ -240,7 +237,7 @@ RAG agit comme un **système de recherche intelligent** qui trouve l'aiguille da
 
 # RAG : retrieval augmented generation
 
-<img src="/public/images/inwai/rag-diagram.svg" alt="RAG diagram" width="100%" class="center">
+<img src="/images/inwai/rag-diagram.svg" alt="RAG diagram" width="100%" class="center">
 
 ---
 
@@ -272,13 +269,11 @@ RAG agit comme un **système de recherche intelligent** qui trouve l'aiguille da
 
 
 ---
-
-<!--
-_class: centered
--->
+<TitleSlide>
 
 # Pratique NLP classique et moderne
 
+</TitleSlide>
 ---
 
 # Sur l'API Wikipedia

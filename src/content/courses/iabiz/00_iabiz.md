@@ -1,13 +1,4 @@
----
-layout: default_en
-title: "IA for Business"
-page_title: "IA for Business"
-summary: "Panorama des usages de l'IA générative pour les métiers, de l'analyse des LLMs à l'automatisation."
----
-
-# IA for Business
-
-Parcours d'introduction aux usages de l'IA générative pour les équipes métier. Le cours illustre comment les modèles multimodaux, agents et outils d'automatisation transforment les organisations, avec un focus sur l'expérimentation concrète.
+Un Parcours d'introduction aux usages de l'IA générative pour les équipes métier. Le cours illustre comment les modèles multimodaux, agents et outils d'automatisation transforment les organisations, avec un focus sur l'expérimentation concrète.
 
 **Module 1 — Comprendre l'écosystème**
 

@@ -4,13 +4,11 @@ title: "RAG"
 slides_project_home: /ml2llm/
 footer: 'RAG'
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 ## RAG : Retrieval Augmented Generation
 
-
+</TitleSlide>
 ---
 # context
 
@@ -95,7 +93,7 @@ L'utilisateur pose sa question : la query
 
 distance entre deux textes vectorisés : cosine similarity
 
-![](/public/images/inwai/word2vec_003_cosine.jpg)
+![](/images/inwai/word2vec_003_cosine.jpg)
 
 
 A ce stade on a 2 questions non résolues
@@ -211,13 +209,13 @@ Ces modeles sont generiques et utiles pour vectoriser de grande quantité de doc
 - **Précision supérieure** : capte les interactions fines (ordre des mots, négation, co-références).
 - **Coût CPU/GPU élevé** : impossible d’encoder tout le corpus ; utilisé seulement pour **reranker les top-k** candidats fournis par l’embedding.
 
-![](/public/images/ml2llm/cross_encoders.webp)
+![](/images/ml2llm/cross_encoders.webp)
 
 ---
 
 ## recap
 
-![](/public/images/ml2llm/rag_system_diagram.png)
+![](/images/ml2llm/rag_system_diagram.png)
 
 ---
 

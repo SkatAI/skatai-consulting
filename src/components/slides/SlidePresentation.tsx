@@ -12,7 +12,7 @@ interface SlidePresentationProps {
 
 export function SlidePresentation({ children, courseHome, footer }: SlidePresentationProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [slides, setSlides] = useState<string[]>([])
+  const [slides, setSlides] = useState<Array<{ html: string; className?: string }>>([])
   const containerRef = useRef<HTMLDivElement>(null)
   const touchStartX = useRef(0)
 
@@ -24,7 +24,25 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         const html = contentDiv.innerHTML
         // Split by <hr> tags (from markdown ---)
         const slideContents = html.split(/<hr\s*\/?>/gi).filter((s) => s.trim())
-        setSlides(slideContents)
+        const parsedSlides = slideContents.map((slide) => {
+          const classMatch = slide.match(/<!--\s*_class:\s*([\s\S]*?)-->/i)
+          let className = ''
+          if (classMatch?.[1]) {
+            className = classMatch[1]
+              .split(/\s+/)
+              .map((token) => token.trim().replace(/_+$/, ''))
+              .filter(Boolean)
+              .join(' ')
+          }
+          const cleaned = slide
+            .replace(/<!--\s*_class:\s*[\s\S]*?-->/i, '')
+            .replace(/<\/?titleslide>/gi, (match) =>
+              match.startsWith('</') ? '</div>' : '<div class="title-slide">',
+            )
+            .trim()
+          return { html: cleaned, className }
+        })
+        setSlides(parsedSlides)
       }
     }
   }, [children])
@@ -175,9 +193,9 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         {slides.map((slideContent, index) => (
           <div
             key={index}
-            className={`slide ${index === currentSlide ? 'active' : ''}`}
+            className={`slide ${slideContent.className || ''} ${index === currentSlide ? 'active' : ''}`}
             style={{ display: index === currentSlide ? 'flex' : 'none' }}
-            dangerouslySetInnerHTML={{ __html: slideContent }}
+            dangerouslySetInnerHTML={{ __html: slideContent.html }}
           />
         ))}
       </Box>

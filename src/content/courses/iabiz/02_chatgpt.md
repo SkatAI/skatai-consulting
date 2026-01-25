@@ -4,12 +4,11 @@ title: "IA for Business"
 slides_project_home: /courses/iabiz/chatgpt/
 footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/chatgpt/'
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # Focus sur chatgpt
 
+</TitleSlide>
 ---
 
 # scope

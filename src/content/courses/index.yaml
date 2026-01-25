@@ -1,20 +1,22 @@
 courses:
   - slug: inwai
     title: Investigating with AI
-    description: "Using AI tools for investigation, analysis, and research."
+    description: "Using AI tools for investigation, analysis, and research. #SciencesPo"
     tags:
-      - AI
-      - Analysis
-      - Research
+      - Artificial Intelligence
+      - Data Analysis
+      - Data journalism
+      - Vibe coding
+      - English
     order: 1
     status: live
   - slug: iabiz
     title: AI for Business
-    description: "Strategic frameworks for identifying AI opportunities and implementing solutions."
+    description: "Panorama des usages de l'IA générative pour les métiers, de l'analyse des LLMs à l'automatisation."
     tags:
-      - Strategy
+      - Intelligence Artificielle
       - Business
-      - AI
+      - Français
     order: 5
     status: live
   - slug: initml

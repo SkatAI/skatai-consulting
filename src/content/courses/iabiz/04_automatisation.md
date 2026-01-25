@@ -4,13 +4,11 @@ title: "IA for Business"
 slides_project_home: /courses/iabiz/automatisation/
 footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/automatisation/'
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # Automatisation avec l'IA
 
-
+</TitleSlide>
 ---
 
 # ETL
@@ -462,16 +460,16 @@ autre alternative : developer mode. mais ne se souvent pas des chats.
 
 La liste des connecteurs semble prometteuse.
 
-![](/public/images/iabiz/claude_ai_connectors.png)
+![](/images/iabiz/claude_ai_connectors.png)
 
 
 Et bien plus
 
-![](/public/images/iabiz/claude_ai_connectors_list.png)
+![](/images/iabiz/claude_ai_connectors_list.png)
 
 Chaque connecteur a sa propre liste de fonctionnalités
 
-![](/public/images/iabiz/claude_ai_notion_connector.png)
+![](/images/iabiz/claude_ai_notion_connector.png)
 
 
 ---
@@ -491,11 +489,11 @@ j'ai verifié que google avait bien autorisé claude a accéder a gmail dans les
 
 et la j'ai cliqué sur settings dans le chat et vu que l'on pouvaoit aussi autoriser gmail dans le chat
 
-![](/public/images/iabiz/claude_ai_enable_connector_in_chat.png)
+![](/images/iabiz/claude_ai_enable_connector_in_chat.png)
 
 et finalement ca marche !
 
-![](/public/images/iabiz/claude_ai_gmail_access_works.png)
+![](/images/iabiz/claude_ai_gmail_access_works.png)
 
 
 ---
@@ -504,7 +502,7 @@ Claude + notion
 
 l'acces est activé sans problème
 
-![](/public/images/iabiz/claude_ai_access_notion.png)
+![](/images/iabiz/claude_ai_access_notion.png)
 
 
 ---

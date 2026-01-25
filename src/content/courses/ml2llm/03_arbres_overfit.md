@@ -6,14 +6,13 @@ summary: "Random forest, biais variance"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
+<TitleSlide>
 
-<!--
-_class: centered
- -->
 # Arbres de Décision
 # Overfit et biais
 # Random Forests
 
+</TitleSlide>
 ---
 
 # Decision Trees
@@ -36,7 +35,7 @@ _class: centered
 </div>
 <div markdown="1">
 
-<img src="/public/images/initml/decision-tree-diagram_fr.svg" alt="decision tree" width="100%" style="display: block; margin: auto; background-color: #fff">
+<img src="/images/initml/decision-tree-diagram_fr.svg" alt="decision tree" width="100%" style="display: block; margin: auto; background-color: #fff">
 
 
 </div>
@@ -170,11 +169,11 @@ tree_constrained.fit(X_train, y_train)
 
 ---
 
-<img src="/public/images/initml/bias-variance-tradeoff-graph.svg" alt="bias variance tradeoff" width="100%" style="display: block; margin: auto; background-color: #fff">
+<img src="/images/initml/bias-variance-tradeoff-graph.svg" alt="bias variance tradeoff" width="100%" style="display: block; margin: auto; background-color: #fff">
 
 ---
 
-<img src="/public/images/initml/bias_Variance_Under_Overfitting.png" alt="bias variance tradeoff" width="100%" style="display: block; margin: auto; background-color: #fff">
+<img src="/images/initml/bias_Variance_Under_Overfitting.png" alt="bias variance tradeoff" width="100%" style="display: block; margin: auto; background-color: #fff">
 
 ---
 
@@ -292,7 +291,7 @@ Un sac avec 5 billes numérotées [1,2,3,4,5]. Si tu tires une bille, notes son 
 
 ---
 
-<img src="/public/images/initml/tree bagging.png" alt="random forest" width="100%" style="display: block; margin: auto; background-color: #fff">
+<img src="/images/initml/tree bagging.png" alt="random forest" width="100%" style="display: block; margin: auto; background-color: #fff">
 
 
 ---

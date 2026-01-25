@@ -1,14 +1,14 @@
 ---
 layout: slides
 title: "IA for Business"
-slides_project_home: /courses/iabiz/overview/
-footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/overview/'
+footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/'
 ---
-<!--
-_class: centered
- -->
+
+<TitleSlide>
 
 # L'Intelligence Artificielle ?
+
+</TitleSlide>
 
 ---
 
@@ -16,20 +16,23 @@ _class: centered
 
 Beaucoup de promesses d'efficacité de gain de temps.
 
-En realité, un melange de savonette et de fadeur et d'experiences bluffantes.
+En réalité, on obtient un mélange de savonette et de fadeur et avec aussi des expériences bluffantes.
 
-Notion de jagged frontier.
+Notion de **jagged frontier** : frontière irrégulière.
 
-- l'IA trebuche sur certaines taches evidentes pour un humain
-- mais excelle et depasse les humains dans des domaines d'excellence
+- l'IA trébuche sur certaines taches évidentes pour un humain
+- mais dépasse les humains dans des domaines d'excellence
 
 
-ce matin:
-<img src="/public/images/iabiz/strawberry.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+Par exemple ce matin, je demande a Mistral de compter le nombre de **r** dans le mot _strawberry_ :
+
+<img src="/images/iabiz/strawberry.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 ---
 
-<img src="/public/images/iabiz/strawberry_take_2.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+En insistant on finit par voir la bonne réponse
+
+<img src="/images/iabiz/strawberry_take_2.png" alt="R dans strawberry" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 ---
 
@@ -37,9 +40,11 @@ ce matin:
 
 Ethan Mollick prof à Wharton
 
-- Une loutre dans un avion qui utilise le wifi
+utilise le même prompt depuis 2021:
 
-même prompt depuis 2021
+```
+Une loutre dans un avion qui utilise le wifi
+```
 
 [otter on a plane using wifi](https://www.oneusefulthing.org/p/the-recent-history-of-ai-in-32-otters)
 
@@ -50,7 +55,16 @@ même prompt depuis 2021
 
 # Historique de l'IA Générative
 
+<img src="/images/inwai/history_nlp_timeline.webp" alt="nlp history" width=1200 class="center">
+
+[NLP Timeline](https://blog.dataiku.com/nlp-metamorphosis)
+
+---
+
+# Les ancètres
+
 ## Nuit des temps
+
 - Ferdinand de Saussure : Cours de linguistique générale, publié en 1916
 - Noam Chomsky : Syntactic Structures (1957)
 - Emile Benveniste : Problèmes de linguistique générale (recueil, 1966)
@@ -62,6 +76,10 @@ même prompt depuis 2021
 - Approches symboliques et statistiques
 - N-grams, TF-IDF
 - Modèles de langage probabilistes
+
+---
+
+# La renaissance
 
 ## 2013 - Word2Vec (Google)
 - **Embeddings** vectoriels pour les mots
@@ -81,6 +99,10 @@ même prompt depuis 2021
 - Bidirectional Encoder Representations
 - Compréhension du contexte bidirectionnel
 
+---
+
+# Les précurseurs
+
 ## 2018 - GPT-1 (OpenAI)
 - 117M paramètres
 - Démonstration du transfer learning
@@ -94,6 +116,10 @@ même prompt depuis 2021
 - 175B paramètres
 - Few-shot learning
 - Capacités émergentes
+
+---
+
+# L'ère des grands modèles
 
 ## 2021 - DALL-E (OpenAI)
 - Text-to-image generation
@@ -129,21 +155,14 @@ même prompt depuis 2021
 
 - autres types de modèles IA (Yan Lecunn)
 
----
-
-<img src="/public/images/inwai/history_nlp_timeline.webp" alt="nlp history" width=1200 class="center">
-
-[NLP Timeline](https://blog.dataiku.com/nlp-metamorphosis)
-
 
 ---
 
-<!--
-_class: centered
- -->
-
+<TitleSlide>
 
 # NLP classique
+
+</TitleSlide>
 
 ---
 
@@ -155,24 +174,30 @@ _class: centered
 
 **Homonymie**
 <div class="note">
+
 - Je vais acheter un livre.
 - Il pèse dix livres.
 - Il livre des colis toute la journée.
+
 </div>
 </div>
 <div markdown="1">
 
 <div class="note">
+
 - Mangeons **,** grand-père.
 - Mangeons grand-père.
+
 </div>
 
 
 <div class="note">
+
 - Poser un lapin
 - Je ne sais pas si je ne viendrai pas
 - I'm bad (Michael Jackson)
 - Septante, acronymes, ...
+
 </div>
 </div>
 
@@ -256,10 +281,10 @@ _"Like everyone, we have definitely felt the impact of AI Overviews. There is on
 
 <div class="columns" markdown="1">
 <div markdown="1">
-<img src="/public/images/inwai/google_NLP_demo_POS_start.jpg" width=600 class="center">
+<img src="/images/inwai/google_NLP_demo_POS_start.jpg" width=600 class="center">
 </div>
 <div markdown="1">
-<img src="/public/images/inwai/google_NLP_demo_POS_end.jpg" width=600 class="center">
+<img src="/images/inwai/google_NLP_demo_POS_end.jpg" width=600 class="center">
 </div>
 </div>
 
@@ -282,22 +307,23 @@ Malheureusement, cette fonctionnalité n'est plus disponible dans la démo NLP d
 
 [https://openai.com/api/pricing/](https://openai.com/api/pricing/)
 
-<img src="/public/images/inwai/openai_pricing_tokens.png" alt="openai pricing" width=800 class="center">
+<img src="/images/inwai/openai_pricing_tokens.png" alt="openai pricing" width=800 class="center">
 
 ---
+
+
+<TitleSlide>
 
 # NLP moderne (post 2013)
 
 
-voir [ces slides](/ml2llm/modern-nlp/)
+voir [ces slides](/courses/ml2llm/nlp_modern/)
+
+</TitleSlide>
 
 ---
 
-<!--
-_class: centered
- -->
-
-
+<TitleSlide>
 
 # LLMs
 
@@ -305,33 +331,57 @@ _class: centered
 
 **Grands modèles de langage**
 
+</TitleSlide>
+
 ---
+
 # Tokens, temperature
 
 **génération de texte :**
 
 - prediction du prochain token suivant une distribution de probabilité
 
-<img src="/public/images/inwai/agents_001.webp" alt="Generation" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/images/inwai/agents_001.webp" alt="Generation" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
-Autre exemple
+---
 
-_Hier soir j'ai mangé_
+## Autre exemple
+
+_Hier soir j'ai mangé_:
+
 - de la pizza
 - des broccoli
 - des huitres
 - un camion
 
+---
 
+## **fenêtre de contexte** et tokens:
 
-- **fenêtre de contexte** et tokens:
-    - 1 token ≈ 0.75 mot, 1 page ~200 a 300 mots,
-    - 1M tokens = 1.3 Guerre et Paix
+- 1 token ≈ 0.75 mot, 1 page ~200 à 300 mots,
+- 1M tokens = 1.3 Guerre et Paix
 
-- **température** : paramètre qui permet de changer la distribution de probabilité des tokens
-    - plus ou moins de **créativité**
-    - plus ou moins d'**hallucinations**
-    - `temperature = 0` ne veut pas dire determinisme
+mais si le contenu est trop grand, le LLM aura tendance
+- à oublier les instructions importantes
+- à se concentrer sur les derniers tokens
+
+Donc garder le contexte petit est important.
+
+C'est une bonne stratégie pour être efficace.
+
+---
+
+## Température :
+
+Le paramètre qui permet de changer la distribution de probabilité des tokens
+
+Les mots moins fréquents ont une probabilité plus grande de être générés quand la température est élevée.
+
+Quand on augmente la temperature :
+
+- plus ou moins de **créativité**
+- plus ou moins d'**hallucinations**
+- `temperature = 0` ne veut pas dire déterminisme
 
 ---
 
@@ -358,7 +408,7 @@ _Hier soir j'ai mangé_
 ---
 # token based pricing
 
-<img src="/public/images/inwai/openai_pricing_tokens.png" alt="OpenAI Pricing" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/images/inwai/openai_pricing_tokens.png" alt="OpenAI Pricing" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 [OpenAI pricing](https://openai.com/api/pricing/)
 
@@ -370,7 +420,7 @@ _Hier soir j'ai mangé_
 - similarité sémantique : `d(chat, chien)  < d(chat, banane)`
 - il y a des modèles exclusivement dédiés à la création d'embeddings
 
-<img src="/public/images/inwai/word-embeddings.png" alt="Word Embeddings" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/images/inwai/word-embeddings.png" alt="Word Embeddings" width = 800 style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 
 ---
@@ -388,7 +438,14 @@ _Hier soir j'ai mangé_
 ---
 # Les plateformes specialisées
 
-Voici une **liste élargie de plateformes et services d’IA spécialisés**, classés par type d’usage pour te donner un aperçu plus utile que juste une liste brute :
+Voici une **liste élargie de plateformes et services d’IA spécialisés**
+
+**IA tout-en-un / plateformes multiplateformes**
+
+* **ChatGPT (OpenAI)** – assistant IA généraliste multitudes de tâches.
+* **Gemini / Claude / Grok** – autres assistants IA puissants.
+* **Lumio AI** – interface multi-modèles (ChatGPT, Claude, Gemini…) pour tester différents LLM dans un seul endroit.
+
 
 **Génération d’images / visuels**
 
@@ -397,6 +454,17 @@ Voici une **liste élargie de plateformes et services d’IA spécialisés**, cl
 * **Stable Diffusion** – open-source pour créations et modifications d’images.
 * **Bing Image Creator** – IA image par Microsoft.
 * **Runway AI** – outils créatifs incluant génération et édition d’images/vidéos.
+
+**Création vidéo / audio**
+
+* **Synthesia** – génération vidéo IA avec avatars.
+* **Google VEO** – outil de création vidéo.
+* **HeyGen** – plateforme vidéo IA.
+* **ElevenLabs** – synthèse vocale réaliste.
+
+---
+
+Mais aussi
 
 **Assistant de recherche / gestion des connaissances**
 
@@ -408,18 +476,6 @@ Voici une **liste élargie de plateformes et services d’IA spécialisés**, cl
 
 * **Lovable** – IA pour générer des applications web complètes sans coder.
 
-**Automatisation & productivité**
-
-* **n8n** – automatisation de tâches via IA et workflows.
-* **Manus** – automatisation IA pour processus métier.
-* **Notion Q&A / Guru** – gestion et extraction de connaissance IA dans les bases.
-
-**Création vidéo / audio**
-
-* **Synthesia** – génération vidéo IA avec avatars.
-* **Google VEO** – outil de création vidéo.
-* **HeyGen** – plateforme vidéo IA.
-* **ElevenLabs** – synthèse vocale réaliste.
 
 **Marketing & contenus social**
 
@@ -427,33 +483,35 @@ Voici une **liste élargie de plateformes et services d’IA spécialisés**, cl
 * **AdCreative / Albert.ai / SE Ranking** – IA marketing & SEO.
 * **Brevo IA** – automatisation marketing complet.
 
+**Automatisation & productivité**
+
+* **n8n** – automatisation de tâches via IA et workflows.
+* **Manus** – automatisation IA pour processus métier.
+* **Notion Q&A / Guru** – gestion et extraction de connaissance IA dans les bases.
+
+
 **Support client & prospection**
 
 * **Zendesk IA** – support client automatisé.
 * **Clay** – prospection IA avec enrichissement de leads.
 * **Crisp IA** – support client RGPD friendly.
 
-**IA tout-en-un / plateformes multiplateformes**
-
-* **ChatGPT (OpenAI)** – assistant IA généraliste multitudes de tâches.
-* **Gemini / Claude / Grok** – autres assistants IA puissants.
-* **Lumio AI** – interface multi-modèles (ChatGPT, Claude, Gemini…) pour tester différents LLM dans un seul endroit.
 
 **Éducation & contenus pédagogiques**
 
 * **Mexty.ai** – IA pour création de contenus éducatifs interactifs.
 
 
-
 ---
 
 - plateforme **fédératrice de modèles** via API
     - [huggingface](https://huggingface.co/) : tous les modèles, LLMs et autres. Le repository mondial.
-    - [groq](https://groq.com/) (pas gro**k**) , [open routeur](https://openrouter.ai/) (modèles open source + rapidité)
+    - [groq](https://groq.com/) (pas gro**k**) ,
+    - [open routeur](https://openrouter.ai/) (modèles open source + rapidité)
+    - [Ollama](https://ollama.com/) : modèles open source locaux
 
----
 
-- en **local**. [Ollama](https://ollama.com/). on download le LLM et on le fait tourner en local. donc petit LLM, ok pour des tâches très spécifiques. gratuit. mais nécessite machine puissante.
+En **local**. [Ollama](https://ollama.com/). on download le LLM et on le fait tourner en local. donc petit LLM, ok pour des tâches très spécifiques. gratuit. mais nécessite machine puissante.
 
 
 ---
@@ -461,7 +519,7 @@ Voici une **liste élargie de plateformes et services d’IA spécialisés**, cl
 # Pléthore de modèles
 
 
-<img src="/public/images/inwai/huggingface-2024-ai-timeline.png" alt="2024 AI Timeline" width =800 style = "background-color: #FFF; padding:20px; display: block; margin: auto;">
+<img src="/images/inwai/huggingface-2024-ai-timeline.png" alt="2024 AI Timeline" width =800 style = "background-color: #FFF; padding:20px; display: block; margin: auto;">
 
 [2024 AI Timeline - Hugginface release dashboards](https://huggingface.co/spaces/reach-vb/2024-ai-timeline)
 
@@ -480,7 +538,7 @@ Distinction majeure entre les modèles open source et closed source
 - Linux, OpenOffice, Firefox, Chromium, Python, grandes bases de données,
 - Peut être copié et modifié par **n'importe qui**
 
-<img src="/public/images/inwai/linux-logo.png" alt="Open source" width = 400 style = "background-color: #FFF; padding:20px">
+<img src="/images/inwai/linux-logo.png" alt="Open source" width = 400 style = "background-color: #FFF; padding:20px">
 
 </div>
 <div>
@@ -491,7 +549,7 @@ Distinction majeure entre les modèles open source et closed source
 - Windows, Word, Chrome, Edge, Oracle
 - nécessite une licence pour utiliser, boîte noire
 
-<img src="/public/images/inwai/windows.jpg" alt="Closed source" width = 200 style = "background-color: #FFF; padding:20px">
+<img src="/images/inwai/windows.jpg" alt="Closed source" width = 200 style = "background-color: #FFF; padding:20px">
 
 </div>
 </div>
@@ -512,13 +570,14 @@ Si vous avez les poids d'un modèle vous pouvez le **fine-tuner** sur vos propre
 
 ---
 
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # Evaluation des LLMs, les benchmarks
 
+</TitleSlide>
+
 ---
+
 # Performances comparées: LLM Benchmarks
 
 **Comment évaluer et comparer les LLMs ?**
@@ -561,7 +620,7 @@ Ceux-ci représentent **les limites cognitives de l'humanité**
 # Artificial Analysis Intellligence Index
 
 
-<img src="/public/images/inwai/aaai.png" alt="AI Index" width="1100">
+<img src="/images/inwai/aaai.png" alt="AI Index" width="1100">
 
 
 [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index) combine les performances sur sept évaluations : MMLU-Pro, GPQA Diamond, Humanity's Last Exam, LiveCodeBench, SciCode, AIME 2025, et IFBench.
@@ -570,26 +629,26 @@ Ceux-ci représentent **les limites cognitives de l'humanité**
 
 # Score vs release date
 
-<img src="/public/images/inwai/aaai_score_date.png" alt="AI Index" width="1100">
+<img src="/images/inwai/aaai_score_date.png" alt="AI Index" width="1100">
 
 
 
 ---
 # La course: open source vs propriétaires
 
-![Closed-source vs. Open-weight models (MMLU, 5-shot) performance comparison over time from 2022-04 to 2024-04](/public/images/inwai/OS_perf_vs_closed.jpg)
+![Closed-source vs. Open-weight models (MMLU, 5-shot) performance comparison over time from 2022-04 to 2024-04](/images/inwai/OS_perf_vs_closed.jpg)
 
 **Les modèles open source rattrapent les modèles closed source**
 
 ---
 # Performance vs Cost - 08/2025
 
-<img src="/public/images/inwai/perf_vs_cost_updated_082025.jpg" alt="Performance vs Cost" width ="80%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/images/inwai/perf_vs_cost_updated_082025.jpg" alt="Performance vs Cost" width ="80%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 ---
 # LM arena
 
-<img src="/public/images/inwai/lmarena_leaderboard_20250825.png" alt="LM arena" width ="100%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
+<img src="/images/inwai/lmarena_leaderboard_20250825.png" alt="LM arena" width ="100%" style = "background-color: #000; padding:20px; display: block; margin: auto;">
 
 [LM arena](https://lmarena.ai/leaderboard/)
 
@@ -608,16 +667,18 @@ Ceux-ci représentent **les limites cognitives de l'humanité**
 * **Modes d’utilisation** : plateforme web ou application, API, intégration locale
 
 ---
-<!--
-_class: centered_
- -->
+
+<TitleSlide>
 
 # Agents
 # LLMs augmentés
 
 du LLM au LLM agentic : mémoire, outils, planification
 
+</TitleSlide>
+
 ---
+
 # Agent mode
 
 

@@ -4,13 +4,12 @@ title: "Python classes - basics 2"
 slides_project_home: /ipsa_python/oop2/
 footer: 'Alexis Perrier - AnIn211 - Pratical Programming in Python - IPSA'
 ---
-<!--
-_class: centered
- -->
+<TitleSlide>
 
 # OOP in Python: Key Concepts
 ## [https://skatai.com/ipsa_python/oop2/](https://skatai.com/ipsa_python/oop2/)
 
+</TitleSlide>
 ---
 
 ## Class vs Instance Attributes

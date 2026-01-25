@@ -11,6 +11,8 @@ services:
     environment:
       NODE_ENV: development
       NEXT_RUNTIME_LOGGING: debug
+      CHOKIDAR_USEPOLLING: "1"
+      WATCHPACK_POLLING: "true"
       # NEXT_DISABLE_TURBOPACK: "1"
     extra_hosts:
       # Enable host.docker.internal on Linux (macOS/Windows have it by default)

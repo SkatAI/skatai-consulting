@@ -10,44 +10,43 @@ Ce cours offre une introduction complète au Machine Learning moderne, depuis le
 
 **Jour 1** : Introduction au Machine Learning
 
-- [Introduction au Machine Learning](/ml2llm/intro-ml-day-01/)
+- [Introduction au Machine Learning](/courses/ml2llm/introduction/)
 
 **Jour 2** : Classification et régression logistique
 
-- [Classification - Régression logistique](/ml2llm/02-classication/)
+- [Classification - Régression logistique](/courses/ml2llm/logistic_regression/)
 
 **Jour 3** : Arbres de décision, overfitting et Random Forests
 
-- [Random forest, biais variance](/ml2llm/03-overfit-trees/)
+- [Random forest, biais variance](/courses/ml2llm/arbres_overfit/)
 
 **Jour 4** : Compétition Kaggle - Pratique
 
-- [Kaggle housing prices competition](/ml2llm/04-kaggle/)
+- [Kaggle housing prices competition](/courses/ml2llm/kaggle/)
 
 **Jour 5** : Optimisation - Descente de gradient stochastique
 
-- [Gradient stochastique](/ml2llm/05-gradient-stochastique/)
+- [Gradient stochastique](/courses/ml2llm/gradient_stochastique/)
 
 **Jour 6** : NLP classique
 
-- [NLP classique](/ml2llm/nlp-classic/)
-- [NLP moderne](/ml2llm/modern-nlp/)
+- [NLP classique](/courses/ml2llm/nlp_classic/)
+- [NLP moderne](/courses/ml2llm/nlp_modern/)
 
 **Jour 7** : Reseaux de neurones
 
-- [Reseaux de neurones](/ml2llm/neural-networks/)
+- [Reseaux de neurones](/courses/ml2llm/neural_networks/)
 
 **Jour 8** : Reseaux de neurones Convolutionels et Recursifs
 
-- [Reseaux de neurones Convolutionels et Recursifs](/ml2llm/convnet-rnn/)
+- [Reseaux de neurones Convolutionels et Recursifs](/courses/ml2llm/cnn_rnn/)
 
 **Jour 9** : Huggingface, LLMs, et Transformers
 
-- [Huggingface](/ml2llm/huggingface/)
-- [DistillGPT2](/ml2llm/llms/)
+- [Huggingface](/courses/ml2llm/huggingface/)
+- [DistillGPT2](/courses/ml2llm/llms/)
 
 
 **Jour 10** : RAG time
 
-- [RAG](/ml2llm/rag/)
-
+- [RAG](/courses/ml2llm/rag/)
