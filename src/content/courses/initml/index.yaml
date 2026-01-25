@@ -1,0 +1,47 @@
+title: Des stats au machine learning
+description: "Cours introductif en machine learning a partir de l'analyse statistique de jeux de données"
+index:
+  file: 00_initml.md
+sessions:
+  - file: 00_initml.md
+    slug: initml
+  - file: 01_quizz_1.md
+    slug: quizz_1
+  - file: 02_quizz_1_v2.md
+    slug: quizz_1_v2
+  - file: 03_what_is_ml.md
+    slug: what_is_ml
+  - file: 04_modele_algorithmes.md
+    slug: modele_algorithmes
+  - file: 05_learnings.md
+    slug: learnings
+  - file: 06_business_production.md
+    slug: business_production
+  - file: 07_quizz_2.md
+    slug: quizz_2
+  - file: 08_etapes_hands_on.md
+    slug: etapes_hands_on
+  - file: 09_entreainez_regression_lineaire.md
+    slug: entreainez_regression_lineaire
+  - file: 10_classifiez_regression_logistique.md
+    slug: classifiez_regression_logistique
+  - file: 11_clusterisez_k_means.md
+    slug: clusterisez_k_means
+  - file: 12_quizz_3.md
+    slug: quizz_3
+  - file: 13_data_quality_importance.md
+    slug: data_quality_importance
+  - file: 14_ameliorez_dataset.md
+    slug: ameliorez_dataset
+  - file: 15_encoding.md
+    slug: encoding
+  - file: 16_02_demo_regularisation.md
+    slug: 02_demo_regularisation
+  - file: 17_overfit_regularisation.md
+    slug: overfit_regularisation
+  - file: 18_quizz_4.md
+    slug: quizz_4
+  - file: 19_dataset_tree_based.md
+    slug: dataset_tree_based
+  - file: 20_ensembling.md
+    slug: ensembling
