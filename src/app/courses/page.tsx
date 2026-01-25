@@ -93,9 +93,7 @@ export default function CoursesPage() {
                       </Text>
                       <HStack flexWrap="wrap" gap={2}>
                         {course.tags.map((tag) => (
-                          <Badge key={tag} colorPalette="orange" variant="subtle" fontSize="xs">
-                            {tag}
-                          </Badge>
+                          <Badge key={tag}>{tag}</Badge>
                         ))}
                       </HStack>
                     </VStack>

@@ -65,9 +65,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.meta.tags && (
                 <HStack flexWrap="wrap" gap={2}>
                   {post.meta.tags.map((tag: string) => (
-                    <Badge key={tag} colorPalette="orange" variant="subtle">
-                      {tag}
-                    </Badge>
+                    <Badge key={tag}>{tag}</Badge>
                   ))}
                 </HStack>
               )}

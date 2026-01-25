@@ -108,10 +108,6 @@ export default function BlogPage() {
                           {post.meta.tags.map((tag: string) => (
                             <Badge
                               key={tag}
-                              colorPalette="teal"
-                              variant="subtle"
-                              fontSize="xs"
-                              px={2}
                             >
                               {tag}
                             </Badge>

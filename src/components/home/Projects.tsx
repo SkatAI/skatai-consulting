@@ -55,9 +55,7 @@ function ProjectCard({ title, project_description, tags, image: _image, link, li
         </VStack>
         <HStack flexWrap="wrap" gap={2}>
           {tags.map((tag) => (
-            <Badge key={tag} colorPalette="orange" variant="subtle" fontSize="xs">
-              {tag}
-            </Badge>
+            <Badge key={tag}>{tag}</Badge>
           ))}
         </HStack>
       </VStack>
