@@ -4,6 +4,7 @@ title: "du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'Neural networks '
 ---
+
 <TitleSlide>
 
 # Réseaux de neurones
@@ -11,6 +12,7 @@ footer: 'Neural networks '
 ## Perceptron, Fast forward
 
 </TitleSlide>
+
 ---
 
 - perceptron
@@ -21,7 +23,6 @@ footer: 'Neural networks '
 - régularisation
     - dropout
     - batch normalisation
-
 
 ---
 # Fonction de cout
@@ -52,12 +53,12 @@ Article : [Réseaux de neurones sur Wikipedia](https://fr.wikipedia.org/wiki/R%C
 <img src="/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="90%" class="center">
 
 ```
-y = F(x1 .w1 + x2.w2 + ... + xN.wN + b)
+y = F(x_1 .w_1 + x_2.w_2 + ... + x_N.w_N + b)
 ```
 
 **fonction d'activation** : analogie avec les neurones du cerveau; capacité à apprendre des relations non linéaires a partir d'une relation lineaire.
 
-Le choix de la fonction d'activation va influencer le comportement du reseaux et notamment contret sa tendance à exploser (exploding gradient) ou a disparaitre (vanishing gradient). Et surtout sa rapidité de calcul.
+Le choix de la fonction d'activation va influencer le comportement du reseaux et notamment contraindre sa tendance à exploser (exploding gradient) ou à disparaitre (vanishing gradient). Et surtout sa rapidité de calcul.
 
 [source](https://www.geeksforgeeks.org/machine-learning/how-neural-networks-can-be-used-for-data-mining/)
 
@@ -67,8 +68,6 @@ Le choix de la fonction d'activation va influencer le comportement du reseaux et
 
 - des échantillons de données de dimension N
 - coefficients à apprendre (N), taux_apprentissage (learning rate), seuil de classification
-
-
 
 
 
@@ -456,7 +455,7 @@ def ReLU(x):
 # vanishing gradient
 
 
-le probleme avec la sigmoide et la tanh est que le gradient est très petit aux extrémités.
+Le probleme avec la sigmoide et la tanh est que le gradient est très petit aux extrémités.
 
 Comme on multiple par la derivée en x de couche en couche il y a propagation de la multiplication par une valeur petite => la maj devient super petite et le gradient disparaît
 

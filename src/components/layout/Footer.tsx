@@ -54,6 +54,22 @@ export function Footer() {
             >
               LinkedIn
             </Link>
+            <Link
+              as={NextLink}
+              href="/conditions-d-utilisation"
+              _hover={{ color: 'orange.500' }}
+              transition="color 0.2s"
+            >
+              Conditions d'utilisation
+            </Link>
+            <Link
+              as={NextLink}
+              href="/politique-de-confidentialite"
+              _hover={{ color: 'orange.500' }}
+              transition="color 0.2s"
+            >
+              Politique de confidentialite
+            </Link>
           </HStack>
 
           <Box textAlign="center">
