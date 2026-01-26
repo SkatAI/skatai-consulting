@@ -38,4 +38,4 @@ We saw
 - you can interpret EXPLAIN query plans
 
 
-[Let's go](/dbsql/sql_relational_algebra/)
+[Let's go](/courses/dbsql/sql_relational_algebra/)

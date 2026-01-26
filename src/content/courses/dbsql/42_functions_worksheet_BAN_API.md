@@ -209,7 +209,7 @@ For a set of trees
 The first thing we need is to activate or install the `http` extension. This part is crucial and probably not that straightforward.
 
 
-see here for [instructions](/dbsql/http_extension_windows/)
+see here for [instructions](/courses/dbsql/install-http-ext-windows11/)
 
 Once that's done, we write a series PL/pgSQL functions:
 
@@ -258,7 +258,7 @@ This version of the database only has trees in the domain called `Alignement`, w
 The new database only has 1000 trees, all situated in Paris with domain as `Alignement`.
 
 - download the `treesdb_v04.sql`
-  - [https://skatai.com](https://skatai.com/assets/db/treesdb_v04.sql)
+  - [https://skatai.com](/assets/db/treesdb_v04.sql)
   - alternative download : from the github repo: <https://github.com/SkatAI/epitadb/blob/master/data/treesdb_v04.01.sql>, this one you need to create a new  database in pgAdmin, name it `treesdb_v04`
 
 Then restore the data into the database:
@@ -277,7 +277,7 @@ To check that everything is as expected, make sure that you have 1000 trees and 
 
 ### Now install the HTTP extension
 
-Full instructions are available [here](/dbsql/http_extension_windows/)
+Full instructions are available [here](/courses/dbsql/install-http-ext-windows11/)
 
 With a bit of luck the `http` extension is already installed. Let's check
 

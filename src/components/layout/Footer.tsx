@@ -60,7 +60,7 @@ export function Footer() {
               _hover={{ color: 'orange.500' }}
               transition="color 0.2s"
             >
-              Conditions d'utilisation
+              Conditions d&apos;utilisation
             </Link>
             <Link
               as={NextLink}

@@ -11,7 +11,7 @@ footer: 'Alexis Perrier - welcome - Skatai.com//dbsql'
 
 <img src="/images/dbsql/qr-code_course_url.png" alt="form" width="40%" style="display: block; margin: auto;">
 
-[**skatai.com/dbsql**](https://skatai.com/dbsql)
+[**skatai.com/dbsql**](/courses/dbsql/)
 </div>
 
 ---
@@ -71,7 +71,7 @@ footer: 'Alexis Perrier - welcome - Skatai.com//dbsql'
 
 <img src="/images/dbsql/qr-code_course_url.png" alt="form" width="40%" style="display: block; margin: auto;">
 
-[**skatai.com/dbsql**](https://skatai.com/dbsql)
+[**skatai.com/dbsql**](/courses/dbsql/)
 </div>
 
 
@@ -713,4 +713,4 @@ consistency and allowing for real-time testing.
 
 # Next
 
-[Install postgresql](/dbsql/install/)
+[Install postgresql](/courses/dbsql/dbsql_install/)

@@ -18,7 +18,7 @@ we work on the normilized version of the movies db
 <img src="/images/dbsql/ERD_moviesdb_normalized.png" alt="moviesdb" width="400" style="display: block; margin: auto;">
 
 
-Download the sql file from [https://skatai.com/assets/db/moviesdb_normalized.sql](https://skatai.com/assets/db/moviesdb_normalized.sql)
+Download the sql file from [https://skatai.com/assets/db/moviesdb_normalized.sql](/assets/db/moviesdb_normalized.sql)
 
 Then load the sql dump with ```psql```
 

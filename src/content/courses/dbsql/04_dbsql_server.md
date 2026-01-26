@@ -14,7 +14,7 @@ footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
 
 <img src="/images/dbsql/qr-code_course_url.png" alt="form" width="40%" style="display: block; margin: auto;">
 
-[**skatai.com/dbsql/postgres-server-config-files**](https://skatai.com/dbsql/postgres-server-config-files)
+[**skatai.com/courses/dbsql/dbsql_server/**](/courses/dbsql/dbsql_server/)
 </div>
 
 ---

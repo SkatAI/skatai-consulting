@@ -19,7 +19,7 @@ slides_project_home: /ml2llm/
 
 ## des stats au Machine learning
 
-[des stats au ML](https://skatai.com/initml/comprendre-machine-learning/)
+[des stats au ML](/courses/initml/what_is_ml/)
     - importance des données
     - Modélisation statistique ou modélisation prédictive
     - [Machine learning definition](https://drive.google.com/drive/u/0/folders/1qf6SFOHZtW9pr0RqTZ_Fx36LBlqwN0mE)
@@ -32,7 +32,7 @@ slides_project_home: /ml2llm/
 
 ## principe d'entrainement iteratif
 
-[https://skatai.com/initml/modeles-algorithmes/](https://skatai.com/initml/modeles-algorithmes/)
+[https://skatai.com/initml/modeles-algorithmes/](/courses/initml/modele_algorithmes/)
 
 - sqrt(2)
 - erreur d'estimation
@@ -56,7 +56,7 @@ https://skatai.com/initml/etapes-construction-modele/
 
 ### LR sur dataset advertising
 
-[https://skatai.com/initml/regression-lineaire/](https://skatai.com/initml/regression-lineaire/)
+[https://skatai.com/courses/initml/entreainez_regression_lineaire/](/courses/initml/entreainez_regression_lineaire/)
 
 [plus en detail](https://openclassrooms.com/fr/courses/5873596-perform-effective-data-modeling/6229141-implement-univariate-linear-regression)
 

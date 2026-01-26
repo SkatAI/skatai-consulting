@@ -43,5 +43,5 @@ slides_project_home: /nosql/
 **Day 6**: [12/12] - BigQuery
 
 
-- [BigQuery](/dbsql/bigquery/)
+- [BigQuery](/courses/dbsql/bigquery/)
 - add your question in the [spreadsheet](https://docs.google.com/spreadsheets/d/1igEJmARLtpojQq6mXyJkIOJxoq-_-u0fC8qMavUpacA/edit?gid=0#gid=0)

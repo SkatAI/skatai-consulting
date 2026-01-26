@@ -8,7 +8,7 @@ footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
 
 # Practice on the Energy database
 
-The energy database is available : [energydb.sql](https://skatai.com/assets/db/energydb.sql)
+The energy database is available : [energydb.sql](/assets/db/energydb.sql)
 
 
 Restoring from the database backup will create a new database `energy_workshop`. In PSQL just do
@@ -25,7 +25,7 @@ Four tables, many rows, 43Mb of data.
 
 ![](/images/dbsql/energydb_erd.png)
 
-See how the database was created with PL/pgSQL functions: [Crearing the Energy Production Database](/dbsql/creating_energy_database/) for an explanation.
+See how the database was created with PL/pgSQL functions: [Crearing the Energy Production Database](/courses/dbsql/energy-db-a-new-database/) for an explanation.
 
 As usual you can restore the sql backup in psql or from the command line.
 

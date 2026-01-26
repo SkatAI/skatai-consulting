@@ -555,7 +555,7 @@ Let's write the function or set of functions that creats the hash from the tree 
 
 For the sake of simplicity we will use the non normalized version of the `treesdb`: `treesdb_v02`
 
-- available [here: treesdb_v02.sql](https://skatai.com/assets/db/treesdb_v02.sql)
+- available [here: treesdb_v02.sql](/assets/db/treesdb_v02.sql)
 - restore in a psql session with `\i <path>/treesdb_v02.sql`
 - Then connect to `treesdb_v02` database on your local
 

@@ -33,7 +33,7 @@ in pgAdmin create the database titanicdb,
 
 
 ## Create the Table
-Run the SQL script provided in [titanic_table.sql](/dbsql/titanic_table.sql/)
+Run the SQL script provided in [titanic_table.sql](/courses/dbsql/titanic_table/)
 
 ### Load Data - Option A: psql
 ```sql

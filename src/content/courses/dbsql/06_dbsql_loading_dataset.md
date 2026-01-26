@@ -459,4 +459,4 @@ You will get a pg_dump file
 
 To finish, let's practice some basic queries.
 
-[practice-queries-titanic](/dbsql/practice-queries-titanic/)
+[practice-queries-titanic](/courses/dbsql/practice-queries-titanic/)

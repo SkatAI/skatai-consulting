@@ -9,7 +9,7 @@ footer: 'Alexis Perrier - Skatai.com - relational databases - The New York Trees
 
 You work with the new york trees dataset. This is a subset of the dataset available on [Google Big Query public datasets](https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1sbigquery-public-data!2snew_york_trees!3stree_census_2015). Our subset only contains trees in Manhattan.
 
-If you have [not yet loaded](/dbsql/new_york_trees_dataset/) the dataset into a new SQL database, the sql file to restore the database is available at [https://skatai.com/assets/db/new_york_trees.sql](/assets/db/new_york_trees.sql).
+If you have [not yet loaded](/courses/dbsql/new_york_trees/) the dataset into a new SQL database, the sql file to restore the database is available at [https://skatai.com/assets/db/new_york_trees.sql](/assets/db/new_york_trees.sql).
 
 
 As usual, you can restore the database from a PSQL session with the following command:

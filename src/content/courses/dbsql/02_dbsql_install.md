@@ -54,7 +54,7 @@ Use a UI interface `pgAdmin`.
 
 I wrote a  detailled step by step guide for windows users here:
 
-[dbsql/installing_on_windows/](/dbsql/installing_on_windows/)
+[dbsql/installing_on_windows/](/courses/dbsql/dbsql_install/)
 
 
 ## PgAdmin
@@ -165,4 +165,4 @@ and this for both mac and windows
 
 # Next
 
-[Wrapup](/dbsql/S01-wrapup/)
+[Wrapup](/courses/dbsql/dbsql_wrapup/)

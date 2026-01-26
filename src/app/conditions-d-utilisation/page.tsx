@@ -17,13 +17,13 @@ export default function ConditionsUtilisationPage() {
           <Box maxW="3xl" mx="auto" w="100%">
             <VStack align="flex-start" gap={4} mb={8}>
               <Heading as="h1" size="2xl" color="gray.800" lineHeight="1.2">
-                Conditions d'utilisation
+                Conditions d&apos;utilisation
               </Heading>
               <Text color="gray.600">
-                En utilisant ce site, vous acceptez les présentes conditions d'utilisation.
+                En utilisant ce site, vous acceptez les présentes conditions d&apos;utilisation.
               </Text>
               <Text color="gray.600">
-                Editeur : L'application a été réalisée par Skatai SAS (Siret 978 308 294 00013), 31 rue
+                Editeur : L&apos;application a été réalisée par Skatai SAS (Siret 978 308 294 00013), 31 rue
                 Pierre Semard 75009 Paris.
               </Text>
               <Text color="gray.600">Contact : Alexis Perrier alexis.perrier@skatai.com</Text>

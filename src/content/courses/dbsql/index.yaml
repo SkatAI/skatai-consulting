@@ -19,10 +19,16 @@ sessions:
     slug: dbsql_wrapup-2
   - file: 08_select_imdb.md
     slug: select_imdb
+  - file: practice-queries-titanic.md
+    slug: practice-queries-titanic
+  - file: titanic_table.md
+    slug: titanic_table
   - file: 09_dbsql_improve_trees.md
     slug: dbsql_improve_trees
   - file: 10_database-design-normalization.md
     slug: database-design-normalization
+  - file: ACID.md
+    slug: acid
   - file: 11_normalization_lab.md
     slug: normalization_lab
   - file: 12_normalization_lab_solution.md

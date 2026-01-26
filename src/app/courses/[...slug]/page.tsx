@@ -32,12 +32,6 @@ export async function generateStaticParams() {
     const chapters = structure.chapters.filter(
       (chapter) => chapter.status !== 'draft' && chapter.status !== 'archived',
     )
-    if (course.slug === 'ml2llm') {
-      console.log(
-        '[build] ml2llm chapters:',
-        chapters.map((chapter) => chapter.slug),
-      )
-    }
     for (const chapter of chapters) {
       params.push({ slug: [course.slug, chapter.slug] })
     }

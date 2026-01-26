@@ -110,7 +110,7 @@ Modèle logistique : p = 1/(1 + e^(-(b₀ + b₁x)))
 
 ## Dataset de défaut de crédit
 
-disponible [ici](https://skatai.com/assets/data/credit_default_sampled.csv)
+disponible [ici](/assets/data/credit_default_sampled.csv)
 
 **Prédicteurs :**
 - continus : balance, income
@@ -504,7 +504,7 @@ Parfois, attribuer un nombre à chaque catégorie a du sens—catégories ordonn
 
 ## Prédicteurs catégoriques – encodage dummy
 
-Charger [auto-mpg](https://skatai.com/assets/data/auto-mpg.csv)
+Charger [auto-mpg](/assets/data/auto-mpg.csv)
 
 `Origin` (3) et `name` (nombreux) sont des catégories non ordonnées (non-ordinales).
 Comment inclure `origin` comme prédicteur dans un modèle linéaire ?

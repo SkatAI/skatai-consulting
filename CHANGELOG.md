@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Courses
+- Added trailing-slash export support so course URLs resolve without .html.
+- Normalized internal course links to `/courses/...` and corrected slugs across dbsql, inwai, initml, ml2llm, and nosql.
+- Added missing dbsql and inwai practice chapters to course indexes.
+- Renamed and wired new inwai practice worksheets; updated links and frontmatter paths.
+- Converted a remaining absolute asset link to a relative `/images/...` path.
+
 ### Home
 - Rewrote the hero copy, added stats, and tuned layout/spacing for a centered 50/50 split.
 - Simplified home sections to Hero, Services, Projects, and Contact; updated navigation anchor.

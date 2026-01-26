@@ -12,7 +12,7 @@ footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
 
 We'll work on the normalized version of the trees db
 
-- download the sql backup from [https://skatai.com/assets/db/treesdb_v03_normalized.sql](https://skatai.com/assets/db/treesdb_v03_normalized.sql)
+- download the sql backup from [https://skatai.com/assets/db/treesdb_v03_normalized.sql](/assets/db/treesdb_v03_normalized.sql)
 
 - restore the database
 

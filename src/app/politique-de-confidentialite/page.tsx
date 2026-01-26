@@ -23,7 +23,7 @@ export default function PolitiqueDeConfidentialitePage() {
                 Cette page decrit la politique de confidentialite de SkatAI.
               </Text>
               <Text color="gray.600">
-                Editeur : L'application a ete realisee par Skatai SAS (Siret 978 308 294 00013), 31 rue
+                Editeur : L&apos;application a ete realisee par Skatai SAS (Siret 978 308 294 00013), 31 rue
                 Pierre Semard 75009 Paris.
               </Text>
               <Text color="gray.600">Contact : Alexis Perrier alexis.perrier@skatai.com</Text>

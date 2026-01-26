@@ -10,7 +10,7 @@ footer: 'Alexis Perrier - Skatai.com/dbsql'
 ## Context
 In this document we are working with the ```treesdb_v02``` database.
 
-The file is available here [treesdb_02.sql](https://skatai.com/assets/db/treesdb_v02.sql)
+The file is available here [treesdb_02.sql](/assets/db/treesdb_v02.sql)
 
 
 

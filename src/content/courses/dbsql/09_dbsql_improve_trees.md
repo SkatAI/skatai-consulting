@@ -69,7 +69,7 @@ pg_dump --file "treesdb_v01.sql"
 ```
 
 <div class="boom">
-The SQL backup file is available [here](https://skatai.com/assets/db/treesdb_v01.sql)
+The SQL backup file is available [here](/assets/db/treesdb_v01.sql)
 </div>
 
 The export includes the `CREATE DATABASE` statement. So you do not have to create the database before restoring the dump.
@@ -93,7 +93,7 @@ Key points:
 To restore the database from that backup sql file:
 
 
-1. download the file from  [https://skatai.com/assets/db/treesdb_v01.sql](https://skatai.com/assets/db/treesdb_v01.sql)
+1. download the file from  [https://skatai.com/assets/db/treesdb_v01.sql](/assets/db/treesdb_v01.sql)
 2. open a PSQL window
 3. run the sql file with
 
@@ -126,7 +126,7 @@ pg_dump --file "treesdb_v01.dump" --host "localhost" --port "5432" --username "a
 
 
 <div class="boom">
-The binary dump file is available [here](https://skatai.com/assets/db/treesdb_v01.dump)
+The binary dump file is available [here](/assets/db/treesdb_v01.dump)
 </div>
 
 

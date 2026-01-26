@@ -5,7 +5,9 @@ index:
 sessions:
   - file: S01.01.inwai.welcome.md
   - file: S02.01.json_pandas.md
+  - file: S02.02.imdb-pandas-exercises.md
   - file: S03.01.api.md
+  - file: S03.02.wikipedia-api-practice.md
   - file: S04.01.classic-nlp.md
   - file: S05.01.modern-nlp.md
   - file: S06.01.build-a-website.md
