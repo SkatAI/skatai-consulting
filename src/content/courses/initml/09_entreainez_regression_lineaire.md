@@ -143,7 +143,7 @@ Pour cela nous utilisons `seaborn` et `matplotlib`, les principales librairies d
 
 La fonction `regplot()` de seaborn permet non seulement d'afficher le nuage de point des variables tv, radio et journaux en fonction des ventes mais aussi de tracer la ligne de régression. La zone grisée reflète l'incertitude du modèle. Plus elle est grande, moins la régression est fiable.
 
-<img src="/images/initml/advertising_00.png" alt="R^2 coefficient of determination" width="100%" style = "padding:20px; display: block; margin: auto;">
+<img src="/public/images/initml/advertising_00.png" alt="R^2 coefficient of determination" width="100%" style = "padding:20px; display: block; margin: auto;">
 
 
 On remarque que la variable tv est plus liée à la variable radio qui elle même est plus liée à la variable journaux.

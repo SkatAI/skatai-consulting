@@ -83,7 +83,7 @@ Par soucis de simplcité on parle dans les 2 cas du `modèle`.
 
 Nous avons donc un modele entrainé sur des données. Mais comment se passe cette entrainement ?
 
-Nous ne rentrerons pas ici dans le arcanes des algorithmes d'entrainement, procédures ultra-optimisées en C, cela serait hors sujet pour ce cours. Mais je voudrais illustrer par un exemple, ce qu'est un algorithme. Ce quipermettra de faire jaillir une notion fondamentale du machine learning: **l'erreur d'estimation**!
+Nous ne rentrerons pas ici dans le arcanes des algorithmes d'entrainement, procédures ultra-optimisées en C, cela serait hors sujet pour ce cours. Mais je voudrais illustrer par un exemple, ce qu'est un algorithme. Ce qui permettra de faire jaillir une notion fondamentale du machine learning: **l'erreur d'estimation**!
 
 La définition officielle d'uin **algorithme**: Un algorithme est une série d'instruction définies et ordonnées qui permettent d'effectuer une tâche spécifique, un calcul par exemple.
 

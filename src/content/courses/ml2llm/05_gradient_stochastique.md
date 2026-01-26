@@ -6,6 +6,7 @@ summary: "gradient stochastique"
 footer: 'Alexis Perrier - Skatai.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
+
 <TitleSlide>
 
 # Gradient stochastique
@@ -283,7 +284,7 @@ Le gradient change naturellement car **la pente n'est pas la même partout** !
 
 ---
 
-## 3. Le Problème : Trop de Données
+## Le Problème : Trop de Données
 
 **Contexte Machine Learning** : On a $n$ echantillons d'entraînement $(x_1, y_1), ..., (x_n, y_n)$
 
@@ -301,7 +302,7 @@ Avec $n$ = 1 million d'exemples → impossible à chaque itération !
 
 ---
 
-## 4. La Solution : Gradient Stochastique
+## La Solution : Gradient Stochastique
 
 **Idée** : Au lieu de calculer le gradient sur TOUS les exemples, utiliser UN SEUL echantillon aléatoire
 
@@ -320,7 +321,7 @@ $$\mathbb{E}[\nabla L_k] = \frac{1}{n}\sum_{i=1}^n \nabla L_i = \nabla E$$
 
 ---
 
-## 5. Pourquoi "Stochastique" ?
+## Pourquoi "Stochastique" ?
 
 Le terme **"stochastique"** vient de l'échantillonnage aléatoire
 
@@ -338,7 +339,7 @@ Le terme **"stochastique"** vient de l'échantillonnage aléatoire
 
 ---
 
-## 6. Estimation Non Biaisée
+## Estimation Non Biaisée
 
 **Question** : Un seul exemple, c'est pas trop approximatif ?
 

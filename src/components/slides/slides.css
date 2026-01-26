@@ -148,7 +148,24 @@
   background: #0d1b2a;
   padding: 1rem;
   border-radius: 0.5rem;
-  overflow-x: auto;
+  overflow: auto;
+  max-height: none;
+  white-space: pre;
+}
+
+.slide pre code {
+  display: block;
+  white-space: pre;
+}
+
+/* Fallback: fenced code rendered without <pre> (shows as single line otherwise) */
+.slide p > code[class*="language-"] {
+  display: block;
+  white-space: pre;
+  background: #0d1b2a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: auto;
 }
 
 .slide img {
@@ -191,6 +208,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
+}
+
+.slide .column {
+  min-width: 0;
 }
 
 /* Responsive */

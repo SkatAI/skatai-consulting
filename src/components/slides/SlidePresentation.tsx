@@ -39,6 +39,12 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
             .replace(/<\/?titleslide>/gi, (match) =>
               match.startsWith('</') ? '</div>' : '<div class="title-slide">',
             )
+            .replace(/<\/?columns>/gi, (match) =>
+              match.startsWith('</') ? '</div>' : '<div class="columns">',
+            )
+            .replace(/<\/?column>/gi, (match) =>
+              match.startsWith('</') ? '</div>' : '<div class="column">',
+            )
             .trim()
           return { html: cleaned, className }
         })
