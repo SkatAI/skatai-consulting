@@ -1,0 +1,9 @@
+title: Deep Learning et Intelligence Artificielle
+description: "Du deep learning en machine learning supervisée aux architectures complexes de type Transformers"
+index:
+  file: 00_course_plan.md
+sessions:
+  - file: 10_machine_learning.md
+    slug: intro_ml
+  - file: 20_perceptron.md
+    slug: perceptron

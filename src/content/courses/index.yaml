@@ -10,9 +10,21 @@ courses:
       - English
     order: 1
     status: live
+  - slug: dlia
+    title: Deep Learning et Intelligence Artificielle
+    description: "Du deep learning en machine learning supervisée aux architectures complexes de type Transformers"
+    tags:
+      - IA
+      - Deep learning
+      - Attention
+      - Transformers
+      - VAE
+      - Reinforcement Learning
+    order: 3
+    status: live
   - slug: iabiz
     title: AI for Business
-    description: "Panorama des usages de l'IA générative pour les métiers, de l'analyse des LLMs à l'automatisation."
+    description: "Panorama des usages de l'IA générative pour les métiers, de l'analyse des LLMs à l'automatisation. Cours SciencesPo Paris"
     tags:
       - Intelligence Artificielle
       - Business
