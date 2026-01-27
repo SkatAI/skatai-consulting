@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "PostgreSQL Views"
 page_title: "PostgreSQL Views"
 summary: "views, virtual tables, query abstraction, joins"

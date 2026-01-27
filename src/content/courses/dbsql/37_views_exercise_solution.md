@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Views Exercise Solutions"
 page_title: "Views Exercise Solutions"
 summary: "view solutions, CTEs, joins, tree data"

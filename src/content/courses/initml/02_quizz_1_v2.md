@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Quiz alternatif sur les concepts fondamentaux du ML"

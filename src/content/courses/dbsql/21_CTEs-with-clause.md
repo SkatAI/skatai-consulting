@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Postgresql CTEs"
 page_title: "Postgresql CTEs"
 summary: "CTEs"

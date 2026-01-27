@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Window Functions and CTEs Introduction"
 page_title: "Window Functions and CTEs Introduction"
 summary: "Intermediate databases - Epita Fall 2025"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "PostgreSQL Roles Management"
 page_title: "PostgreSQL Roles Management"
 summary: "roles, access control, privileges, schemas"

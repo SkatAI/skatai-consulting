@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title:  "Relational databases"
 page_title:  "Relational databases"
 summary: "A course in intermediate databases and postgresql"

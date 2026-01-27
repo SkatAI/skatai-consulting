@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Database Scan Algorithms Quiz"
 page_title: "Database Scan Algorithms Quiz"
 summary: "scan algorithms, query optimizer, sequential scans"

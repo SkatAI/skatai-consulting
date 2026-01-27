@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Final Lab Session"
 page_title: "Final Lab Session"
 summary: "course review, ADEME database, comprehensive practice"

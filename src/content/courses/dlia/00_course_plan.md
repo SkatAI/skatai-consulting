@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: prose
 title: "Introduction"
 page_title: "Deep Learning et Intelligence Artificielle"
 summary: "Du deep learning en machine learning supervisée aux architectures complexes de type Transformers"
@@ -12,43 +12,47 @@ Bienvenue dans le cours. Cette introduction présente les objectifs, le plan du 
 
 ## Plan du cours
 
-- Introduction au machine learning
-    - classification vs régression
-    - calcul de sqrt(2), erreur, fonction de cout
-    - régression linéaire et régression logistique
-    - stochastic gradient descent
-    - biais et overfitting
+[Introduction au machine learning](/courses/dlia/intro_ml/)
+- classification vs régression
+- calcul de sqrt(2), erreur, fonction de cout
+- régression linéaire et régression logistique
+- stochastic gradient descent
+- biais et overfitting
 
-- Le perceptron
-    - le perceptron (1957)
-    - fonctions d'activation
-    - perceptron multicouche
-    - backpropagation
-    - exploding et vanishing gradients
-    - réseaux de neurones feedforward
-    - regularization et dropout
-    - Keras, Tensorflow, Pytorch
+[Le perceptron](/courses/dlia/perceptron/)
 
-- Réseaux de neurones à convolution
-    - convolution
-    - pooling
-    - normalization
-- Réseaux de neurones récurrents
-    - LSTM
-    - GRU
+- le perceptron (1957)
+- fonctions d'activation
+- perceptron multicouche
+- backpropagation
+- exploding et vanishing gradients
+- réseaux de neurones feedforward
+- regularization et dropout
+- Keras, Tensorflow, Pytorch
+
+[Réseaux de neurones à convolution](/courses/dlia/cnn_rnn/)
+- convolution
+- pooling
+- normalization
+[Réseaux de neurones récurrents](/courses/dlia/cnn_rnn/)
+- LSTM
+- GRU
 - Transformers
-    - attention mechanism
-    - self-attention
-    - multi-head attention
-    - positional encoding
-- VAE
-    - variational autoencoder
+- attention mechanism
+- self-attention
+- multi-head attention
+- positional encoding
+
+[VAE](/courses/dlia/variational_encoder/)
+- variational autoencoder
+
+[GAN](/courses/dlia/generative_adversarial_networks/)
+- generative adversarial networks
 - Reinforcement Learning
-    - Q-learning
-    - policy gradient
+- Q-learning
+- policy gradient
 
 ## Evaluation
 
 - projet final
 - quiz
-

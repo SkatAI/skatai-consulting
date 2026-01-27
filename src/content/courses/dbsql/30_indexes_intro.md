@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Database Indexes Introduction"
 page_title: "Database Indexes Introduction"
 summary: "indexes, query optimizer, EXPLAIN, scan algorithms"

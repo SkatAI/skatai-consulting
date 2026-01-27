@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Indexing Practice Lab"
 page_title: "Indexing Practice Lab"
 summary: "B-tree, Hash indexes, query performance, INSERT overhead"

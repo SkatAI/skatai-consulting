@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Day 2"
 page_title: "Classification - Regression logistique"
 summary: "Classification avec la regression logistique"

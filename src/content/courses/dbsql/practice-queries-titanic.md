@@ -1,5 +1,5 @@
 ---
-layout: post_en
+layout: prose
 title: "Titanic Dataset Practice"
 categories: [dbsql]
 project: "dbsql"

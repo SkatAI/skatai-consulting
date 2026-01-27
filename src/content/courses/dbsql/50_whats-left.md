@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Outstanding Database Topics"
 page_title: "Outstanding Database Topics"
 summary: "course review, transactions, ACID, triggers, access control"

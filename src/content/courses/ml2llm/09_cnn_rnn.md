@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'Réseaux de neurones Convolutionels'
@@ -385,7 +385,7 @@ The gradient tells how much each weight contributed to the loss
 
 # Oui! Plusieurs Filtres de Convolution
 
-Excellente question! On a toujours **plusieurs filtres** en parallèle. C'est crucial.
+On a toujours **plusieurs filtres** en parallèle.
 
 ---
 
@@ -405,11 +405,11 @@ Paramètres du filtre:
 Output: 30×30×1 (une seule feature map)
 ```
 
-**Problème:** On n'extrait qu'UNE feature (genre "détecte les bords verticaux"). C'est insuffisant!
+Dans ce cas on n'extrait qu'une seule feature (par exemple "les bords verticaux").  Ce qui ne suffit pas
 
 ---
 
-### Cas 2 : 32 FILTRES en parallèle (réaliste)
+### Cas 2 : 32 FILTRES en parallèle
 
 ```
 Input: 32×32×3
@@ -453,7 +453,7 @@ Output: 30×30×32
 
 ---
 
-## Comment ça Change dans un Réseau Profond
+## Comment ça change dans un Réseau Profond
 
 **VGG-16 Example:**
 
@@ -565,78 +565,86 @@ Les tableaux de bord et **Histogrammes** montrent la distribution d'un Tensor au
 
 techniques de reduction de l'overfit en  deep learning
 
-Ajouter plus de couches convolutionnelles pour apprendre des caractéristiques plus complexes.
-Utiliser la batch normalisation pour stabiliser et accélérer l'entraînement. (BatchNormalization layer)
-Augmenter les données pour avoir plus de diversité dans le dataset d'entraînement
-Simplifier le modèle en réduisant le nombre de neurones dans les couches denses ou la taille des filtres de convolution.
-Ajouter de la régularisation L2 aux couches denses.
-Accroître le dropout, par exemple à 0,5 ou 0,6.
-Tune le learning rate.
-Accroître le batch_size et par conséquent le volume de données utilisé pour estimer le gradient
+- Ajouter plus de couches convolutionnelles pour apprendre des caractéristiques plus complexes.
+- Utiliser la batch normalisation pour stabiliser et accélérer l'entraînement. (BatchNormalization layer)
+- Augmenter les données pour avoir plus de diversité dans le dataset d'entraînement
+- Simplifier le modèle en réduisant le nombre de neurones dans les couches denses ou la taille des filtres de convolution.
+- Ajouter de la régularisation L2 aux couches denses.
+- Accroître le dropout, par exemple à 0,5 ou 0,6.
+- Tune le learning rate.
+- Accroître le batch_size et par conséquent le volume de données utilisé pour estimer le gradient
 
 
 ---
 
-Augmenter les données
+# Augmenter les données
 
 A chaque etape, le ImageDataGenerator prend un certain nombre (batch_size) d'images et les transforme aléatoirement (ou non)
-De cette façon, le modèle voit des variations des images ce qui réduit l'overfitting
-2 modes : création effective des images dans un répertoire
-ou à la volée : lorsque les images sont chargées, certaines sont transformées d'autres non
 
-Augmenter les données
+De cette façon, le modèle voit des variations des images ce qui réduit l'overfitting
+
+2 modes :
+- création effective des images dans un répertoire
+- à la volée : lorsque les images sont chargées, certaines sont transformées d'autres non
+
 
 Les transformations possibles sont
-translation
-rotation
-Shear Transformation
-Zoom
-Brightness / luminosité
-symetrie verticale ou horizontale
-et Preprocessing
+- translation
+- rotation
+- Shear Transformation
+- Zoom
+- Brightness / luminosité
+- symetrie verticale ou horizontale
+- et Preprocessing
+
 Pour aller plus loin : construire un pipeline input https://www.tensorflow.org/guide/data
 
+---
 
-BATCH SIZE
+# BATCH SIZE
 
 Le gradient qui sert à mettre à jour les poids du noeud lors de la rétropropagation est estimé à chaque fois sur une partie du dataset
+
 le nombre d'échantillon estimé à chaque étape est appelé le batch size.
 
 Valeurs courantes : N = 16, 32, 64, …
 
 Le batch size est défini dans le train_generator, et le test_generator
 
+```
 train_generator = train_datagen.flow_from_directory(train_dir,
                                                     batch_size=20,
                                                     class_mode='binary',
                                                     target_size=(150, 150))
+```
 
+## Comment régler le batch size ?
 
-Comment régler le batch size
- Augmenter le batch size
+Augmenter le batch size
+- itérations plus rapides (exploite les GPU)
+- besoin de plus de mémoire
+- meilleure estimation du gradient
+- moins d'étapes
+
 Réduire le batch size
-itérations plus rapides (exploite les GPU)
-besoin de plus de mémoire
-meilleure estimation du gradient
-moins d'étapes
-itérations plus lente
-besoin de moins de mémoire
-estimation du gradient plus variable
-plus de maj
+- itérations plus lente
+- besoin de moins de mémoire
+- estimation du gradient plus variable
+- plus de maj
 
 
-Faut il réduire ou augmenter le batch size pour compenser l'overfit ?
+> Faut il réduire ou augmenter le batch size pour compenser l'overfit ?
 
 D'un côté réduire le batch size réduit aussi l'overfit car :
-plus de bruit dans l'estimation du gradient
-donc moins tendance à coller aux données de training
+- plus de bruit dans l'estimation du gradient
+- donc moins tendance à coller aux données de training
 
 Mais de l'autre côté augmenter le batch size réduit aussi l'overfit car:
-Meilleure estimation du gradient
-Effet de regularization
+- Meilleure estimation du gradient
+- Effet de regularization
 
 
-approfondissement
+# Approfondissement
 
 INPUT -> [[CONV -> RELU]*N -> POOL?]*M -> [FC -> RELU]*K -> FC
 
@@ -644,7 +652,7 @@ Lire la partie architecture du cours de Stanford Convolutional Neural Networks
 https://cs231n.github.io/convolutional-networks/#architectures
 
 
-Pour aller plus loin
+# Pour aller plus loin
 
 L'excellent cours de stanford, notamment la section sur l'architecture
 https://cs231n.github.io/convolutional-networks/#architectures
@@ -658,45 +666,50 @@ https://www.deeplearningbook.org/contents/convnets.html
 # Transfer Learning  et fine tuning
 
 
-1 ) le Fine tuning
+## le Fine tuning
 
 En prenant pour départ un grand modèle déjà entraîné, l'idée est de réutiliser le modèle pour l'extraction des données
-on ne gèle que quelques unes des couches du modèle
-on ré-entraîne le modèle sur une nouveau dataset de taille conséquente
-avec un learning rate assez faible pour ne pas perdre la connaissance du modèle initial
+- on ne gèle que quelques unes des couches du modèle
+- on ré-entraîne le modèle sur une nouveau dataset de taille conséquente
+- avec un learning rate assez faible pour ne pas perdre la connaissance du modèle initial
 
 
-Nécessite : beaucoup de données et des ressources informatiques puissantes
+Nécessite souvent beaucoup de données et des ressources informatiques puissantes
 
 
-Transfer learning (plus facile)
+## Transfer learning (plus facile)
 
 En prenant pour départ un grand modèle déjà entraîné, l'idée est de réutiliser le modèle pour l'extraction des données
-on gèle les N-1 couches du modèle
-on supprime la dernière couche (celle de classification)
-on ré-entraîne seulement la dernière couche du modèle sur un jeux de donnée de taille réduite
-Les couches N-1 sont en fait utilisées pour l'extraction des features
+- on gèle les N-1 couches du modèle
+- on supprime la dernière couche (celle de classification)
+- on ré-entraîne seulement la dernière couche du modèle sur un jeux de donnée de taille réduite
+- Les couches N-1 sont en fait utilisées pour l'extraction des features
 
 Peu de données, faibles ressources informatiques
 
 
-Transfer learning - 2 façon d'opérer
+## Transfer learning - 2 façon d'opérer
 
-Workflow complet
-Charger un modèle pré-entraîné.
-Geler toutes les couches du modèle  trainable = False.
-Ajouter une couche non gelée en sortie du modèle
-Entraîner votre nouveau modèle sur votre nouveau jeu de données.
-Alternative plus légère
-Charger un modèle pré-entraîné.
-Faire passer votre nouveau jeu de données à travers ce modèle et enregistrer la sortie du modèle pré-entraîné.
-Utiliser cette sortie comme données d'entrée pour un nouveau modèle plus petit que vous entraînez.
+### Workflow complet
+- Charger un modèle pré-entraîné.
+- Geler toutes les couches du modèle  trainable = False.
+- Ajouter une couche non gelée en sortie du modèle
+- Entraîner votre nouveau modèle sur votre nouveau jeu de données.
+
+
+### Alternative plus légère
+
+- Charger un modèle pré-entraîné.
+- Faire passer votre nouveau jeu de données à travers ce modèle et enregistrer la sortie du modèle pré-entraîné.
+- Utiliser cette sortie comme données d'entrée pour un nouveau modèle plus petit que vous entraînez.
 (MLP par exemple)
+
 Dans ce cas vous ne faites passer le modèle de base sur vos données qu'une seule fois, plutôt qu'une fois par époque d'entraînement. Donc c'est beaucoup plus rapide et moins coûteux.
 
 
-Combiner les modèles keras
+## Combiner les modèles keras
 
+```
 inner_model = Sequential([
     layers.Input(shape=(10,)),
     layers.Dense(32, activation='relu'),
@@ -711,31 +724,30 @@ outer_model = Sequential([
 
 # Compile the outer model
 outer_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
 
+## Transfer learning
 
-Transfer learning
+On va utiliser le modèle InceptionV3 : Total params: 21802784 (83.17 MB) + 311 layers!!!
 
-On va utiliser le modèle InceptionV3
-Total params: 21802784 (83.17 MB)
-311 layers!!!
+![Inception V3](/images/ml2llm/inceptionV3.png)
 
-![](/images/ml2llm/inceptionV3.png)
-
-Inception V3
-Introduit en 2015
-Les modules Inception combinent des convolutions de 1x1, 3x3, et 5x5 et des pooling layers
+### Inception V3
+- Introduit en 2015
+- Les modules Inception combinent des convolutions de 1x1, 3x3, et 5x5 et des pooling layers
 dans une même couche ce qui capture des caractéristiques à différentes échelles.
-L'architecture inclut également des couches factorisées, des couches de réduction
+- L'architecture inclut également des couches factorisées, des couches de réduction
 de dimensionnalité et des connexions résiduelles.
-InceptionV3 a été entraîné sur le dataset ImageNet, comprenant des millions d'images
+- InceptionV3 a été entraîné sur le dataset ImageNet, comprenant des millions d'images
 réparties en 1000 classes.
-environ 24 millions de paramètres.
-Des techniques comme le batch normalization et la régularisation sont utilisées pour améliorer
+- environ 24 millions de paramètres.
+- Des techniques comme le batch normalization et la régularisation sont utilisées pour améliorer
 la stabilité et la performance du réseau.
 
 
+### Notebook transfer learning
 [Notebook transfer learning](https://colab.research.google.com/github/SkatAI/deeplearning/blob/master/notebooks/transfer_learning.ipynb)
 
-Version du notebook plus recente
+### Version du notebook plus recente
 
 [Notebook transfer learning V2](https://colab.research.google.com/drive/1GeRkb3I0TTUvJVgDX5Y5ABTtkw9Re82M#scrollTo=test_prediction_cell)

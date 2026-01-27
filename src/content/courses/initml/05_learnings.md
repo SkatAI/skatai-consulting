@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Décrypter les modes d'apprentissage et différencier ML du Deep Learning"

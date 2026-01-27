@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Comprendre l'importance de la qualité des données en ML"

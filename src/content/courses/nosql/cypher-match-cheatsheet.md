@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Advanced databases - Graph database Neo4j - Cypher MATCH clause cheatsheet"
 slides_project_home: /nosql/
 footer: 'Alexis Perrier - Graph database Neo4j cheatsheet - Skatai.com/nosql'

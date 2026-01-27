@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Postgresql Query performance - Explain - Scans"
 page_title: "SQL and relational Algebra"
 summary: "SQL and relational Algebra"

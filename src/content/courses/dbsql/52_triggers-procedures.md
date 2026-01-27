@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Database Triggers and Procedures"
 page_title: "Database Triggers and Procedures"
 summary: "triggers, stored procedures, event execution, performance"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "ADEME Database Worksheet"
 page_title: "ADEME Database Worksheet"
 summary: "server management, pg_dump, pg_restore, backup"

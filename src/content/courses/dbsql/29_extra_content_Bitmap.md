@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Bitmap Heap and Index Scans"
 page_title: "Bitmap Heap and Index Scans"
 summary: "bitmap scans, heap scans, index scans, query execution"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title:  "du Machine learning aux LLMs"
 page_title:  "du Machine learning aux LLMs"
 ---

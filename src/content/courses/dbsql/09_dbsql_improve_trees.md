@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Postgresql Loading data"
 page_title: "Postgresql Loading data"
 summary: "Improve trees"

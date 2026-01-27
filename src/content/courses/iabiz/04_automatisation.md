@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "IA for Business"
 slides_project_home: /courses/iabiz/automatisation/
 footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/automatisation/'

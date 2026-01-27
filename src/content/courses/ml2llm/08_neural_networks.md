@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'Neural networks '
@@ -15,7 +15,9 @@ footer: 'Neural networks '
 
 ---
 
-- perceptron
+# Contenu
+
+- Perceptron
 - multi layer perceptron
 - backpropagation
 - fonctions d'activation
@@ -25,10 +27,11 @@ footer: 'Neural networks '
     - batch normalisation
 
 ---
+
 # Fonction de cout
 
 
-<img src="/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
+<img src="/public/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
 
 ---
 
@@ -50,7 +53,7 @@ Article : [Réseaux de neurones sur Wikipedia](https://fr.wikipedia.org/wiki/R%C
 
 Équivalent à une régression linéaire.
 
-<img src="/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="90%" class="center">
+<img src="/public/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="90%" class="center">
 
 ```
 y = F(x_1 .w_1 + x_2.w_2 + ... + x_N.w_N + b)
@@ -151,7 +154,7 @@ Exemple : 3 neurones pour reconnaître A, B, C
 
 # XOR vs AND
 
-<img src="/images/ml2llm/xor_or_and.png" alt="xor or and" width="90%" class="center">
+<img src="/public/images/ml2llm/xor_or_and.png" alt="xor or and" width="90%" class="center">
 
 
 ---
@@ -177,7 +180,7 @@ Notebook: [XOR vs AND](https://github.com/SkatAI/deeplearning/blob/master/notebo
 
 # Multi layer perceptron
 
-<img src="/images/ml2llm/nn_mlp.jpg" alt="mlp" width="90%" class="center">
+<img src="/public/images/ml2llm/nn_mlp.jpg" alt="mlp" width="90%" class="center">
 
 ---
 
@@ -195,7 +198,7 @@ Notebook: [XOR vs AND](https://github.com/SkatAI/deeplearning/blob/master/notebo
 ## MLP avec scikit-learn
 
 
-<img src="/images/ml2llm/sklearn_ml-classifier.png" alt="mlp sklearn" width="90%" class="center">
+<img src="/public/images/ml2llm/sklearn_ml-classifier.png" alt="mlp sklearn" width="90%" class="center">
 
 [MLPClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)
 
@@ -235,6 +238,7 @@ solvers:
 - `max_fun=15000`: Maximum number of loss function calls. Only used when solver=’lbfgs’.
 
 ---
+
 # Backpropagation
 
 nécessaire pour adapter les coefficients des noeuds en fonction de l'erreur et du résultat de la fonction de coût

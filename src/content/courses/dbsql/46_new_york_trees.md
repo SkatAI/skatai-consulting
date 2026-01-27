@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "The New York Trees census dataset"
 page_title: "The New York Trees census dataset"
 summary: "census of all the trees in Manhattan"

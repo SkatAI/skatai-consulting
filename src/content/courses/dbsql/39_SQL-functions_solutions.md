@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "SQL Functions Solutions"
 page_title: "SQL Functions Solutions"
 summary: "CONCAT_WS, COALESCE, REPLACE, string manipulation"

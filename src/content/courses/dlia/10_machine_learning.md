@@ -247,6 +247,7 @@ Tant que `|x^2 - 2| > precision` :
 - mettre à jour x `x = (x + 2/x)/2`
 
 > La suite est disponible en notebook jupyter: [heron_sqrt_2.ipynb](/notebooks/heron_sqrt_2.ipynb)
+et sur [Colab](https://drive.google.com/file/d/1mPX-Q9FxHecCKPABss3vTm-i9x_FLvuO/view?usp=sharing)
 
 ---
 
@@ -504,7 +505,7 @@ Le gradient, c'est **la pente** de la fonction à un point donné.
 
 **Résultat** : $f(2) = 1$ est le minimum global
 
-voir le [colab](https://colab.research.google.com/drive/1NUEamCO6uFekiL4o7hpKnrRM-SwJEcIf?usp=sharing)
+voir le [colab](https://drive.google.com/file/d/1K_4dLtSfUre-YEGOsWzMA5ByoM4HyQf5/view?usp=sharing)
 
 ---
 
@@ -519,8 +520,6 @@ voir [slides gradient stochastique](/courses/ml2llm/gradient_stochastique)
 
 
 <img src="/images/initml/bias_variance.png" alt="bias-variance" width="100%" style = "padding:20px; display: block; margin: auto; background-color: white;">
-
----
 
 ---
 
@@ -578,4 +577,27 @@ C’est souvent plus rapide et moins gourmand en ressources que des méthodes ex
 
 L’algorithme est sensible à l’ordre des données ou des décisions. Un mauvais choix précoce peut dégrader la performance finale.
 
+---
+
+# Intermission
+
+## Metropolis - Fritz Lang - 1927
+
+<iframe width="774" height="521" src="https://www.youtube.com/embed/gZShc8oshtU?t=63" title="Metropolis (1927) - Maria&#39;s Transformation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+41'37"
+
+
+
+---
+
+# TD Gradient stochastique
+
+Notebook dispo sur
+
+- [colab](https://colab.research.google.com/drive/1NfoRvldN4dNQtMBkGPjWsc0ZOB0SCN0Z?usp=sharing)
+- [skatai](https://skatai.com/notebooks/SGDRegressor_Boston.ipynb)
+
+
+- [dataset Boston Original](https://skatai.com/data/boston_original.csv)
 

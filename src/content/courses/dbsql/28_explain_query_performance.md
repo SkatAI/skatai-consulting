@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Postgresql Query performance - Explain - Scans"
 page_title: "Postgresql Query performance - Explain - Scans"
 summary: "Query performance - Explain - Scans"

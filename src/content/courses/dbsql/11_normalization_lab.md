@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Postgresql database normalization"
 page_title: "Postgresql database normalization lab"
 summary: "Normalization lab"

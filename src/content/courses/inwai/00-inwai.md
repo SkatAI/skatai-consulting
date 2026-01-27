@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title:  "Investigating with AI"
 page_title:  "Investigating with AI"
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "PL/pgSQL Functions"
 page_title: "PL/pgSQL Functions"
 summary: "PL/pgSQL, procedural programming, control structures"

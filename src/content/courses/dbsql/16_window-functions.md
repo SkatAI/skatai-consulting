@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Postgresql windows functions"
 page_title: "Postgresql windows functions and CTEs"
 summary: "Intermediate databases - Epita Fall 2025 - Windows functions"

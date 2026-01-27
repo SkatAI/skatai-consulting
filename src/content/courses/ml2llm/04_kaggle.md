@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Day 4"
 page_title: "Kaggle housing prices competition"
 summary: "Kaggle housing prices competition"

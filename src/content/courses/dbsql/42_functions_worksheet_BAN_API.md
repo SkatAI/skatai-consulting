@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "BAN API Integration Workshop"
 page_title: "BAN API Integration Workshop"
 summary: "BAN API, HTTP extension, geolocation, JSONB"

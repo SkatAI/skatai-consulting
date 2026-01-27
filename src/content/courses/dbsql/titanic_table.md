@@ -1,5 +1,5 @@
 ---
-layout: raw_page
+layout: prose
 title: "Titanic Table SQL"
 ---
 

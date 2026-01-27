@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Energy Production Database"
 page_title: "Energy Production Database"
 summary: "database creation, energy data, PL/SQL, carbon emissions"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Window Functions CTEs Lab"
 page_title: "Window Functions CTEs Lab"
 summary: "window functions, CTEs, trees database, data quality"

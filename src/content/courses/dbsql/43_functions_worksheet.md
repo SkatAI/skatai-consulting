@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "SHA256 Functions Worksheet"
 page_title: "SHA256 Functions Worksheet"
 summary: "SHA256, pgcrypto, hashing, data integrity"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Installing HTTP Extension Windows"
 page_title: "Installing HTTP Extension Windows"
 summary: "PostgreSQL extensions, HTTP client, Windows installation"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title:  "Advanced databases"
 page_title:  "Advanced databases"
 summary: "A course in nosql and other databases"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "SQL Functions COALESCE and Strings"
 page_title: "SQL Functions COALESCE and Strings"
 summary: "COALESCE, NULL handling, string functions, volatility"

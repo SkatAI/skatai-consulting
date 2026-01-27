@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Intro to databases - Aero 2025-26 - IPSA"
 slides_project_home: /ipsadb/imdb/
 footer: 'Alexis Perrier - In311 - Intro to databases - Aero 2025-26 - IPSA'

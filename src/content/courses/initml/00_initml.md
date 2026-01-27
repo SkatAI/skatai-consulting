@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title:  "Des stats au machine learning"
 page_title:  "Des stats au machine learning"
 summary: "Cours introductif en machine learning a partir de l'analyse statistique de jeux de données"

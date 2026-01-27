@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "PostgreSQL Authentication"
 page_title: "PostgreSQL Authentication"
 summary: "pg_hba.conf, authentication, security, configuration"

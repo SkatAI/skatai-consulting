@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Database Indexes Implementation"
 page_title: "Database Indexes Implementation"
 summary: "B-tree, Hash indexes, query optimization, EXPLAIN"

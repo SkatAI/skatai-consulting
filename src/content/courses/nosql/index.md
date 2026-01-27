@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: prose
 title: Home
 ---
 This webpage is a wrapper around the main public repo avalable at [https://github.com/SkatAI/Epita_SP25_NoSQL/](https://github.com/SkatAI/Epita_SP25_NoSQL/)

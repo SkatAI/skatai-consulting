@@ -7,3 +7,10 @@ sessions:
     slug: intro_ml
   - file: 20_perceptron.md
     slug: perceptron
+  - file: 30_cnn.md
+    slug: cnn_rnn
+  - file: 40_vae.md
+    slug: variational_encoder
+  - file: 50_gan.md
+    slug: generative_adversarial_networks
+

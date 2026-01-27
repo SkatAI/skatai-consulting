@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Day 1"
 page_title: "Introduction au Machine Learning"
 summary: "Apprendre à entraîner un modèle de régression linéaire"

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'Huggingface'

@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "Views Exercise"
 page_title: "Views Exercise"
 summary: "view creation, tree data, joins, filtering"

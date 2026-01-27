@@ -1,5 +1,5 @@
 ---
-layout: default_en
+layout: prose
 title: "RAG"
 slides_project_home: /ml2llm/
 footer: 'RAG'
