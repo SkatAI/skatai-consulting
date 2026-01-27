@@ -218,12 +218,12 @@ $$\hat{y} = w^T x + b$$
 
 ### Le gradient est aussi un vecteur !
 
-$$\nabla E(w) = \begin{pmatrix}
+<!-- $$\nabla E(w) = \begin{pmatrix}
 \frac{\partial E}{\partial w_1} \\
 \frac{\partial E}{\partial w_2} \\
 \vdots \\
 \frac{\partial E}{\partial w_d}
-\end{pmatrix}$$
+\end{pmatrix}$$ -->
 
 **Mise à jour vectorielle** :
 
@@ -246,7 +246,7 @@ En pratique ML :
 
 ---
 
-### Dimensions typiques
+# Dimensions
 
 | Modèle | Taille de $w$ |
 |--------|---------------|
@@ -622,11 +622,15 @@ $$R(w) = \|w\|_2^2 = \sum_{i=1}^d w_i^2$$
 
 **L1** : Gradient constant (en valeur absolue)
 
-$$\frac{\partial |w_i|}{\partial w_i} = \begin{cases}
+$$
+
+\frac{\partial |w_i|}{\partial w_i} = \begin{cases}
 +1 & \text{si } w_i > 0 \\
 -1 & \text{si } w_i < 0 \\
 [-1, 1] & \text{si } w_i = 0
-\end{cases}$$
+\end{cases}
+
+$$
 
 **L2** : Gradient proportionnel à $w$
 
@@ -719,13 +723,10 @@ SGDRegressor(
 3. Si pas d'amélioration pendant $p$ époques : **STOP**
 
 **Implémentation** :
-```python
-SGDRegressor(
-    early_stopping=True,
-    validation_fraction=0.1,
-    n_iter_no_change=5
-)
-```
+
+`SGDRegressor( early_stopping=True, validation_fraction=0.1, n_iter_no_change=5)`
+
+c'est le parametre `n_iter_no_change` qui contrôle le nombre d'époques sans amélioration avant l'arrêt.
 
 ---
 

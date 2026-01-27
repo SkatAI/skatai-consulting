@@ -246,6 +246,8 @@ Tant que `|x^2 - 2| > precision` :
 
 - mettre à jour x `x = (x + 2/x)/2`
 
+> La suite est disponible en notebook jupyter: [heron_sqrt_2.ipynb](/notebooks/heron_sqrt_2.ipynb)
+
 ---
 
 
@@ -384,19 +386,19 @@ La convergence est plus rapide avec l'erreur quadratique que l'erreur absolue
 Capte la tendance générale des observations.
 
 
-- dimension = 1: Predire une variable y à partir d'une variable x,  trouver les coefficients a et b dans l'équation de la droite
+dimension = 1: Predire une variable y à partir d'une variable x,  trouver les coefficients a et b dans l'équation de la droite
 
 ```
 y = a x + b.
 ```
 
-- dimension 2, x_1 et x_2 de y, le modèle correspond à l'équation du plan défini par
+dimension 2, x_1 et x_2 de y, le modèle correspond à l'équation du plan défini par
 
 ```
 y = a x_1 + b x_2 + c
 ```
 
-- dimension N, et N variables {x_1, ..., x_N} =>  trouver les N coefficients c_1, ... c_N de l'équation:
+dimension N, et N variables {x_1, ..., x_N} =>  trouver les N coefficients c_1, ... c_N de l'équation:
 
 ```
 y = c_1 x_1 +_ c_2 x_2 + ... + c_N x_N + c_{N+1}
@@ -411,7 +413,11 @@ y = c_1 x_1 +_ c_2 x_2 + ... + c_N x_N + c_{N+1}
 - **rapidité de calcul**: optimisée depuis des lustres les calculs sont hyper rapides
 - **consomme peu de mémoire**: étant hyper optimisé depuis longtemps
 
-<img src="/public/images/initml/non-linear-vs-linear-regression.png" alt="non-linear-vs-linear-regression">
+---
+
+# Regression polynomiale
+
+<img src="/images/initml/non-linear-vs-linear-regression.png" alt="non-linear-vs-linear-regression">
 
 ---
 
@@ -422,9 +428,9 @@ y = c_1 x_1 +_ c_2 x_2 + ... + c_N x_N + c_{N+1}
 
 le dataset advertising :
 
-<img src="/public/images/initml/advertising_00.png" alt="R^2 coefficient of determination" width="100%" style = "padding:20px; display: block; margin: auto;">
+<img src="/images/initml/advertising_00.png" alt="R^2 coefficient of determination" width="100%" style = "padding:20px; display: block; margin: auto;">
 
-Pour aller plus loin sur la regression lineaire, voir le [Entrenez une régression linéaire](/courses/initml/entreainez_regression_lineaire/)
+Pour aller plus loin sur la regression lineaire, voir le cours [Entrenez une régression linéaire](/courses/initml/entreainez_regression_lineaire/)
 
 ---
 
@@ -437,7 +443,17 @@ Pour aller plus loin sur la regression lineaire, voir le [Entrenez une régressi
     - si la probabilité est inférieure à 0.5, on predit la classe 0
 
 
-<img src="/public/images/initml/sigmoid-logit.png" alt="sigmoid-logit" width="100%" style = "padding:20px; display: block; margin: auto;">
+<Columns>
+<Column>
+
+<img src="/images/initml/sigmoid.svg" alt="sigmoid-logit" width="90%" style = "padding:20px; display: block; margin: auto; background-color: white;">
+
+</Column>
+<Column>
+
+<img src="/images/initml/sigmoid-logit.png" alt="sigmoid-logit" width="100%" style = "padding:20px; display: block; margin: auto;">
+</Column>
+</Columns>
 
 ---
 
@@ -460,16 +476,18 @@ $$x_{n+1} = x_n - \eta \nabla f(x_n)$$
 
 où $\eta$ est le **taux d'apprentissage** (learning rate) et $\nabla f(x_n)$ le gradient, la derivée de la fonction $f(x)$ (= le gradient)
 
-**Qu'est-ce que le gradient ?**
+---
+
+## **Qu'est-ce que le gradient ?**
 
 Le gradient, c'est **la pente** de la fonction à un point donné.
 
 - Il indique **dans quelle direction monter** pour augmenter la fonction
 - Plus le gradient est grand, plus la pente est raide
 
-<img src="/public/images/initml/gradient-descent.png" alt="gradient-descent" width="100%" style = "padding:20px; display: block; margin: auto;">
+<img src="/images/initml/gradient_ball.png" alt="gradient-descent" width="100%" style = "padding:20px; display: block; margin: auto;">
 
-<img src="/public/images/initml/gradient3d2.jpg" alt="gradient-descent-explanation" width="100%" style = "padding:20px; display: block; margin: auto;">
+<img src="/images/initml/gradient3d2.jpg" alt="gradient-descent-explanation" width="100%" style = "padding:20px; display: block; margin: auto;">
 
 ---
 
@@ -486,6 +504,8 @@ Le gradient, c'est **la pente** de la fonction à un point donné.
 
 **Résultat** : $f(2) = 1$ est le minimum global
 
+voir le [colab](https://colab.research.google.com/drive/1NUEamCO6uFekiL4o7hpKnrRM-SwJEcIf?usp=sharing)
+
 ---
 
 voir [slides gradient stochastique](/courses/ml2llm/gradient_stochastique)
@@ -497,97 +517,10 @@ voir [slides gradient stochastique](/courses/ml2llm/gradient_stochastique)
 - Trop bien sur les données d'entraînement
 - Généralise mal
 
----
 
-# Régularisation
-
-- Contrainte sur la fonction de coût
-- L1 et L2
+<img src="/images/initml/bias_variance.png" alt="bias-variance" width="100%" style = "padding:20px; display: block; margin: auto; background-color: white;">
 
 ---
-
-# Concepts clés
-
-- Compromis biais-variance
-- No free lunch
-- Malédiction de la dimension
-- Algorithmes gloutons
-
----
-
-# Notebooks
-
-- Sqrt(2)
-- Régression polynomiale et overfitting
-
----
-
-# TP / TD
-
-- Optimiser un SGD sur un dataset UCI
-- Normalisation des données
-- Réglage du learning rate
-- Réglage du batch size
-
----
-
-# Supervisé, non supervisé, semi-supervisé
-
----
-
-# Classification vs régression
-
-- Classification : prédire une catégorie
-- Régression : prédire une valeur continue
-
----
-
-# Erreur et fonction de coût
-
-- Mesure l'écart entre prédiction et réalité
-- Sert de boussole pour l'apprentissage
-
----
-
-# Régression linéaire : idée clé
-
-- Relation simple entre variables
-- Point d'entrée pour l'optimisation
-
----
-
-# Régression logistique : intuition
-
-- Probabilité entre 0 et 1
-- Seuil pour décider la classe
-
----
-
-# Descente de gradient : intuition
-
-- Aller vers la pente qui diminue la perte
-- Pas trop grand, pas trop petit
-
----
-
-# SGD : pourquoi ?
-
-- Plus rapide sur grands jeux de données
-- Plus bruité mais souvent efficace
-
----
-
-# Overfitting : symptôme
-
-- Excellente performance en entraînement
-- Mauvaise généralisation
-
----
-
-# Régularisation L1 / L2
-
-- L1 : favorise la parcimonie
-- L2 : stabilise les poids
 
 ---
 
@@ -607,6 +540,12 @@ voir [slides gradient stochastique](/courses/ml2llm/gradient_stochastique)
 - Aucun modèle ne gagne partout
 - Le contexte dicte le choix
 
+
+aucun algorithme n’est universellement supérieur à un autre sur l’ensemble des problèmes possibles.
+
+Il n’existe pas d’algorithme qui performe systématiquement mieux que tous les autres, quelle que soit la tâche ou la distribution des données. Toute méthode optimisée pour un type de problème (ex : classification d’images) peut être surpassée par une autre sur un problème différent (ex : prédiction de séries temporelles).
+
+
 ---
 
 # Malédiction de la dimension
@@ -624,5 +563,19 @@ voir [slides gradient stochastique](/courses/ml2llm/gradient_stochastique)
 
 - Choix locaux rapides
 - Pas toujours optimal globalement
+
+
+principe de choisir, à chaque itération, l’option qui semble la meilleure à court terme, sans revenir en arrière. Cette approche est simple, efficace pour certains problèmes, mais ne garantit pas toujours l’optimalité globale.
+Caractéristiques clés :
+
+- Déterministes : pas de hasard, choix basés sur une heuristique claire.
+- Locaux : décision prise uniquement en fonction des données disponibles à l’étape courante.
+- Irréversibles : une fois un choix fait, il n’est pas révisé.
+- Rapides : souvent une complexité polynomiale (ex : O(n log n) pour Dijkstra).
+
+
+C’est souvent plus rapide et moins gourmand en ressources que des méthodes exhaustives (ex : recherche combinatoire). Idéal pour des problèmes où une solution "suffisamment bonne" suffit.
+
+L’algorithme est sensible à l’ordre des données ou des décisions. Un mauvais choix précoce peut dégrader la performance finale.
 
 
