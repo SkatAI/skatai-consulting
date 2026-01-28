@@ -25,7 +25,7 @@ footer: "SkatAI.com/courses/dlia"
 
 - supervisé vs non supervisé vs semi-supervisé
 - classification vs régression
-- calcul de sqrt(2)
+- calcul de sqrt(2) - Methode babylonienne de Heron
   - erreur
   - fonction de coût
 - régression linéaire
@@ -55,9 +55,9 @@ footer: "SkatAI.com/courses/dlia"
 
 [Google Colab](https://colab.research.google.com/)
 
-- sqrt(2)
-- régression polynomiale et overfitting
-
+- [sqrt(2) - Heron](https://colab.research.google.com/drive/1mPX-Q9FxHecCKPABss3vTm-i9x_FLvuO)
+- [Gradient descent sur fonction polynomiale](https://colab.research.google.com/drive/1K_4dLtSfUre-YEGOsWzMA5ByoM4HyQf5)
+- [SGD sur Boston Housing](https://colab.research.google.com/drive/1S-HXH69xWdvV9NTqG70tuSxCS56apfi7)
 
 ---
 
@@ -256,7 +256,7 @@ Tant que `|x^2 - 2| > precision` :
 - mettre à jour x `x = (x + 2/x)/2`
 
 > La suite est disponible en notebook jupyter: [heron_sqrt_2.ipynb](/notebooks/heron_sqrt_2.ipynb)
-et sur [Colab](https://drive.google.com/file/d/1mPX-Q9FxHecCKPABss3vTm-i9x_FLvuO/view?usp=sharing)
+et sur [Colab](https://colab.research.google.com/drive/1mPX-Q9FxHecCKPABss3vTm-i9x_FLvuO)
 
 ---
 
