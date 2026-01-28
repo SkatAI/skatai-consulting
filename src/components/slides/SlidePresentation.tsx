@@ -1,16 +1,16 @@
 'use client'
 
 import { useEffect, useState, useCallback, useRef } from 'react'
-import { Box, Button, HStack, Text } from '@chakra-ui/react'
+import { Box, Button, HStack, VStack } from '@chakra-ui/react'
+import { FiChevronLeft, FiChevronRight, FiHome, FiMaximize2 } from 'react-icons/fi'
 import './slides.css'
 
 interface SlidePresentationProps {
   children: React.ReactNode
   courseHome?: string
-  footer?: string
 }
 
-export function SlidePresentation({ children, courseHome, footer }: SlidePresentationProps) {
+export function SlidePresentation({ children, courseHome }: SlidePresentationProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slides, setSlides] = useState<Array<{ html: string; className?: string }>>([])
   const containerRef = useRef<HTMLDivElement>(null)
@@ -190,106 +190,95 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
       {/* Slide container */}
       <Box
         display="flex"
-        alignItems="center"
+        alignItems="flex-start"
         justifyContent="center"
         w="100%"
-        h="100%"
+        minH="100vh"
         p={5}
       >
         {slides.map((slideContent, index) => (
           <div
             key={index}
-            className={`slide ${slideContent.className || ''} ${index === currentSlide ? 'active' : ''}`}
+            className="slide-frame"
             style={{ display: index === currentSlide ? 'flex' : 'none' }}
-            dangerouslySetInnerHTML={{ __html: slideContent.html }}
-          />
+          >
+            <div
+              className={`slide ${slideContent.className || ''} ${index === currentSlide ? 'active' : ''}`}
+              dangerouslySetInnerHTML={{ __html: slideContent.html }}
+            />
+
+            {index === currentSlide && (
+              <VStack
+                position="absolute"
+                top="8px"
+                right="8px"
+                zIndex={100}
+                gap={1}
+                align="center"
+              >
+                {courseHome && (
+                  <Button
+                    size="xs"
+                    bg="rgba(255, 255, 255, 0.12)"
+                    color="var(--color-white)"
+                    _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}
+                    borderRadius="full"
+                    minW="28px"
+                    h="28px"
+                    p={0}
+                    onClick={() => (window.location.href = courseHome)}
+                  >
+                    <FiHome />
+                  </Button>
+                )}
+                <HStack gap={1} justify="center">
+                  <Button
+                    size="xs"
+                    bg="rgba(255, 255, 255, 0.12)"
+                    color="var(--color-white)"
+                    _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}
+                    borderRadius="full"
+                    minW="28px"
+                    h="28px"
+                    p={0}
+                    onClick={prevSlide}
+                    disabled={currentSlide === 0}
+                  >
+                    <FiChevronLeft />
+                  </Button>
+                  <Button
+                    size="xs"
+                    bg="rgba(255, 255, 255, 0.12)"
+                    color="var(--color-white)"
+                    _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}
+                    borderRadius="full"
+                    minW="28px"
+                    h="28px"
+                    p={0}
+                    onClick={nextSlide}
+                    disabled={currentSlide === slides.length - 1}
+                  >
+                    <FiChevronRight />
+                  </Button>
+                </HStack>
+                <Button
+                  size="xs"
+                  bg="rgba(255, 255, 255, 0.12)"
+                  color="var(--color-white)"
+                  _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}
+                  borderRadius="full"
+                  minW="28px"
+                  h="28px"
+                  p={0}
+                  onClick={toggleFullscreen}
+                >
+                  <FiMaximize2 />
+                </Button>
+              </VStack>
+            )}
+          </div>
         ))}
       </Box>
-
-      {/* Footer */}
-      {footer && (
-        <Text
-          position="absolute"
-          bottom="70px"
-          right="30px"
-          fontSize="12px"
-          color="var(--color-slide-button)"
-        >
-          {footer}
-        </Text>
-      )}
-
-      {/* Navigation controls */}
-      <HStack
-        position="fixed"
-        bottom="20px"
-        left="50%"
-        transform="translateX(-50%)"
-        zIndex={100}
-        gap={2}
-        bg="var(--color-overlay-dark)"
-        p={2}
-        borderRadius="25px"
-      >
-        {courseHome && (
-          <Button
-            size="sm"
-            bg="var(--color-slide-button)"
-            color="var(--color-white)"
-            _hover={{ bg: 'var(--color-slide-button-hover)' }}
-            onClick={() => (window.location.href = courseHome)}
-          >
-            🏠
-          </Button>
-        )}
-        <Button
-          size="sm"
-          bg="var(--color-slide-button)"
-          color="var(--color-white)"
-          _hover={{ bg: 'var(--color-slide-button-hover)' }}
-          onClick={() => goToSlide(0)}
-        >
-          ⏮
-        </Button>
-        <Button
-          size="sm"
-          bg="var(--color-slide-button)"
-          color="var(--color-white)"
-          _hover={{ bg: 'var(--color-slide-button-hover)' }}
-          onClick={prevSlide}
-          disabled={currentSlide === 0}
-        >
-          ←
-        </Button>
-        <Button
-          size="sm"
-          bg="var(--color-slide-button)"
-          color="var(--color-white)"
-          _hover={{ bg: 'var(--color-slide-button-hover)' }}
-          onClick={nextSlide}
-          disabled={currentSlide === slides.length - 1}
-        >
-          →
-        </Button>
-        <Button
-          size="sm"
-          bg="var(--color-slide-button)"
-          color="var(--color-white)"
-          _hover={{ bg: 'var(--color-slide-button-hover)' }}
-          onClick={() => goToSlide(slides.length - 1)}
-        >
-          ⏭
-        </Button>
-        <Button
-          size="sm"
-          bg="var(--color-slide-button)"
-          color="var(--color-white)"
-          _hover={{ bg: 'var(--color-slide-button-hover)' }}
-          onClick={toggleFullscreen}
-        >
-          ⛶
-        </Button>
-      </HStack>
 
       {/* Slide counter */}
       <Box
@@ -307,23 +296,6 @@ export function SlidePresentation({ children, courseHome, footer }: SlidePresent
         {currentSlide + 1} / {slides.length}
       </Box>
 
-      {/* Keyboard hint */}
-      <Box
-        position="fixed"
-        top="20px"
-        right="20px"
-        zIndex={100}
-        bg="var(--color-overlay-dark-heavy)"
-        color="var(--color-white)"
-        px={3}
-        py={2}
-        borderRadius="8px"
-        fontSize="11px"
-        opacity={0.8}
-        border="1px solid var(--color-border-light)"
-      >
-        ← → arrow keys | Space
-      </Box>
     </Box>
   )
 }

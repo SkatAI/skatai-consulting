@@ -1,8 +1,10 @@
 import { MDXRemote as MDXRemoteBase } from 'next-mdx-remote/rsc'
 import rehypeRaw from 'rehype-raw'
+import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
+import 'highlight.js/styles/github-dark.css'
 import './slides/TitleSlide.css'
 
 function TitleSlide({ children }: { children: React.ReactNode }) {
@@ -30,7 +32,7 @@ export function MDXRemote({ source }: MDXRemoteProps) {
         mdxOptions: {
           format: 'md',
           remarkPlugins: [remarkGfm, remarkMath],
-          rehypePlugins: [rehypeRaw, rehypeKatex],
+          rehypePlugins: [rehypeRaw, rehypeKatex, rehypeHighlight],
         },
       }}
     />

@@ -14,5 +14,10 @@ slides_project_home: /courses/dlia/
 
 [le perceptron](/courses/ml2llm/neural_networks)
 
+
+![](/images/smurfs_perceptron.png)
+
 ---
+
+
 

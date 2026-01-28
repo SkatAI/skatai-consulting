@@ -2,16 +2,17 @@
 .slide-presentation {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: #0d1b2a;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .slide {
-  width: 90%;
-  max-width: 1200px;
-  height: 85%;
-  max-height: 800px;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  min-height: 90vh;
   padding: 15px 40px 40px 40px;
   background: #1a3a3a;
   color: #e6f2ff;
@@ -20,12 +21,19 @@
     0 20px 40px rgba(0, 0, 0, 0.3),
     0 8px 16px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow-y: auto;
+  overflow: visible;
   font-size: 1.4em;
   line-height: 1.6;
-  aspect-ratio: 16/10;
+  aspect-ratio: auto;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+.slide-frame {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  position: relative;
 }
 
 .slide::-webkit-scrollbar {
@@ -223,9 +231,11 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .slide {
+  .slide-frame {
     width: 95%;
-    height: 90%;
+  }
+
+  .slide {
     padding: 10px 25px 25px 25px;
     font-size: 1.2em;
     border-radius: 12px;

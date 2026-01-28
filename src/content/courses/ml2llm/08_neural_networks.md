@@ -1,5 +1,5 @@
 ---
-layout: prose
+layout: slides
 title: "du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'Neural networks '
@@ -31,7 +31,7 @@ footer: 'Neural networks '
 # Fonction de cout
 
 
-<img src="/public/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
+<img src="/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
 
 ---
 
@@ -51,15 +51,15 @@ Article : [Réseaux de neurones sur Wikipedia](https://fr.wikipedia.org/wiki/R%C
 - regression lineaire ou les coefficients sont les _poids_ + un _biais_
 - et une _fonction d’activation_
 
-Équivalent à une régression linéaire.
+Équivalent à une régression linéaire + activation
 
-<img src="/public/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="90%" class="center">
+<img src="/images/ml2llm/image_neurone_schema.png" alt="neurone schema" width="60%" class="center">
 
 ```
 y = F(x_1 .w_1 + x_2.w_2 + ... + x_N.w_N + b)
 ```
 
-**fonction d'activation** : analogie avec les neurones du cerveau; capacité à apprendre des relations non linéaires a partir d'une relation lineaire.
+**fonction d'activation** : analogie faible avec les neurones du cerveau; capacité à apprendre des relations non linéaires a partir d'une relation lineaire.
 
 Le choix de la fonction d'activation va influencer le comportement du reseaux et notamment contraindre sa tendance à exploser (exploding gradient) ou à disparaitre (vanishing gradient). Et surtout sa rapidité de calcul.
 
@@ -70,7 +70,9 @@ Le choix de la fonction d'activation va influencer le comportement du reseaux et
 ## Contexte d'une classification binaire linéairement séparable
 
 - des échantillons de données de dimension N
-- coefficients à apprendre (N), taux_apprentissage (learning rate), seuil de classification
+- coefficients à apprendre (N),
+- taux_apprentissage (learning rate),
+- seuil de classification
 
 
 
@@ -118,7 +120,7 @@ for epoch in range(20):
 
 ---
 
-limites du percetron une couche
+# limites du percetron une couche
 
 - Un perceptron à une seule couche ne peut pas apprendre des fonctions non linéaires, malgré le fait que la fonction d'activation (fonction de Heaviside) soit non linéaire.
 - Architecture trop simple: pas de couches cachées qui sont nécessaires pour capturer des relations non linéaires entre les entrées et la sortie.

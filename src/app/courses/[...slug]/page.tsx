@@ -219,10 +219,9 @@ export default async function CoursePage({ params }: Props) {
 
   if (isSlides) {
     const courseHome = `/courses/${courseName}`
-    const footer = (post.meta.footer as string) || ''
 
     return (
-      <SlidePresentation courseHome={courseHome} footer={footer}>
+      <SlidePresentation courseHome={courseHome}>
         <MDXRemote source={post.content} />
       </SlidePresentation>
     )
