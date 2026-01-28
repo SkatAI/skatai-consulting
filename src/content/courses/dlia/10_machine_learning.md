@@ -4,11 +4,17 @@ title: "Introduction au machine learning"
 footer: "SkatAI.com/courses/dlia"
 ---
 
-<TitleSlide>
+<!-- <TitleSlide> -->
 
 # Machine Learning
 
-</TitleSlide>
+
+
+<!-- </TitleSlide> -->
+
+
+
+<img src="/images/initml/memes/stats-vs_ml.jpeg" width="60%" style="margin:auto">
 
 ---
 
@@ -45,19 +51,22 @@ footer: "SkatAI.com/courses/dlia"
 
 ---
 
-## Notebooks
+# Notebooks
+
+[Google Colab](https://colab.research.google.com/)
+
 - sqrt(2)
 - régression polynomiale et overfitting
 
 
 ---
 
-## TP / TD
-Optimiser un Gradient stochastic sur dataset UCI
+# TP / TD
+Optimiser un **Gradient stochastic** sur dataset [UCI](https://archive.ics.uci.edu/datasets)
 
-- normalisation des données
-- reglage du learning rate
-- reglage du batch size
+- **normalisation** des données
+- réglage du **learning rate**
+- réglage du **batch size**
 
 ---
 
@@ -92,10 +101,6 @@ Optimiser un Gradient stochastic sur dataset UCI
 </Column>
 </Columns>
 
-
----
-
-<img src="/images/initml/memes/stats-vs_ml.jpeg" width="600">
 
 ---
 
@@ -151,10 +156,14 @@ _One class is linearly separable from the other 2; the latter are not linearly s
 
 ---
 
-Dans le monde réel, les données sont souvent mal foutues.
+# Données brutes
+
 <Columns>
 <Column>
 
+
+
+Dans le monde réel, les données sont souvent mal foutues.
 
 - manquantes
 - outliers

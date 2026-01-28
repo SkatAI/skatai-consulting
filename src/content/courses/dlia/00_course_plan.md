@@ -34,6 +34,7 @@ Bienvenue dans le cours. Cette introduction présente les objectifs, le plan du 
 - convolution
 - pooling
 - normalization
+
 [Réseaux de neurones récurrents](/courses/dlia/cnn_rnn/)
 - LSTM
 - GRU
@@ -43,16 +44,56 @@ Bienvenue dans le cours. Cette introduction présente les objectifs, le plan du 
 - multi-head attention
 - positional encoding
 
-[VAE](/courses/dlia/variational_encoder/)
-- variational autoencoder
+[VAE - variational autoencoder]()
 
-[GAN](/courses/dlia/generative_adversarial_networks/)
-- generative adversarial networks
-- Reinforcement Learning
-- Q-learning
-- policy gradient
+- Compresse des données complexes (images, texte, etc.) en une représentation latente continue et structurée.
+- Génère de nouveaux exemples similaires en échantillonnant depuis cette représentation latente
+
+**Use cases:** Génération d'images réalistes, Interpolation entre exemples, Détection d'anomalies
+
+Comme dit CLaude:
+
+> _Contrairement à un autoencoder classique, le VAE ajoute une régularisation probabiliste (divergence KL) qui force l'espace latent à suivre une distribution normale, ce qui le rend "explorable" pour générer de nouvelles données cohérentes._ 🤣🤣🤣
+
+[GANs - Generative Adversarial Networks]()
+Deux réseaux en compétition :
+- Générateur : crée des images fake à partir de bruit aléatoire
+- Discriminateur : apprend à distinguer fake vs réel
+
+Le générateur s'améliore pour tromper le discriminateur, qui s'améliore pour détecter les fakes. Cette compétition produit des images de plus en plus réalistes.
+- Résultat : génération d'images très haute qualité et photréalistes (visages, paysages, etc.)
+- Applications : deepfakes, synthèse d'images, style transfer, super-résolution...
+
+[LSTM - Modeles autoregressifs]()
+
+Réseau de neurones récurrent conçu pour capturer les dépendances long-terme dans les séquences.
+- NLP
+- Time series
+
+[Diffusion models]()
+
+- Modèles génératifs qui créent des images en inversant un processus de bruit.
+- DALL-E 3, Midjourney, Stable Diffusion - text-to-image - Imagen
+
+[Attention & Transformers]()
+
+- chaque token "regarde" tous les autres tokens pour comprendre le contexte, en parallèle.
+
+- foundation pour tous les language models modernes (GPT, Claude, BERT, LLaMA, etc.)
+
+[Modeles multi modaux]()
+
+- audio, images, etc
+
+[Reinforcement Learning (RL)]()
+
+- Un agent apprend par essai-erreur en interagissant avec un environnement, guidé par des récompenses.
+- Jeux (AlphaGo, jeux vidéo), Robotique (apprentissage moteur), Recommandation (optimiser engagement), Contrôle (thermostat, drones)
+
 
 ## Evaluation
+
+à definir
 
 - projet final
 - quiz
