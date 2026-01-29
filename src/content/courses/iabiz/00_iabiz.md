@@ -6,7 +6,7 @@ Un Parcours d'introduction aux usages de l'IA générative pour les équipes mé
 
 **Module 2 — Exploiter ChatGPT en entreprise**
 
-- [Focus sur ChatGPT](/courses/iabiz/chatgpt/) — Tour d'horizon de GPT-5, agents OpenAI, outils opérateur, connecteurs métiers et bonnes pratiques de prompting.
+- [Bien travailler avec l'IA](/courses/iabiz/chatgpt/) — bonnes pratiques de prompting et Tour d'horizon de chatGPT-5, agents OpenAI, outils opérateur, connecteurs métiers.
 
 **Module 3 — Automatiser les processus**
 
