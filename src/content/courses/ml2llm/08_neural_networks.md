@@ -26,12 +26,6 @@ footer: 'Neural networks '
     - dropout
     - batch normalisation
 
----
-
-# Fonction de cout
-
-
-<img src="/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
 
 ---
 
@@ -59,11 +53,53 @@ Article : [Réseaux de neurones sur Wikipedia](https://fr.wikipedia.org/wiki/R%C
 y = F(x_1 .w_1 + x_2.w_2 + ... + x_N.w_N + b)
 ```
 
-**fonction d'activation** : analogie faible avec les neurones du cerveau; capacité à apprendre des relations non linéaires a partir d'une relation lineaire.
+---
+
+# Fonction d'activation
+
+Analogie faible avec les neurones du cerveau;
+
+Capacité à apprendre des relations non linéaires à partir d'une relation lineaire.
 
 Le choix de la fonction d'activation va influencer le comportement du reseaux et notamment contraindre sa tendance à exploser (exploding gradient) ou à disparaitre (vanishing gradient). Et surtout sa rapidité de calcul.
 
 [source](https://www.geeksforgeeks.org/machine-learning/how-neural-networks-can-be-used-for-data-mining/)
+
+
+<img src="/images/ml2llm/ReLU_and_GELU.png" alt="RELU & GELU" width="60%" class="center">
+
+---
+
+# More activation functions
+
+<img src="/images/ml2llm/Activation_Functions.png" alt="fonctions d'activation" width="90%" class="center">
+
+---
+
+# Le perceptron
+
+- Initialize weights randomly
+- Loop through samples
+- Compute weighted sum (z = weights · sample.features + bias)
+- Apply Heaviside step function (z > 0)
+- Calculate error
+- Update weights by the error
+
+```
+input : data, learning_rate
+
+weights = random()
+bias = 0
+
+FOR each iteration DO
+    FOR each sample IN data DO
+        z = weights · sample.features + bias
+        prediction = 1 if z > 0 else 0
+        error = sample.label - prediction
+        weights = weights + learning_rate * error * sample.features
+        bias = bias + learning_rate * error
+```
+
 
 ---
 
@@ -73,8 +109,6 @@ Le choix de la fonction d'activation va influencer le comportement du reseaux et
 - coefficients à apprendre (N),
 - taux_apprentissage (learning rate),
 - seuil de classification
-
-
 
 ---
 # en python
@@ -122,9 +156,16 @@ for epoch in range(20):
 
 # limites du percetron une couche
 
-- Un perceptron à une seule couche ne peut pas apprendre des fonctions non linéaires, malgré le fait que la fonction d'activation (fonction de Heaviside) soit non linéaire.
-- Architecture trop simple: pas de couches cachées qui sont nécessaires pour capturer des relations non linéaires entre les entrées et la sortie.
-- Pour apprendre des fonctions non linéaires, des architectures de réseaux de neurones plus avancées sont utilisées. Par exemple les perceptrons multicouches avec des couches cachées associées à des fonctions d'activation non linéaires,.
+Inadapté à la non linéarité.
+
+- Un perceptron à une seule couche ne peut pas apprendre des fonctions non linéaires, malgré le fait que la fonction d'activation ([fonction de Heaviside](https://fr.wikipedia.org/wiki/Fonction_de_Heaviside)) soit non linéaire.
+- **Architecture trop simple**: pas de couches cachées qui sont nécessaires pour capturer des relations non linéaires entre les entrées et la sortie.
+
+Pour apprendre des fonctions non linéaires, des architectures de réseaux de neurones plus avancées sont utilisées.
+
+Par exemple
+- les **perceptrons multicouches** avec des couches cachées
+- associées à des **fonctions d'activation non linéaires**.
 
 
 ---
@@ -156,7 +197,7 @@ Exemple : 3 neurones pour reconnaître A, B, C
 
 # XOR vs AND
 
-<img src="/public/images/ml2llm/xor_or_and.png" alt="xor or and" width="90%" class="center">
+<img src="/images/ml2llm/xor_or_and.png" alt="xor or and" width="90%" class="center">
 
 
 ---
@@ -182,7 +223,17 @@ Notebook: [XOR vs AND](https://github.com/SkatAI/deeplearning/blob/master/notebo
 
 # Multi layer perceptron
 
-<img src="/public/images/ml2llm/nn_mlp.jpg" alt="mlp" width="90%" class="center">
+<img src="/images/ml2llm/nn_mlp.jpg" alt="mlp" width="90%" class="center">
+
+---
+
+# Fonction de cout
+
+pour mettre a jour les poids / coefficients des cellules, on utilise une fonction de cout (loss function).
+
+<img src="/images/ml2llm/nn_loss_function.png" alt="nn loss function" width="90%" class="center">
+
+
 
 ---
 
@@ -200,7 +251,7 @@ Notebook: [XOR vs AND](https://github.com/SkatAI/deeplearning/blob/master/notebo
 ## MLP avec scikit-learn
 
 
-<img src="/public/images/ml2llm/sklearn_ml-classifier.png" alt="mlp sklearn" width="90%" class="center">
+<img src="/images/ml2llm/sklearn_ml-classifier.png" alt="mlp sklearn" width="90%" class="center">
 
 [MLPClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html)
 
