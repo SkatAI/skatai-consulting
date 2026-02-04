@@ -72,10 +72,6 @@ resources
 https://www.datacamp.com/fr/tutorial/chatgpt-agent
 
 
-ceci dit
-
-# agent tuteur
-
 
 
 

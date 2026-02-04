@@ -170,6 +170,15 @@
   background: transparent;
 }
 
+/* Quotes */
+.slide blockquote {
+  border-left: 4px solid #ff6b35;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #c9d7e5;
+}
+
 /* Fallback: fenced code rendered without <pre> (shows as single line otherwise) */
 .slide p > code[class*="language-"] {
   display: block;
@@ -217,6 +226,24 @@
 .slide img.center {
   display: block;
   margin: 1em auto;
+}
+
+.slide table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.slide th,
+.slide td {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.slide th {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
 }
 
 .slide .columns {

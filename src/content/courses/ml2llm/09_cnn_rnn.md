@@ -1,15 +1,17 @@
 ---
-layout: prose
+layout: slides
 title: "du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'Réseaux de neurones Convolutionels'
 ---
+
 <TitleSlide>
 
-## Images et ConvNets
-## transfer learning
+# Images et ConvNets
+# Transfer learning
 
 </TitleSlide>
+
 ---
 
 # Pour aller plus loin
@@ -20,7 +22,7 @@ footer: 'Réseaux de neurones Convolutionels'
 
 ---
 
-## Principaux types de réseaux
+# Principaux types de réseaux
 
 
 ## 1. Feed Forward (Perceptron Multicouche)
@@ -39,12 +41,13 @@ Classification, régression, reconnaissance de patterns simples.
 
 ---
 
-## RNN (Recurrent Neural Networks)
+## 2. RNN (Recurrent Neural Networks)
 
 > Réseaux avec connexions cycliques permettant de traiter des séquences temporelles.
 - hidden state : Au lieu d'oublier chaque entrée après l'avoir traitée, un RNN maintient un état caché qui persiste et se met à jour à chaque étape.
 
-![RNN](/images/ml2llm/rnn.png)
+<img src="/images/ml2llm/rnn.png" alt="RNN" style="width:90%; margin: auto">
+
 
 **Cas d'utilisation:**
 Traitement du langage naturel, prédiction de séries temporelles, génération de texte simple, traduction.
@@ -55,11 +58,11 @@ Traitement du langage naturel, prédiction de séries temporelles, génération 
 - Entraînement plus coûteux en calcul
 - Sensible à l'ordre des données
 
-=> excelelnt post de [Karpathy sur RNN](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+=> excellent post de [Karpathy sur RNN](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
 ---
 
-## Transformers
+## 3. Transformers
 
 - Architecture basée sur des mécanismes d'attention multi-têtes.
 - Traite l'ensemble de la séquence en parallèle sans récurrence.
@@ -80,14 +83,16 @@ NLP (BERT, GPT), vision (Vision Transformers), génération, traduction, modèle
 
 ---
 
-## CNN (Convolutional Neural Networks)
+# 4. CNN (Convolutional Neural Networks)
 
-- Utilise des **convolutions** au lieu d'une regression linéaire pour extraire des features locales.
+> Utilise des **convolutions** au lieu d'une regression linéaire pour extraire des features locales.
+
+
 - Réducteurs dimensionnels de l'information par **pooling**, idéals pour les données spatiales.
-- Pooling:  réduction dimensionnelle en extrayant les informations les plus importantes d'une région (max sur une zone de pixels).
+- **Pooling**:  réduction dimensionnelle en extrayant les informations les plus importantes d'une région (max sur une zone de pixels).
 
 
-![convnet](/images/ml2llm/convnet.jpg)
+<img src="/images/ml2llm/convnet.jpg" alt="ConvNet" style="width:90%; margin: auto">
 
 **Cas d'utilisation:**
 Vision par ordinateur, reconnaissance d'images, détection d'objets, segmentation sémantique.
@@ -115,9 +120,9 @@ Vision par ordinateur, reconnaissance d'images, détection d'objets, segmentatio
 ---
 # Bref historique
 
-- **AlexNet (2012)** - CNN, gagnant ILSVRC, relance la révolution du deep learning (15.3% d'erreur vs 26.2%)
+- **AlexNet (2012)** - CNN, gagnant [ILSVRC](https://image-net.org/challenges/LSVRC/), relance la révolution du deep learning (15.3% d'erreur vs 26.2%)
 - **VGGNet (2014)** - CNN, montre que la profondeur capture plus de complexité (16-19 couches empilées)
-- **Inception (2014)** - CNN, gagnant ILSVRC, modules Inception parallèles (convolutions multiples simultanées)
+- **Inception (2014)** - CNN, gagnant [ILSVRC](https://image-net.org/challenges/LSVRC/), modules Inception parallèles (convolutions multiples simultanées)
 - **ResNet (2015)** - CNN ultra-profond (152 couches), skip connections révolutionnaires
 - **Transformer (2017)** - Architecture basée sur l'attention, remplace RNN/LSTM pour NLP, fondation des modèles modernes (BERT, GPT)
 - **Vision Transformer (2020)** - Applique les transformers à la vision par ordinateur
@@ -128,15 +133,28 @@ Vision par ordinateur, reconnaissance d'images, détection d'objets, segmentatio
 
 # Inception (2014)
 
-![inception](/images/ml2llm/inception.jpg)
+[Architecture Inception ](https://medium.com/@abheerchrome/inception-v1-architecture-explained-454b2eb66baf)
 
-[Inception (2014)](https://medium.com/@abheerchrome/inception-v1-architecture-explained-454b2eb66baf)
+
+<img src="/images/ml2llm/inception.jpg" alt="Inception" style="width:90%; margin: auto">
+
 
 ---
 
-![](/images/ml2llm/hist_training_compute.jpg)
+<img src="/images/dlia/inception_architecture_slide.png" alt="Inception" style="width:100%; margin: auto">
 
-avec la relation suivante entre paramètres et FLOPs (Floating Point Operations):
+
+---
+# FLOPs
+
+Les FLOPs (Floating Point Operations) désignent le **nombre d’opérations arithmétiques** en virgule flottante nécessaires pour exécuter un modèle, et servent à estimer son coût de calcul et sa complexité.
+
+
+<img src="/images/ml2llm/hist_training_compute.jpg" alt="Historique des entraînements" style="width:90%; margin: auto">
+
+
+
+On a la relation suivante entre paramètres et FLOPs:
 
 ```
 FLOPs ~= 6 *Parameters * tokens
@@ -148,6 +166,7 @@ FLOPs ~= 6 *Parameters * tokens
 | GPT-3            | 175B          | 3.14 × 10^23 |
 | LLaMA-7B         | 7B            | ~1.4 × 10^21 |
 | LLaMA-70B        | 70B           | ~1.4 × 10^22 |
+| Étoiles dans l'univers        |          | 10^22 à 10^24 |
 
 
 ---
@@ -167,8 +186,15 @@ puis comme en ML classique:
 
 ---
 
-# CNN
+<TitleSlide>
 
+# Convolutional Neural Network
+
+</TitleSlide>
+
+---
+
+# CNN : Convolutional Neural Network
 
 MLP pas fantastique pour les images
 
@@ -177,11 +203,15 @@ MLP pas fantastique pour les images
 
 > pourtant si on bouge la chaise … ça reste une chaise !
 
-## Le CNN
+Le CNN capture l'information spatiale, les spécificités locales
 
-capture l'information spatiale, les spécificités locales
 
-![cnn](/images/ml2llm/cnn_cat.png)
+---
+
+# CNN
+
+<Columns>
+<Column>
 
 parfait pour :
 - la classification d'images
@@ -194,7 +224,18 @@ mais aussi les séries temporelles :
 - classification audio
 - analyse des capteurs (IoT)
 
-## CNN : principe de base
+</Column>
+<Column>
+
+<img src="/images/ml2llm/cnn_cat.png" alt="CNN" style="width:90%; margin: auto">
+
+</Column>
+</Columns>
+
+
+---
+
+# CNN : principe de base
 
 Décomposition de l'image de pixel en pixel, par petit carrés (3x3, 5x5)
 
@@ -202,7 +243,12 @@ Décomposition de l'image de pixel en pixel, par petit carrés (3x3, 5x5)
 - **pooling** : agréger ces valeurs en prenant le _max_ ou la _moyenne_ des valeurs (sous échantillonnage ou downsampling )
 - enfin, envoyer le tout dans un **MLP** classique
 
-### Convolution
+<img src="/images/dlia/cnn_diagram.png" alt="CNN principle" style="width:90%; margin: auto">
+
+
+---
+
+# Convolution
 
 Filtrage des regions par un filtre (tenseur rang 2 de dimension 3x3 ou 5x5, …).
 
@@ -211,39 +257,64 @@ Filtrage des regions par un filtre (tenseur rang 2 de dimension 3x3 ou 5x5, …)
 le calcul de "convolution"
 
 - Dans les CNN, la "convolution" consiste à multiplier les éléments  des matrices 2 à 2.
-C'est différent de la convolution en traitement du signal et des images qui retourne et décale le signal d'entrée.
-
-Cependant le mot "convolution" est utilisé en raison du contexte historique, de la similarité conceptuelle, des considérations pratiques et de la cohérence terminologique.
-
-L'idée principale reste la suivante : un noyau (**filtre**) est appliqué à une entrée (**image**) pour produire une carte de caractéristiques, qui capture les caractéristiques spatiales importantes de l'entrée.
 
 
+---
 
-### Pooling
+# Convolution
+
+
+<img src="/images/dlia/convolution_matrix_multiplication.png" alt="Convolution math" style="width:80%; margin: auto">
+
+Différent de la convolution en traitement du signal et des images qui retourne et décale le signal d'entrée.
+
+Le mot "convolution" est utilisé en raison du contexte historique, de la similarité conceptuelle et de la cohérence terminologique.
+
+L'idée principale reste la suivante
+
+> un noyau (**filtre**) est appliqué à une entrée (**image**) pour produire une carte de caractéristiques, qui capture les caractéristiques spatiales importantes de l'entrée.
+
+---
+
+# Pooling
 
 Reduction de dimension (downsampling) : max ou moyenne des valeurs sur une region (2x2, 3x3, 4x4, etc.)
 
-![pooling](/images/ml2llm/max-pooling-a.png)
-
-Voir le cours de [Stanford sur les CNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
-
-
-
 Apres la convolution vient le **pooling** aussi appelée sous-échantillonnage
-But :
+
+
+But du pooling:
 
 - réduire la taille des données
 - extraire les features importantes
 - réduire la dépendance à la translation
 
-2 techniques
+---
 
-- prendre le max (plus fréquent)
-- prendre la moyenne
+## 2 techniques de Pooling
 
-![pooling](/images/ml2llm/pooling.png)
+<Columns>
+<Column>
+
+prendre le max (plus fréquent)
+<img src="/images/ml2llm/max-pooling-a.png" alt="Pooling" style="width:90%; margin: auto">
+
+</Column>
+<Column>
+
+prendre la moyenne
+<img src="/images/ml2llm/pooling.png" alt="Pooling" style="width:90%; margin: auto">
+
+</Column>
+</Columns>
+
+Voir le cours de [Stanford sur les CNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
+
+
 
 ---
+
+# En résumé
 
 Le partie convolution et pooling réalise l'extraction des caractéristiques (features) de l'image d'entrée.
 
@@ -254,17 +325,19 @@ Combiner plusieurs couches de convolution + pooling permet d'extraire des caract
 On peut enchaîner les couches de convolution sans avoir à chaque fois une couche de pooling
 
 
-![convolution](/images/ml2llm/typical_cnn.jpg)
-
+<img src="/images/ml2llm/typical_cnn.jpg" alt="Typical CNN" style="width:80%; margin: auto">
 
 ---
-# En resumé
+
+# CNN : separation of concerns
 
 
-- the first layers that consist of convolution + relu + pooling are simply to extract features
-- and then the result of these first layers are fed into a classic feed forward
+The genius of CNNs is the **separation of concerns**:
+- **Conv layers** learn WHAT features exist (spatial relationships)
+- **Dense layers** learn HOW to combine features for decisions
 
-## CNN Architecture Structure
+
+Architecture typique
 
 ```
 Input Image
@@ -281,6 +354,8 @@ Flatten (reshape to 1D vector)
     ↓
 Prediction (class probabilities)
 ```
+
+
 
 ---
 
@@ -301,7 +376,7 @@ Prediction (class probabilities)
 
 ---
 
-## Example (VGG-16)
+# Example (VGG-16)
 
 ```
 Input: 224×224×3 image
@@ -317,35 +392,14 @@ Dense layers (3 layers):
 ```
 
 
-The genius of CNNs is the **separation of concerns**:
-- **Conv layers** learn WHAT features exist (spatial relationships)
-- **Dense layers** learn HOW to combine features for decisions
-
-## Backprop in CNN
-
-Backpropagation updates ALL layers, including the convolutional filters.
-
-## How it Works
-
-```
-Loss (final output error)
-    ↓
-Backprop through Dense layers
-    ↓
-Backprop through Flatten layer
-    ↓
-Backprop through Conv + ReLU + Pooling layers
-    ↓
-Update Conv Filter Weights ← gradient descent
-```
 
 ---
 
-## What Gets Updated
+## Backpropagation
 
-**During backpropagation:**
+**Backpropagation** updates ALL layers, including the convolutional filters.
 
-```
+
 Dense layers:
 - Weights updated ✓
 - Biases updated ✓
@@ -355,7 +409,7 @@ Convolutional layers:
 - Conv biases updated ✓
 - Pooling: NO weights (just selection operation)
 - ReLU: NO weights (just gate)
-```
+
 
 ---
 
@@ -377,17 +431,12 @@ The gradient tells how much each weight contributed to the loss
 
 ---
 
-## In Practice
 
-**All layers are trainable by default:**
-- Conv filters learn to detect more useful features for YOUR task
-- Dense layers learn better classification from those features
 
-# Oui! Plusieurs Filtres de Convolution
+# Plusieurs Filtres de Convolution
 
 On a toujours **plusieurs filtres** en parallèle.
 
----
 
 ## Exemple Concret
 
@@ -453,7 +502,7 @@ Output: 30×30×32
 
 ---
 
-## Comment ça change dans un Réseau Profond
+## Comment ça change dans un Deep Network
 
 **VGG-16 Example:**
 
@@ -519,7 +568,9 @@ Params = (3 × 3 × 64 × 128) + 128 = 73,728 + 128 = 73,856
 | **Paramètres croissent** | Avec le nombre de filtres ET le nombre de canaux d'entrée |
 | **Plus profond** | Chaque couche reçoit plus de canaux → explosion de paramètres |
 
-Les **multiples filtres en parallèle** c'est la clé: c'est comme avoir plein de détecteurs différents qui travaillent en même temps! 🎯
+Les **multiples filtres en parallèle** : plein de détecteurs différents qui travaillent en même temps
+
+---
 
 ## Interet de multiplier les couches Conv - Pooling
 
@@ -563,7 +614,7 @@ Les tableaux de bord et **Histogrammes** montrent la distribution d'un Tensor au
 
 ---
 
-techniques de reduction de l'overfit en  deep learning
+# techniques de reduction de l'overfit en  deep learning
 
 - Ajouter plus de couches convolutionnelles pour apprendre des caractéristiques plus complexes.
 - Utiliser la batch normalisation pour stabiliser et accélérer l'entraînement. (BatchNormalization layer)
@@ -579,7 +630,7 @@ techniques de reduction de l'overfit en  deep learning
 
 # Augmenter les données
 
-A chaque etape, le ImageDataGenerator prend un certain nombre (batch_size) d'images et les transforme aléatoirement (ou non)
+A chaque etape, le `ImageDataGenerator` prend un certain nombre (batch_size) d'images et les transforme aléatoirement (ou non)
 
 De cette façon, le modèle voit des variations des images ce qui réduit l'overfitting
 
@@ -611,12 +662,14 @@ Valeurs courantes : N = 16, 32, 64, …
 
 Le batch size est défini dans le train_generator, et le test_generator
 
-```
+```python
 train_generator = train_datagen.flow_from_directory(train_dir,
                                                     batch_size=20,
                                                     class_mode='binary',
                                                     target_size=(150, 150))
 ```
+
+---
 
 ## Comment régler le batch size ?
 
@@ -643,6 +696,7 @@ Mais de l'autre côté augmenter le batch size réduit aussi l'overfit car:
 - Meilleure estimation du gradient
 - Effet de regularization
 
+---
 
 # Approfondissement
 
@@ -652,21 +706,33 @@ Lire la partie architecture du cours de Stanford Convolutional Neural Networks
 https://cs231n.github.io/convolutional-networks/#architectures
 
 
-# Pour aller plus loin
+## Pour aller plus loin
 
-L'excellent cours de stanford, notamment la section sur l'architecture
-https://cs231n.github.io/convolutional-networks/#architectures
-et ce cours récapitulatif
-https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks
-Le chapitre sur la convolution  du Deep Learning book
-https://www.deeplearningbook.org/contents/convnets.html
+L'excellent cours de stanford, notamment la section sur l'architecture [https://cs231n.github.io/convolutional-networks/#architectures](https://cs231n.github.io/convolutional-networks/#architectures)
+
+Ce cours récapitulatif [https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
+
+Le chapitre sur la convolution  du Deep Learning book [https://www.deeplearningbook.org/contents/convnets.html](https://www.deeplearningbook.org/contents/convnets.html)
 
 ---
 
+<TitleSlide>
+
+# A vous de jouer
+
+[CNN Notebook](https://colab.research.google.com/github/SkatAI/deeplearning/blob/master/notebooks/CNN.ipynb#scrollTo=ZRjQjW0rcbQN)
+
+</TitleSlide>
+
+---
+
+<TitleSlide>
 # Transfer Learning  et fine tuning
+</TitleSlide>
 
+---
 
-## le Fine tuning
+# le Fine tuning
 
 En prenant pour départ un grand modèle déjà entraîné, l'idée est de réutiliser le modèle pour l'extraction des données
 - on ne gèle que quelques unes des couches du modèle
@@ -675,6 +741,8 @@ En prenant pour départ un grand modèle déjà entraîné, l'idée est de réut
 
 
 Nécessite souvent beaucoup de données et des ressources informatiques puissantes
+
+---
 
 
 ## Transfer learning (plus facile)
@@ -688,16 +756,20 @@ En prenant pour départ un grand modèle déjà entraîné, l'idée est de réut
 Peu de données, faibles ressources informatiques
 
 
-## Transfer learning - 2 façon d'opérer
+---
 
-### Workflow complet
+# Transfer learning - 2 façon d'opérer
+
+## Workflow complet
 - Charger un modèle pré-entraîné.
 - Geler toutes les couches du modèle  trainable = False.
 - Ajouter une couche non gelée en sortie du modèle
 - Entraîner votre nouveau modèle sur votre nouveau jeu de données.
 
 
-### Alternative plus légère
+---
+
+## Alternative plus légère
 
 - Charger un modèle pré-entraîné.
 - Faire passer votre nouveau jeu de données à travers ce modèle et enregistrer la sortie du modèle pré-entraîné.
@@ -706,10 +778,11 @@ Peu de données, faibles ressources informatiques
 
 Dans ce cas vous ne faites passer le modèle de base sur vos données qu'une seule fois, plutôt qu'une fois par époque d'entraînement. Donc c'est beaucoup plus rapide et moins coûteux.
 
+---
 
 ## Combiner les modèles keras
 
-```
+```python
 inner_model = Sequential([
     layers.Input(shape=(10,)),
     layers.Dense(32, activation='relu'),
@@ -725,6 +798,8 @@ outer_model = Sequential([
 # Compile the outer model
 outer_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 ```
+
+---
 
 ## Transfer learning
 
@@ -744,10 +819,12 @@ réparties en 1000 classes.
 - Des techniques comme le batch normalization et la régularisation sont utilisées pour améliorer
 la stabilité et la performance du réseau.
 
+---
 
 ### Notebook transfer learning
 [Notebook transfer learning](https://colab.research.google.com/github/SkatAI/deeplearning/blob/master/notebooks/transfer_learning.ipynb)
 
 ### Version du notebook plus recente
 
-[Notebook transfer learning V2](https://colab.research.google.com/drive/1GeRkb3I0TTUvJVgDX5Y5ABTtkw9Re82M#scrollTo=test_prediction_cell)
+[Notebook transfer learning V2](https://colab.research.google.com/github/SkatAI/deeplearning/blob/master/notebooks/transfer_learning_inception.ipynb)
+
