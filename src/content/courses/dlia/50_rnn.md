@@ -54,7 +54,7 @@ Or beaucoup de données du monde réel sont **séquentielles**, l'ordre compte :
 
 **Recurrent Neural Networks** : enchaîner les couches pour utiliser la sortie de la couche N-1 comme entrée de la couche N avec en plus un nouvel échantillon.
 
-
+<img src="/images/dlia/introduction-to-rnns-image-3.png"  style="margin:auto; width:600px; background-color: white;">>
 
 - Conçu pour traiter des données séquentielles
 - Le RNN a une mémoire et peut modéliser des dépendances temporelles
