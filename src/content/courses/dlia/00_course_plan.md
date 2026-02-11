@@ -35,7 +35,10 @@ Bienvenue dans le cours. Cette introduction présente les objectifs, le plan du 
 - pooling
 - normalization
 
-[Réseaux de neurones récurrents](/courses/dlia/cnn_rnn/)
+[Transfer Learning](/courses/dlia/transfer_learning/)
+- Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur de nouvelles tâches
+
+[Réseaux de neurones récurrents](/courses/dlia/rnn/)
 - LSTM
 - GRU
 - Transformers

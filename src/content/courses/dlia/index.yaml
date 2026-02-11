@@ -9,6 +9,10 @@ sessions:
     slug: perceptron
   - file: 30_cnn.md
     slug: cnn_rnn
+  - file: 40_transfer_learning.md
+    slug: transfer_learning
+  - file: 50_rnn.md
+    slug: rnn
   - file: 40_vae.md
     slug: variational_encoder
   - file: 50_gan.md

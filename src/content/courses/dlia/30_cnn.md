@@ -10,9 +10,6 @@ slides_project_home: /courses/dlia/
 
 # Convolutional Neural Networks
 
-# Recurrent Neural Networks
-
-
 
 [slides: Tenseurs, Keras, ...](https://docs.google.com/presentation/d/101_5TpuJgcOGTP5_x9m4aXEg9bNa44r7uHTxOjD8Kw0/edit?usp=sharing)
 
