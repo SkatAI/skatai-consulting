@@ -8,7 +8,7 @@ slides_project_home: /courses/dlia/
 
 # Deep Learning et Intelligence Artificielle
 
-Bienvenue dans le cours. Cette introduction présente les objectifs, le plan du cours et les prérequis.
+
 
 ## Plan du cours
 
@@ -80,10 +80,6 @@ Le générateur s'améliore pour tromper le discriminateur, qui s'améliore pour
 
 - Modèles génératifs qui créent des images en inversant un processus de bruit.
 - DALL-E 3, Midjourney, Stable Diffusion - text-to-image - Imagen
-
-[Modeles multi modaux]()
-
-- audio, images, etc
 
 [Reinforcement Learning (RL)]()
 

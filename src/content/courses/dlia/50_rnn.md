@@ -97,6 +97,19 @@ Où :
 
 ---
 
+# Representation dépliée vs en un bloc
+
+
+
+<img src="/images/dlia/rnn_orig.png" style="margin:auto; width:600px; background-color: white;">
+
+En fait on a un seul réseau récurrent avec des poids partagés à chaque pas de temps.
+
+<img src="/images/dlia/3-Recurrent-Neural-Network-1536x1138.png" style="margin:auto; width:600px;">
+
+
+---
+
 # RNN — Applications
 
 1. Language Modelling and Generating Text
