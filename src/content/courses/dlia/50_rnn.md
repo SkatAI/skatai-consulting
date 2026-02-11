@@ -620,22 +620,19 @@ Deux portes seulement :
 
 ---
 
+<TitleSlide>
+
 # Ateliers
+
+</TitleSlide>
 
 ---
 
 ## Atelier 1 — RNN simple : prédiction de série temporelle
 
-Construction de RNNs de prédiction de séries temporelles univariées.
+Construction de RNNs de prédiction de séries temporelles sur le dataset SunSpot
 
-Premier dataset : prix d'ouverture de cotation de l'action Google.
-
-On implémente 3 RNNs : **SimpleRNN**, **LSTM** et **GRU**.
-
-**Mission :**
-- Modifier les architectures et paramètres des modèles pour estimer les performances, rapidité d'exécution et complexité des modèles.
-- Ajouter TensorBoard pour analyser les modèles.
-- Battre le score de mean_absolute_error de **1.78**.
+https://github.com/SkatAI/deeplearning/blob/master/notebooks/RNN_hands_on_claude_sunspots.ipynb
 
 ---
 
@@ -648,12 +645,3 @@ Appliquer les modèles RNN/LSTM/GRU sur d'autres datasets :
 - https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/
 - https://machinelearningmastery.com/time-series-forecasting-long-short-term-memory-network-python/
 
----
-
-## RNN pour le texte
-
-Les RNN (et surtout les LSTM) ont longtemps été l'architecture de référence pour le traitement du texte : analyse de sentiment, traduction, génération de texte.
-
-Réf : https://www.geeksforgeeks.org/sentiment-analysis-with-an-recurrent-neural-networks-rnn/?ref=lbp
-
-**Note** : ces approches ont été largement remplacées par les **Transformers** (BERT, GPT, etc.) qui utilisent le mécanisme d'**attention** plutôt que la récurrence. C'est le sujet de la suite du cours.
