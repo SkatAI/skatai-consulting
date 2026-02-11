@@ -39,8 +39,17 @@ Bienvenue dans le cours. Cette introduction présente les objectifs, le plan du 
 - Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur de nouvelles tâches
 
 [Réseaux de neurones récurrents](/courses/dlia/rnn/)
+- RNN
 - LSTM
 - GRU
+
+[Attention and Transformers]()
+
+Chaque token "regarde" tous les autres tokens pour comprendre le contexte, en parallèle.
+
+Foundation pour tous les language models modernes (GPT, Claude, BERT, LLaMA, etc.)
+
+
 - Transformers
 - attention mechanism
 - self-attention
@@ -67,22 +76,10 @@ Le générateur s'améliore pour tromper le discriminateur, qui s'améliore pour
 - Résultat : génération d'images très haute qualité et photréalistes (visages, paysages, etc.)
 - Applications : deepfakes, synthèse d'images, style transfer, super-résolution...
 
-[LSTM - Modeles autoregressifs]()
-
-Réseau de neurones récurrent conçu pour capturer les dépendances long-terme dans les séquences.
-- NLP
-- Time series
-
 [Diffusion models]()
 
 - Modèles génératifs qui créent des images en inversant un processus de bruit.
 - DALL-E 3, Midjourney, Stable Diffusion - text-to-image - Imagen
-
-[Attention & Transformers]()
-
-- chaque token "regarde" tous les autres tokens pour comprendre le contexte, en parallèle.
-
-- foundation pour tous les language models modernes (GPT, Claude, BERT, LLaMA, etc.)
 
 [Modeles multi modaux]()
 
