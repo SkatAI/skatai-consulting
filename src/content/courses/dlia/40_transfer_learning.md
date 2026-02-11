@@ -407,3 +407,10 @@ classifier = pipeline('sentiment-analysis')
 Demo transfer Learning : [transfer_learning_inception_fr.ipynb](https://github.com/SkatAI/deeplearning/blob/master/notebooks/transfer_learning_inception_fr.ipynb)
 
 Atelier : [transfer_learning_hands_on_claude_flowers.ipynb](https://github.com/SkatAI/deeplearning/blob/master/notebooks/transfer_learning_hands_on_claude_flowers.ipynb)
+
+
+---
+
+# DeepDream
+
+[deep_dream_claude.ipynb](https://github.com/SkatAI/deeplearning/blob/master/notebooks/deep_dream_claude.ipynb)
