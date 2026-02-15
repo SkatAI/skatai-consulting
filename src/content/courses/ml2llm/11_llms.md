@@ -4,6 +4,7 @@ title: "Du ML aux LLMs"
 slides_project_home: /ml2llm/
 footer: 'DistillGPT2 architecture'
 ---
+
 <TitleSlide>
 
 ## Structure de GPT2
