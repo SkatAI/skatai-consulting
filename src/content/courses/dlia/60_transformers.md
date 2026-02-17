@@ -39,6 +39,96 @@ Crédits : les posts de Jay Alammar,
 
 ---
 
+# Embedding
+
+La couche `Embedding` de Keras transforme des **indices entiers** (identifiants de mots) en **vecteurs denses** de taille fixe.
+
+Concrètement, c'est une **table de lookup** : une matrice de poids de taille `(vocab_size, embedding_dim)` où chaque ligne correspond à un mot du vocabulaire.
+
+```python
+from keras import layers
+
+# Vocabulaire de 10 000 mots → vecteurs de 256 dimensions
+embedding = layers.Embedding(input_dim=10000, output_dim=256)
+
+# Entrée : indices de mots, ex. [42, 7, 153]
+# Sortie : les 3 vecteurs correspondants, shape (3, 256)
+```
+
+- `input_dim` : taille du vocabulaire (nombre de mots possibles)
+- `output_dim` : dimension du vecteur dense pour chaque mot
+
+Les poids de cette matrice sont **appris pendant l'entraînement** : le réseau découvre lui-même quelles représentations vectorielles sont utiles pour la tâche.
+
+- **À l'initialisation** : les vecteurs sont **aléatoires**, aucun sens sémantique.
+- **Après entraînement** : les vecteurs capturent une **sémantique liée à la tâche**. Les mots proches en sens (roi/reine, chat/chien) finissent avec des vecteurs proches — c'est le même principe que Word2Vec, sauf que l'embedding est appris conjointement avec le reste du réseau.
+
+---
+
+## Embedding Keras vs modèle Hugging Face
+
+| | `layers.Embedding` (Keras) | Modèle HF (ex. `sentence-transformers`) |
+|---|---|---|
+| **Initialisation** | Poids **aléatoires** | Poids **pré-entraînés** sur des milliards de textes |
+| **Représentation** | **Statique** : un mot = un vecteur, quel que soit le contexte | **Contextuelle** : le même mot a un vecteur différent selon la phrase |
+| **Lookup** | Simple accès à une ligne de matrice | Passe complète dans un Transformer (self-attention sur toute la phrase) |
+| **Sémantique** | Apprise sur **votre tâche** (commence à zéro) | Déjà riche d'une sémantique générale (milliards de textes) |
+| **Entraînement** | Doit être entraîné sur votre tâche | Utilisable tel quel (transfer learning) |
+
+```python
+# Keras : "avocat" a toujours le même vecteur
+embedding = layers.Embedding(10000, 256)
+# embedding(42) → toujours le même vecteur, que ce soit
+# "l'avocat a plaidé non coupable" ou "une salade d'avocat"
+
+# Hugging Face : "avocat" a un vecteur différent selon le contexte
+from sentence_transformers import SentenceTransformer
+model = SentenceTransformer("all-MiniLM-L6-v2")
+model.encode("l'avocat a plaidé non coupable")  # vecteur A
+model.encode("une salade d'avocat")              # vecteur B  (≠ A)
+```
+
+Dans un Transformer, la couche `Embedding` de Keras ne sert qu'au **premier étage** : elle fournit les vecteurs initiaux. C'est ensuite la **self-attention** qui rend ces représentations contextuelles — exactement ce que font les modèles Hugging Face en interne.
+
+---
+
+## Rappel : le RNN pas à pas
+
+
+À chaque pas de temps $t$, un RNN calcule :
+
+$$h_t = f(W_h \cdot h_{t-1} + W_x \cdot x_t + b)$$
+
+où $x_t$ est l'embedding du mot courant et $h_{t-1}$ l'état caché précédent.
+
+- La fonction $f$ est typiquement une tangente hyperbolique ou, dans le cas du LSTM, un mécanisme de portes (forget, input, output) qui contrôle le flux d'information.
+
+Le problème fondamental : toute l'information de la phrase d'entrée doit passer par un unique vecteur $h_T$ de taille fixe (256, 512, ou 1024 dimensions).
+
+
+---
+
+# Le RNN en Keras
+
+```python
+import keras
+from keras import layers
+
+# Encodeur LSTM simple
+encoder_input = layers.Input(shape=(None, embedding_dim))
+encoder_lstm = layers.LSTM(256, return_state=True)
+_, state_h, state_c = encoder_lstm(encoder_input)
+
+# state_h = le fameux vecteur de contexte
+encoder_states = [state_h, state_c]
+```
+
+`encoder_input` est un **placeholder** : il déclare la forme des données d'entrée sans faire de calcul. `shape=(None, embedding_dim)` signifie "une séquence de longueur variable, où chaque mot est déjà un vecteur de dimension `embedding_dim`". Ici l'embedding est supposé fait en amont — dans le modèle complet plus loin, on utilisera une couche `Embedding` intégrée.
+
+Ce `state_h` de 256 dimensions doit résumer une phrase entière qu'elle fasse 5 ou 50 mots.
+
+---
+
 ## Le modèle Seq2Seq
 
 Un modèle **seq2seq**
@@ -56,6 +146,109 @@ L'architecture repose sur deux composants :
 
 ---
 
+# Pourquoi encodeur + decodeur
+
+
+L'idée est simple : comprendre et parler sont deux tâches différentes.
+
+Quand tu traduis du français vers l'anglais, tu fais deux choses distinctes :
+
+- Tu lis et tu **comprends** la phrase française → c'est l'**encodeur**. Il transforme une séquence de mots en une représentation interne du sens de la phrase.
+- Tu formules et tu **écris** la phrase anglaise → c'est le **décodeur**. Il prend cette représentation du sens et génère les mots un par un dans la langue cible.
+
+**Pourquoi ne pas utiliser un seul réseau ?**:
+
+Parce que les deux langues n'ont pas la même structure. "J'aime la musique" c'est 4 mots, "I love music" c'est 3 mots. L'ordre peut changer, la grammaire est différente. On ne peut pas faire du mot-à-mot.
+
+La séparation encodeur/décodeur permet de **découpler** la compréhension de la génération.
+
+Entre les deux, il y a une représentation abstraite du sens, indépendante de la langue. C'est comme un interprète qui écoute d'abord tout le message, le comprend dans sa tête, puis le reformule dans l'autre langue.
+
+---
+
+# Seq2Seq en Keras
+
+
+```python
+from keras import layers, Model
+import numpy as np
+
+# === HYPERPARAMÈTRES ===
+vocab_size_src = 10000   # Taille du vocabulaire source (ex: français) → 10 000 mots possibles
+vocab_size_tgt = 8000    # Taille du vocabulaire cible (ex: anglais) → 8 000 mots possibles
+embedding_dim = 256      # Chaque mot sera représenté par un vecteur de 256 nombres
+hidden_dim = 512         # Taille de la "mémoire interne" du LSTM (le fameux post-it)
+
+# =============================================
+# ENCODEUR — Lit la phrase source et la résume
+# =============================================
+
+# Entrée : une séquence d'entiers (chaque entier = un mot du vocabulaire source)
+# shape=(None,) → la longueur de la phrase peut varier
+enc_input = layers.Input(shape=(None,), name="encoder_input")
+
+# Embedding : transforme chaque mot (un simple numéro) en un vecteur riche de 256 dimensions
+# Ex: le mot n°42 devient [0.12, -0.8, 0.3, ...] (256 valeurs)
+enc_emb = layers.Embedding(vocab_size_src, embedding_dim)(enc_input)
+
+# LSTM de l'encodeur : lit la séquence mot par mot
+# return_state=True → on récupère l'état final de la mémoire :
+#   - enc_h = "hidden state" (résumé de ce que le LSTM a compris)
+#   - enc_c = "cell state" (mémoire à long terme du LSTM)
+# On jette la sortie séquentielle (_) car on veut juste le résumé final
+_, enc_h, enc_c = layers.LSTM(hidden_dim, return_state=True)(enc_emb)
+
+# >>> À ce stade : toute la phrase source est compressée dans enc_h et enc_c
+# >>> Ce sont deux vecteurs de 512 nombres chacun
+
+# =============================================
+# DÉCODEUR — Génère la traduction mot par mot
+# =============================================
+
+# Entrée : la phrase cible décalée d'un cran (technique du "teacher forcing")
+# Pendant l'entraînement, on lui donne la bonne traduction en entrée
+# Ex: si la cible est "I love music", l'entrée décodeur est "<START> I love music"
+dec_input = layers.Input(shape=(None,), name="decoder_input")
+
+# Même principe : chaque mot cible devient un vecteur de 256 dimensions
+dec_emb = layers.Embedding(vocab_size_tgt, embedding_dim)(dec_input)
+
+# LSTM du décodeur :
+# - return_sequences=True → on veut une sortie pour CHAQUE mot (pas juste le dernier)
+# - return_state=True → on récupère aussi les états (utile pour l'inférence)
+dec_lstm = layers.LSTM(hidden_dim, return_sequences=True, return_state=True)
+
+# ⭐ LA LIGNE CLÉ : initial_state=[enc_h, enc_c]
+# On initialise le décodeur avec le "post-it" de l'encodeur
+# C'est LE SEUL LIEN entre l'encodeur et le décodeur
+# Toute la compréhension de la phrase source passe par ces 2 vecteurs
+dec_output, _, _ = dec_lstm(dec_emb, initial_state=[enc_h, enc_c])
+
+# =============================================
+# COUCHE DE SORTIE — Choisir le mot suivant
+# =============================================
+
+# Pour chaque position, on calcule une probabilité sur les 8000 mots du vocabulaire cible
+# softmax → les 8000 valeurs s'additionnent à 1 (ce sont des probabilités)
+# Le mot avec la plus haute probabilité est le mot prédit
+output = layers.Dense(vocab_size_tgt, activation="softmax")(dec_output)
+
+# =============================================
+# ASSEMBLAGE DU MODÈLE
+# =============================================
+
+# Le modèle prend 2 entrées (phrase source + phrase cible décalée)
+# et produit 1 sortie (les probabilités de chaque mot cible)
+model = Model([enc_input, dec_input], output)
+
+# sparse_categorical_crossentropy car nos cibles sont des entiers (pas du one-hot)
+model.compile(optimizer="adam", loss="sparse_categorical_crossentropy")
+```
+
+Le point essentiel à retenir : **`initial_state=[enc_h, enc_c]`** — ces deux vecteurs de 512 dimensions sont le seul canal de communication entre l'encodeur et le décodeur. Que la phrase source fasse 5 mots ou 500, tout doit tenir dans ce post-it de taille fixe. C'est exactement la limitation que l'attention viendra résoudre.
+
+---
+
 # Vecteur de contexte
 
 L'encodeur est un RNN (souvent un LSTM ou GRU).
@@ -68,49 +261,11 @@ Le dernier état caché constitue le **vecteur de contexte** : la seule informat
 
 ---
 
-## Rappel : le RNN pas à pas
-
-<Columns>
-<Column>
-
-À chaque pas de temps $t$, un RNN calcule :
-
-$$h_t = f(W_h \cdot h_{t-1} + W_x \cdot x_t + b)$$
-
-où $x_t$ est l'embedding du mot courant et $h_{t-1}$ l'état caché précédent.
-
-- La fonction $f$ est typiquement une tangente hyperbolique ou, dans le cas du LSTM, un mécanisme de portes (forget, input, output) qui contrôle le flux d'information.
-
-Le problème fondamental : toute l'information de la phrase d'entrée doit passer par un unique vecteur $h_T$ de taille fixe (256, 512, ou 1024 dimensions).
-
-</Column>
-<Column>
-
-```python
-import keras
-from keras import layers
-
-# Encodeur LSTM simple
-encoder_input = layers.Input(shape=(None, embedding_dim))
-encoder_lstm = layers.LSTM(256, return_state=True)
-_, state_h, state_c = encoder_lstm(encoder_input)
-
-# state_h = le fameux vecteur de contexte
-encoder_states = [state_h, state_c]
-```
-
-Q: que fait le encoder_input ?
-
-Ce `state_h` de 256 dimensions doit résumer une phrase entière qu'elle fasse 5 ou 50 mots.
-
-</Column>
-</Columns>
-
----
-
 ## Le goulot d'étranglement du contexte fixe
 
-Imaginez qu'on vous demande de traduire un paragraphe entier, mais que vous n'avez le droit de prendre qu'une seule note de taille fixe entre la lecture et l'écriture.
+Imaginez qu'on vous demande de traduire un paragraphe entier, mais que vous n'avez le droit de resumer  que sur un post-it entre la lecture et l'écriture que le texte fasse 3  ou 300 mots
+
+Le **vecteur de contexte** fixe du RNN encoder-decoder, c'est ce post-it : sa dimension ne change pas, quelle que soit la longueur de l'entrée. D'où la perte d'information sur les textes longs.
 
 Pour des phrases courtes, ça fonctionne. Pour des phrases longues, l'information se dégrade.
 
@@ -118,51 +273,8 @@ C'est exactement ce qui se passe avec le vecteur de contexte. Les expériences m
 
 Les premiers mots de la phrase sont progressivement "oubliés" au profit des derniers : c'est le problème classique du **vanishing gradient** appliqué aux séquences longues, même avec des LSTM.
 
-> 📌 **IMAGE** : Graphique montrant la dégradation du score BLEU en fonction de la longueur de la phrase d'entrée pour un modèle seq2seq sans attention. *(Référence : Bahdanau et al., 2014, Figure 2)*
-
----
-
-# Couche Embeddings de Keras
-
-TODO
 
 
----
-
-## Seq2Seq complet en Keras
-
-```python
-from keras import layers, Model
-import numpy as np
-
-# Hyperparamètres
-vocab_size_src = 10000
-vocab_size_tgt = 8000
-embedding_dim = 256
-hidden_dim = 512
-
-# --- ENCODEUR ---
-enc_input = layers.Input(shape=(None,), name="encoder_input")
-enc_emb = layers.Embedding(vocab_size_src, embedding_dim)(enc_input)
-_, enc_h, enc_c = layers.LSTM(hidden_dim, return_state=True)(enc_emb)
-
-# --- DÉCODEUR ---
-dec_input = layers.Input(shape=(None,), name="decoder_input")
-dec_emb = layers.Embedding(vocab_size_tgt, embedding_dim)(dec_input)
-dec_lstm = layers.LSTM(hidden_dim, return_sequences=True, return_state=True)
-dec_output, _, _ = dec_lstm(dec_emb, initial_state=[enc_h, enc_c])
-
-# Couche de sortie : probabilité sur le vocabulaire cible
-output = layers.Dense(vocab_size_tgt, activation="softmax")(dec_output)
-
-model = Model([enc_input, dec_input], output)
-model.compile(optimizer="adam", loss="sparse_categorical_crossentropy")
-```
-
-Notez le `initial_state=[enc_h, enc_c]` : c'est le seul lien entre l'encodeur et le décodeur. Toute la phrase source est compressée dans ces deux vecteurs.
-
-Q: comprends rien. + besoin de voir la couche Embedding de Keras
-- comment ca passe entre decodeur en encodeur
 
 
 ---
@@ -182,7 +294,11 @@ En 2014, Bahdanau et al. proposent une solution élégante au goulot d'étrangle
 
 L'analogie est simple. Au lieu de prendre une seule note résumant tout le texte, vous gardez le texte source sous les yeux et vous pouvez y jeter un coup d'œil à chaque mot que vous traduisez. Naturellement, votre regard se porte sur les parties pertinentes du texte — c'est exactement ce que fait l'attention.
 
-> 📌 **IMAGE** : Schéma montrant l'encodeur qui transmet *tous* ses états cachés (h₁, h₂, ..., hₙ) au décodeur, au lieu d'un seul vecteur de contexte. *(Alammar: seq2seq_7.mp4)*
+
+
+<video src="/images/dlia/seq2seq_7.mp4" autoplay loop muted playsinline></video>
+
+> Schéma montrant l'encodeur qui transmet *tous* ses états cachés (h₁, h₂, ..., hₙ) au décodeur, au lieu d'un seul vecteur de contexte.
 
 ---
 
@@ -229,7 +345,10 @@ Quand on affiche la matrice d'attention $\alpha$ pour une paire de phrases, on o
 
 Un résultat remarquable : le modèle apprend seul l'alignement entre les langues. Par exemple, pour "la zone économique européenne" → "the European Economic Area", l'attention apprend automatiquement l'inversion de l'ordre des adjectifs entre le français et l'anglais.
 
-> 📌 **IMAGE** : Matrice d'alignement (heatmap) pour la traduction d'une phrase français→anglais, montrant comment les mots se correspondent. On voit clairement l'inversion de l'ordre pour "zone économique européenne" → "European Economic Area". *(Alammar: attention_sentence.png)*
+> Matrice d'alignement (heatmap) pour la traduction d'une phrase français→anglais, montrant comment les mots se correspondent. On voit clairement l'inversion de l'ordre pour "zone économique européenne" → "European Economic Area".
+
+
+<img src="/images/dlia/attention_sentence.png" alt="Matrice d'alignement" style = "width:800; margin: auto;"/>
 
 ---
 
@@ -276,11 +395,15 @@ La différence clé avec le modèle précédent : `return_sequences=True` sur l'
 
 ## Ce que l'attention a changé — et ses limites
 
-L'attention a résolu le goulot d'étranglement et amélioré considérablement la traduction automatique, surtout sur les phrases longues. Mais le modèle reste fondamentalement **séquentiel** : l'encodeur RNN doit traiter les mots un par un, dans l'ordre. Impossible de paralléliser le calcul. Sur un GPU moderne avec des milliers de nodes, c'est un gâchis monumental.
+L'attention a résolu le goulot d'étranglement et amélioré considérablement la traduction automatique, surtout sur les phrases longues.
+
+Mais le modèle reste fondamentalement **séquentiel** : l'encodeur RNN doit traiter les mots un par un, dans l'ordre. **Impossible de paralléliser le calcul**. Sur un GPU moderne avec des milliers de nodes, c'est un gâchis monumental.
 
 De plus, même avec des LSTM et l'attention, l'information sur les dépendances à très longue distance reste fragile. Le RNN doit propager les gradients à travers de nombreux pas de temps.
 
 En 2017, l'équipe de Google Brain pose une question audacieuse dans un article au titre provocateur : et si on se débarrassait complètement de la récurrence ?
+
+
 
 ---
 
@@ -302,24 +425,32 @@ Vaswani et al., 2017
 
 Le Transformer conserve l'architecture encodeur-décodeur, mais remplace entièrement les RNN par des couches d'**attention**. L'article original empile 6 encodeurs et 6 décodeurs.
 
-Chaque bloc **encodeur** contient deux sous-couches :
-— une couche de **self-attention** multi-têtes
-— un réseau **feed-forward** position par position
+Chaque bloc **encodeur** contient deux sous-couches:
+- une couche de **self-attention** multi-têtes
+- un réseau **feed-forward** position par position
 
-Chaque bloc **décodeur** contient trois sous-couches :
-— une couche de **self-attention masquée**
-— une couche d'**attention croisée** (encoder-decoder)
-— un réseau **feed-forward**
+Chaque bloc **décodeur** contient trois sous-couches:
+- une couche de **self-attention masquée**
+- une couche d'**attention croisée** (encoder-decoder)
+- un réseau **feed-forward**
 
 Chaque sous-couche est entourée d'une **connexion résiduelle** et d'une **normalisation de couche**.
 
 </Column>
 <Column>
 
-> 📌 **IMAGE** : Architecture complète du Transformer. À gauche, la pile de 6 encodeurs. À droite, la pile de 6 décodeurs. Montrer les connexions entre le dernier encodeur et chaque décodeur (K, V envoyés à l'attention croisée). *(Alammar: The_transformer_encoders_decoders.png + The_transformer_encoder_decoder_stack.png)*
+
+<img src="/images/dlia/The_transformer_encoder_decoder_stack.png" alt="Architecture complète du Transformer" style = " margin: auto;"/>
+
+> Architecture complète du Transformer. À gauche, la pile de 6 encodeurs. À droite, la pile de 6 décodeurs. Montrer les connexions entre le dernier encodeur et chaque décodeur (K, V envoyés à l'attention croisée). *(Alammar: The_transformer_encoders_decoders.png + The_transformer_encoder_decoder_stack.png)*
 
 </Column>
 </Columns>
+
+---
+
+<img src="/images/dlia/transformer_architecture.png" alt="Architecture complète du Transformer" style = " margin: auto; width: 800"/>
+
 
 ---
 
@@ -329,7 +460,10 @@ Le Transformer traite **tous les mots en parallèle**. Là où un LSTM avec une 
 
 Mais comment le modèle peut-il capturer les relations entre les mots s'il les traite tous en même temps ? C'est ici qu'intervient la **self-attention** : chaque mot peut "regarder" tous les autres mots de la séquence en une seule opération. Le mot "it" dans *"The animal didn't cross the street because it was too tired"* peut directement s'associer au mot "animal", sans avoir à propager l'information à travers une chaîne de states cachés.
 
-> 📌 **IMAGE** : Visualisation de la self-attention sur la phrase "The animal didn't cross the street because it was too tired". Des lignes colorées relient "it" aux mots auxquels il prête attention, avec "animal" fortement pondéré. *(Alammar: transformer_self-attention_visualization.png)*
+
+<img src="/images/dlia/transformer_self-attention_visualization.png" alt="Visualisation de la self-attention" style = " margin: auto; width: 800"/>
+
+> Visualisation de la self-attention sur la phrase "The animal didn't cross the street because it was too tired". Des lignes colorées relient "it" aux mots auxquels il prête attention, avec "animal" fortement pondéré.
 
 ---
 
@@ -358,7 +492,9 @@ Pour un mot $x_i$ avec son embedding (ou sa représentation venant de la couche 
 
 $$q_i = x_i \cdot W^Q, \quad k_i = x_i \cdot W^K, \quad v_i = x_i \cdot W^V$$
 
-L'embedding a une dimension $d_{model} = 512$. Les vecteurs Q, K, V ont une dimension $d_k = 64$ (on verra pourquoi avec le multi-head).
+L'embedding a une dimension $d_{model} = 512$.
+
+Les vecteurs Q, K, V ont une dimension $d_k = 64$
 
 Le **score** entre le mot $i$ (query) et le mot $j$ (key) :
 
@@ -380,7 +516,6 @@ $$z_i = \sum_j \text{softmax}(\text{score}_{ij}^{scaled}) \cdot v_j$$
 </Column>
 </Columns>
 
-> 📌 **IMAGE** : Schéma pas-à-pas du calcul de self-attention pour le mot "Thinking" : q₁·k₁, q₁·k₂, division par √64, softmax, puis pondération des values et somme. *(Alammar: transformer_self_attention_score.png + self-attention_softmax.png + self-attention-output.png)*
 
 ---
 
@@ -394,7 +529,6 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{Q \cdot K^\top}{\sqrt{d_
 
 La matrice $Q \cdot K^\top$ a une taille $(n \times n)$ — chaque élément $(i,j)$ mesure à quel point le mot $i$ doit prêter attention au mot $j$. Après softmax (ligne par ligne), on multiplie par $V$ pour obtenir les nouvelles représentations.
 
-> 📌 **IMAGE** : Calcul matriciel de l'attention. Montrer X → (Q, K, V) via les matrices de poids, puis le produit QKᵀ, la division, le softmax, et la multiplication par V. *(Alammar: self-attention-matrix-calculation.png + self-attention-matrix-calculation-2.png)*
 
 ---
 
@@ -458,7 +592,6 @@ La matrice $W^O$ a une taille $(8 \times 64, 512) = (512, 512)$, ramenant la sor
 </Column>
 <Column>
 
-> 📌 **IMAGE** : Schéma du multi-head attention. 8 "têtes" parallèles produisent chacune une matrice Z de taille (n, 64). On les concatène en (n, 512) puis on multiplie par Wᴼ. *(Alammar: transformer_attention_heads_z.png + transformer_attention_heads_weight_matrix_o.png)*
 
 Le coût total est comparable à une seule tête de dimension 512, puisque $8 \times 64 = 512$. On ne paye pas plus cher, mais on obtient 8 "points de vue" différents sur la séquence.
 
@@ -786,119 +919,4 @@ La question de recherche active n'est plus "faut-il utiliser des Transformers ?"
 
 ---
 
-<TitleSlide>
-
-# Compléments optionnels
-
-</TitleSlide>
-
----
-
-## [Optionnel] Positional Encoding : pourquoi ça marche
-
-Les fonctions sinusoïdales ont une propriété cruciale : pour tout décalage fixe $k$, il existe une transformation linéaire qui relie $PE_{pos}$ à $PE_{pos+k}$. Le modèle peut donc apprendre à raisonner sur les positions relatives.
-
-$$PE_{pos+k} = f(PE_{pos})$$
-
-Intuitivement, c'est similaire à la représentation binaire des nombres : le bit de poids faible alterne à chaque position (0,1,0,1...), le suivant alterne tous les 2 (0,0,1,1,0,0...), etc. Les sinusoïdes jouent le même rôle mais en continu.
-
-Les modèles plus récents utilisent d'autres approches : **RoPE** (Rotary Position Embeddings) dans LLaMA encode la position comme une rotation dans l'espace complexe, et **ALiBi** (Attention with Linear Biases) ajoute un biais linéaire directement aux scores d'attention plutôt qu'aux embeddings.
-
----
-
-## [Optionnel] Détail du training : warm-up et label smoothing
-
-<Columns>
-<Column>
-
-L'article original utilise un **learning rate schedule** spécifique avec warm-up :
-
-$$lr = d_{model}^{-0.5} \cdot \min(step^{-0.5}, step \cdot warmup^{-1.5})$$
-
-Le learning rate monte linéairement pendant les premières `warmup_steps` (typiquement 4000), puis décroît comme $1/\sqrt{step}$. Le warm-up est crucial car les premières itérations avec des poids aléatoires produisent des gradients instables.
-
-L'article utilise aussi le **label smoothing** ($\epsilon = 0.1$) : au lieu de cibles one-hot, on redistribue 10% de la probabilité sur les autres classes. Cela améliore la généralisation et le score BLEU.
-
-</Column>
-<Column>
-
-```python
-class TransformerSchedule(
-    keras.optimizers.schedules.LearningRateSchedule
-):
-    def __init__(self, d_model, warmup_steps=4000):
-        super().__init__()
-        self.d_model = float(d_model)
-        self.warmup = float(warmup_steps)
-
-    def __call__(self, step):
-        step = float(step)
-        arg1 = step ** -0.5
-        arg2 = step * self.warmup ** -1.5
-        return self.d_model ** -0.5 * min(
-            arg1, arg2
-        )
-
-optimizer = keras.optimizers.Adam(
-    learning_rate=TransformerSchedule(512),
-    beta_1=0.9, beta_2=0.98, epsilon=1e-9
-)
-```
-
-</Column>
-</Columns>
-
----
-
-## [Optionnel] Beam Search à l'inférence
-
-À l'inférence, le greedy decoding (prendre le mot le plus probable à chaque étape) n'est pas optimal globalement. Le **beam search** explore $B$ hypothèses en parallèle :
-
-À chaque pas, on garde les $B$ séquences partielles les plus probables (le "faisceau"). Pour chaque hypothèse, on calcule les $V$ continuations possibles, ce qui donne $B \times V$ candidats. On ne garde que les $B$ meilleurs parmi tous ces candidats.
-
-```python
-# Pseudo-code simplifié du beam search
-beam_size = 4
-sequences = [{"tokens": [SOS], "score": 0.0}]
-
-for step in range(max_length):
-    all_candidates = []
-    for seq in sequences:
-        probs = model.predict(seq["tokens"])  # distribution sur le vocab
-        top_k = np.argsort(probs)[-beam_size:]
-        for token in top_k:
-            candidate = {
-                "tokens": seq["tokens"] + [token],
-                "score": seq["score"] + np.log(probs[token])
-            }
-            all_candidates.append(candidate)
-    # Garder les B meilleures
-    sequences = sorted(all_candidates, key=lambda x: x["score"])[-beam_size:]
-```
-
-En pratique, un beam size de 4-6 offre un bon compromis qualité/vitesse.
-
----
-
-## Références
-
-Sutskever, I., Vinyals, O., Le, Q. V. (2014). *Sequence to Sequence Learning with Neural Networks.* NeurIPS.
-
-Bahdanau, D., Cho, K., Bengio, Y. (2014). *Neural Machine Translation by Jointly Learning to Align and Translate.* ICLR 2015.
-
-Luong, M-T., Pham, H., Manning, C. D. (2015). *Effective Approaches to Attention-based Neural Machine Translation.* EMNLP.
-
-Vaswani, A. et al. (2017). *Attention Is All You Need.* NeurIPS.
-
-Alammar, J. (2018). *The Illustrated Transformer.* jalammar.github.io.
-
-Alammar, J. (2018). *Visualizing A Neural Machine Translation Model.* jalammar.github.io.
-
----
-
-<TitleSlide>
-
-# Merci !
-## Questions ?
-
-</TitleSlide>
+<img src="/images/dlia/transformer_architecture.png" alt="Architecture complète du Transformer" style = " margin: auto; width: 800"/>

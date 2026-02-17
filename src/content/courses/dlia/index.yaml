@@ -15,4 +15,6 @@ sessions:
     slug: rnn
   - file: 60_transformers.md
     slug: transformers
+  - file: 70_ollama.md
+    slug: ollama
 
