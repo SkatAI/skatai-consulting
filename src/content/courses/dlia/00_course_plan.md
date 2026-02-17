@@ -43,12 +43,11 @@ slides_project_home: /courses/dlia/
 - LSTM
 - GRU
 
-[Attention and Transformers]()
+[Attention and Transformers](/courses/dlia/transformers/)
 
-Chaque token "regarde" tous les autres tokens pour comprendre le contexte, en parallèle.
+- echauffement : generer du text avec un LSTM [notebook](https://github.com/SkatAI/deeplearning/blob/master/notebooks/moliere_lstm_generation.ipynb)
 
-Foundation pour tous les language models modernes (GPT, Claude, BERT, LLaMA, etc.)
-
+Puis :
 
 - Transformers
 - attention mechanism

@@ -1,0 +1,50 @@
+Index,play_name,act,scene,character,cue_num,cue
+0,princessedelide,A,1,l-aurore,1,"Quand l’Amour à vos yeux offre un choix agréable,
+Jeunes beautés laissez-vous enflammer.
+Moquez-vous d’affecter cet orgueil indomptable,
+Dont on vous dit qu’il est beau de s’armer :
+Dans l’âge où l’on est aimable
+Rien n’est si beau que d’aimer.
+Soupirez librement pour un amant fidèle,
+Et bravez ceux qui voudraient vous blâmer ;
+Un cœur tendre est aimable, et le nom de cruelle
+N’est pas un nom à se faire estimer :
+Dans le temps où l’on est belle,
+Rien n’est si beau que d’aimer."
+1,princessedelide,A,2,valets-de-chiens,1,"Holà ? holà ? debout, debout, debout :
+Pour la Chasse ordonnée il faut préparer tout :
+Holà ? ho debout, vite debout."
+2,princessedelide,A,2,valet-1,2,"Jusqu’aux plus sombres lieux le jour se communique,"
+3,princessedelide,A,2,valet-2,3,L’air sur les fleurs en perles se résout.
+4,princessedelide,A,2,valet-3,4,"Les Rossignols commencent leur Musique,
+Et leurs petits concerts retentissent partout."
+5,princessedelide,A,2,valets-de-chiens,5,"Sus, sus debout, vite debout !
+Qu’est-ce ci, Lyciscas ? quoi ? tu ronfles encore,
+Toi qui promettais tant de devancer l’Aurore ?
+Allons debout, vite debout,
+Pour la Chasse ordonnée il faut préparer tout,
+Debout, vite debout, dépêchons, debout."
+6,princessedelide,A,2,lyciscas,6,"Par la morbleu vous êtes de grands braillards vous autres, Et vous avez la gueule ouverte de bon matin !"
+7,princessedelide,A,2,musiciens,7,"Ne vois-tu pas le jour qui se répand partout ?
+Allons debout, Lyciscas debout."
+8,princessedelide,A,2,lyciscas,8,Hé ! laissez-moi dormir encore un peu je vous conjure !
+9,princessedelide,A,2,musiciens,9,"Non, non debout, Lyciscas debout."
+10,princessedelide,A,2,lyciscas,10,Je ne vous demande plus qu’un petit quart d’heure !
+11,princessedelide,A,2,musiciens,11,"Point, point debout, vite debout."
+12,princessedelide,A,2,lyciscas,12,Hé ! je vous prie !
+13,princessedelide,A,2,musiciens,13,Debout.
+14,princessedelide,A,2,lyciscas,14,Un moment.
+15,princessedelide,A,2,musiciens,15,Debout.
+16,princessedelide,A,2,lyciscas,16,De grâce.
+17,princessedelide,A,2,musiciens,17,Debout.
+18,princessedelide,A,2,lyciscas,18,Eh.
+19,princessedelide,A,2,musiciens,19,Debout.
+20,princessedelide,A,2,lyciscas,20,Je...
+21,princessedelide,A,2,musiciens,21,Debout.
+22,princessedelide,A,2,lyciscas,22,J’aurai fait incontinent.
+23,princessedelide,A,2,musiciens,23,"Non, non debout, Lyciscas debout :
+Pour la Chasse ordonnée il faut préparer tout ;
+Vite debout, dépêchons, debout."
+24,princessedelide,A,2,lyciscas,24,"Eh bien laissez-moi, je vais me lever : Vous êtes d’étranges gens de me tourmenter comme cela : vous serez cause que je ne me porterai pas bien de toute la journée ; car, voyez-vous, le sommeil est nécessaire à l’homme, et lorsqu’on ne dort pas sa réfection, il arrive... que... on est..."
+25,princessedelide,A,2,valet-1,25,Lyciscas.
+26,princessedelide,A,2,valet-2,26,Lyciscas.

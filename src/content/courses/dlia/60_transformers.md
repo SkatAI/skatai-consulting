@@ -8,7 +8,9 @@ slides_project_home: /courses/dlia/
 <TitleSlide>
 
 # Des Séquences aux Transformers
-## Attention, Self-Attention (l'architecture qui a tout changé)
+## Attention, Self-Attention
+
+l'architecture qui a tout changé
 
 </TitleSlide>
 
@@ -16,13 +18,15 @@ slides_project_home: /courses/dlia/
 
 ## Plan du cours
 
-Ce cours se décompose en trois grandes parties.
+Trois grandes parties.
 
 - Les modèles **séquence-à-séquence (seq2seq)** fondés sur les RNN, en comprenant pourquoi ils atteignent leurs limites sur les longues séquences.
-- Le **mécanisme d'attention** de Bahdanau, qui permet au décodeur de "regarder en arrière" vers l'encodeur.
-- L'architecture **Transformer**, qui abandonne complètement la récurrence au profit de l'attention — et qui est à la base de tous les grands modèles de langage actuels (GPT, BERT, LLaMA, etc.).
+- Le **mécanisme d'attention** de Bahdanau, qui permet au décodeur de "**regarder en arrière**" vers l'encodeur.
+- L'architecture **Transformer**, qui abandonne complètement la récurrence au profit de l'attention. Base de tous les grands modèles de langage actuels (GPT, BERT, LLaMA, etc.).
 
-Crédits visuels : les illustrations de ce cours sont adaptées des posts de Jay Alammar, *"Visualizing Seq2seq with Attention"* et *"The Illustrated Transformer"*.
+Crédits : les posts de Jay Alammar,
+- [Visualizing Seq2seq with Attention](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 
 ---
 
@@ -38,18 +42,29 @@ Crédits visuels : les illustrations de ce cours sont adaptées des posts de Jay
 ## Le modèle Seq2Seq
 
 Un modèle **seq2seq**
-- input: une séquence d'entrée (par exemple une phrase en français)
-- output: une séquence de sortie (sa traduction en anglais).
+- input: une séquence d'entrée
+- output: une séquence de sortie
 
-L'architecture repose sur deux composants : un **encodeur** qui lit l'entrée mot par mot et compresse l'information dans un vecteur, et un **décodeur** qui génère la sortie à partir de ce vecteur.
+> une phrase en français -> la phrase traduite en anglais
+
+L'architecture repose sur deux composants :
+- un **encodeur** qui lit l'entrée mot par mot et compresse l'information dans un vecteur,
+- un **décodeur** qui génère la sortie à partir de ce vecteur.
+
+<video src="/images/dlia/seq2seq_3.mp4" autoplay loop muted playsinline></video>
+
+
+---
+
+# Vecteur de contexte
 
 L'encodeur est un RNN (souvent un LSTM ou GRU).
 
 À chaque pas de temps, il reçoit le **word embedding** du mot courant et son état caché précédent, et produit un nouvel état caché.
 
-Le dernier état caché constitue le **vecteur de contexte** — la seule information transmise au décodeur.
+Le dernier état caché constitue le **vecteur de contexte** : la seule information transmise au décodeur.
 
-> 📌 **IMAGE** : Schéma animé d'un encodeur-décodeur seq2seq. L'encodeur traite "je suis étudiant" mot par mot, produit un vecteur de contexte, puis le décodeur génère "I am a student". *(Alammar: seq2seq_5.mp4 / seq2seq_6.mp4)*
+<video src="/images/dlia/seq2seq_6.mp4" autoplay loop muted playsinline></video>
 
 ---
 
@@ -84,7 +99,9 @@ _, state_h, state_c = encoder_lstm(encoder_input)
 encoder_states = [state_h, state_c]
 ```
 
-Ce `state_h` de 256 dimensions doit résumer une phrase entière — qu'elle fasse 5 ou 50 mots.
+Q: que fait le encoder_input ?
+
+Ce `state_h` de 256 dimensions doit résumer une phrase entière qu'elle fasse 5 ou 50 mots.
 
 </Column>
 </Columns>
@@ -93,11 +110,22 @@ Ce `state_h` de 256 dimensions doit résumer une phrase entière — qu'elle fas
 
 ## Le goulot d'étranglement du contexte fixe
 
-Imaginez qu'on vous demande de traduire un paragraphe entier, mais que vous n'avez le droit de prendre qu'une seule note de taille fixe entre la lecture et l'écriture. Pour des phrases courtes, ça fonctionne. Pour des phrases longues, l'information se dégrade.
+Imaginez qu'on vous demande de traduire un paragraphe entier, mais que vous n'avez le droit de prendre qu'une seule note de taille fixe entre la lecture et l'écriture.
 
-C'est exactement ce qui se passe avec le vecteur de contexte. Les expériences montrent une chute significative de la qualité de traduction au-delà de 20-30 mots. Les premiers mots de la phrase sont progressivement "oubliés" au profit des derniers — c'est le problème classique du **vanishing gradient** appliqué aux séquences longues, même avec des LSTM.
+Pour des phrases courtes, ça fonctionne. Pour des phrases longues, l'information se dégrade.
+
+C'est exactement ce qui se passe avec le vecteur de contexte. Les expériences montrent une chute significative de la qualité de traduction au-delà de 20-30 mots.
+
+Les premiers mots de la phrase sont progressivement "oubliés" au profit des derniers : c'est le problème classique du **vanishing gradient** appliqué aux séquences longues, même avec des LSTM.
 
 > 📌 **IMAGE** : Graphique montrant la dégradation du score BLEU en fonction de la longueur de la phrase d'entrée pour un modèle seq2seq sans attention. *(Référence : Bahdanau et al., 2014, Figure 2)*
+
+---
+
+# Couche Embeddings de Keras
+
+TODO
+
 
 ---
 
@@ -132,6 +160,10 @@ model.compile(optimizer="adam", loss="sparse_categorical_crossentropy")
 ```
 
 Notez le `initial_state=[enc_h, enc_c]` : c'est le seul lien entre l'encodeur et le décodeur. Toute la phrase source est compressée dans ces deux vecteurs.
+
+Q: comprends rien. + besoin de voir la couche Embedding de Keras
+- comment ca passe entre decodeur en encodeur
+
 
 ---
 
@@ -244,7 +276,7 @@ La différence clé avec le modèle précédent : `return_sequences=True` sur l'
 
 ## Ce que l'attention a changé — et ses limites
 
-L'attention a résolu le goulot d'étranglement et amélioré considérablement la traduction automatique, surtout sur les phrases longues. Mais le modèle reste fondamentalement **séquentiel** : l'encodeur RNN doit traiter les mots un par un, dans l'ordre. Impossible de paralléliser le calcul. Sur un GPU moderne avec des milliers de cœurs, c'est un gâchis monumental.
+L'attention a résolu le goulot d'étranglement et amélioré considérablement la traduction automatique, surtout sur les phrases longues. Mais le modèle reste fondamentalement **séquentiel** : l'encodeur RNN doit traiter les mots un par un, dans l'ordre. Impossible de paralléliser le calcul. Sur un GPU moderne avec des milliers de nodes, c'est un gâchis monumental.
 
 De plus, même avec des LSTM et l'attention, l'information sur les dépendances à très longue distance reste fragile. Le RNN doit propager les gradients à travers de nombreux pas de temps.
 
