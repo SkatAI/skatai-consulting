@@ -920,3 +920,9 @@ La question de recherche active n'est plus "faut-il utiliser des Transformers ?"
 ---
 
 <img src="/images/dlia/transformer_architecture.png" alt="Architecture complète du Transformer" style = " margin: auto; width: 800"/>
+
+---
+
+# Intermission
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ARJ8cAGm6JE?si=gJzQ8L_rrFKvXhwG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

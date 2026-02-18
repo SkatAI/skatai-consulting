@@ -17,6 +17,8 @@ slides_project_home: /courses/dlia/
 - stochastic gradient descent
 - biais et overfitting
 
+---
+
 ## [Le perceptron](/courses/dlia/perceptron/)
 
 - le perceptron (1957)
@@ -28,28 +30,36 @@ slides_project_home: /courses/dlia/
 - regularization et dropout
 - Keras, Tensorflow, Pytorch
 
+---
+
 ## [Réseaux de neurones à convolution](/courses/dlia/cnn_rnn/)
 - convolution
 - pooling
 - normalization
 
+---
+
 ## [Transfer Learning](/courses/dlia/transfer_learning/)
-- Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur de nouvelles tâches
+
+Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur de nouvelles tâches
+
+---
 
 ## [Réseaux de neurones récurrents](/courses/dlia/rnn/)
 - RNN
 - LSTM
 - GRU
 
+---
+
 ## Attention and Transformers
 
-- echauffement : generer du text avec un LSTM [notebook](https://github.com/SkatAI/deeplearning/blob/master/notebooks/moliere_lstm_generation.ipynb)
-
+- [notebook](https://github.com/SkatAI/deeplearning/blob/master/notebooks/moliere_lstm_generation.ipynb) : Generer du text avec un LSTM
 - [Transformers & attention mechanism]((/courses/dlia/transformers/))
-
+- [L'IA aujourd'hui](/courses/dlia/ai_today_feb_26)
 - [TP Ollama](/courses/dlia/ollama/)
 
-
+---
 
 ## [VAE - variational autoencoder]()
 

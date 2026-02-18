@@ -15,6 +15,8 @@ sessions:
     slug: rnn
   - file: 60_transformers.md
     slug: transformers
+  - file: 65_ai_today.md
+    slug: ai_today_feb_26
   - file: 70_ollama.md
     slug: ollama
 
