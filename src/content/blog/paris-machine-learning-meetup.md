@@ -8,6 +8,8 @@ image: /images/blog/meetup_paris/LSA_15_topics_terminal_screenshot.png
 layout: slides
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xhmKMK3pJxk?ecver=1&t=1450" frameborder="0" allowfullscreen></iframe>
+
 <section data-markdown style="text-align: left;">
 
 ### Topic Modeling

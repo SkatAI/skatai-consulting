@@ -8,6 +8,8 @@ image: /images/blog/ooc-boston/accuracy_100_samples.png
 layout: slides
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vMlhynqoQFg?ecver=1" frameborder="0" allowfullscreen></iframe>
+
 <section data-markdown style="text-align: left;">
 
 ### Large Data with Scikit-learn
