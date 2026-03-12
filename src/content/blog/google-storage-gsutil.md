@@ -1,0 +1,314 @@
+---
+title: "Top gsutil command lines to get started on Google Cloud Storage "
+date: 2018-01-01
+author: Alexis Perrier
+description: "Learn the best Google Cloud Storage features with these gsutil commands. "
+tags: [Google Cloud, Google Cloud Storage, RAG, LLM]
+image: /images/blog/gcp/google_cloud_storage.png
+---
+
+Google storage is a file storage service available from Google Cloud. Quite similar to Amazon S3 it offers interesting functionalities such as signed-urls, bucket synchronization, collaboration bucket settings, parallel uploads and is S3 compatible. `Gsutil`, the associated command line tool is part of the ```gcloud``` command line interface.
+
+After a brief presentation of the [Google Cloud Storage](https://cloud.google.com/storage/) service, I will list the most important and useful `gsutil` command lines and address a few of the service particularities.
+
+# Google storage
+
+![Google Cloud Storage Icon](/images/blog/gcp/google_cloud_storage.png)
+The google storage platform is Google's Entreprise storage solution. Google Storage offers a classic bucket based file structure similarly to AWS S3 and Azure Storage. Google Storage was introduced in may 2010 as [Google Storage for Developers](https://googlecode.blogspot.com/2010/05/google-storage-for-developers-preview.html), a RESTful cloud service limited at the time to a few hundreds developers. `gsutil` the command line tool associated with Google Storage was released at the same time.
+
+
+Fast forward to 2018, Google Storage now offers [3 levels of storage](https://cloud.google.com/storage-options/) with different accessibility and pricing.
+
+* **standard storage** is for fast access to large amounts of data. It offers high speed of response to requests.
+* **DRA** is for long-term data storage and infrequent access and is priced lower than standard storage.
+* **Nearline** storage is for even less frequent access and offers longer response times. It is the cheapest option.
+
+Google Storage price structure depends on location and storage class and evolves frequently. At time of writing prices are $0.026 per Gb-month for Standard , $0.01 for Nearline and as low as $0.007 for Coldline storage with a Multi-regional location. See the [pricing page](https://cloud.google.com/storage/pricing) for uptodate prices. See also [Google Cloud Storage on a shoestring budget](https://medium.com/@duhroach/google-cloud-storage-on-a-shoestring-budget-55f054fad436?__s=veqfs39xxza6piky7ktj)
+for an interesting cost breakdown.
+
+A distinct trait of Google Storage structure is that folders and subfolders within a bucket are not associated with a "_physical_" structure as they would be on your local machine. On Google Storage, buckets have _virtual_ folders. **The full path to a file is interpreted as being the entire filename**.
+Consider for instance, the file `hello_world.txt` located in `mybucket/myfolder/`. The file's URL is: `gs://mybucket/myfolder/hello_world.txt`. Google Storage interprets that file has having the filename `myfolder/hello_world.txt`.
+
+The slash `/` character is part of the object filename instead of being an indication of an existing folder. As Google calls it, this object naming scheme creates _" the illusion of a hierarchical file tree atop the "flat" name space"_.
+
+Although this is transparent most of the time, virtual paths may results in misplaced files when uploading a folder with multiple subfolders. If the upload fails and needs to be restarted, the copy command will have unexpected results since the folder did not exist in the first upload but does with the second try.
+
+In order to avoid these weird cases, the best practice, is to make sure to start by creating the expected folder structure and only then upload the files to their target folders.
+
+## gsutil
+
+`Gsutil` is the command line tool used to manage buckets and objects on Google Storage. It is part of the `gcloud` shell scripts. `Gsutil` is fully [open sourced on github](https://github.com/GoogleCloudPlatform/gsutil), and under active development.
+
+Gsutil goes well beyond simple file transfers with an impressive lists of advanced gsutil features, including:
+
+* **ACLs**: setting access control via Access Control Lists
+* **rsync**: synchronizing folders and buckets
+* **lifeline**: defining lifecycle rules
+* **signed urls**: setting time limited online access ()
+* **perfdiag** for troubleshooting
+* logging, notifications and versioning
+
+Before diving in these powerful functionalities, let's walk through a simple case of file transfer.
+If you don't have `gsutil` installed on your local machine or cloud instance, follow the [Google Cloud SDK install instructions](https://cloud.google.com/sdk/) for your OS in order to get started. You may need to sign up for a [free trial account](https://cloud.google.com/free/).
+
+
+## Getting around with gsutil
+
+In the following examples, I create a bucket, upload some files, get information on these files, move them around and change the bucket storage class.
+
+* First things first. In order to get `help` on `gsutil` or any `gsutil` sub commands:
+
+{% highlight shell %}
+$ gsutil help
+$ gsutil <command> help
+{% endhighlight %}
+
+
+* Now create a bucket named `<bucketname>`
+
+All buckets names share a single global Google namespace and must not be already taken.
+
+
+{% highlight shell %}
+$ gsutil mb gs://<bucketname>
+{% endhighlight %}
+
+
+Note that there are certain [restrictions](https://cloud.google.com/storage/docs/naming) on bucket naming and creation beyond the uniqueness condition. For instance you cannot change the name of an existing bucket, and a bucket name cannot include the word _google_.
+
+
+* Upload and download a file with `cp`
+
+{% highlight shell %}
+$ gsutil cp <local_file> gs://<bucketname>/
+$ gsutil cp  gs://<bucketname>/<remote_file> ./
+{% endhighlight %}
+
+* And transfer a file between buckets:
+
+{% highlight shell %}
+$ gsutil cp  gs://<bucket_A>/<remote_file> gs://<bucket_B>/
+{% endhighlight %}
+
+* Create a folder in a bucket with `cp`
+
+{% highlight shell %}
+$ gsutil cp <new_folder> gs://<bucketname>/
+{% endhighlight %}
+
+* Upload a file to a `<new_folder>` with `cp`
+
+{% highlight shell %}
+$ gsutil cp <local_file> gs://<bucketname>/<new_folder>/
+{% endhighlight %}
+
+This will create the folder `<new_folder>` and at the same time upload the file `<local_file>` to that folder. Note the trailing `/` that tells `gsutil` to actually interpret `<new_folder>` as a new folder and not as the target filename. If you omit the trailing `/` gsutil will rename the file with the filename `<new_folder>` once uploaded and the new folder will not be created.
+
+* List the folder with `ls`
+
+{% highlight shell %}
+$ gsutil ls gs://<bucketname>/
+{% endhighlight %}
+
+* Check storage space with `du`
+
+{% highlight shell %}
+$ gsutil du -h gs://<bucketname>/
+{% endhighlight %}
+
+where the `-h` flag makes it human readable
+
+## The `-r` and `-m` flags
+
+* Copy a local folder and its content to a bucket with `cp -r`
+
+{% highlight shell %}
+$ gsutil cp -r ./<local_folder> gs://<bucketname>/
+{% endhighlight %}
+
+Consider for instance a local `./img` directory that contain several image files. We can copy that entire local directory and create the remote folder at the same time with the following command:
+
+{% highlight shell %}
+$ gsutil cp -r ./img gs://<bucketname>/
+{% endhighlight %}
+
+
+The bucket now has the virtual folder `/img`.
+
+* Improve performance with the `-m` flag
+
+When moving large number of files, adding the `-m` flag to `cp` will run the transfers in parallel and significantly improve performance provided you are using a reasonably fast network connection.
+
+* Wildcards
+
+gsutil supports `*` and `?`  wildcards only for files. To include folders in the wildcard target you need to double the `*` or `?` sign. For instance, `gsutil ls gs://<bucketname>/**.txt`  will list all the text files in all subdirectories. The [wildcard page](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames) offers more details.
+
+
+## Gsutil full configuration
+Gsutil full configuration is available in the `~/.boto` file. You can edit that file directly or via the `gsutil config` command. Some interesting parameters are:
+
+* `parallel_composite_upload_threshold`: to specify the maximum size of a file to be uploaded in a single stream. Files larger than this threshold will be uploaded in parallel. The `parallel_composite_upload_threshold` parameter is disabled by default.
+
+* `check_hashes`: to enforce integrity checks when downloading data, always, never or conditionally.
+* `prefer_api`: to specify the API to use when interacting with cloud storage providers (S3, GCS, ...)
+* and `aws_access_key_id` and `aws_secret_access_key` for interoperability with S3.
+
+Cloud storage compatibility is powerful. Not only can you migrate easily from AWS S3 to GCP or vice versa but you can also sync S3 buckets and GCP buckets with the rsync command.
+
+## ACL
+
+As stated in the documentation, _Access Control Lists (ACLs) allow you to control who can read and write your data, and who can read and write the ACLs themselves_.
+ACL are assigned to objects (files) or buckets. By default all files in a bucket have the same ACL as the bucket they're in.
+
+ACL has 3 commands
+
+* **GET**: lists the permissions on a given object. For instance `gsutil acl get gs://<bucketname>/` outputs the access settings for the `<bucketname>` bucket.
+* **SET**: sets the permissions on a given object. The best way to set the permissions and avoid mistakes is by first exporting them to a file with `gsutil acl get gs://<bucketname>/<filename> act.txt`, modify the acl.txt file and then set the new permissions with `gsutil acl set acl.txt gs://bucket/<filename>`
+* **CH**: for change, modifies the current permissions on a given object. For instance to grant WRITE access to a user `gsutil acl ch -u someone@gmail.com:WRITE gs://<bucketname>/`
+
+The default settings for buckets are defined with the `defacl` command which also responds to `get`, `set` and `ch` subcommands. The command `gsutil defacl get gs://<bucketname>/` will return the default settings for the bucket `<bucketname>`.
+
+Several pre defined setings are available:
+
+* **project-private**: is the default setting for new objects. It gives permission to the project team based on their roles. All team members have READ permission while editors and owners have OWNER permission.
+* **private**: Gives the requester OWNER permission for a bucket or object
+* **public-read**: Opens the objects to the whole internet as it gives all users read permission.
+* **public-read-write**: The dangerous setting that allows anyone on the internet to upload files to your bucket.
+
+Further ACL details are available in the [ACL page](https://cloud.google.com/storage/docs/gsutil/commands/acl)
+
+## rsync
+
+The `gsutil rsync` makes the content of a target folder identical to the content of a source folder by copying, updating or deleting any file in the target folder that has changed in the source folder. This synchronization works across local and GCP folders as well as other gsutil cloud compatible storage solutions such as AWS S3. With the `gsutil rsync` command you have everything you need to create an automatic backup of your data in the cloud. The rsync command follows:
+
+{% highlight shell %}
+$ gsutil rsync <source folder> <target folder>
+{% endhighlight  %}
+
+Consider a local folder `./myfolder` and the `<bucketname>` bucket, the following command synchronizes the content of the local folder with the storage bucket:
+
+{% highlight shell %}
+$ gsutil -m rsync -r -d ./myfolder gs://<bucketname>
+{% endhighlight  %}
+
+The content of `gs://<bucketname>` will match the content of your local `./myfolder` directory, effectively backing up the local documents.
+
+* Note the presence of the `-r` flag which ensures that all subfolders are matched.
+* The `-d` flag is to be used with caution as it will delete the content in the target when deleted from the source. If you inadvertently make a mistake in your command, for instance inverting the source and target folders, you may end up deleting your content. A good way to ensure that does not happen is to enable bucket versioning.
+
+If you don't want to have to run the `gsutil` command every time you make a change in the source folder, you can set up a cron job on your local with `crontab -e` or the equivalent for windows machines. For instance the following cron job will backup your local folder to Google Cloud every 15mn.
+
+{% highlight shell %}
+\*/15  * * * * gsutil -m rsync -r -d < full path to myfolder> gs://mybucket >> <full path to log file>
+{% endhighlight  %}
+
+
+## Bucket versioning
+
+Bucket versioning is a powerful feature that prevents any file deletion by mistake. Enabling and disabling versioning is done at the bucket level with the command:
+
+{% highlight shell %}
+$ gsutil versioning set on gs://<bucketname>
+$ gsutil versioning set off gs://<bucketname>
+{% endhighlight %}
+
+When versioning is enabled on a bucket, objects become accessible by specifying their version number. Listing the content of a bucket will show the version numbers of its objects as such:
+
+{% highlight shell %}
+gs://<bucketname>/<filename>#<version_number_1>
+gs://<bucketname>/<filename>#<version_number_2>
+gs://<bucketname>/<filename>#<version_number_3>
+...
+{% endhighlight  %}
+
+To retrieve the correct version, simply append the version number to the object name in the cp command.
+
+The [object versioning](https://cloud.google.com/storage/docs/object-versioning) page offers more details on the subject.
+
+## Signed URLs
+
+Signed URLs is a mechanism for query string authentication for buckets and objects. In other words, Signed urls provide a way to give time-limited read or write access to anyone in possession of the URL, regardless of whether they have a Google account.
+To create a signed url you first need to generate a generate a private key following these [instructions](https://console.cloud.google.com/apis/credentials). Click on `Create a service account key`, select  your project, and download the JSON file that contains your private key.
+
+You can now create a signed urls for one of your file with
+
+{% highlight shell %}
+$ gsutil signurl -d 10m -m GET <path/private_key.json>  gs://<bucketname>/<filename>
+{% endhighlight  %}
+
+
+Note that signed urls do not work on directories. If you want to give access to multiple files you can use wildcards. For instance the following command will give access for 10 minutes on all the png files in the `gs://<bucketname>/img/` folder.
+
+{% highlight shell %}
+$ gsutil signurl -d 10m -m GET <path/private_key.json> gs://<bucketname>/img/*.png*
+{% endhighlight  %}
+
+Check the [signed urls](https://cloud.google.com/storage/docs/access-control/signed-urls) page for more info
+
+### Service accounts
+
+Service accounts are special accounts that represent software rather than people. They are the most common way applications authenticate with Google Cloud Storage. Every project has service accounts associated with it, which may be used for different authentication scenarios, as well as to enable advanced features such as Signed URLs and browser uploads using POST.
+
+When you use a service account to authenticate your application, you do not need a user to authenticate to get an access token. Instead, you obtain a private key from the Google Cloud Platform Console, which you then use to send a signed request for an access token. You can then use the access token like you normally would. For more information see the [Google Cloud Platform Auth Guide](https://cloud.google.com/storage/docs/authentication).
+
+
+### Lifecycle
+
+Lifecycle configurations allows you to automatically delete or change the storage class of objects when some criterion is met.
+
+To enable lifecycle for a bucket with settings defined in the `config_file.json` file, run:
+
+
+{% highlight shell %}
+$ gsutil lifecycle set <config_file.json> gs://<bucket_name>
+{% endhighlight  %}
+
+
+For instance, in order to delete the content of the bucket after 30 days, the config file would be:
+Example: delete after 10 days
+
+
+{% highlight shell %}
+{
+    "lifecycle": {
+        "rule": [
+            {
+                "action": {"type": "Delete"},
+                "condition": {
+                    "age": 30,
+                    "isLive": true
+                }
+            }
+        ]
+    }
+}
+{% endhighlight  %}
+
+While changing  storage class of a bucket to Nearline after a year would be:
+
+{% highlight shell %}
+{
+    "action": {
+        "type": "SetStorageClass",
+        "storageClass": "NEARLINE"
+    },
+    "condition": {
+      "age": 365,
+      "matchesStorageClass": ["MULTI_REGIONAL", "STANDARD", "DURABLE_REDUCED_AVAILABILITY"]
+    }
+}
+{% endhighlight  %}
+
+Check the [lifecycle configurations page](https://cloud.google.com/storage/docs/lifecycle) for more info.
+
+
+# Conclusion
+
+Google Cloud Storage is a fully featured enterprise level service which offers a viable alternative to AWS S3. Prices, scalability, and reliability are key features of the service. I've been using Google Storage for awhile across different projects and find it very user friendly. Definitely worth testing if you need to store significant amount of data.
+
+# Further readings
+
+* [Transferring Big Data Sets to Cloud Platform](https://cloud.google.com/solutions/transferring-big-data-sets-to-gcp)
+* [Streaming data](https://cloud.google.com/storage/docs/streaming)
+* [Google Cloud Storage Performance](https://medium.com/@duhroach/google-cloud-storage-performance-4cfcec8bad72?__s=veqfs39xxza6piky7ktj)
+* [Use Cases and Different Ways to get Files Into Google Cloud Storage](https://medium.com/google-cloud/use-cases-and-a-few-different-ways-to-get-files-into-google-cloud-storage-c8dce8f4f25a)
