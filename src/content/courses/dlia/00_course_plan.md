@@ -64,10 +64,10 @@ Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur 
 # TP Rag
 
 - [Introduction au RAG](/courses/dlia/introduction_rag/)
-- la video NotebookLM : [video](public/videos/intro_RAG.mp4)
+- la video NotebookLM : [video](https://skatai.com/videos/intro_RAG.mp4)
 - [TP RAG](/courses/dlia/tp_rag/)
 - [Construire un corpus Wiki](/courses/dlia/construire_corpus_wiki/)
 - le script python pour construire un corpus a partir d'un wiki : [wiki_downloader.py](https://skatai.com/python/wiki_downloader.py)
 
-Formulaire de soumission du TP RAG : https://forms.gle/Lx9E1QATVjZ2QdZv9
+Formulaire de soumission du TP RAG : [https://forms.gle/Lx9E1QATVjZ2QdZv9](https://forms.gle/Lx9E1QATVjZ2QdZv9)
 
