@@ -19,4 +19,10 @@ sessions:
     slug: ai_today_feb_26
   - file: 70_ollama.md
     slug: ollama
+  - file: 80_introduction_rag.md
+    slug: introduction_rag
+  - file: 82_tp_rag.md
+    slug: tp_rag
+  - file: 85_construire_corpus_wiki.md
+    slug: construire_corpus_wiki
 

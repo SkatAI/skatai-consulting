@@ -61,40 +61,13 @@ Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur 
 
 ---
 
-## [VAE - variational autoencoder]()
+# TP Rag
 
-- Compresse des données complexes (images, texte, etc.) en une représentation latente continue et structurée.
-- Génère de nouveaux exemples similaires en échantillonnant depuis cette représentation latente
+- [Introduction au RAG](/courses/dlia/introduction_rag/)
+- la video NotebookLM : [video](public/videos/intro_RAG.mp4)
+- [TP RAG](/courses/dlia/tp_rag/)
+- [Construire un corpus Wiki](/courses/dlia/construire_corpus_wiki/)
+- le script python pour construire un corpus a partir d'un wiki : [wiki_downloader.py](https://skatai.com/python/wiki_downloader.py)
 
-**Use cases:** Génération d'images réalistes, Interpolation entre exemples, Détection d'anomalies
+Formulaire de soumission du TP RAG : https://forms.gle/Lx9E1QATVjZ2QdZv9
 
-Comme dit CLaude:
-
-> _Contrairement à un autoencoder classique, le VAE ajoute une régularisation probabiliste (divergence KL) qui force l'espace latent à suivre une distribution normale, ce qui le rend "explorable" pour générer de nouvelles données cohérentes._ 🤣🤣🤣
-
-## [GANs - Generative Adversarial Networks]()
-Deux réseaux en compétition :
-- Générateur : crée des images fake à partir de bruit aléatoire
-- Discriminateur : apprend à distinguer fake vs réel
-
-Le générateur s'améliore pour tromper le discriminateur, qui s'améliore pour détecter les fakes. Cette compétition produit des images de plus en plus réalistes.
-- Résultat : génération d'images très haute qualité et photréalistes (visages, paysages, etc.)
-- Applications : deepfakes, synthèse d'images, style transfer, super-résolution...
-
-## [Diffusion models]()
-
-- Modèles génératifs qui créent des images en inversant un processus de bruit.
-- DALL-E 3, Midjourney, Stable Diffusion - text-to-image - Imagen
-
-## [Reinforcement Learning (RL)]()
-
-- Un agent apprend par essai-erreur en interagissant avec un environnement, guidé par des récompenses.
-- Jeux (AlphaGo, jeux vidéo), Robotique (apprentissage moteur), Recommandation (optimiser engagement), Contrôle (thermostat, drones)
-
-
-## Evaluation
-
-à definir
-
-- projet final
-- quiz
