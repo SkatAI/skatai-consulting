@@ -41,23 +41,11 @@ Le principe : au lieu de demander à un LLM de répondre uniquement à partir de
 
 Vous soumettrez le lien vers votre repo GitHub via le formulaire Google :
 
-👉 [lien vers le formulaire — à compléter]
+👉 [https://forms.gle/Lx9E1QATVjZ2QdZv9](https://forms.gle/Lx9E1QATVjZ2QdZv9)
 
 > Il est recommandé de générer le code avec une IA (Claude, Gemini, ChatGPT, Copilot, etc.).
 
-
 ---
-
-## Barème indicatif
-
-| Critère | Points | Détail |
-|---|---|---|
-| **Ingestion** | 4-6 | Corpus chargé, chunking fonctionnel, embeddings générés, stockage dans FAISS |
-| **Retrieval** | 4-6 | La recherche par similarité retourne des chunks pertinents pour une question donnée |
-| **Génération** | 4-6 | Le prompt est bien construit et le LLM renvoie une réponse cohérente basée sur les chunks |
-| **Qualité du code et du repo** | 4-6 | README clair, clés API non exposées (fichier `.env`), code lisible |
-| **Bonus — Reranking** |  | Implémentation d'un reranking avec un modèle cross-encoder |
-| **Bonus — Interface** |  | Interface web (Streamlit, Gradio…) ou ligne de commande interactive |
 
 
 ### Consignes pour le repository GitHub
