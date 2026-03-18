@@ -1,3 +1,8 @@
+---
+title: "TP — Construire un RAG"
+page_title: "TP — Construire un RAG"
+---
+
 # TP — Construire un RAG
 
 ## Master 1 Art & Science — ESIEE Paris

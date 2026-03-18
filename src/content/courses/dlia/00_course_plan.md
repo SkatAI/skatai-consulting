@@ -61,7 +61,7 @@ Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur 
 
 ---
 
-# TP Rag
+# TP Rag ou Bot telegram
 
 - [Introduction au RAG](/courses/dlia/introduction_rag/)
 - la [video NotebookLM](https://skatai.com/videos/intro_RAG.mp4)
@@ -69,5 +69,11 @@ Réutilisation de modèles pré-entraînés pour améliorer l'apprentissage sur 
 - [Construire un corpus Wiki](/courses/dlia/construire_corpus_wiki/)
 - le script python pour construire un corpus a partir d'un wiki : [wiki_downloader.py](https://skatai.com/python/wiki_downloader.py)
 
-Formulaire de soumission du TP RAG : [https://forms.gle/Lx9E1QATVjZ2QdZv9](https://forms.gle/Lx9E1QATVjZ2QdZv9)
+Vous pouvez aussi construire un bot telegram de recherche de stage
+
+- [Bot telegram](/courses/dlia/bot_telegram/)
+
+
+
+Formulaire de soumission du TP : [https://forms.gle/Lx9E1QATVjZ2QdZv9](https://forms.gle/Lx9E1QATVjZ2QdZv9)
 

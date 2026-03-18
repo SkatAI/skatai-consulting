@@ -1,3 +1,9 @@
+---
+title: "Introduction au RAG — Retrieval Augmented Generation"
+page_title: "Introduction au RAG — Retrieval Augmented Generation"
+---
+
+
 # Introduction au RAG — Retrieval Augmented Generation
 
 

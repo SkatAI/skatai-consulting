@@ -1,3 +1,8 @@
+---
+title: "Construire son propre corpus Wiki"
+page_title: "Construire son propre corpus Wiki"
+---
+
 # Construire son propre corpus Wiki
 
 > **Objectif :** Télécharger un sous-ensemble ciblé de pages depuis un wiki de fans (basé sur MediaWiki) pour constituer un corpus qui servira de base de connaissances à un système de Retrieval-Augmented Generation (RAG).

@@ -25,4 +25,6 @@ sessions:
     slug: tp_rag
   - file: 85_construire_corpus_wiki.md
     slug: construire_corpus_wiki
+  - file: 90_bot_telegram.md
+    slug: bot_telegram
 
