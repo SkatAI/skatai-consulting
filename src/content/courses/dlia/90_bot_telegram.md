@@ -18,7 +18,7 @@ Site : [https://openrouter.ai/](https://openrouter.ai/)
 Clé partagée (il manque les 5 derniers caractères, je vous les donnerai en cours) :
 
 ```
-sk-or-v1-2def8c4157456ed36e4e4920a1759194cf91bed0d4f2980eb514c7cd0de
+sk-or-v1-dc41a8c33eed06df1ca0d0375b5a16dee3d205348e20698bb064255aa6a
 ```
 
 

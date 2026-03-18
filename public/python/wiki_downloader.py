@@ -12,12 +12,12 @@ import argparse
 from pathlib import Path
 
 # Pokemon
-BASE_URL = "https://bulbapedia.bulbagarden.net"
-API_ENDPOINT = f"{BASE_URL}/w/api.php"
+# BASE_URL = "https://bulbapedia.bulbagarden.net"
+# API_ENDPOINT = f"{BASE_URL}/w/api.php"
 
 # Dragonball
-# BASE_URL = "https://dragonball.fandom.com"        # ← votre wiki
-# API_ENDPOINT = f"{BASE_URL}/api.php"               # ← adapter le chemin si nécessaire
+BASE_URL = "https://dragonball.fandom.com"        # ← votre wiki
+API_ENDPOINT = f"{BASE_URL}/api.php"               # ← adapter le chemin si nécessaire
 
 
 
