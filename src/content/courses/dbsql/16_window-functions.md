@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql windows functions"
 page_title: "Postgresql windows functions and CTEs"
 summary: "Intermediate databases - Epita Fall 2025 - Windows functions"
-footer: 'Alexis Perrier - Skatai.com/dbsql/  '
+footer: 'Alexis Perrier - alexisperrier.com/dbsql/  '
 ---
 
 # Window function
@@ -18,7 +18,7 @@ we work on the normilized version of the movies db
 <img src="/images/dbsql/ERD_moviesdb_normalized.png" alt="moviesdb" width="400" style="display: block; margin: auto;">
 
 
-Download the sql file from [https://skatai.com/assets/db/moviesdb_normalized.sql](/assets/db/moviesdb_normalized.sql)
+Download the sql file from [https://alexisperrier.com/assets/db/moviesdb_normalized.sql](/assets/db/moviesdb_normalized.sql)
 
 Then load the sql dump with ```psql```
 

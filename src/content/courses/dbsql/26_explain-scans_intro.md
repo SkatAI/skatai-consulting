@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql Query performance - Explain - Scans"
 page_title: "Postgresql Query performance - Explain - Scans"
 summary: "Query performance - Explain - Scans"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Query performance

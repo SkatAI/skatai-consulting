@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: Props) {
   try {
     const post = getPostBySlug('blog', slug)
     return {
-      title: `${post.meta.title} - SkatAI Blog`,
+      title: `${post.meta.title} - Alexis Perrier Blog`,
       description: post.meta.description || post.meta.title,
     }
   } catch {
     return {
-      title: 'Post Not Found - SkatAI',
+      title: 'Post Not Found - Alexis Perrier',
     }
   }
 }

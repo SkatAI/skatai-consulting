@@ -3,7 +3,7 @@ layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Améliorer et nettoyer un jeu de données pour l'ML"
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 # Nettoyez un jeu de données

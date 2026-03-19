@@ -3,7 +3,7 @@ layout: prose
 title: "Installing HTTP Extension Windows"
 page_title: "Installing HTTP Extension Windows"
 summary: "PostgreSQL extensions, HTTP client, Windows installation"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # The HTTP extension

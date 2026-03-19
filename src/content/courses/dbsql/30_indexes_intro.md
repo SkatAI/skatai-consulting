@@ -3,7 +3,7 @@ layout: prose
 title: "Database Indexes Introduction"
 page_title: "Database Indexes Introduction"
 summary: "indexes, query optimizer, EXPLAIN, scan algorithms"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 

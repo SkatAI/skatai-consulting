@@ -4,7 +4,7 @@ title: "Postgresql database normalization"
 slides_project_home: /dbsql/
 page_title: "Postgresql database normalization"
 summary: "Intermediate databases - Epita Fall 2025"
-footer: 'Alexis Perrier - Skatai.com/dbsql/  '
+footer: 'Alexis Perrier - alexisperrier.com/dbsql/  '
 ---
 <TitleSlide>
 

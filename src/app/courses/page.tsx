@@ -6,7 +6,7 @@ import { getCourseIndex, getCourseStructure } from '@/lib/mdx'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
-  title: 'Courses - SkatAI',
+  title: 'Courses - Alexis Perrier',
   description: 'Educational courses on MLOps, AI, Machine Learning, and Data Science',
 }
 

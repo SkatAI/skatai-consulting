@@ -10,7 +10,7 @@ footer: 'Alexis Perrier - In311 - Intro to databases - Aero 2025-26 - IPSA'
 ## Aero 2025-26 - IPSA
 
 <div class="boom">
-## [SkatAI.com/ipsadb/01](/ipsadb/01)
+## [alexisperrier.com/ipsadb/01](/ipsadb/01)
 <br />
 </div>
 
@@ -27,7 +27,7 @@ footer: 'Alexis Perrier - In311 - Intro to databases - Aero 2025-26 - IPSA'
 * **Synthesis project (written exam)**: Complete case study – from modeling to querying
 
 <div class="boom">
-## [SkatAI.com/ipsadb/01](/ipsadb/01)
+## [alexisperrier.com/ipsadb/01](/ipsadb/01)
 <br />
 </div>
 

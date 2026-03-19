@@ -3,7 +3,7 @@ layout: prose
 title: "Normalization Lab Solutions"
 page_title: "Normalization Lab Solutions"
 summary: "normalization, spotify dataset, SQL aggregation"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # solution to S04 practice on normalization

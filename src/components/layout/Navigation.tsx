@@ -23,11 +23,11 @@ export function Navigation() {
       icon: <FaLinkedin size={20} color="#0077B5" />,
       label: 'LinkedIn',
     },
-    {
-      href: 'https://www.malt.fr/profile/alexisperrier',
-      icon: <Image src="/images/malt-logo-red.svg" alt="Malt" width={60} height={18} />,
-      label: 'Malt',
-    },
+    // {
+    //   href: 'https://www.malt.fr/profile/alexisperrier',
+    //   icon: <Image src="/images/malt-logo-red.svg" alt="Malt" width={60} height={18} />,
+    //   label: 'Malt',
+    // },
   ]
 
   return (
@@ -48,10 +48,10 @@ export function Navigation() {
           <Link as={NextLink} href="/" _hover={{ textDecoration: 'none' }}>
             <VStack align="flex-start" gap={0}>
               <HStack gap={3} align="center">
-                <Image src="/images/woodpecker_02.png" alt="SkatAI Logo" width={56} height={56} />
+                <Image src="/images/woodpecker_02.png" alt="Alexis Perrier Logo" width={56} height={56} />
                 <VStack align="flex-start" gap={0}>
                   <Text fontSize="2xl" fontWeight="bold" color="gray.900">
-                    Skat<Text as="span" color="orange.500">AI</Text>
+                    Alexis <Text as="span" color="orange.500">Perrier</Text> PhD
                   </Text>
                   <Text fontSize="sm" color="gray.500" letterSpacing="wide">
                     AI from idea to production

@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql CTEs"
 page_title: "Postgresql CTEs"
 summary: "CTEs"
-footer: 'Alexis Perrier - Skatai.com/dbsql/  '
+footer: 'Alexis Perrier - alexisperrier.com/dbsql/  '
 ---
 
 # Common Table Expressions (CTEs)

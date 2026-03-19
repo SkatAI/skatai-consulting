@@ -3,7 +3,7 @@ layout: prose
 title: "ADEME Database Worksheet"
 page_title: "ADEME Database Worksheet"
 summary: "server management, pg_dump, pg_restore, backup"
-footer: 'Alexis Perrier - Skatai.com'
+footer: 'Alexis Perrier - alexisperrier.com'
 ---
 
 # Part I : get started

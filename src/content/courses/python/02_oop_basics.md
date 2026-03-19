@@ -7,7 +7,7 @@ footer: 'Alexis Perrier - AnIn211 - Pratical Programming in Python - IPSA'
 <TitleSlide>
 
 # OOP in Python: Key Concepts
-## [https://skatai.com/ipsa_python/oop2/](/ipsa_python/oop2/)
+## [https://alexisperrier.com/ipsa_python/oop2/](/ipsa_python/oop2/)
 
 </TitleSlide>
 ---

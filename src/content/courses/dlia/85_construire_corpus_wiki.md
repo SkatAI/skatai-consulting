@@ -13,7 +13,7 @@ Pas besoin de milliers de pages. **30 à 80 pages bien choisies** suffisent larg
 
 ## 1. Choisir son univers
 
-Le script [wiki_downloader.py](https://skatai.com/python/wiki_downloader.py) fonctionne avec **n'importe quel wiki basé sur MediaWiki**. Il suffit de modifier la variable `BASE_URL` en haut du fichier.
+Le script [wiki_downloader.py](https://alexisperrier.com/python/wiki_downloader.py) fonctionne avec **n'importe quel wiki basé sur MediaWiki**. Il suffit de modifier la variable `BASE_URL` en haut du fichier.
 
 Voici quelques options populaires :
 

@@ -3,7 +3,7 @@ layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Démonstration pratique de la régularisation"
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 Pour montrer l'impact de la régularisation  il nous faut un dataset et un model qui overfit donc complexe et qui offre de la regularisaton de type L2. Ridge est un modele de simple regression lineaire donc par definition simple.

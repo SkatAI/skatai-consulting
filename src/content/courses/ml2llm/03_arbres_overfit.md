@@ -3,7 +3,7 @@ layout: slides
 title: "Day 3"
 page_title: "Random forest, biais variance"
 summary: "Random forest, biais variance"
-footer: 'Alexis Perrier - Skatai.com/ml2llm/'
+footer: 'Alexis Perrier - alexisperrier.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
 <TitleSlide>

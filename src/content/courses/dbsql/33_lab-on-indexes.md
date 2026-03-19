@@ -3,7 +3,7 @@ layout: prose
 title: "Indexing Practice Lab"
 page_title: "Indexing Practice Lab"
 summary: "B-tree, Hash indexes, query performance, INSERT overhead"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Practice on the Energy database

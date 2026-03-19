@@ -49,21 +49,21 @@ export async function generateMetadata({ params }: Props) {
     try {
       const session = getCourseSessionBySlug(courseName, chapterSlug)
       if (!session) {
-        return { title: 'Chapter Not Found - SkatAI' }
+        return { title: 'Chapter Not Found - Alexis Perrier' }
       }
       const fileSlug = session?.file?.replace(/\.(md|mdx)$/, '') || chapterSlug
       const post = getPostBySlug(`courses/${courseName}`, fileSlug)
       return {
-        title: `${post.meta.title} - SkatAI`,
+        title: `${post.meta.title} - Alexis Perrier`,
         description: post.meta.description || post.meta.title,
       }
     } catch {
-      return { title: 'Chapter Not Found - SkatAI' }
+      return { title: 'Chapter Not Found - Alexis Perrier' }
     }
   }
 
   return {
-    title: `${courseMeta?.title || courseName} Course - SkatAI`,
+    title: `${courseMeta?.title || courseName} Course - Alexis Perrier`,
     description: courseMeta?.description || `Course content for ${courseName}`,
   }
 }

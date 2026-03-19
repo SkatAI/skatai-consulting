@@ -57,11 +57,11 @@ export function Contact() {
               <HStack gap={2}>
                 <Text color="gray.700">Email:</Text>
                 <Link
-                  href="mailto:alexis.perrier@skatai.com"
+                  href="mailto:alexis.perrier@gmail.com"
                   color="gray.700"
                   _hover={{ color: 'orange.600' }}
                 >
-                  alexis.perrier@skatai.com
+                  alexis.perrier@gmail.com
                 </Link>
               </HStack>
             </VStack>
@@ -109,7 +109,7 @@ export function Contact() {
                   <Text>Medium</Text>
                 </HStack>
               </Link>
-              <Link
+              {/* <Link
                 href="https://www.malt.fr/profile/alexisperrier"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -122,7 +122,7 @@ export function Contact() {
                   width={70}
                   height={20}
                 />
-              </Link>
+              </Link> */}
             </VStack>
           </VStack>
         </SimpleGrid>

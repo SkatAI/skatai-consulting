@@ -2,7 +2,7 @@
 layout: slides
 title: "IA for Business"
 slides_project_home: /iabiz/chatgpt/
-footer: 'Alexis Perrier - SkatAI.com/iabiz/chatgpt_agent_mode/'
+footer: 'Alexis Perrier - alexisperrier.com/iabiz/chatgpt_agent_mode/'
 ---
 
 

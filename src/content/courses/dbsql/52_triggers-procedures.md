@@ -3,7 +3,7 @@ layout: prose
 title: "Database Triggers and Procedures"
 page_title: "Database Triggers and Procedures"
 summary: "triggers, stored procedures, event execution, performance"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Triggers

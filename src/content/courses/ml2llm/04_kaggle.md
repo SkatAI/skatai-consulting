@@ -3,7 +3,7 @@ layout: prose
 title: "Day 4"
 page_title: "Kaggle housing prices competition"
 summary: "Kaggle housing prices competition"
-footer: 'Alexis Perrier - Skatai.com/ml2llm/'
+footer: 'Alexis Perrier - alexisperrier.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
 <TitleSlide>

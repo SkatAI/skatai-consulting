@@ -4,8 +4,8 @@ import { Footer } from '@/components/layout/Footer'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
-  title: 'Politique de confidentialite - SkatAI',
-  description: 'Politique de confidentialite de SkatAI',
+  title: 'Politique de confidentialite',
+  description: 'Politique de confidentialite de alexisperrier.com',
 }
 
 export default function PolitiqueDeConfidentialitePage() {
@@ -20,13 +20,11 @@ export default function PolitiqueDeConfidentialitePage() {
                 Politique de confidentialite
               </Heading>
               <Text color="gray.600">
-                Cette page decrit la politique de confidentialite de SkatAI.
+                Cette page decrit la politique de confidentialite de AlexisPerrier.com.
               </Text>
               <Text color="gray.600">
-                Editeur : L&apos;application a ete realisee par Skatai SAS (Siret 978 308 294 00013), 31 rue
-                Pierre Semard 75009 Paris.
+                Editeur : L&apos;application a été réalisée par Alexis Perrier.
               </Text>
-              <Text color="gray.600">Contact : Alexis Perrier alexis.perrier@skatai.com</Text>
             </VStack>
           </Box>
         </SiteContainer>

@@ -3,7 +3,7 @@ layout: slides
 title: "Postgresql Loading data"
 page_title: "Postgresql Loading data"
 summary: "A course on Intermediate databases - Epita Fall 2025"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 <TitleSlide>
 

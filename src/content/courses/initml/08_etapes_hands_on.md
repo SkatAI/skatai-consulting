@@ -3,7 +3,7 @@ layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Maîtriser les étapes pratiques de construction d'un modèle prédictif"
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 # Les étapes de construction d'un modèle prédictif

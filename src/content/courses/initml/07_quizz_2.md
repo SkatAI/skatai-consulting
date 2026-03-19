@@ -3,7 +3,7 @@ layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Quiz sur les techniques d'entraînement de modèles ML"
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 # Quiz P2

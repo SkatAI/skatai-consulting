@@ -3,7 +3,7 @@ layout: prose
 title: "Views and Functions Introduction"
 page_title: "Views and Functions Introduction"
 summary: "views, PL/pgSQL, triggers, stored procedures"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 #  views, functions

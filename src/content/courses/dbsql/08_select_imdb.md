@@ -4,7 +4,7 @@ title: "Postgresql Explore IMDB"
 page_title: "Postgresql Explore IMDB"
 summary: "Explore IMDB"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com/dbsql'
+footer: 'Alexis Perrier - alexisperrier.com/dbsql'
 ---
 <TitleSlide>
 

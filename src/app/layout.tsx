@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'SkatAI - AI from idea to production - Paris',
+  title: 'Alexis Perrier - AI from idea to production - Paris',
   description:
     'Expert consulting in MLOps, AI Strategy, and Custom Machine Learning solutions. Helping businesses leverage AI effectively.',
 }

@@ -2,7 +2,7 @@
 layout: slides
 title: "IA for Business"
 slides_project_home: /courses/iabiz/chatgpt/
-footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/chatgpt/'
+footer: 'Alexis Perrier - alexisperrier.com/courses/iabiz/chatgpt/'
 ---
 
 <TitleSlide>

@@ -3,7 +3,7 @@ layout: prose
 title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Passer d'une problématique business à la mise en production d'un modèle ML"
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 # Passer d'une problématique business à la mise en production

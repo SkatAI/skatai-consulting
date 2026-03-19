@@ -3,7 +3,7 @@ layout: prose
 title: "Outstanding Database Topics"
 page_title: "Outstanding Database Topics"
 summary: "course review, transactions, ACID, triggers, access control"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Session 9: outstanding topics

@@ -3,7 +3,7 @@ layout: slides
 title: "Day 5"
 page_title: "Gradient stochastique"
 summary: "gradient stochastique"
-footer: 'Alexis Perrier - Skatai.com/ml2llm/'
+footer: 'Alexis Perrier - alexisperrier.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
 

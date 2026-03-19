@@ -2,7 +2,7 @@
 layout: slides
 title: "NLP classique"
 slides_project_home: /ml2llm/nlp-classic/
-footer: 'NLP classique - https://skatai.com/ml2llm/nlp-classic/'
+footer: 'NLP classique - https://alexisperrier.com/ml2llm/nlp-classic/'
 ---
 <TitleSlide>
 

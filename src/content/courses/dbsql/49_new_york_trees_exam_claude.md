@@ -4,7 +4,7 @@ title: "The New York Trees census dataset - Exam"
 page_title: "The New York Trees census dataset - Exam"
 summary: "census of all the trees in Manhattan"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com - relational databases - The New York Trees census dataset - Exam'
+footer: 'Alexis Perrier - alexisperrier.com - relational databases - The New York Trees census dataset - Exam'
 ---
 
 ## Exam Overview
@@ -21,7 +21,7 @@ You will be working with the New York trees dataset, which contains a census of 
 
 ### Restoring the Database
 
-If you have not already loaded the dataset, restore it using the SQL file available at: [https://skatai.com/assets/db/new_york_trees.sql](/assets/db/new_york_trees.sql)
+If you have not already loaded the dataset, restore it using the SQL file available at: [https://alexisperrier.com/assets/db/new_york_trees.sql](/assets/db/new_york_trees.sql)
 
 In your psql session, run:
 

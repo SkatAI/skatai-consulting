@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql Query performance - Explain - Scans"
 page_title: "SQL and relational Algebra"
 summary: "SQL and relational Algebra"
-footer: 'Alexis Perrier - Skatai.com'
+footer: 'Alexis Perrier - alexisperrier.com'
 ---
 
 # Scope

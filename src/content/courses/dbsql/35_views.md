@@ -3,7 +3,7 @@ layout: prose
 title: "PostgreSQL Views"
 page_title: "PostgreSQL Views"
 summary: "views, virtual tables, query abstraction, joins"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Views in PostgreSQL

@@ -5,7 +5,7 @@ slides_project_home: /ipsa_python/oop/
 footer: 'Alexis Perrier - AnIn211 - Pratical Programming in Python - IPSA'
 ---
 
-# https://skatai.com/ipsa_python/oop/
+# https://alexisperrier.com/ipsa_python/oop/
 
 ---
 

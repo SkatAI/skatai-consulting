@@ -4,7 +4,7 @@ title: "The New York Trees census dataset"
 page_title: "The New York Trees census dataset"
 summary: "census of all the trees in Manhattan"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com - relational databases - The New York Trees census dataset'
+footer: 'Alexis Perrier - alexisperrier.com - relational databases - The New York Trees census dataset'
 ---
 
 # Trees of New York
@@ -15,7 +15,7 @@ Well well well, this looks like a great dataset for a nice exam.
 
 The main dataset for the 2015 survey has 673k trees for a total uncompressed file size of 122 Mb. Bit too much for your laptops. I extracted all the trees in Manhattan.
 
-This subset is available [https://skatai.com/assets/db/new_york_trees.sql](/assets/db/new_york_trees.sql)
+This subset is available [https://alexisperrier.com/assets/db/new_york_trees.sql](/assets/db/new_york_trees.sql)
 
 
 In a psql session, you can restore the dataset with

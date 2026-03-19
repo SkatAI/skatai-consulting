@@ -3,7 +3,7 @@ layout: prose
 title: "Database Scan Algorithms Quiz"
 page_title: "Database Scan Algorithms Quiz"
 summary: "scan algorithms, query optimizer, sequential scans"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # quiz on Scans

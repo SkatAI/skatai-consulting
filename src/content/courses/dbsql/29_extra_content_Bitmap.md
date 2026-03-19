@@ -3,7 +3,7 @@ layout: prose
 title: "Bitmap Heap and Index Scans"
 page_title: "Bitmap Heap and Index Scans"
 summary: "bitmap scans, heap scans, index scans, query execution"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Prelude

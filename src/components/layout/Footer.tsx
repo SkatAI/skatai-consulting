@@ -37,16 +37,7 @@ export function Footer() {
               Contact
             </Link>
             <Link
-              href="https://github.com/skatai"
-              target="_blank"
-              rel="noopener noreferrer"
-              _hover={{ color: 'orange.500' }}
-              transition="color 0.2s"
-            >
-              GitHub
-            </Link>
-            <Link
-              href="https://linkedin.com/in/skatai"
+              href="https://linkedin.com/in/alexisperrier"
               target="_blank"
               rel="noopener noreferrer"
               _hover={{ color: 'orange.500' }}
@@ -73,10 +64,7 @@ export function Footer() {
           </HStack>
 
           <Box textAlign="center">
-            <Text fontSize="lg" fontWeight="bold" color="gray.900" mb={2}>
-              Skat<Text as="span" color="orange.500">AI</Text>
-            </Text>
-            <Text fontSize="sm">© {currentYear} SkatAI. All rights reserved.</Text>
+            <Text fontSize="sm">© {currentYear} Alexis Perrier. All rights reserved.</Text>
           </Box>
         </VStack>
       </SiteContainer>

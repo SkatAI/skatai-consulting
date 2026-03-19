@@ -5,7 +5,7 @@ title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Travailler avec des modèles basés sur les arbres de décision"
 permalink: /initml/modeles-arbres/
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 # P4C2 : Modèles basés sur les arbres

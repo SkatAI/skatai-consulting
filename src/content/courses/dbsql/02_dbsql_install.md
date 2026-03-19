@@ -2,7 +2,7 @@
 layout: slides
 title: "Relational databases - Install postgresql on Mac and Windows"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com - Install - https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com - Install - https://discord.gg/DDbh5AyHYH'
 ---
 <TitleSlide>
 

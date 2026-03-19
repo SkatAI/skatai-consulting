@@ -3,7 +3,7 @@ layout: prose
 title: "Day 1"
 page_title: "Introduction au Machine Learning"
 summary: "Apprendre à entraîner un modèle de régression linéaire"
-footer: 'Alexis Perrier - Skatai.com/ml2llm/'
+footer: 'Alexis Perrier - alexisperrier.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
 
@@ -32,7 +32,7 @@ slides_project_home: /ml2llm/
 
 ## principe d'entrainement iteratif
 
-[https://skatai.com/initml/modeles-algorithmes/](/courses/initml/modele_algorithmes/)
+[https://alexisperrier.com/initml/modeles-algorithmes/](/courses/initml/modele_algorithmes/)
 
 - sqrt(2)
 - erreur d'estimation
@@ -45,7 +45,7 @@ slides_project_home: /ml2llm/
 
 ## Regression lineaire avec scikit-learn
 
-https://skatai.com/initml/etapes-construction-modele/
+https://alexisperrier.com/initml/etapes-construction-modele/
 
 - variable cible et matrice de design
 - import, fit, score
@@ -56,7 +56,7 @@ https://skatai.com/initml/etapes-construction-modele/
 
 ### LR sur dataset advertising
 
-[https://skatai.com/courses/initml/entreainez_regression_lineaire/](/courses/initml/entreainez_regression_lineaire/)
+[https://alexisperrier.com/courses/initml/entreainez_regression_lineaire/](/courses/initml/entreainez_regression_lineaire/)
 
 [plus en detail](https://openclassrooms.com/fr/courses/5873596-perform-effective-data-modeling/6229141-implement-univariate-linear-regression)
 

@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql CTEs -lab"
 page_title: "Postgresql CTEs Lab"
 summary: "CTEs Lab"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Lab on window functions and CTEs

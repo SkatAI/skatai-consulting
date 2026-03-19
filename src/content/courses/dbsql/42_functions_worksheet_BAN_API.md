@@ -3,7 +3,7 @@ layout: prose
 title: "BAN API Integration Workshop"
 page_title: "BAN API Integration Workshop"
 summary: "BAN API, HTTP extension, geolocation, JSONB"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Workshop : Tree Locations & BAN API
@@ -258,7 +258,7 @@ This version of the database only has trees in the domain called `Alignement`, w
 The new database only has 1000 trees, all situated in Paris with domain as `Alignement`.
 
 - download the `treesdb_v04.sql`
-  - [https://skatai.com](/assets/db/treesdb_v04.sql)
+  - [https://alexisperrier.com](/assets/db/treesdb_v04.sql)
   - alternative download : from the github repo: <https://github.com/SkatAI/epitadb/blob/master/data/treesdb_v04.01.sql>, this one you need to create a new  database in pgAdmin, name it `treesdb_v04`
 
 Then restore the data into the database:

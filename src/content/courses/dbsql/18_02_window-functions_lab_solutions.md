@@ -3,7 +3,7 @@ layout: prose
 title: "Window Functions CTEs Lab"
 page_title: "Window Functions CTEs Lab"
 summary: "window functions, CTEs, trees database, data quality"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 ---
@@ -12,7 +12,7 @@ footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
 
 We'll work on the normalized version of the trees db
 
-- download the sql backup from [https://skatai.com/assets/db/treesdb_v03_normalized.sql](/assets/db/treesdb_v03_normalized.sql)
+- download the sql backup from [https://alexisperrier.com/assets/db/treesdb_v03_normalized.sql](/assets/db/treesdb_v03_normalized.sql)
 
 - restore the database
 

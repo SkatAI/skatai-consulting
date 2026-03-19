@@ -3,7 +3,7 @@ layout: prose
 title: "Day 2"
 page_title: "Classification - Regression logistique"
 summary: "Classification avec la regression logistique"
-footer: 'Alexis Perrier - Skatai.com/ml2llm/'
+footer: 'Alexis Perrier - alexisperrier.com/ml2llm/'
 slides_project_home: /ml2llm/
 ---
 # Logistic regression

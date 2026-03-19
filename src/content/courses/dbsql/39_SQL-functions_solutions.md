@@ -3,7 +3,7 @@ layout: prose
 title: "SQL Functions Solutions"
 page_title: "SQL Functions Solutions"
 summary: "CONCAT_WS, COALESCE, REPLACE, string manipulation"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Exercise on concatenate

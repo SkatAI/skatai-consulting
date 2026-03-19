@@ -4,7 +4,7 @@ title: "Big Query"
 page_title: "Big Query"
 summary: "Big Query"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com - Big Query'
+footer: 'Alexis Perrier - alexisperrier.com - Big Query'
 ---
 
 # Big Query

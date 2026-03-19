@@ -3,7 +3,7 @@ layout: prose
 title: "Energy Production Database"
 page_title: "Energy Production Database"
 summary: "database creation, energy data, PL/SQL, carbon emissions"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # A new database

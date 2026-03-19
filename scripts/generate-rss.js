@@ -8,7 +8,7 @@ const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
-const SITE_URL = process.env.SITE_URL || 'https://skatai.com'
+const SITE_URL = process.env.SITE_URL || 'https://alexisperrier.com'
 const blogDir = path.join(process.cwd(), 'src/content/blog')
 const outDir = path.join(process.cwd(), 'out')
 

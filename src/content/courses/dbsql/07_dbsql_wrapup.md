@@ -2,7 +2,7 @@
 layout: slides
 title: "S02 - Wrapup"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com/dbsql - Wrapup'
+footer: 'Alexis Perrier - alexisperrier.com/dbsql - Wrapup'
 ---
 <TitleSlide>
 

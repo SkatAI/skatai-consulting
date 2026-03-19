@@ -2,7 +2,7 @@
 layout: prose
 title: "IA for Business"
 slides_project_home: /courses/iabiz/automatisation/
-footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/automatisation/'
+footer: 'Alexis Perrier - alexisperrier.com/courses/iabiz/automatisation/'
 ---
 <TitleSlide>
 

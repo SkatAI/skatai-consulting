@@ -4,7 +4,7 @@ title: "SQl Anti patterns"
 page_title: "SQl Anti patterns"
 summary: "SQl Anti patterns"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com - relational databases - SQl Anti patterns'
+footer: 'Alexis Perrier - alexisperrier.com - relational databases - SQl Anti patterns'
 ---
 
 # SQL Anti-Patterns

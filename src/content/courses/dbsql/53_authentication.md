@@ -3,7 +3,7 @@ layout: prose
 title: "PostgreSQL Authentication"
 page_title: "PostgreSQL Authentication"
 summary: "pg_hba.conf, authentication, security, configuration"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Authentication and configuration

@@ -3,7 +3,7 @@ layout: prose
 title: "SHA256 Functions Worksheet"
 page_title: "SHA256 Functions Worksheet"
 summary: "SHA256, pgcrypto, hashing, data integrity"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Worksheet: Using Functions in PL/pgSQL

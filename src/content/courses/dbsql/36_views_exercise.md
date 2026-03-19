@@ -3,7 +3,7 @@ layout: prose
 title: "Views Exercise"
 page_title: "Views Exercise"
 summary: "view creation, tree data, joins, filtering"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # PostgreSQL Views Exercise: Managing Paris Tree Data

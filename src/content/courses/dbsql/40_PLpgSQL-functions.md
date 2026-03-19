@@ -3,7 +3,7 @@ layout: prose
 title: "PL/pgSQL Functions"
 page_title: "PL/pgSQL Functions"
 summary: "PL/pgSQL, procedural programming, control structures"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # PL/pgSQL functions in PostgreSQL

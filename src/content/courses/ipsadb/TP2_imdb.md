@@ -87,7 +87,7 @@ The moviesdb database contains **6 tables** that work together to store movie in
 
 Download the database file (< 1 Mb) from [this link](/assets/db/moviesdb.sqlite).
 
-> Full url: [https://skatai.com/assets/db/moviesdb.sqlite](/assets/db/moviesdb.sqlite)
+> Full url: [https://alexisperrier.com/assets/db/moviesdb.sqlite](/assets/db/moviesdb.sqlite)
 
 Launch sqlite with the following command:
 

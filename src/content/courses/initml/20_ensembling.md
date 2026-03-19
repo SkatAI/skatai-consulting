@@ -5,7 +5,7 @@ title: "Introduction au Machine Learning"
 page_title: "Introduction au Machine Learning"
 summary: "Découvrir l'apprentissage d'ensemble et les méthodes de combinaison"
 permalink: /initml/apprentissage-ensemble/
-footer: 'Alexis Perrier - Skatai.com/initml'
+footer: 'Alexis Perrier - alexisperrier.com/initml'
 ---
 
 # P4C3 : Apprentissage d'ensemble

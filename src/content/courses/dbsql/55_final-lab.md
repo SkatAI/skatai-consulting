@@ -3,7 +3,7 @@ layout: prose
 title: "Final Lab Session"
 page_title: "Final Lab Session"
 summary: "course review, ADEME database, comprehensive practice"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Session 10

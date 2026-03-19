@@ -4,7 +4,7 @@ title: "RDBMS architecture - SQL language overview"
 page_title: "RDBMS architecture - SQL language overview"
 summary: "RDBMS architecture - SQL language overview"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com/dbsql/'
+footer: 'Alexis Perrier - alexisperrier.com/dbsql/'
 ---
 <TitleSlide>
 

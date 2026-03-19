@@ -4,8 +4,8 @@ import { Footer } from '@/components/layout/Footer'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
-  title: "Conditions d'utilisation - SkatAI",
-  description: "Conditions d'utilisation de SkatAI",
+  title: "Conditions d'utilisation",
+  description: "Conditions d'utilisation de alexisperrier.com",
 }
 
 export default function ConditionsUtilisationPage() {
@@ -23,10 +23,8 @@ export default function ConditionsUtilisationPage() {
                 En utilisant ce site, vous acceptez les présentes conditions d&apos;utilisation.
               </Text>
               <Text color="gray.600">
-                Editeur : L&apos;application a été réalisée par Skatai SAS (Siret 978 308 294 00013), 31 rue
-                Pierre Semard 75009 Paris.
+                Editeur : L&apos;application a été réalisée par Alexis Perrier.
               </Text>
-              <Text color="gray.600">Contact : Alexis Perrier alexis.perrier@skatai.com</Text>
             </VStack>
           </Box>
         </SiteContainer>

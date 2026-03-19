@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql CTEs -lab"
 page_title: "Postgresql CTEs Lab"
 summary: "CTEs Lab"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 
@@ -23,7 +23,7 @@ Your job is to get insights on the data to facilitate tree management and  impro
 
 At this point you should have the V03 normalized version of the trees database (`treesdb_v03`) loaded in PostgreSQL.
 
-- download the sql backup from [https://skatai.com/assets/db/treesdb_v03_normalized.sql](/assets/db/treesdb_v03_normalized.sql)
+- download the sql backup from [https://alexisperrier.com/assets/db/treesdb_v03_normalized.sql](/assets/db/treesdb_v03_normalized.sql)
 
 - restore the database
 

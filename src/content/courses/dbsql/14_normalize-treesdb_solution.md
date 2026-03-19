@@ -3,7 +3,7 @@ layout: prose
 title: "Postgresql database normalization"
 page_title: "Postgresql database normalization lab on trees dataset"
 summary: "Normalization lab on trees"
-footer: 'Alexis Perrier - Skatai.com/dbsql'
+footer: 'Alexis Perrier - alexisperrier.com/dbsql'
 ---
 
 

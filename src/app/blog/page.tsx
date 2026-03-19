@@ -18,7 +18,7 @@ import { getAllPosts } from '@/lib/mdx'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export const metadata = {
-  title: 'Blog - SkatAI',
+  title: 'Blog - Alexis Perrier',
   description: 'Articles on AI, Machine Learning, and MLOps',
 }
 

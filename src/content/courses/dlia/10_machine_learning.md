@@ -1,7 +1,7 @@
 ---
 layout: slides
 title: "Introduction au machine learning"
-footer: "SkatAI.com/courses/dlia"
+footer: "alexisperrier.com/courses/dlia"
 ---
 
 <!-- <TitleSlide> -->
@@ -605,8 +605,8 @@ L’algorithme est sensible à l’ordre des données ou des décisions. Un mauv
 Notebook dispo sur
 
 - [colab](https://colab.research.google.com/drive/1NfoRvldN4dNQtMBkGPjWsc0ZOB0SCN0Z?usp=sharing)
-- [skatai](https://skatai.com/notebooks/SGDRegressor_Boston.ipynb)
+- [skatai](https://alexisperrier.com/notebooks/SGDRegressor_Boston.ipynb)
 
 
-- [dataset Boston Original](https://skatai.com/data/boston_original.csv)
+- [dataset Boston Original](https://alexisperrier.com/data/boston_original.csv)
 

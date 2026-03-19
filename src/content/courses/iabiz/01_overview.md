@@ -1,7 +1,7 @@
 ---
 layout: slides
 title: "IA for Business"
-footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/'
+footer: 'Alexis Perrier - alexisperrier.com/courses/iabiz/'
 ---
 
 <TitleSlide>

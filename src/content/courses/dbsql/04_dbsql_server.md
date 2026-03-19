@@ -4,7 +4,7 @@ title: "Postgresql server setup"
 page_title: "Postgresql server setup"
 summary: "config files"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 
 ---
 
@@ -14,7 +14,7 @@ footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
 
 <img src="/images/dbsql/qr-code_course_url.png" alt="form" width="40%" style="display: block; margin: auto;">
 
-[**skatai.com/courses/dbsql/dbsql_server/**](/courses/dbsql/dbsql_server/)
+[**alexisperrier.com/courses/dbsql/dbsql_server/**](/courses/dbsql/dbsql_server/)
 </div>
 
 ---

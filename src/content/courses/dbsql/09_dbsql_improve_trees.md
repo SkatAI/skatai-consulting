@@ -4,7 +4,7 @@ title: "Postgresql Loading data"
 page_title: "Postgresql Loading data"
 summary: "Improve trees"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - Skatai.com/dbsql'
+footer: 'Alexis Perrier - alexisperrier.com/dbsql'
 ---
 <TitleSlide>
 
@@ -93,7 +93,7 @@ Key points:
 To restore the database from that backup sql file:
 
 
-1. download the file from  [https://skatai.com/assets/db/treesdb_v01.sql](/assets/db/treesdb_v01.sql)
+1. download the file from  [https://alexisperrier.com/assets/db/treesdb_v01.sql](/assets/db/treesdb_v01.sql)
 2. open a PSQL window
 3. run the sql file with
 

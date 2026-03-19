@@ -2,7 +2,7 @@
 layout: slides
 title: "Relational databases - postgresql - Welcome"
 slides_project_home: /dbsql/
-footer: 'Alexis Perrier - welcome - Skatai.com//dbsql'
+footer: 'Alexis Perrier - welcome - alexisperrier.com//dbsql'
 ---
 
 # Intermediate databases - Epita 2025
@@ -11,7 +11,7 @@ footer: 'Alexis Perrier - welcome - Skatai.com//dbsql'
 
 <img src="/images/dbsql/qr-code_course_url.png" alt="form" width="40%" style="display: block; margin: auto;">
 
-[**skatai.com/dbsql**](/courses/dbsql/)
+[**alexisperrier.com/dbsql**](/courses/dbsql/)
 </div>
 
 ---
@@ -71,7 +71,7 @@ footer: 'Alexis Perrier - welcome - Skatai.com//dbsql'
 
 <img src="/images/dbsql/qr-code_course_url.png" alt="form" width="40%" style="display: block; margin: auto;">
 
-[**skatai.com/dbsql**](/courses/dbsql/)
+[**alexisperrier.com/dbsql**](/courses/dbsql/)
 </div>
 
 

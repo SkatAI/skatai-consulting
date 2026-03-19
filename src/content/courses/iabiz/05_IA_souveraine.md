@@ -2,7 +2,7 @@
 layout: prose
 title: "IA for Business"
 slides_project_home: /courses/iabiz/
-footer: 'Alexis Perrier - SkatAI.com/courses/iabiz/ia_souveraine/'
+footer: 'Alexis Perrier - alexisperrier.com/courses/iabiz/ia_souveraine/'
 ---
 
 # Solutions IA Souveraines

@@ -3,7 +3,7 @@ layout: prose
 title: "Database Indexes Implementation"
 page_title: "Database Indexes Implementation"
 summary: "B-tree, Hash indexes, query optimization, EXPLAIN"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Indexes

@@ -3,7 +3,7 @@ layout: prose
 title: "PostgreSQL Roles Management"
 page_title: "PostgreSQL Roles Management"
 summary: "roles, access control, privileges, schemas"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Roles in PostgreSQL

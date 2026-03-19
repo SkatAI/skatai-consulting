@@ -3,7 +3,7 @@ layout: slides
 title: "Writing Scalable Functions"
 page_title: "Writing Scalable Functions"
 summary: "function design, PL/pgSQL, best practices, exception handling"
-footer: 'Alexis Perrier - Skatai.com  https://discord.gg/DDbh5AyHYH'
+footer: 'Alexis Perrier - alexisperrier.com  https://discord.gg/DDbh5AyHYH'
 ---
 
 # Writing functions
