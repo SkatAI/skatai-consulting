@@ -4,7 +4,7 @@ import { Box, HStack, Link, Text, IconButton, VStack } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { FaLinkedin } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export function Navigation() {
@@ -22,6 +22,11 @@ export function Navigation() {
       href: 'https://www.linkedin.com/in/alexisperrier',
       icon: <FaLinkedin size={20} color="#0077B5" />,
       label: 'LinkedIn',
+    },
+    {
+      href: 'https://github.com/skatai',
+      icon: <FaGithub size={20} color="#181717" />,
+      label: 'GitHub',
     },
     // {
     //   href: 'https://www.malt.fr/profile/alexisperrier',
