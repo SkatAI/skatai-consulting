@@ -1,9 +1,9 @@
 'use client'
 
 import { Box, Heading, Text, VStack, HStack, Link, SimpleGrid } from '@chakra-ui/react'
-import { FaLinkedin, FaMedium } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 import { SiBluesky } from 'react-icons/si'
-import Image from 'next/image'
 import { SiteContainer } from '@/components/layout/SiteContainer'
 
 export function Contact() {
@@ -96,7 +96,21 @@ export function Contact() {
                 </HStack>
               </Link>
               <Link
-                href="https://medium.com/@alexisperrier"
+                href="https://github.com/skatai"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="gray.700"
+                _hover={{ color: '#181717' }}
+              >
+                <HStack gap={2}>
+                  <Box color="#181717">
+                    <FaGithub size={20} />
+                  </Box>
+                  <Text>GitHub</Text>
+                </HStack>
+              </Link>
+              <Link
+                href="https://x.com/alexip"
                 target="_blank"
                 rel="noopener noreferrer"
                 color="gray.700"
@@ -104,25 +118,11 @@ export function Contact() {
               >
                 <HStack gap={2}>
                   <Box color="#000000">
-                    <FaMedium size={20} />
+                    <FaXTwitter size={20} />
                   </Box>
-                  <Text>Medium</Text>
+                  <Text>X</Text>
                 </HStack>
               </Link>
-              {/* <Link
-                href="https://www.malt.fr/profile/alexisperrier"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="gray.700"
-                _hover={{ color: '#FC5757' }}
-              >
-                <Image
-                  src="/images/malt-logo-red.svg"
-                  alt="Malt"
-                  width={70}
-                  height={20}
-                />
-              </Link> */}
             </VStack>
           </VStack>
         </SimpleGrid>
