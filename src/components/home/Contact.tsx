@@ -78,21 +78,7 @@ export function Contact() {
                   <Box color="#0A66C2">
                     <FaLinkedin size={20} />
                   </Box>
-                  <Text>LinkedIn</Text>
-                </HStack>
-              </Link>
-              <Link
-                href="https://bsky.app/profile/alexisperrier.bsky.social"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="gray.700"
-                _hover={{ color: '#0085FF' }}
-              >
-                <HStack gap={2}>
-                  <Box color="#0085FF">
-                    <SiBluesky size={20} />
-                  </Box>
-                  <Text>Bluesky</Text>
+                  <Text>@alexisperrier</Text>
                 </HStack>
               </Link>
               <Link
@@ -106,7 +92,7 @@ export function Contact() {
                   <Box color="#181717">
                     <FaGithub size={20} />
                   </Box>
-                  <Text>GitHub</Text>
+                  <Text>@Skatai</Text>
                 </HStack>
               </Link>
               <Link
@@ -120,7 +106,21 @@ export function Contact() {
                   <Box color="#000000">
                     <FaXTwitter size={20} />
                   </Box>
-                  <Text>X</Text>
+                  <Text>@alexip</Text>
+                </HStack>
+              </Link>
+              <Link
+                href="https://bsky.app/profile/alexisperrier.bsky.social"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="gray.700"
+                _hover={{ color: '#0085FF' }}
+              >
+                <HStack gap={2}>
+                  <Box color="#0085FF">
+                    <SiBluesky size={20} />
+                  </Box>
+                  <Text>@alexisperrier</Text>
                 </HStack>
               </Link>
             </VStack>

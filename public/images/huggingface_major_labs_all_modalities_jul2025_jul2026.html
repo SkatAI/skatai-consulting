@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Open Model Release Velocity — All Modalities · Jul 2025 to Jul 2026</title>
+<style>
+  :root{
+    --paper:#f4f0e7;
+    --ink:#171717;
+    --muted:#66645f;
+    --line:#c8c2b6;
+    --card:#fbf9f4;
+    --accent:#b52820;
+    --chip:#e9e4da;
+    --shadow:0 1px 0 rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  a{color:inherit}
+  .masthead{border-bottom:1px solid var(--ink);padding:26px 28px 20px;background:var(--paper)}
+  .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--accent);margin-bottom:8px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,4.8vw,68px);font-weight:500;letter-spacing:-.035em;line-height:.95;margin:0;max-width:1150px}
+  .dek{max-width:940px;margin:14px 0 0;font:16px/1.45 Georgia,"Times New Roman",serif;color:#343330}
+  .summary{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+  .stat{min-width:110px}
+  .stat strong{font:600 24px/1 Georgia,"Times New Roman",serif;display:block}
+  .stat span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+
+  .toolbar{position:sticky;top:0;z-index:50;background:rgba(244,240,231,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--ink);padding:10px 28px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .toolbar .label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;margin-right:4px}
+  button,select,input{font:600 12px/1.1 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:transparent;border:1px solid #87837a;border-radius:999px;padding:8px 11px;outline:none}
+  button{cursor:pointer}
+  button.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  select{border-radius:4px;background:var(--card)}
+  input{border-radius:4px;width:190px;background:var(--card);font-weight:500}
+  .spacer{flex:1}
+  .method-btn{border-color:var(--accent);color:var(--accent)}
+
+  .timeline-wrap{overflow-x:auto;overflow-y:visible;padding-bottom:18px}
+  .timeline{display:grid;grid-template-columns:repeat(13,270px);min-width:max-content;align-items:start}
+  .month{min-height:calc(100vh - 120px);border-right:1px solid var(--line);padding:0 12px 48px}
+  .month:first-child{border-left:1px solid var(--line)}
+  .month-head{position:sticky;top:53px;z-index:30;background:rgba(244,240,231,.98);backdrop-filter:blur(8px);padding:15px 2px 11px;border-bottom:2px solid var(--ink);margin:0 -2px 12px;display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+  .month-name{font:600 20px/1 Georgia,"Times New Roman",serif}
+  .month-year{display:block;font:700 10px/1.2 Inter,sans-serif;color:var(--muted);letter-spacing:.1em;margin-top:4px}
+  .month-count{font:800 11px/1 Inter,sans-serif;background:var(--accent);color:white;border-radius:999px;padding:5px 7px;min-width:26px;text-align:center}
+
+  .cards{display:flex;flex-direction:column;gap:9px}
+  .card{display:block;text-decoration:none;background:var(--card);border:1px solid #8f8a80;border-top:3px solid var(--ink);padding:11px 11px 10px;box-shadow:var(--shadow);transition:transform .12s ease,box-shadow .12s ease,opacity .12s ease}
+  .card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+  .card.hidden{display:none}
+  .lab{font-size:9px;line-height:1.2;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--accent);margin-bottom:5px;display:flex;align-items:center;gap:6px}.flag{font-size:14px;line-height:1;letter-spacing:0}.kind{margin-left:auto;color:var(--muted);font-weight:800;letter-spacing:.08em}
+  .model{font:600 17px/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.015em;margin:0 0 8px}
+  .size{display:flex;align-items:baseline;gap:6px;padding:7px 0;border-top:1px solid #ddd7cb;border-bottom:1px solid #ddd7cb;margin-bottom:8px}
+  .size strong{font:700 16px/1 Georgia,"Times New Roman",serif}
+  .size span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .chips{display:flex;gap:4px;flex-wrap:wrap}
+  .chip{font-size:9px;line-height:1;text-transform:uppercase;letter-spacing:.055em;background:var(--chip);padding:5px 6px;border-radius:2px;color:#373632}
+  .chip.reasoning{background:#ead9d6;color:#7e201b}
+  .chip.multimodal{background:#dde4e6;color:#284d56}
+  .chip.agentic,.chip.coding{background:#dfe4d8;color:#345028}
+  .chip.moe{background:#e4def0;color:#4b3d69}
+  .note{font:11px/1.35 Georgia,"Times New Roman",serif;color:#54514b;margin-top:8px}
+
+  .empty{font:italic 12px/1.4 Georgia,serif;color:var(--muted);padding:8px 2px}
+  .footer{border-top:1px solid var(--ink);padding:24px 28px 44px;display:grid;grid-template-columns:minmax(240px,1fr) minmax(260px,1fr);gap:34px;background:#ece7dc}
+  .footer h2{font:600 22px/1 Georgia,serif;margin:0 0 10px}
+  .footer p,.footer li{font:13px/1.5 Georgia,serif;color:#3d3b37}
+  .footer ul{margin:0;padding-left:18px}
+  .footer a{text-decoration-thickness:1px;text-underline-offset:2px}
+  .legend-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .small{font-size:11px;color:var(--muted)}
+  dialog{max-width:720px;width:calc(100% - 30px);border:1px solid var(--ink);background:var(--paper);padding:24px;box-shadow:0 15px 50px rgba(0,0,0,.2)}
+  dialog::backdrop{background:rgba(0,0,0,.28)}
+  dialog h2{font:600 28px/1 Georgia,serif;margin:0 0 12px}
+  dialog p, dialog li{font:14px/1.5 Georgia,serif}
+  dialog button{float:right;margin-top:10px;border-radius:4px}
+  @media(max-width:700px){
+    .masthead{padding:20px 16px 16px}.toolbar{padding:8px 16px}.timeline{grid-template-columns:repeat(13,244px)}.month-head{top:91px}.footer{grid-template-columns:1fr;padding:20px 16px 36px}.spacer{display:none}input{width:150px}
+  }
+  @media print{
+    .toolbar{display:none}.timeline-wrap{overflow:visible}.timeline{grid-template-columns:repeat(13,1fr);min-width:0}.month{padding:0 5px}.month-head{position:static}.card{break-inside:avoid}.model{font-size:10px}.lab,.chip{font-size:5px}.size strong{font-size:9px}.note{font-size:7px}.footer{display:none}
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="kicker">Hugging Face · Major labs · All modalities</div>
+  <h1>One year of model releases</h1>
+  <p class="dek">A month-by-month grid of major model families published from July 2025 through July 2026 across language, image, video, vision, audio, embeddings and 3D. Parameter variants, quantizations, FP8/GGUF builds and routine checkpoints are collapsed so the density reflects <em>families and meaningful releases</em>, not repository duplication.</p>
+  <div class="summary">
+    <div class="stat"><strong id="releaseTotal">—</strong><span>release cards</span></div>
+    <div class="stat"><strong id="labTotal">—</strong><span>labs represented</span></div>
+    <div class="stat"><strong>13</strong><span>month columns</span></div>
+    <div class="stat"><strong id="typeTotal">—</strong><span>model types</span></div>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="Filters">
+  <span class="label">Model type</span>
+  <button class="filter active" data-filter="all">All</button>
+  <button class="filter" data-filter="language">Language</button>
+  <button class="filter" data-filter="image">Image</button>
+  <button class="filter" data-filter="video">Video</button>
+  <button class="filter" data-filter="audio">Audio</button>
+  <button class="filter" data-filter="embeddings">Embeddings</button>
+  <button class="filter" data-filter="vision3d">Vision / 3D</button>
+  <select id="labFilter" aria-label="Filter by lab"><option value="all">All labs</option></select>
+  <input id="searchBox" type="search" placeholder="Search model or lab…" aria-label="Search model or lab" />
+  <span class="spacer"></span>
+  <button class="method-btn" id="methodBtn">Method & scope</button>
+</nav>
+
+<main class="timeline-wrap">
+  <div id="timeline" class="timeline"></div>
+</main>
+
+<section class="footer">
+  <div>
+    <h2>How to read the cards</h2>
+    <p>The large number is the <strong>total parameter count</strong> of the representative flagship or main open checkpoint for that family. For MoE models, active-parameter counts are intentionally omitted so sizes stay visually comparable.</p>
+    <div class="legend-row">
+      <span class="chip reasoning">Reasoning</span><span class="chip multimodal">Multimodal</span><span class="chip coding">Coding</span><span class="chip agentic">Agentic</span><span class="chip moe">MoE</span>
+    </div>
+    <p class="small">The flag identifies the lab’s home country. The small label at the top-right of each card gives its primary model type; capability chips below can still mark reasoning, multimodal, coding, ASR, TTS, generation, retrieval and related traits.</p>
+  </div>
+  <div>
+    <h2>Source & caveat</h2>
+    <p>This is a curated visualization layer built around official Hugging Face model pages and collections from major labs. It is intentionally <strong>not</strong> a literal export of every repository: small individual publishers, quantizations, mirrors and routine checkpoint variants are excluded.</p>
+    <ul>
+      <li><a href="https://huggingface.co/models?sort=created" target="_blank" rel="noreferrer">Hugging Face model browser — newest first</a></li>
+      <li><a href="https://huggingface.co/blog/state-of-open-models-summer-2026" target="_blank" rel="noreferrer">Hugging Face: State of Open Models, Summer 2026</a></li>
+    </ul>
+    <p class="small">Release dating can differ between repository creation, announcement, and later model-card updates. This grid uses the first public release month for the named family/release where possible.</p>
+  </div>
+</section>
+
+<dialog id="methodDialog">
+  <h2>Method & scope</h2>
+  <p>The purpose of the grid is to make release velocity visually obvious. A raw Hugging Face query contains many artifacts that would inflate the visual without adding a new model family.</p>
+  <ul>
+    <li><strong>Collapsed:</strong> parameter-size siblings, base/instruct siblings, quantizations, GGUF/FP8/AWQ conversions, and routine deployment checkpoints.</li>
+    <li><strong>Kept:</strong> new named generations, substantial architecture/capability releases, and major specialized families from large or institutionally significant labs.</li>
+    <li><strong>Size:</strong> representative flagship total parameter count only. Active MoE parameter counts are deliberately omitted.</li>
+    <li><strong>Modalities:</strong> language, image, video/world models, audio/speech, embeddings/retrieval, computer vision and 3D are included when released by a major lab.</li>
+    <li><strong>Not a benchmark:</strong> card count measures release cadence, not quality, adoption, market share, or capability.</li>
+  </ul>
+  <button id="closeMethod">Close</button>
+</dialog>
+
+<script>
+const months = [
+  ["2025-07","JULY","2025"],["2025-08","AUGUST","2025"],["2025-09","SEPTEMBER","2025"],["2025-10","OCTOBER","2025"],["2025-11","NOVEMBER","2025"],["2025-12","DECEMBER","2025"],
+  ["2026-01","JANUARY","2026"],["2026-02","FEBRUARY","2026"],["2026-03","MARCH","2026"],["2026-04","APRIL","2026"],["2026-05","MAY","2026"],["2026-06","JUNE","2026"],["2026-07","JULY","2026"]
+];
+
+const releases = [
+
+  {m:"2025-07",n:"Voxtral",lab:"Mistral AI",size:"24B",label:"main checkpoint",kind:"Audio",tags:["Audio","ASR","Translation","Audio understanding"],note:"Mistral's speech-and-audio understanding family; Mini and Small variants collapsed here.",url:"https://huggingface.co/mistralai/Voxtral-Small-24B-2507"},
+  {m:"2025-07",n:"Wan 2.2",lab:"Wan · Alibaba",size:"14B",label:"main checkpoint",kind:"Video",tags:["Video","Text-to-video","Image-to-video","MoE"],note:"Alibaba's open video generation family spanning text-to-video, image-to-video and hybrid variants.",url:"https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B"},
+  {m:"2025-08",n:"Qwen-Image",lab:"Qwen · Alibaba",size:"20B",label:"parameters",kind:"Image",tags:["Image","Generation","Editing","Text rendering"],note:"Image foundation model for high-quality generation and precise editing, especially strong at rendered text.",url:"https://huggingface.co/Qwen/Qwen-Image"},
+  {m:"2025-08",n:"DINOv3",lab:"Meta",size:"7B",label:"largest backbone",kind:"Vision",tags:["Vision","Embeddings","Self-supervised","Dense features"],note:"General-purpose visual foundation model family for image representations and dense computer-vision features.",url:"https://huggingface.co/facebook/dinov3-vit7b16-pretrain-lvd1689m"},
+  {m:"2025-08",n:"VibeVoice",lab:"Microsoft",size:"1.5B",label:"official checkpoint",kind:"Audio",tags:["Audio","TTS","Multi-speaker","Long-form"],note:"Open text-to-speech family aimed at expressive long-form and multi-speaker conversational audio.",url:"https://huggingface.co/microsoft/VibeVoice-1.5B"},
+  {m:"2025-09",n:"EmbeddingGemma",lab:"Google",size:"0.3B",label:"parameters",kind:"Embeddings",tags:["Embeddings","Retrieval","Multilingual","On-device"],note:"Compact multilingual text embedding family derived from Gemma for search, retrieval and semantic similarity.",url:"https://huggingface.co/google/embeddinggemma-300m"},
+  {m:"2025-10",n:"Nemotron Embed",lab:"NVIDIA",size:"8B",label:"main text embedder",kind:"Embeddings",tags:["Embeddings","Retrieval","Reranking","Multilingual"],note:"NVIDIA retrieval family; text and multimodal Nemotron embedding releases are collapsed into one card.",url:"https://huggingface.co/nvidia/llama-embed-nemotron-8b"},
+  {m:"2025-10",n:"Cosmos Predict 2.5",lab:"NVIDIA",size:"14B",label:"main checkpoint",kind:"Video",tags:["Video","World model","Multimodal","Physical AI"],note:"World foundation model family for generating and predicting future visual states from text, images and video.",url:"https://huggingface.co/nvidia/Cosmos-Predict2.5-14B"},
+  {m:"2025-11",n:"FLUX.2",lab:"Black Forest Labs",size:"32B",label:"dev checkpoint",kind:"Image",tags:["Image","Generation","Editing","Multi-reference"],note:"Second-generation FLUX image family, trained from scratch for generation and image editing.",url:"https://huggingface.co/black-forest-labs/FLUX.2-dev"},
+  {m:"2025-11",n:"Z-Image",lab:"Tongyi · Alibaba",size:"6B",label:"parameters",kind:"Image",tags:["Image","Generation","Fast inference","Text rendering"],note:"Efficient image generation family from Alibaba's Tongyi-MAI team; base and Turbo variants collapsed.",url:"https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"},
+  {m:"2025-11",n:"HunyuanVideo 1.5",lab:"Tencent",size:"8.3B",label:"parameters",kind:"Video",tags:["Video","Text-to-video","Image-to-video","Consumer GPU"],note:"Tencent's lightweight open video generation family for text- and image-conditioned generation.",url:"https://huggingface.co/tencent/HunyuanVideo-1.5"},
+  {m:"2025-11",n:"Omnilingual ASR",lab:"Meta",size:"7.8B",label:"largest ASR checkpoint",kind:"Audio",tags:["Audio","ASR","1600+ languages","Multilingual"],note:"Meta speech-recognition family covering more than 1,600 languages, with W2V, CTC and LLM-based variants.",url:"https://huggingface.co/facebook/omniASR-LLM-7B"},
+  {m:"2025-11",n:"SAM 3",lab:"Meta",size:"0.85B",label:"parameters",kind:"Vision",tags:["Vision","Segmentation","Tracking","Open vocabulary"],note:"Promptable concept segmentation and tracking across images and video using text or visual prompts.",url:"https://huggingface.co/facebook/sam3"},
+  {m:"2025-11",n:"SAM 3D",lab:"Meta",size:"1.8B",label:"two-stage total",kind:"3D",tags:["3D","Reconstruction","Geometry","Texture"],note:"Single-image 3D reconstruction family; 1.2B geometry model plus 0.6B texture/refinement model.",url:"https://huggingface.co/facebook/sam-3d-objects"},
+  {m:"2026-01",n:"Qwen3-TTS",lab:"Qwen · Alibaba",size:"1.7B",label:"main checkpoint",kind:"Audio",tags:["Audio","TTS","Voice cloning","Streaming"],note:"Multilingual speech-generation family with controllable voices, voice design and short-sample voice cloning.",url:"https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"},
+  {m:"2026-01",n:"PersonaPlex",lab:"NVIDIA",size:"7B",label:"parameters",kind:"Audio",tags:["Audio","Speech-to-speech","Realtime","Conversational"],note:"End-to-end real-time conversational speech model that jointly understands and generates spoken audio.",url:"https://huggingface.co/nvidia/personaplex-7b-v1"},
+  {m:"2026-03",n:"Granite Speech 4.0",lab:"IBM",size:"1B",label:"parameters",kind:"Audio",tags:["Audio","ASR","Speech translation","Multilingual"],note:"Compact enterprise speech-language model for multilingual recognition and bidirectional speech translation.",url:"https://huggingface.co/ibm-granite/granite-4.0-1b-speech"},
+  {m:"2026-03",n:"Granite Vision 4.0",lab:"IBM",size:"4B",label:"total parameters",kind:"Vision",tags:["Vision","Documents","Multimodal","Enterprise"],note:"Compact document-focused visual language model for charts, tables, pages and enterprise document workflows.",url:"https://huggingface.co/ibm-granite/granite-4.0-3b-vision"},
+  {m:"2026-04",n:"Granite Embedding R2",lab:"IBM",size:"0.31B",label:"main checkpoint",kind:"Embeddings",tags:["Embeddings","Retrieval","Multilingual","32K context"],note:"Second-generation multilingual Granite embedding family; 311M and 97M variants collapsed here.",url:"https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2"},
+  {m:"2026-05",n:"Stable Audio 3",lab:"Stability AI",size:"2B",label:"medium checkpoint",kind:"Audio",tags:["Audio","Text-to-audio","Editing","Music + SFX"],note:"Latent-diffusion audio family for variable-length music and sound generation, continuation and inpainting.",url:"https://huggingface.co/stabilityai/stable-audio-3-medium"},
+  {m:"2025-07",n:"Qwen3-Coder",lab:"Qwen · Alibaba",size:"480B",label:"total parameters",tags:["MoE","Coding","Agentic"],note:"Flagship coding and software-agent branch of Qwen3.",url:"https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct"},
+  {m:"2025-07",n:"Kimi K2",lab:"Moonshot AI",size:"1T",label:"total parameters",tags:["MoE","Reasoning","Coding","Agentic"],note:"Frontier-scale sparse model optimized for coding and tool use.",url:"https://huggingface.co/moonshotai/Kimi-K2-Instruct"},
+  {m:"2025-07",n:"GLM-4.5",lab:"Z.ai",size:"355B",label:"total parameters",tags:["MoE","Reasoning","Agentic"],note:"Unified reasoning, coding and agent-oriented flagship.",url:"https://huggingface.co/zai-org/GLM-4.5"},
+  {m:"2025-07",n:"Step-3",lab:"StepFun",size:"321B",label:"total parameters",tags:["MoE","Multimodal","Reasoning"],note:"Large vision-language reasoning model.",url:"https://huggingface.co/stepfun-ai/Step3",broad:true},
+  {m:"2025-07",n:"MiniMax-M1",lab:"MiniMax",size:"456B",label:"parameters",tags:["MoE","Reasoning","Long context"],note:"Large hybrid-attention reasoning model.",url:"https://huggingface.co/MiniMaxAI/MiniMax-M1-80k"},
+  {m:"2025-07",n:"Phi-4 mini flash reasoning",lab:"Microsoft",size:"3.8B",label:"parameters",tags:["Reasoning","Small","Hybrid"],note:"Compact reasoning model using a hybrid attention/SSM design.",url:"https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning"},
+  {m:"2025-07",n:"Command A Vision",lab:"Cohere",size:"112B",label:"parameters",tags:["Multimodal","Enterprise"],note:"Vision-enabled extension of Cohere's Command A family.",url:"https://huggingface.co/CohereLabs/c4ai-command-a-vision-07-2025",broad:true},
+  {m:"2025-07",n:"OpenReasoning-Nemotron",lab:"NVIDIA",size:"32B",label:"flagship class",tags:["Reasoning","Open data"],note:"Reasoning-focused open release and training-data effort.",url:"https://huggingface.co/nvidia/OpenReasoning-Nemotron-32B"},
+
+  {m:"2025-08",n:"GPT-OSS",lab:"OpenAI",size:"117B",label:"main checkpoint",tags:["MoE","Reasoning","Agentic"],note:"Open-weight reasoning family, with 120B and 20B variants collapsed here.",url:"https://huggingface.co/openai/gpt-oss-120b"},
+  {m:"2025-08",n:"DeepSeek-V3.1",lab:"DeepSeek",size:"671B",label:"total parameters",tags:["MoE","Reasoning","Agentic"],note:"Hybrid thinking/non-thinking model with stronger tool use.",url:"https://huggingface.co/deepseek-ai/DeepSeek-V3.1"},
+  {m:"2025-08",n:"GLM-4.5V",lab:"Z.ai",size:"106B",label:"total parameters",tags:["MoE","Multimodal","Reasoning","Agentic"],note:"Vision reasoning, video, documents and GUI-agent tasks.",url:"https://huggingface.co/zai-org/GLM-4.5V",broad:true},
+  {m:"2025-08",n:"Command A Reasoning",lab:"Cohere",size:"111B",label:"parameters",tags:["Reasoning","Enterprise"],note:"Reasoning-oriented Command A release.",url:"https://huggingface.co/CohereLabs/c4ai-command-a-reasoning-08-2025"},
+  {m:"2025-08",n:"Nemotron Nano 2",lab:"NVIDIA",size:"9B",label:"parameters",tags:["Small","Reasoning"],note:"Compact production-oriented Nemotron release.",url:"https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2"},
+  {m:"2025-08",n:"MiMo-VL 2508",lab:"Xiaomi",size:"7B",label:"parameters",tags:["Multimodal","Small"],note:"Compact Xiaomi vision-language model family.",url:"https://huggingface.co/XiaomiMiMo/MiMo-VL-7B-RL-2508",broad:true},
+
+  {m:"2025-09",n:"Qwen3-Next",lab:"Qwen · Alibaba",size:"80B",label:"total parameters",tags:["MoE","Reasoning","Hybrid"],note:"Efficiency-focused next-generation hybrid architecture.",url:"https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking"},
+  {m:"2025-09",n:"Qwen3-Omni",lab:"Qwen · Alibaba",size:"30B",label:"total parameters",tags:["MoE","Multimodal","Audio"],note:"Native text, image, audio and broader omni-modal interaction.",url:"https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",broad:true},
+  {m:"2025-09",n:"Qwen3-VL",lab:"Qwen · Alibaba",size:"235B",label:"total parameters",tags:["MoE","Multimodal","Reasoning","Agentic"],note:"Large vision-language family with visual reasoning and agents.",url:"https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",broad:true},
+
+  {m:"2025-10",n:"DeepSeek-V3.2-Exp",lab:"DeepSeek",size:"671B",label:"family scale",tags:["MoE","Reasoning","Agentic"],note:"Experimental V3.2 branch; later consolidated into V3.2.",url:"https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp"},
+  {m:"2025-10",n:"Granite 4.0 Nano",lab:"IBM",size:"3B class",label:"family flagship",tags:["Small","Enterprise"],note:"Compact Granite 4.0 line for local and enterprise use.",url:"https://huggingface.co/ibm-granite"},
+
+  {m:"2025-11",n:"DeepSeekMath-V2",lab:"DeepSeek",size:"685B class",label:"family scale",tags:["Reasoning","Math"],note:"Specialized mathematical reasoning release.",url:"https://huggingface.co/deepseek-ai/DeepSeek-Math-V2"},
+
+  {m:"2025-12",n:"Mistral Large 3",lab:"Mistral AI",size:"675B",label:"total parameters",tags:["MoE","Multimodal","Reasoning"],note:"Mistral's large sparse flagship generation.",url:"https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512",broad:true},
+  {m:"2025-12",n:"Devstral 2",lab:"Mistral AI",size:"123B",label:"parameters",tags:["Coding","Agentic"],note:"Large software-engineering and coding-agent model.",url:"https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512"},
+  {m:"2025-12",n:"Ministral 3",lab:"Mistral AI",size:"14B",label:"flagship variant",tags:["Small","Reasoning"],note:"3B/8B/14B compact family collapsed into one card.",url:"https://huggingface.co/mistralai"},
+  {m:"2025-12",n:"OLMo 3",lab:"Ai2",size:"32B",label:"flagship variant",tags:["Reasoning","Coding","Fully open"],note:"Open weights, data and training recipe; 7B/32B family.",url:"https://huggingface.co/allenai/Olmo-3-32B-Think"},
+  {m:"2025-12",n:"GLM-4.7",lab:"Z.ai",size:"358B",label:"parameters",tags:["MoE","Reasoning","Agentic"],note:"Next GLM generation for reasoning and agent workflows.",url:"https://huggingface.co/zai-org/GLM-4.7"},
+  {m:"2025-12",n:"MiniMax-M2",lab:"MiniMax",size:"229B",label:"parameters",tags:["MoE","Coding","Agentic"],note:"Large sparse model aimed at coding and agents.",url:"https://huggingface.co/MiniMaxAI/MiniMax-M2"},
+  {m:"2025-12",n:"Kimi Linear",lab:"Moonshot AI",size:"48B",label:"total parameters",tags:["MoE","Hybrid","Efficient"],note:"Efficiency-oriented linear/hybrid architecture experiment.",url:"https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct"},
+  {m:"2025-12",n:"Nemotron 3 Nano",lab:"NVIDIA",size:"30B",label:"total parameters",tags:["MoE","Reasoning","Efficient"],note:"Sparse Nemotron generation optimized for efficient inference.",url:"https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"},
+
+  {m:"2026-01",n:"TranslateGemma",lab:"Google",size:"27B",label:"flagship variant",tags:["Translation","Multilingual"],note:"Gemma-derived translation family spanning multiple sizes.",url:"https://huggingface.co/google/translategemma-27b-it"},
+  {m:"2026-01",n:"MiniMax-M2.1",lab:"MiniMax",size:"229B",label:"parameters",tags:["MoE","Coding","Agentic"],note:"M2 generation update focused on complex agentic work.",url:"https://huggingface.co/MiniMaxAI/MiniMax-M2.1"},
+
+  {m:"2026-02",n:"Qwen3-Coder-Next",lab:"Qwen · Alibaba",size:"80B",label:"total parameters",tags:["MoE","Coding","Agentic","Hybrid"],note:"Long-horizon coding agent aimed at repository-scale software engineering workflows.",url:"https://huggingface.co/Qwen/Qwen3-Coder-Next"},
+  {m:"2026-02",n:"Qwen3.5",lab:"Qwen · Alibaba",size:"397B",label:"total parameters",tags:["MoE","Reasoning","Multimodal","Agentic"],note:"Large general family combining reasoning, vision and agents.",url:"https://huggingface.co/Qwen/Qwen3.5-397B-A17B",broad:true},
+  {m:"2026-02",n:"Step-3.5-Flash",lab:"StepFun",size:"196B",label:"total parameters",tags:["MoE","Reasoning","Agentic"],note:"Sparse reasoning model optimized for speed and tool use.",url:"https://huggingface.co/stepfun-ai/Step-3.5-Flash"},
+
+  {m:"2026-03",n:"Mistral Small 4",lab:"Mistral AI",size:"119B",label:"total parameters",tags:["MoE","Reasoning","Coding"],note:"Unifies general instruction, reasoning and software-engineering roles.",url:"https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"},
+  {m:"2026-03",n:"MiniMax-M2.5",lab:"MiniMax",size:"229B",label:"parameters",tags:["MoE","Coding","Agentic"],note:"Continued high-cadence M2 agent/coding series.",url:"https://huggingface.co/MiniMaxAI/MiniMax-M2.5"},
+  {m:"2026-03",n:"Nemotron 3 Nano 4B",lab:"NVIDIA",size:"4B",label:"parameters",tags:["Small","Reasoning"],note:"Very small member of the Nemotron 3 generation.",url:"https://huggingface.co/nvidia"},
+
+  {m:"2026-04",n:"DeepSeek-V4",lab:"DeepSeek",size:"1.6T",label:"total parameters",tags:["MoE","Reasoning","Agentic","Long context"],note:"New DeepSeek generation; Flash and Pro variants collapsed here.",url:"https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"},
+  {m:"2026-04",n:"Qwen3.6",lab:"Qwen · Alibaba",size:"35B",label:"total parameters",tags:["MoE","Reasoning","Efficient"],note:"Compact sparse next-step in the Qwen3 generation.",url:"https://huggingface.co/Qwen/Qwen3.6-35B-A3B"},
+  {m:"2026-04",n:"GLM-5",lab:"Z.ai",size:"754B",label:"parameters",tags:["MoE","Reasoning","Agentic"],note:"Major GLM generation jump at frontier scale.",url:"https://huggingface.co/zai-org/GLM-5"},
+  {m:"2026-04",n:"MiniMax-M2.7",lab:"MiniMax",size:"229B",label:"parameters",tags:["MoE","Coding","Agentic"],note:"Another rapid iteration in the M2 family.",url:"https://huggingface.co/MiniMaxAI/MiniMax-M2.7"},
+  {m:"2026-04",n:"Hunyuan Hy3",lab:"Tencent",size:"295B",label:"total parameters",tags:["MoE","Reasoning","Coding","Agentic"],note:"Tencent's new large sparse generation, first released as Hy3 preview.",url:"https://huggingface.co/tencent/Hunyuan-HY3-Preview"},
+  {m:"2026-04",n:"Granite 4.1",lab:"IBM",size:"30B",label:"flagship variant",tags:["Coding","Agentic","Enterprise"],note:"3B/8B/30B dense family with long context and tool calling.",url:"https://huggingface.co/ibm-granite/granite-4.1-30b"},
+
+  {m:"2026-05",n:"GLM-5.1",lab:"Z.ai",size:"754B",label:"parameters",tags:["MoE","Reasoning","Agentic"],note:"Rapid follow-on to GLM-5, preserving frontier-scale cadence.",url:"https://huggingface.co/zai-org/GLM-5.1"},
+  {m:"2026-05",n:"Command A+",lab:"Cohere",size:"100B+",label:"main checkpoint",tags:["MoE","Enterprise","Agentic","Long context"],note:"New sparse Command generation for enterprise and tool-heavy workloads.",url:"https://huggingface.co/CohereLabs"},
+  {m:"2026-05",n:"Nemotron 3 Super",lab:"NVIDIA",size:"124B",label:"parameters",tags:["Reasoning","Agentic"],note:"Large original U.S. open model in the Nemotron 3 line.",url:"https://huggingface.co/collections/nvidia/nemotron-v3"},
+
+  {m:"2026-06",n:"Kimi K3",lab:"Moonshot AI",size:"2.8T",label:"parameters",tags:["MoE","Multimodal","Reasoning","Agentic"],note:"Frontier-scale native multimodal Kimi generation.",url:"https://huggingface.co/moonshotai/Kimi-K3",broad:true},
+  {m:"2026-06",n:"GLM-5.2",lab:"Z.ai",size:"753B",label:"parameters",tags:["MoE","Reasoning","Agentic"],note:"Long-horizon reasoning and agent-oriented GLM release.",url:"https://huggingface.co/zai-org/GLM-5.2"},
+  {m:"2026-06",n:"MiniMax-M3",lab:"MiniMax",size:"427B",label:"parameters",tags:["MoE","Multimodal","Coding","Agentic"],note:"New MiniMax generation with multimodal and agentic emphasis.",url:"https://huggingface.co/MiniMaxAI/MiniMax-M3",broad:true},
+  {m:"2026-06",n:"Nemotron 3 Ultra",lab:"NVIDIA",size:"561B",label:"total parameters",tags:["MoE","Reasoning","Agentic"],note:"NVIDIA's frontier-scale original open model.",url:"https://huggingface.co/nvidia/Nemotron-3-Ultra"},
+  {m:"2026-06",n:"Step-3.7-Flash",lab:"StepFun",size:"201B",label:"parameters",tags:["Multimodal","Reasoning","Agentic"],note:"Unified multimodal Step release with fast inference emphasis.",url:"https://huggingface.co/stepfun-ai",broad:true},
+
+  {m:"2026-07",n:"Gemma 4",lab:"Google",size:"31B",label:"dense flagship",tags:["Multimodal","Reasoning","Coding"],note:"New Gemma generation; dense and sparse variants collapsed here.",url:"https://huggingface.co/google",broad:true},
+  {m:"2026-07",n:"DiffusionGemma",lab:"Google",size:"26B",label:"total parameters",tags:["MoE","Multimodal","Diffusion"],note:"Discrete-diffusion generative model derived from the Gemma 4 generation.",url:"https://huggingface.co/google/DiffusionGemma-26B-A4B-it",broad:true},
+  {m:"2026-07",n:"MiMo-V2.5",lab:"Xiaomi",size:"1T",label:"Pro flagship",tags:["MoE","Reasoning","Coding","Agentic"],note:"Large Xiaomi generation; standard and Pro variants collapsed.",url:"https://huggingface.co/XiaomiMiMo"},
+];
+
+
+const labFlags = {
+  "OpenAI":"🇺🇸","DeepSeek":"🇨🇳","Qwen · Alibaba":"🇨🇳","Wan · Alibaba":"🇨🇳","Tongyi · Alibaba":"🇨🇳",
+  "Z.ai":"🇨🇳","Moonshot AI":"🇨🇳","MiniMax":"🇨🇳","StepFun":"🇨🇳","Xiaomi":"🇨🇳","Tencent":"🇨🇳",
+  "Mistral AI":"🇫🇷","Cohere":"🇨🇦","NVIDIA":"🇺🇸","Microsoft":"🇺🇸","IBM":"🇺🇸","Google":"🇺🇸","Meta":"🇺🇸",
+  "Black Forest Labs":"🇩🇪","Stability AI":"🇬🇧","Ai2":"🇺🇸"
+};
+function primaryKind(r){
+  if(r.kind) return r.kind;
+  if(/Vision/.test(r.n) && !/Command A Vision/.test(r.n)) return 'Vision';
+  return 'Language';
+}
+function normalizedFilterKind(r){
+  const k=primaryKind(r).toLowerCase();
+  return (k==='vision'||k==='3d') ? 'vision3d' : k;
+}
+
+const timeline = document.getElementById('timeline');
+const labFilter = document.getElementById('labFilter');
+const searchBox = document.getElementById('searchBox');
+let capability = 'all';
+
+function chipClass(tag){
+  const t=tag.toLowerCase();
+  if(t.includes('reason')) return 'reasoning';
+  if(t.includes('multimodal')||t.includes('audio')) return 'multimodal';
+  if(t.includes('coding')) return 'coding';
+  if(t.includes('agent')) return 'agentic';
+  if(t==='moe') return 'moe';
+  return '';
+}
+function render(){
+  timeline.innerHTML='';
+  for(const [key,name,year] of months){
+    const col=document.createElement('section'); col.className='month'; col.dataset.month=key;
+    col.innerHTML=`<div class="month-head"><div><div class="month-name">${name}</div><span class="month-year">${year}</span></div><span class="month-count" data-count>0</span></div><div class="cards"></div>`;
+    const holder=col.querySelector('.cards');
+    releases.filter(r=>r.m===key).forEach(r=>{
+      const a=document.createElement('a'); a.className='card'; a.href=r.url; a.target='_blank'; a.rel='noreferrer';
+      a.dataset.lab=r.lab; a.dataset.tags=r.tags.join('|').toLowerCase(); a.dataset.kind=normalizedFilterKind(r); a.dataset.search=(r.n+' '+r.lab+' '+primaryKind(r)+' '+r.tags.join(' ')).toLowerCase();
+      a.innerHTML=`<div class="lab"><span class="flag">${labFlags[r.lab]||'🌐'}</span><span>${r.lab}</span><span class="kind">${primaryKind(r)}</span></div><h3 class="model">${r.n}</h3><div class="size"><strong>${r.size}</strong><span>${r.label}</span></div><div class="chips">${r.tags.map(t=>`<span class="chip ${chipClass(t)}">${t}</span>`).join('')}</div><div class="note">${r.note}</div>`;
+      holder.appendChild(a);
+    });
+    timeline.appendChild(col);
+  }
+  applyFilters();
+}
+function applyFilters(){
+  const lab=labFilter.value;
+  const q=searchBox.value.trim().toLowerCase();
+  document.querySelectorAll('.month').forEach(col=>{
+    let visible=0;
+    col.querySelectorAll('.card').forEach(card=>{
+      const tags=card.dataset.tags;
+      const capOK = capability==='all' || card.dataset.kind===capability;
+      const labOK = lab==='all' || card.dataset.lab===lab;
+      const qOK = !q || card.dataset.search.includes(q);
+      const show=capOK && labOK && qOK;
+      card.classList.toggle('hidden',!show);
+      if(show) visible++;
+    });
+    col.querySelector('[data-count]').textContent=visible;
+    let empty=col.querySelector('.empty');
+    if(visible===0 && !empty){empty=document.createElement('div');empty.className='empty';empty.textContent='No matching releases.';col.querySelector('.cards').appendChild(empty)}
+    if(empty) empty.style.display=visible===0?'block':'none';
+  });
+}
+
+const labs=[...new Set(releases.map(r=>r.lab))].sort();
+labs.forEach(l=>{const o=document.createElement('option');o.value=l;o.textContent=l;labFilter.appendChild(o)});
+document.getElementById('releaseTotal').textContent=releases.length;
+document.getElementById('labTotal').textContent=labs.length;
+document.getElementById('typeTotal').textContent=new Set(releases.map(primaryKind)).size;
+
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');capability=btn.dataset.filter;applyFilters();
+}));
+labFilter.addEventListener('change',applyFilters);searchBox.addEventListener('input',applyFilters);
+const dlg=document.getElementById('methodDialog');document.getElementById('methodBtn').onclick=()=>dlg.showModal();document.getElementById('closeMethod').onclick=()=>dlg.close();
+render();
+</script>
+</body>
+</html>
