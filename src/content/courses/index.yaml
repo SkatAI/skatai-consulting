@@ -1,14 +1,22 @@
 courses:
+  - slug: AI-101-2026
+    title: Introduction to AI @SciencesPo - Le Havre 2026
+    description: "Through live demos, conceptual explanations, and hands-on practice, we move from the foundational mechanics of large language models to the broader questions they raise about work, intelligence, the environment, and geopolitical power."
+    tags:
+      - Artificial Intelligence
+      - English
+    order: 5
+    status: live
   - slug: inwai
-    title: Investigating with AI
-    description: "Using AI tools for investigation, analysis, and research. #SciencesPo"
+    title: Investigating with AI 2025
+    description: "Using AI tools for investigation, analysis, and research. #SciencesPo 2025"
     tags:
       - Artificial Intelligence
       - Data Analysis
       - Data journalism
       - Vibe coding
       - English
-    order: 1
+    order: 10
     status: live
   - slug: dlia
     title: Deep Learning et Intelligence Artificielle
@@ -20,7 +28,7 @@ courses:
       - Transformers
       - VAE
       - Reinforcement Learning
-    order: 3
+    order: 15
     status: live
   - slug: iabiz
     title: AI for Business
@@ -29,7 +37,7 @@ courses:
       - Intelligence Artificielle
       - Business
       - Français
-    order: 5
+    order: 20
     status: live
   - slug: initml
     title: Introduction to ML
@@ -38,7 +46,7 @@ courses:
       - ML
       - Python
       - Scikit-learn
-    order: 6
+    order: 25
     status: live
 
   - slug: ml2llm
@@ -50,8 +58,6 @@ courses:
       - Transformers
     order: 30
     status: live
-
-
   - slug: nosql
     title: NoSQL Databases
     description: "Deep dive into NoSQL database systems and data modeling patterns."
