@@ -32,6 +32,20 @@ export interface CourseIndexItem {
   tags?: string[]
   order?: number
   status?: 'live' | 'draft' | 'archived'
+  background?: string
+}
+
+// Background images live in public/, but are served from the site root.
+// Accept both `public/images/...` and `/images/...` in index.yaml.
+function normalizeAssetPath(value: unknown): string | undefined {
+  if (typeof value !== 'string' || !value.trim()) {
+    return undefined
+  }
+  const trimmed = value.trim()
+  if (/^https?:\/\//.test(trimmed)) {
+    return trimmed
+  }
+  return `/${trimmed.replace(/^\/?public\//, '').replace(/^\//, '')}`
 }
 
 export interface CourseSessionItem {
@@ -264,6 +278,7 @@ export function getCourseIndex(): CourseIndexItem[] {
             tags,
             order: Number.isFinite(order) ? order : undefined,
             status,
+            background: normalizeAssetPath(item?.background),
           })
         })
     }

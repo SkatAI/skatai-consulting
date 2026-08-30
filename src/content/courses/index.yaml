@@ -7,6 +7,7 @@ courses:
       - English
     order: 5
     status: live
+    background: /images/AI-101-2026/sciencespo_campus_havre_facade_001_1f6aabd815.jpg
   - slug: inwai
     title: Investigating with AI 2025
     description: "Using AI tools for investigation, analysis, and research. #SciencesPo 2025"
