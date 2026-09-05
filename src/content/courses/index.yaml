@@ -1,25 +1,28 @@
 courses:
+  - slug: inwai26
+    title: Investigating with AI - @SciencesPo Paris - Winter 2026
+    description: "Challenging AI for investigation, analysis, and research. #SciencesPo 2026. Sept to Dec 26."
+    tags:
+      - Artificial Intelligence
+      - Data Analysis
+      - Data journalism
+      - Social Impact
+      - Technical overview
+      - Building with AI demos
+      - Hands on research project
+      - English
+    order: 5
+    status: live
+    background: /images/inwai26/sciencespo_paris_drone_view.png
   - slug: AI-101-2026
     title: Introduction to AI @SciencesPo - Le Havre 2026
     description: "Through live demos, conceptual explanations, and hands-on practice, we move from the foundational mechanics of large language models to the broader questions they raise about work, intelligence, the environment, and geopolitical power."
     tags:
       - Artificial Intelligence
       - English
-    order: 5
-    status: live
-    background: /images/AI-101-2026/sciencespo_campus_havre_facade_001_1f6aabd815.jpg
-  - slug: inwai26
-    title: Investigating with AI 2026
-    description: "Using AI tools for investigation, analysis, and research. #SciencesPo 2026"
-    tags:
-      - Artificial Intelligence
-      - Data Analysis
-      - Data journalism
-      - Vibe coding
-      - English
     order: 8
     status: live
-    background: /images/inwai26/sciencespo_paris_drone_view.png
+    background: /images/AI-101-2026/sciencespo_campus_havre_facade_001_1f6aabd815.jpg
   - slug: inwai25
     title: Investigating with AI 2025
     description: "Using AI tools for investigation, analysis, and research. #SciencesPo 2025"
