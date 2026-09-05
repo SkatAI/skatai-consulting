@@ -1,9 +1,9 @@
 title: Investigating with AI
 description: Using AI tools for investigation, analysis, and research.
 index:
-  file: 00-inwai.md
+  file: 00-inwai25.md
 sessions:
-  - file: S01.01.inwai.welcome.md
+  - file: S01.01.welcome.md
   - file: S02.01.json_pandas.md
   - file: S02.02.imdb-pandas-exercises.md
   - file: S03.01.api.md

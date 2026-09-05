@@ -191,18 +191,21 @@ export function getCourseStructure(courseName: string): {
         })
     : []
 
-  if (chaptersFromIndex.length > 0) {
+  const indexFromContent = contentIndex?.index
+    ? {
+        title: contentIndex.index.title || contentIndex.title || courseName,
+        description: contentIndex.index.description || contentIndex.description,
+        file: contentIndex.index.file,
+      }
+    : contentIndex?.title
+      ? { title: contentIndex.title, description: contentIndex.description }
+      : undefined
+
+  // A course may declare an index page with no sessions (single-page course).
+  if (chaptersFromIndex.length > 0 || indexFromContent?.file) {
     return {
       chapters: chaptersFromIndex.sort((a, b) => a.order - b.order),
-      index: contentIndex?.index
-        ? {
-            title: contentIndex.index.title || contentIndex.title || courseName,
-            description: contentIndex.index.description || contentIndex.description,
-            file: contentIndex.index.file,
-          }
-        : contentIndex?.title
-          ? { title: contentIndex.title, description: contentIndex.description }
-          : undefined,
+      index: indexFromContent,
     }
   }
 
@@ -224,6 +227,7 @@ export function getCourseStructure(courseName: string): {
 
   return {
     chapters: chapters.sort((a, b) => a.order - b.order),
+    index: indexFromContent,
   }
 }
 

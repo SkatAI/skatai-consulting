@@ -104,7 +104,7 @@ By the end of this course, students will be able to:
 
 ## Required Tools & Resources
 - **Google Colab** for Python programming and data analysis
-- **Course website**: [alexisperrier.com/inwai](/courses/inwai/)
+- **Course website**: [alexisperrier.com/courses/inwai25](/courses/inwai25/)
 - **GitHub account**
 - **Instructor**: Alexis Perrier, alexis.perrier@sciencespo.fr
 

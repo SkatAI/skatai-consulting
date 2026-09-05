@@ -2,14 +2,17 @@ SHELL := /bin/bash
 
 .DEFAULT_GOAL := help
 
-.PHONY: help setup start start-logs dev devrun build lint format format-fix pretty clean supa-start supa-stop supa-reset supa-status supa-push supa-pull db-start db-stop db-reset docker-dev docker-dev-detached docker-up-detached docker-prod docker-prod-detached docker-down docker-logs docker-prod-build test test-ui
+.PHONY: help setup start start-logs run devrun build lint format format-fix pretty clean supa-start supa-stop supa-reset supa-status supa-push supa-pull db-start db-stop db-reset docker-dev docker-dev-detached docker-up-detached docker-prod docker-prod-detached docker-down docker-logs docker-prod-build test test-ui
 
 help: ## Show available make targets.
 	@echo "Available make targets:"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?##' $(MAKEFILE_LIST) | awk 'BEGIN {FS=":.*?## "}{printf "  %-16s %s\n", $$1, $$2}'
 
-dev: ## Start Next.js dev server only (Supabase must be running separately).
-	npm run dev
+run: ## Start Next.js dev server in the background (Supabase must be running separately).
+	@mkdir -p .next
+	@nohup npm run dev > .next/dev.log 2>&1 & echo $$! > .next/dev.pid
+	@echo "Next.js dev server started in the background (PID $$(cat .next/dev.pid))."
+	@echo "Logs: .next/dev.log"
 
 build: ## Build the application for production.
 	npm run build

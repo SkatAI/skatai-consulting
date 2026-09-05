@@ -8,7 +8,19 @@ courses:
     order: 5
     status: live
     background: /images/AI-101-2026/sciencespo_campus_havre_facade_001_1f6aabd815.jpg
-  - slug: inwai
+  - slug: inwai26
+    title: Investigating with AI 2026
+    description: "Using AI tools for investigation, analysis, and research. #SciencesPo 2026"
+    tags:
+      - Artificial Intelligence
+      - Data Analysis
+      - Data journalism
+      - Vibe coding
+      - English
+    order: 8
+    status: live
+    background: /images/inwai26/sciencespo_paris_drone_view.png
+  - slug: inwai25
     title: Investigating with AI 2025
     description: "Using AI tools for investigation, analysis, and research. #SciencesPo 2025"
     tags:
