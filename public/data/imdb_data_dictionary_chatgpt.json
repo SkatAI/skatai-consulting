@@ -1,0 +1,199 @@
+{
+  "dataset": "IMDb Top 1000",
+  "number_of_records": 1000,
+  "number_of_features": 16,
+  "features": [
+    {
+      "feature_name": "Poster_Link",
+      "feature_type": "string (URL)",
+      "feature_description": "URL pointing to the movie poster image.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Series_Title",
+      "feature_type": "string",
+      "feature_description": "Title of the movie.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Released_Year",
+      "feature_type": "integer",
+      "feature_description": "Year in which the movie was released.",
+      "basic_stats": {
+        "mean": 1991.2172,
+        "median": 1999,
+        "min": 1920,
+        "max": 2020
+      },
+      "number_of_missing_values": 1
+    },
+    {
+      "feature_name": "Certificate",
+      "feature_type": "categorical string",
+      "feature_description": "Movie age/content certification or rating.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 101
+    },
+    {
+      "feature_name": "Runtime",
+      "feature_type": "integer (minutes)",
+      "feature_description": "Movie running time in minutes. The original CSV stores values as strings such as '142 min'.",
+      "basic_stats": {
+        "mean": 122.891,
+        "median": 119,
+        "min": 45,
+        "max": 321
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Genre",
+      "feature_type": "categorical string (multi-label)",
+      "feature_description": "One or more genres associated with the movie.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "IMDB_Rating",
+      "feature_type": "float",
+      "feature_description": "IMDb user rating of the movie.",
+      "basic_stats": {
+        "mean": 7.9493,
+        "median": 7.9,
+        "min": 7.6,
+        "max": 9.3
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Overview",
+      "feature_type": "string (text)",
+      "feature_description": "Short textual summary or synopsis of the movie.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Meta_score",
+      "feature_type": "integer",
+      "feature_description": "Metascore assigned to the movie, typically on a 0–100 scale.",
+      "basic_stats": {
+        "mean": 77.9715,
+        "median": 79,
+        "min": 28,
+        "max": 100
+      },
+      "number_of_missing_values": 157
+    },
+    {
+      "feature_name": "Director",
+      "feature_type": "categorical string",
+      "feature_description": "Name of the movie's director.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Star1",
+      "feature_type": "categorical string",
+      "feature_description": "Name of the first principal cast member.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Star2",
+      "feature_type": "categorical string",
+      "feature_description": "Name of the second principal cast member.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Star3",
+      "feature_type": "categorical string",
+      "feature_description": "Name of the third principal cast member.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Star4",
+      "feature_type": "categorical string",
+      "feature_description": "Name of the fourth principal cast member.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "No_of_Votes",
+      "feature_type": "integer",
+      "feature_description": "Number of IMDb user votes received by the movie.",
+      "basic_stats": {
+        "mean": 273692.911,
+        "median": 138548.5,
+        "min": 25088,
+        "max": 2343110
+      },
+      "number_of_missing_values": 0
+    },
+    {
+      "feature_name": "Gross",
+      "feature_type": "integer (box-office revenue)",
+      "feature_description": "Reported gross box-office revenue. The original CSV stores values as comma-separated numeric strings.",
+      "basic_stats": {
+        "mean": 68034750.8736,
+        "median": 23530892,
+        "min": 1305,
+        "max": 936662225
+      },
+      "number_of_missing_values": 169
+    }
+  ]
+}

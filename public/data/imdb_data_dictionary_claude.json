@@ -1,0 +1,363 @@
+{
+  "dataset": {
+    "name": "IMDb Top 1000 Movies",
+    "source_url": "https://raw.githubusercontent.com/SkatAI/DHUM25A43/refs/heads/master/data/imdb_top_1000.csv",
+    "format": "CSV, quoted fields, comma-separated, UTF-8",
+    "rows": 1000,
+    "columns": 16,
+    "profiled_on": "2026-09-13",
+    "notes": [
+      "Every column is stored as text in the CSV; Runtime and Gross need parsing before numeric use.",
+      "Statistics for text fields (Poster_Link, Series_Title, Overview) are computed on string length, since mean/median are undefined for free text.",
+      "Statistics for numeric columns are computed on non-missing values only."
+    ]
+  },
+  "features": [
+    {
+      "feature_name": "Poster_Link",
+      "feature_type": "string (URL)",
+      "feature_description": "Direct URL to the film's poster image hosted on Amazon media servers. Unique for every row; carries no analytical value.",
+      "basic_stats": {
+        "mean": 136.6,
+        "median": 145.0,
+        "min": 109.0,
+        "max": 161.0,
+        "unit": "characters (text field: stats computed on string length)"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 1000
+      }
+    },
+    {
+      "feature_name": "Series_Title",
+      "feature_type": "string",
+      "feature_description": "Title of the film as listed on IMDb.",
+      "basic_stats": {
+        "mean": 15.5,
+        "median": 14.0,
+        "min": 2.0,
+        "max": 68.0,
+        "unit": "characters (text field: stats computed on string length)"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 999,
+        "note": "999 distinct titles for 1000 rows: one title appears twice (different films sharing a name)."
+      }
+    },
+    {
+      "feature_name": "Released_Year",
+      "feature_type": "integer (stored as string/year)",
+      "feature_description": "Year of theatrical release.",
+      "basic_stats": {
+        "mean": 1991.2,
+        "median": 1999.0,
+        "min": 1920.0,
+        "max": 2020.0
+      },
+      "missing_values": {
+        "count": 1,
+        "percent": 0.1
+      },
+      "additional": {
+        "distinct_values": 99,
+        "note": "One row (Apollo 13) has an empty year."
+      }
+    },
+    {
+      "feature_name": "Certificate",
+      "feature_type": "categorical (string)",
+      "feature_description": "Age/content rating of the film. Mixes rating systems (Indian: U, UA, A; US MPAA: G, PG, PG-13, R; US TV: TV-14, TV-MA, TV-PG; legacy: Approved, Passed, GP; plus 'Unrated' and '16').",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "note": "Not applicable — nominal categorical."
+      },
+      "missing_values": {
+        "count": 101,
+        "percent": 10.1
+      },
+      "additional": {
+        "distinct_values": 16,
+        "categories": [
+          "16",
+          "A",
+          "Approved",
+          "G",
+          "GP",
+          "PG",
+          "PG-13",
+          "Passed",
+          "R",
+          "TV-14",
+          "TV-MA",
+          "TV-PG",
+          "U",
+          "U/A",
+          "UA",
+          "Unrated"
+        ]
+      }
+    },
+    {
+      "feature_name": "Runtime",
+      "feature_type": "string (integer + ' min')",
+      "feature_description": "Film duration. Stored as text with a ' min' suffix; must be stripped to be numeric.",
+      "basic_stats": {
+        "mean": 122.9,
+        "median": 119.0,
+        "min": 45.0,
+        "max": 321.0,
+        "unit": "minutes (after stripping ' min')"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 140
+      }
+    },
+    {
+      "feature_name": "Genre",
+      "feature_type": "multi-label categorical (string)",
+      "feature_description": "One to three genre labels, comma-separated (e.g. 'Action, Crime, Drama').",
+      "basic_stats": {
+        "mean": 2.54,
+        "median": 3.0,
+        "min": 1.0,
+        "max": 3.0,
+        "unit": "number of genre labels per row"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_combinations": 202,
+        "distinct_labels": [
+          "Action",
+          "Adventure",
+          "Animation",
+          "Biography",
+          "Comedy",
+          "Crime",
+          "Drama",
+          "Family",
+          "Fantasy",
+          "Film-Noir",
+          "History",
+          "Horror",
+          "Music",
+          "Musical",
+          "Mystery",
+          "Romance",
+          "Sci-Fi",
+          "Sport",
+          "Thriller",
+          "War",
+          "Western"
+        ]
+      }
+    },
+    {
+      "feature_name": "IMDB_Rating",
+      "feature_type": "float",
+      "feature_description": "Average user rating on IMDb, on a 0–10 scale. Dataset is truncated to the top 1000 films, so the floor is 7.6.",
+      "basic_stats": {
+        "mean": 7.95,
+        "median": 7.9,
+        "min": 7.6,
+        "max": 9.3,
+        "unit": "points (0–10)"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 17
+      }
+    },
+    {
+      "feature_name": "Overview",
+      "feature_type": "string (free text)",
+      "feature_description": "Short plot synopsis of the film.",
+      "basic_stats": {
+        "mean": 146.3,
+        "median": 142.0,
+        "min": 40.0,
+        "max": 313.0,
+        "unit": "characters (text field: stats computed on string length)"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 1000
+      }
+    },
+    {
+      "feature_name": "Meta_score",
+      "feature_type": "integer",
+      "feature_description": "Metacritic score, a weighted average of professional critic reviews, on a 0–100 scale.",
+      "basic_stats": {
+        "mean": 77.97,
+        "median": 79.0,
+        "min": 28.0,
+        "max": 100.0,
+        "unit": "points (0–100)"
+      },
+      "missing_values": {
+        "count": 157,
+        "percent": 15.7
+      },
+      "additional": {
+        "distinct_values": 63
+      }
+    },
+    {
+      "feature_name": "Director",
+      "feature_type": "categorical (string)",
+      "feature_description": "Name of the film's director.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "note": "Not applicable — nominal categorical."
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 548
+      }
+    },
+    {
+      "feature_name": "Star1",
+      "feature_type": "categorical (string)",
+      "feature_description": "Name of the first-billed actor.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "note": "Not applicable — nominal categorical."
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 660
+      }
+    },
+    {
+      "feature_name": "Star2",
+      "feature_type": "categorical (string)",
+      "feature_description": "Name of the second-billed actor.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "note": "Not applicable — nominal categorical."
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 841
+      }
+    },
+    {
+      "feature_name": "Star3",
+      "feature_type": "categorical (string)",
+      "feature_description": "Name of the third-billed actor.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "note": "Not applicable — nominal categorical."
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 891
+      }
+    },
+    {
+      "feature_name": "Star4",
+      "feature_type": "categorical (string)",
+      "feature_description": "Name of the fourth-billed actor.",
+      "basic_stats": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "note": "Not applicable — nominal categorical."
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 939
+      }
+    },
+    {
+      "feature_name": "No_of_Votes",
+      "feature_type": "integer",
+      "feature_description": "Number of IMDb users who rated the film.",
+      "basic_stats": {
+        "mean": 273692.9,
+        "median": 138548.5,
+        "min": 25088.0,
+        "max": 2343110.0,
+        "unit": "votes"
+      },
+      "missing_values": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "additional": {
+        "distinct_values": 999
+      }
+    },
+    {
+      "feature_name": "Gross",
+      "feature_type": "string (integer with thousands separators)",
+      "feature_description": "Domestic (US) box-office gross revenue. Stored as text with commas; must be stripped to be numeric. Not inflation-adjusted.",
+      "basic_stats": {
+        "mean": 68034750.9,
+        "median": 23530892.0,
+        "min": 1305.0,
+        "max": 936662225.0,
+        "unit": "US dollars (after removing commas)"
+      },
+      "missing_values": {
+        "count": 169,
+        "percent": 16.9
+      },
+      "additional": {
+        "distinct_values": 823
+      }
+    }
+  ]
+}
