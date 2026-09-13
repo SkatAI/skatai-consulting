@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What 26 students think AI does to society</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E6E9E3;
+  --surface:#F5F6F2;
+  --ink:#1A2420;
+  --ink-soft:#4E5A54;
+  --rule:#C3C9BF;
+  --pos:#2C6A5C;
+  --neg:#8A3A4A;
+  --mix:#A3712F;
+  --que:#57616E;
+  --na:#9AA096;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.ui{font-family:var(--display);font-weight:600;letter-spacing:-0.015em}
+a{color:var(--pos)}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 28px;border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:48px;align-items:start}
+h1{font-size:clamp(34px,4.4vw,52px);line-height:1.02;margin:0 0 18px;font-weight:800;letter-spacing:-0.03em}
+.standfirst{font-size:18px;color:var(--ink-soft);margin:0 0 22px;max-width:46ch}
+.meta{font-family:var(--display);font-size:14px;color:var(--ink-soft);line-height:1.9}
+.meta b{color:var(--ink);font-weight:600}
+
+/* ---------- wall ---------- */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(30px,1fr));gap:3px}
+.tile{
+  position:relative;aspect-ratio:1;border:none;padding:0;cursor:pointer;
+  background:#DCE0D8;overflow:hidden;
+}
+.tile:focus-visible{outline:2px solid var(--ink);outline-offset:2px;z-index:2}
+.tile i{position:absolute;left:0;right:0;bottom:0;display:block}
+.tile[data-s="pos"] i{background:var(--pos)}
+.tile[data-s="neg"] i{background:var(--neg)}
+.tile[data-s="mixed"] i{background:var(--mix)}
+.tile[data-s="question"] i{background:var(--que)}
+.tile[data-s="na"] i{background:var(--na)}
+.tile[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--ink)}
+.tile:hover i{filter:brightness(1.25)}
+
+.reader{
+  margin-top:16px;background:var(--surface);border:1px solid var(--rule);
+  padding:20px 22px;min-height:128px;
+}
+.reader p{margin:0 0 10px;font-size:19px;line-height:1.5}
+.reader .who{font-family:var(--display);font-size:13px;color:var(--ink-soft)}
+.reader .empty{color:var(--ink-soft);font-style:italic}
+
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-family:var(--display);font-size:13px;color:var(--ink-soft)}
+.legend span{display:flex;align-items:center;gap:6px}
+.sw{width:11px;height:11px;display:inline-block}
+
+/* ---------- sections ---------- */
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+h2{font-size:27px;margin:0 0 6px;letter-spacing:-0.02em}
+.sub{color:var(--ink-soft);margin:0 0 30px;max-width:62ch;font-size:16px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
+p{max-width:68ch}
+
+/* themes */
+.theme-row{
+  display:grid;grid-template-columns:minmax(150px,230px) 1fr 54px;gap:16px;align-items:center;
+  width:100%;background:none;border:none;border-top:1px solid var(--rule);
+  padding:9px 0;text-align:left;cursor:pointer;color:inherit;font:inherit;
+}
+.theme-row:last-child{border-bottom:1px solid var(--rule)}
+.theme-row:hover .tname,.theme-row[aria-pressed="true"] .tname{text-decoration:underline;text-underline-offset:3px}
+.tname{font-family:var(--display);font-size:15px}
+.tbar{display:flex;height:15px;background:#DCE0D8}
+.tbar span{display:block}
+.tbar .p{background:var(--pos)} .tbar .n{background:var(--neg)}
+.tbar .m{background:var(--mix)} .tbar .q{background:var(--que)} .tbar .x{background:var(--na)}
+.tnum{font-family:var(--display);font-size:14px;color:var(--ink-soft);text-align:right}
+
+/* big figures */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin:0 0 34px}
+.fig b{font-family:var(--display);font-size:46px;font-weight:800;line-height:1;letter-spacing:-0.03em;display:block}
+.fig span{font-size:15px;color:var(--ink-soft);display:block;margin-top:8px;max-width:26ch}
+
+table{border-collapse:collapse;width:100%;max-width:540px;font-size:16px}
+th,td{text-align:left;padding:7px 14px 7px 0;border-bottom:1px solid var(--rule)}
+th{font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-soft)}
+td.n{font-variant-numeric:tabular-nums}
+
+/* assumptions */
+.assump{margin:0 0 26px;max-width:72ch}
+.assump h3{font-size:19px;margin:0 0 4px}
+.assump p{margin:0;color:var(--ink-soft)}
+.assump blockquote{
+  margin:10px 0 0;padding-left:14px;border-left:2px solid var(--rule);
+  font-style:italic;color:var(--ink-soft);font-size:16px
+}
+
+/* browser */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:22px}
+.chip{
+  font-family:var(--display);font-size:13px;padding:5px 11px;border:1px solid var(--rule);
+  background:var(--surface);cursor:pointer;color:var(--ink-soft)
+}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+select,input[type=search]{
+  font-family:var(--display);font-size:14px;padding:6px 10px;border:1px solid var(--rule);
+  background:var(--surface);color:var(--ink)
+}
+input[type=search]{min-width:200px;flex:1}
+.count{font-family:var(--display);font-size:13px;color:var(--ink-soft)}
+.entry{display:grid;grid-template-columns:70px 1fr;gap:18px;padding:15px 0;border-top:1px solid var(--rule)}
+.entry .rank{font-family:var(--display);font-size:13px;color:var(--ink-soft);line-height:1.45}
+.entry .rank em{display:block;font-style:normal;font-size:22px;color:var(--ink);font-weight:600}
+.entry q{display:block;font-size:18px;line-height:1.48;quotes:"\201C" "\201D"}
+.entry .tags{font-family:var(--display);font-size:12.5px;color:var(--ink-soft);margin-top:7px}
+.entry .dot{display:inline-block;width:8px;height:8px;margin-right:5px;vertical-align:baseline}
+.trunc{color:var(--na)}
+
+footer{padding:44px 0 64px;font-size:15px;color:var(--ink-soft)}
+footer p{max-width:70ch}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero{padding-top:40px}
+  .wall{grid-template-columns:repeat(auto-fill,minmax(26px,1fr))}
+  .theme-row{grid-template-columns:1fr 44px;gap:8px}
+  .theme-row .tbar{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:no-preference){
+  .tile i{transform:scaleY(0);transform-origin:bottom;animation:grow .5s ease forwards}
+}
+@keyframes grow{to{transform:scaleY(1)}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <h1>Ninety things students believe about AI</h1>
+   <p class="standfirst">A five-minute opinion collection with 26 Sciences&nbsp;Po students, coded by theme and stance. Every tile is one opinion: colour is its stance, fill height is how highly the student ranked it.</p>
+   <p class="meta">
+     <b>26</b> students · <b>90</b> opinions<br>
+     Collected 5 September 2026 · 5-minute window<br>
+     <b>0</b> students wrote nothing negative
+   </p>
+  </div>
+  <div>
+   <div class="wall" id="wall"></div>
+   <div class="reader" id="reader"><p class="empty">Select a tile to read the opinion.</p></div>
+   <div class="legend">
+     <span><i class="sw" style="background:var(--pos)"></i>benefit</span>
+     <span><i class="sw" style="background:var(--neg)"></i>harm</span>
+     <span><i class="sw" style="background:var(--mix)"></i>conditional</span>
+     <span><i class="sw" style="background:var(--que)"></i>open question</span>
+     <span><i class="sw" style="background:var(--na)"></i>cut off mid-entry</span>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>What they talked about</h2>
+  <p class="sub">Themes coded from the text of each entry. Bars show the stance mix inside each theme. Select one to filter the full list at the bottom of the page.</p>
+  <div id="themes"></div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Two answers, held at once</h2>
+  <div class="figs">
+    <div class="fig"><b>15/26</b><span>wrote both a clear benefit and a clear harm</span></div>
+    <div class="fig"><b>5/26</b><span>wrote no benefit at all</span></div>
+    <div class="fig"><b>0/26</b><span>wrote no harm at all</span></div>
+    <div class="fig"><b>14/26</b><span>said AI is eroding the ability to think</span></div>
+  </div>
+  <div class="cols">
+   <div>
+    <p>There is no straightforward optimist in this cohort. The room divides into students who are ambivalent and students who are negative — and the ambivalence is not fence-sitting. It is a specific, repeated shape: the benefit first, the fear immediately after.</p>
+    <p>Anna is the clearest case. Her top-ranked opinion is that AI is practical for revising lectures. Her second is that relying on it damages our cognitive function. Sofia, Gilad, Marco and several anonymous participants do the same thing.</p>
+   </div>
+   <div>
+    <h3 class="ui" style="font-size:15px;margin:0 0 10px">Stance by the student's own ranking</h3>
+    <table>
+     <tr><th>Rank</th><th>Benefit</th><th>Harm</th></tr>
+     <tr><td>5 — their top item</td><td class="n">12</td><td class="n">9</td></tr>
+     <tr><td>4</td><td class="n">7</td><td class="n">16</td></tr>
+     <tr><td>3</td><td class="n">2</td><td class="n">10</td></tr>
+     <tr><td>2</td><td class="n">6</td><td class="n">3</td></tr>
+     <tr><td>1</td><td class="n">3</td><td class="n">3</td></tr>
+    </table>
+    <p style="font-size:15px;color:var(--ink-soft);margin-top:14px">Benefits arrive first because they are what students <em>use</em>. Harms follow because they are what students <em>believe</em>.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Hopes and fears</h2>
+  <div class="cols">
+   <div>
+    <h3 class="ui" style="font-size:16px;margin:0 0 10px">Hopes, by weight</h3>
+    <p style="font-size:16px">Time saved on low-value work, always described in the first person — summarising, revising, drafting, translating. Then AI as a thinking partner, always conditioned on the user's skill. Then medicine: cancer detection appears twice, unprompted, in almost identical words. Then, from one student only, emancipation — sovereignty, democratised access, freedom from the need to produce capital.</p>
+    <p style="font-size:16px">Hope is about efficiency far more than about capability, and almost never about a collective good.</p>
+   </div>
+   <div>
+    <h3 class="ui" style="font-size:16px;margin:0 0 10px">Fears, by how many students raised them</h3>
+    <p style="font-size:16px">Losing the capacity to think (14). Jobs (6). Water, energy and data centres (5). Unreliability — hallucination, altered inputs, context bleeding between chats (3). Information integrity (4). A market crash when the bubble deflates (2, and it was their highest-ranked item). Power concentration (3). Homogenisation and the dehumanisation of war (3). Existential risk (1, ranked last).</p>
+    <p style="font-size:16px">The widely shared fears are proximate and personal. The systemic ones are carried by three or four students each.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>What goes unsaid</h2>
+  <p class="sub">Assumptions that no entry argues for, and that the whole corpus rests on.</p>
+  <div class="cols">
+   <div>
+    <div class="assump">
+     <h3>AI means a chatbot</h3>
+     <p>Almost every entry treats AI as a generative text assistant. No entry mentions recommendation systems, ranking, credit scoring, insurance pricing, predictive policing or automated administrative decisions — the AI that already governs their lives. A field has been collapsed onto the product they personally use.</p>
+    </div>
+    <div class="assump">
+     <h3>Cognition is zero-sum</h3>
+     <p>Offloading effort is assumed to destroy capacity rather than redirect it, and it is stated as fact rather than hypothesis.</p>
+     <blockquote>the brain is a muscle that must be trained, after all, and will weaken without it</blockquote>
+    </div>
+    <div class="assump">
+     <h3>Harm is a discipline problem</h3>
+     <p>One conditional runs through the corpus: if used properly, if prompted well, if we have the will power. Responsibility sits with the individual user. This is what explains the near-total absence of governance — if the problem is willpower, law is beside the point.</p>
+    </div>
+    <div class="assump">
+     <h3>Benefits are private, costs are public</h3>
+     <p>Benefits are described in the first person, costs in the third. No entry connects the two: nobody notices that their own lecture summaries are a claim on the water and energy they criticise elsewhere.</p>
+    </div>
+   </div>
+   <div>
+    <div class="assump">
+     <h3>The technology is weather</h3>
+     <p>Adoption is something to adapt to, not something built by identifiable firms making identifiable choices — though the same students who call it irreversible also expect its market to collapse.</p>
+     <blockquote>AI is the modern-day fire… there is nothing that can be done to undo it</blockquote>
+    </div>
+    <div class="assump">
+     <h3>Impacts are universal</h3>
+     <p>People get lazy, society is destabilised, unemployment is universal. Only three entries name a who: those with access to better models, superpowers, and children. Distributional thinking — the core move of their own discipline — is largely absent.</p>
+    </div>
+    <div class="assump">
+     <h3>Human intelligence has a guaranteed ceiling above the machine</h3>
+     <p>An argument from origin, asserted rather than defended.</p>
+     <blockquote>It will never replace human intelligence since it is made by it</blockquote>
+    </div>
+    <div class="assump">
+     <h3>Personal experience generalises to society</h3>
+     <p>Nearly every claim about society is extrapolated from two years of using a chatbot. This is the corpus's honesty and its central weakness at the same time.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>The missing entry</h2>
+  <div class="figs">
+    <div class="fig"><b>1</b><span>of 90 entries mentions regulation — ranked last by the student who wrote it</span></div>
+    <div class="fig"><b>2</b><span>mention democracy</span></div>
+    <div class="fig"><b>0</b><span>mention a law, court, union, election or the EU AI Act</span></div>
+  </div>
+  <p>In a room of political science students, the political dimension of AI is the least-represented theme in the corpus. It follows directly from the discipline assumption above: if the harm comes from users lacking self-control, then no institution has anything to do.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Read all 90</h2>
+  <p class="sub">Every entry as written, with the student's own ranking. Text is unedited, including typos and entries cut off by the five-minute limit.</p>
+  <div class="controls">
+    <select id="fTheme" aria-label="Filter by theme"><option value="">All themes</option></select>
+    <button class="chip" data-stance="pos" aria-pressed="false">Benefit</button>
+    <button class="chip" data-stance="neg" aria-pressed="false">Harm</button>
+    <button class="chip" data-stance="mixed" aria-pressed="false">Conditional</button>
+    <button class="chip" data-stance="question" aria-pressed="false">Question</button>
+    <input type="search" id="fText" placeholder="Search the text" aria-label="Search the text">
+    <span class="count" id="count"></span>
+  </div>
+  <div id="list"></div>
+ </div>
+</section>
+
+<footer class="wrap">
+ <h3 class="ui" style="font-size:15px;margin:0 0 8px">How this was made</h3>
+ <p>Stance and theme were coded manually from the text of each entry. The impact slider that students also filled in is not used here: 37 of 90 entries were left at the default of zero, six students never moved it, and several scores contradict their own text — “The end of the world (AGI, misalignment, Cyber/Bioweapons)” was scored +5, “Optimism regarding new opportunities” was scored −5. A share of the cohort read the slider as magnitude rather than direction. For the next round, force an interaction, relabel the scale as direction, and allow more than five minutes: the low-ranked entries are currently too thin to code.</p>
+</footer>
+
+<script>
+const DATA = [{"name": "Sofia", "text": "AI can help with tasks that would otherwise take a long time to be completed", "importance": 5, "impact": 0, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Sofia", "text": "AI is a bubble about to burst.", "importance": 4, "impact": 0, "theme": "Economy, markets and the bubble", "stance": "neg"}, {"name": "Sofia", "text": "AI can help with accumulating quick information but people can learn more and retain more information when learning the traditional way (books, papper, having unsolved questions about a topi", "importance": 3, "impact": 0, "theme": "Education and learning", "stance": "mixed"}, {"name": "Sofia", "text": "AI is a new way to colect our personal data", "importance": 2, "impact": 0, "theme": "Privacy and surveillance", "stance": "neg"}, {"name": "Anonymous", "text": "Ai sometimes change the contents i gave it", "importance": 5, "impact": 0, "theme": "Reliability and technical limits", "stance": "neg"}, {"name": "Anonymous", "text": "AI might be delusional", "importance": 4, "impact": 5, "theme": "Reliability and technical limits", "stance": "neg"}, {"name": "Anonymous", "text": "ai sometimes struggle to do multi task", "importance": 3, "impact": 0, "theme": "Reliability and technical limits", "stance": "neg"}, {"name": "Anonymous", "text": "ai mixes up informations across different chats", "importance": 2, "impact": 0, "theme": "Reliability and technical limits", "stance": "neg"}, {"name": "Anonymous", "text": "some ai arts look really bad", "importance": 1, "impact": 0, "theme": "Creativity and art", "stance": "neg"}, {"name": "valeria", "text": "It should not be used in primary school because it will increase illiteracy rates and not allow children to learn to their fullest capacity", "importance": 5, "impact": -5, "theme": "Education and learning", "stance": "neg"}, {"name": "valeria", "text": "The creation of AI data centers", "importance": 4, "impact": 0, "theme": "Environment and resources", "stance": "neg"}, {"name": "Anonymous", "text": "AI deteriorates the cogntitive processes of students and everyone who uses it. Knowledge has been in someways, displaced by complacency", "importance": 5, "impact": 0, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "People who has access to better models will have more opportunities than others. Concentration of political and economical power", "importance": 4, "impact": 0, "theme": "Power, inequality and geopolitics", "stance": "neg"}, {"name": "Anonymous", "text": "More", "importance": 3, "impact": 0, "theme": "Unclassified (incomplete entry)", "stance": "na"}, {"name": "Anna", "text": "I feel like AI is very practical for revisioning lectures. It can summarize and explain the information from the slides without you having to go trough everything yourself.", "importance": 5, "impact": 5, "theme": "Education and learning", "stance": "pos"}, {"name": "Anna", "text": "I think AI can be dangerous because we rely on it too much instead of using our own brains. Like i think it has a negative impact on our cognitive function", "importance": 4, "impact": -4, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anna", "text": "AI can easily create images or videos that can be spread", "importance": 3, "impact": 0, "theme": "Misinformation, trust and democracy", "stance": "neg"}, {"name": "Marco", "text": "I believe that the AI impact on society was destabilizing especially because most of the people don't know what it is about.", "importance": 5, "impact": 2, "theme": "Pace of change and uncertainty", "stance": "neg"}, {"name": "Marco", "text": "AI can be a revolution if it does not substitute the human reasoning capacity.", "importance": 4, "impact": 4, "theme": "Cognitive deskilling", "stance": "mixed"}, {"name": "Marco", "text": "I fear that regulations on AI capacity to create fake news will destabilize our society.", "importance": 3, "impact": -5, "theme": "Misinformation, trust and democracy", "stance": "neg"}, {"name": "Marco", "text": "AI can real", "importance": 2, "impact": 0, "theme": "Unclassified (incomplete entry)", "stance": "na"}, {"name": "Francisca Mautalen", "text": "It has a strong impact on nature, affecting water usage massively.", "importance": 5, "impact": 0, "theme": "Environment and resources", "stance": "neg"}, {"name": "Francisca Mautalen", "text": "It will never replace human intelligence since it is made by it.", "importance": 4, "impact": 0, "theme": "Pace of change and uncertainty", "stance": "pos"}, {"name": "Francisca Mautalen", "text": "IA can replace multiple jobs resulting in a big unemployment rate universally", "importance": 3, "impact": 0, "theme": "Jobs and labour", "stance": "neg"}, {"name": "Francisca Mautalen", "text": "IA can find loopholes and errors in human made systems.", "importance": 2, "impact": 0, "theme": "Reliability and technical limits", "stance": "pos"}, {"name": "Francisca Mautalen", "text": "A strong will power is needed to not use IA for simple tasks such as writing an email or complet", "importance": 1, "impact": 0, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "AI can automate jobs and change needed skills", "importance": 5, "impact": 3, "theme": "Jobs and labour", "stance": "mixed"}, {"name": "Anonymous", "text": "AI threatens privacy through surveillance and data collection", "importance": 4, "impact": -3, "theme": "Privacy and surveillance", "stance": "neg"}, {"name": "Anonymous", "text": "AI can spread misinformation and influence democracy", "importance": 3, "impact": -4, "theme": "Misinformation, trust and democracy", "stance": "neg"}, {"name": "Anonymous", "text": "AI can boost creativity and help people work faster", "importance": 2, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "AI should be regulated to prevent harmful uses", "importance": 1, "impact": 0, "theme": "Regulation and governance", "stance": "mixed"}, {"name": "mathieu marciano", "text": "Helps with brainstorming ideas and can act as a sanity check if prompted well", "importance": 5, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "mathieu marciano", "text": "Enables efficiency for mundane tasks at jobs", "importance": 4, "impact": 3, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "mathieu marciano", "text": "May change what it means to be creative by not having the same introspective qualities of human beings but still has the capacity to create and analyze art", "importance": 3, "impact": -2, "theme": "Creativity and art", "stance": "mixed"}, {"name": "mathieu marciano", "text": "Fosters intellectual creativity through easy access to information and the ability to explore topics that are not accessible to beginners", "importance": 2, "impact": 5, "theme": "Creativity and art", "stance": "pos"}, {"name": "mathieu marciano", "text": "Encourages thinking outside the box as an intellectual sparring partner provided it is prompted well", "importance": 1, "impact": 2, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Jimin", "text": "Automation", "importance": 5, "impact": 5, "theme": "Jobs and labour", "stance": "pos"}, {"name": "Jimin", "text": "Research on large data", "importance": 4, "impact": 5, "theme": "Health and science", "stance": "pos"}, {"name": "Jimin", "text": "Hallucination", "importance": 3, "impact": -3, "theme": "Reliability and technical limits", "stance": "neg"}, {"name": "Jimin", "text": "Image search", "importance": 2, "impact": 3, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Jimin", "text": "Translation", "importance": 1, "impact": 4, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Marcos Gonzalez", "text": "Future and unknown impact.", "importance": 5, "impact": 4, "theme": "Pace of change and uncertainty", "stance": "question"}, {"name": "Marcos Gonzalez", "text": "The jobs that will be lost", "importance": 4, "impact": -5, "theme": "Jobs and labour", "stance": "neg"}, {"name": "Marcos Gonzalez", "text": "Children wont be able to think by themselves or will become really lazy.", "importance": 3, "impact": -5, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Marcos Gonzalez", "text": "Impact on the enviroment is something that should be talked more about", "importance": 2, "impact": -2, "theme": "Environment and resources", "stance": "neg"}, {"name": "Marcos Gonzalez", "text": "Optimism regarding new oportunities, views, technology.", "importance": 1, "impact": -5, "theme": "Pace of change and uncertainty", "stance": "pos"}, {"name": "Anonymous", "text": "I fear that AI can cause people to think less themself and lose the ability to think critically (if they don't use AI right, which a lot of people don't).", "importance": 5, "impact": 3, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "I fear that the world will become less creative.", "importance": 4, "impact": 2, "theme": "Creativity and art", "stance": "neg"}, {"name": "Anonymous", "text": "I think that AI can", "importance": 3, "impact": 4, "theme": "Unclassified (incomplete entry)", "stance": "na"}, {"name": "Anonymous", "text": "AI will change the world in unforeseeable ways. People will be able to work better than ever before, but unless tools/skills are developed to help people identify the content, it will cause distrust.", "importance": 5, "impact": 0, "theme": "Misinformation, trust and democracy", "stance": "mixed"}, {"name": "Anonymous", "text": "AI is the modern-day fire. Its discovery/creation will be one of the most transformative events, if not the most transformative, of our lifetime, and there is nothing that can be done to undo it.", "importance": 4, "impact": 0, "theme": "Pace of change and uncertainty", "stance": "mixed"}, {"name": "Anonymous", "text": "People will forget how to use their brains if AI is misused. Just like how you can", "importance": 3, "impact": 0, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "I believe is super useful and makes some everyday task much easier and less time-consuming.", "importance": 5, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "It presents a risk of deteriorating our capacity to make deci", "importance": 4, "impact": 0, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "helps increase/streamline efficiency in certain cases", "importance": 5, "impact": 0, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "can be developed enough and assist in major medical breakthroughs, such as scanning for cancer cells", "importance": 4, "impact": 0, "theme": "Health and science", "stance": "pos"}, {"name": "Anonymous", "text": "without actively taking steps to make sure that one thinks on their own, AI reduces their ability to think critically. the brain is a muscle that must be trained, after all, and will weaken without it", "importance": 3, "impact": 0, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "Incoming IPOs of Anthropic and OpenAI; we saw how with SpaceX how lucrative it seems, but what are the effects on the stock market and the economy when these AI emergent giants finally IPO?", "importance": 5, "impact": -2, "theme": "Economy, markets and the bubble", "stance": "question"}, {"name": "Anonymous", "text": "The AI bubble will burst when investors no longer have belief that the AI competitors can recoup their investments. They will start selling their shares which will cause a market crash worse than 2008", "importance": 4, "impact": -5, "theme": "Economy, markets and the bubble", "stance": "neg"}, {"name": "Gilad", "text": "AI is amazing but there is an enivormental cost we need to keep un mind also. The servers take a lot of energy and water to cool and optimize performance", "importance": 5, "impact": -5, "theme": "Environment and resources", "stance": "mixed"}, {"name": "Gilad", "text": "It is great for educational matters", "importance": 4, "impact": 4, "theme": "Education and learning", "stance": "pos"}, {"name": "Gilad", "text": "It has a potential to efficiate resources for countries", "importance": 3, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Elliott", "text": "It’s going to be the future of how productive companies are", "importance": 5, "impact": 0, "theme": "Jobs and labour", "stance": "pos"}, {"name": "Elliott", "text": "Saves a company costs / however - it can do that well financially and with calculations - but can more personal jobs such as wealth management be challenged ?", "importance": 4, "impact": 0, "theme": "Jobs and labour", "stance": "question"}, {"name": "Elliott", "text": "How sustainable is it ?", "importance": 3, "impact": 0, "theme": "Environment and resources", "stance": "question"}, {"name": "Elliott", "text": "How private is it ?", "importance": 2, "impact": 0, "theme": "Privacy and surveillance", "stance": "question"}, {"name": "Elliott", "text": "What can we expect from AI 10 years down the line ?", "importance": 1, "impact": 0, "theme": "Pace of change and uncertainty", "stance": "question"}, {"name": "john steinbeck", "text": "Greater individuality, sovereignty and democratisation of access to advanced technical capabilities", "importance": 5, "impact": 5, "theme": "Power, inequality and geopolitics", "stance": "pos"}, {"name": "john steinbeck", "text": "Geopolitical leveraging (e.g Trump US, China) reinforcing superpower dominance", "importance": 4, "impact": -3, "theme": "Power, inequality and geopolitics", "stance": "neg"}, {"name": "john steinbeck", "text": "Potential for freedom from the need to produce/ create capital", "importance": 3, "impact": 5, "theme": "Jobs and labour", "stance": "pos"}, {"name": "john steinbeck", "text": "Healthcare: Human health, increased lifespan, gene editing", "importance": 2, "impact": 3, "theme": "Health and science", "stance": "pos"}, {"name": "john steinbeck", "text": "The end of the world (AGI, mislignment, Cyber/ Bioweapons etc)", "importance": 1, "impact": 5, "theme": "Existential risk and safety", "stance": "neg"}, {"name": "Anonymous", "text": "Increasing dependence, and lack of promoting curiosity", "importance": 5, "impact": -5, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "Quick access to information: for example for location recomendations", "importance": 4, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "AI is a powerful tool in the world", "importance": 5, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "AI is reshaping the world faster than people can handle, lots of people will lose their way to thinking and study.", "importance": 4, "impact": -3, "theme": "Pace of change and uncertainty", "stance": "neg"}, {"name": "Anonymous", "text": "Dehumanization of war and politics", "importance": 5, "impact": -5, "theme": "Existential risk and safety", "stance": "neg"}, {"name": "Anonymous", "text": "Can end up standardising a way of life", "importance": 4, "impact": -3, "theme": "Pace of change and uncertainty", "stance": "neg"}, {"name": "Anonymous", "text": "Productivity", "importance": 5, "impact": 5, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "Safety", "importance": 4, "impact": -2, "theme": "Existential risk and safety", "stance": "neg"}, {"name": "Anonymous", "text": "Critical thinking", "importance": 3, "impact": -3, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "Helping in life", "importance": 2, "impact": 0, "theme": "Productivity and efficiency", "stance": "pos"}, {"name": "Anonymous", "text": "I think Ai has the potential to change the world in good if we used it well like in medecine where it can see tumer and cancer faster than a human the most important is to be in controle", "importance": 5, "impact": 4, "theme": "Health and science", "stance": "pos"}, {"name": "Anonymous", "text": "It make people more lazy and less creative so we could be enable to create new art", "importance": 4, "impact": 0, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "AI is a useful tool for research and investigation", "importance": 5, "impact": 5, "theme": "Health and science", "stance": "pos"}, {"name": "Anonymous", "text": "People may become lazy because they may simply outsource the thinking process to AI", "importance": 4, "impact": -5, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "AI will spur the deve", "importance": 3, "impact": 0, "theme": "Unclassified (incomplete entry)", "stance": "na"}, {"name": "Anonymous", "text": "Ai will takeover human brain and made people forgot how to think things properly if we don't use it in a proper way", "importance": 5, "impact": -5, "theme": "Cognitive deskilling", "stance": "neg"}, {"name": "Anonymous", "text": "Ai is powerful and its the base of everything in the future", "importance": 4, "impact": 0, "theme": "Pace of change and uncertainty", "stance": "pos"}, {"name": "Anonymous", "text": "Ai", "importance": 3, "impact": 0, "theme": "Unclassified (incomplete entry)", "stance": "na"}];
+const THEMES = [{"theme": "Productivity and efficiency", "n": 14, "share": 15.6, "mean_importance": 3.5, "pos": 14, "neg": 0, "mixed": 0, "question": 0, "mean_impact": 4.27}, {"theme": "Cognitive deskilling", "n": 14, "share": 15.6, "mean_importance": 3.79, "pos": 0, "neg": 13, "mixed": 1, "question": 0, "mean_impact": -2.5}, {"theme": "Pace of change and uncertainty", "n": 9, "share": 10.0, "mean_importance": 3.56, "pos": 3, "neg": 3, "mixed": 1, "question": 2, "mean_impact": -1}, {"theme": "Jobs and labour", "n": 7, "share": 7.8, "mean_importance": 4.14, "pos": 3, "neg": 2, "mixed": 1, "question": 1, "mean_impact": 2}, {"theme": "Reliability and technical limits", "n": 6, "share": 6.7, "mean_importance": 3.17, "pos": 1, "neg": 5, "mixed": 0, "question": 0, "mean_impact": 1}, {"theme": "Environment and resources", "n": 5, "share": 5.6, "mean_importance": 3.8, "pos": 0, "neg": 3, "mixed": 1, "question": 1, "mean_impact": -3.5}, {"theme": "Unclassified (incomplete entry)", "n": 5, "share": 5.6, "mean_importance": 2.8, "pos": 0, "neg": 0, "mixed": 0, "question": 0, "mean_impact": 4}, {"theme": "Health and science", "n": 5, "share": 5.6, "mean_importance": 4, "pos": 5, "neg": 0, "mixed": 0, "question": 0, "mean_impact": 4.25}, {"theme": "Education and learning", "n": 4, "share": 4.4, "mean_importance": 4.25, "pos": 2, "neg": 1, "mixed": 1, "question": 0, "mean_impact": 1.33}, {"theme": "Creativity and art", "n": 4, "share": 4.4, "mean_importance": 2.5, "pos": 1, "neg": 2, "mixed": 1, "question": 0, "mean_impact": 1.67}, {"theme": "Misinformation, trust and democracy", "n": 4, "share": 4.4, "mean_importance": 3.5, "pos": 0, "neg": 3, "mixed": 1, "question": 0, "mean_impact": -4.5}, {"theme": "Economy, markets and the bubble", "n": 3, "share": 3.3, "mean_importance": 4.33, "pos": 0, "neg": 2, "mixed": 0, "question": 1, "mean_impact": -3.5}, {"theme": "Privacy and surveillance", "n": 3, "share": 3.3, "mean_importance": 2.67, "pos": 0, "neg": 2, "mixed": 0, "question": 1, "mean_impact": -3}, {"theme": "Power, inequality and geopolitics", "n": 3, "share": 3.3, "mean_importance": 4.33, "pos": 1, "neg": 2, "mixed": 0, "question": 0, "mean_impact": 1}, {"theme": "Existential risk and safety", "n": 3, "share": 3.3, "mean_importance": 3.33, "pos": 0, "neg": 3, "mixed": 0, "question": 0, "mean_impact": -0.67}, {"theme": "Regulation and governance", "n": 1, "share": 1.1, "mean_importance": 1, "pos": 0, "neg": 0, "mixed": 1, "question": 0, "mean_impact": null}];
+const SLABEL = {pos:"benefit",neg:"harm",mixed:"conditional",question:"open question",na:"cut off"};
+const SVAR = {pos:"--pos",neg:"--neg",mixed:"--mix",question:"--que",na:"--na"};
+
+/* wall */
+const wall = document.getElementById('wall');
+const reader = document.getElementById('reader');
+DATA.forEach((d,i)=>{
+  const b=document.createElement('button');
+  b.className='tile'; b.dataset.s=d.stance; b.dataset.i=i;
+  b.setAttribute('aria-pressed','false');
+  b.setAttribute('aria-label', d.name+', importance '+d.importance+': '+d.text.slice(0,60));
+  const bar=document.createElement('i');
+  bar.style.height=(d.importance*18+10)+'%';
+  bar.style.animationDelay=(i*6)+'ms';
+  b.appendChild(bar); wall.appendChild(b);
+});
+wall.addEventListener('click',e=>{
+  const t=e.target.closest('.tile'); if(!t) return;
+  wall.querySelectorAll('.tile[aria-pressed="true"]').forEach(x=>x.setAttribute('aria-pressed','false'));
+  t.setAttribute('aria-pressed','true');
+  const d=DATA[+t.dataset.i];
+  reader.innerHTML='<p>“'+esc(d.text)+'”</p><p class="who">'+esc(d.name)+
+    ' · ranked '+d.importance+' of their own list · '+esc(d.theme)+' · '+SLABEL[d.stance]+'</p>';
+});
+
+/* themes */
+const tWrap=document.getElementById('themes');
+const maxN=Math.max(...THEMES.map(t=>t.n));
+THEMES.forEach(t=>{
+  const btn=document.createElement('button');
+  btn.className='theme-row'; btn.dataset.theme=t.theme; btn.setAttribute('aria-pressed','false');
+  const na = t.n-(t.pos+t.neg+t.mixed+t.question);
+  const seg=(cls,v)=> v? '<span class="'+cls+'" style="flex:'+v+'"></span>':'';
+  btn.innerHTML='<span class="tname">'+esc(t.theme)+'</span>'+
+    '<span class="tbar" style="width:'+(100*t.n/maxN)+'%">'+seg('p',t.pos)+seg('n',t.neg)+seg('m',t.mixed)+seg('q',t.question)+seg('x',na)+'</span>'+
+    '<span class="tnum">'+t.n+'</span>';
+  btn.addEventListener('click',()=>{
+    const on = btn.getAttribute('aria-pressed')==='true';
+    tWrap.querySelectorAll('.theme-row').forEach(x=>x.setAttribute('aria-pressed','false'));
+    btn.setAttribute('aria-pressed', on?'false':'true');
+    sel.value = on? '' : t.theme;
+    render();
+    if(!on) document.getElementById('list').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  tWrap.appendChild(btn);
+});
+
+/* browser */
+const sel=document.getElementById('fTheme'), q=document.getElementById('fText'),
+      list=document.getElementById('list'), count=document.getElementById('count');
+[...new Set(DATA.map(d=>d.theme))].sort().forEach(t=>{
+  const o=document.createElement('option'); o.value=t; o.textContent=t; sel.appendChild(o);
+});
+let stances=new Set();
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  const s=c.dataset.stance;
+  if(stances.has(s)){stances.delete(s);c.setAttribute('aria-pressed','false');}
+  else{stances.add(s);c.setAttribute('aria-pressed','true');}
+  render();
+}));
+sel.addEventListener('change',render); q.addEventListener('input',render);
+
+function render(){
+  const term=q.value.trim().toLowerCase();
+  const rows=DATA.filter(d=>
+    (!sel.value || d.theme===sel.value) &&
+    (!stances.size || stances.has(d.stance)) &&
+    (!term || d.text.toLowerCase().includes(term) || d.name.toLowerCase().includes(term))
+  ).sort((a,b)=> b.importance-a.importance);
+  count.textContent = rows.length+' of 90';
+  list.innerHTML = rows.length? rows.map(d=>
+    '<div class="entry"><div class="rank"><em>'+d.importance+'</em>ranked</div><div>'+
+    '<q'+(d.stance==='na'?' class="trunc"':'')+'>'+esc(d.text)+'</q>'+
+    '<div class="tags"><i class="dot" style="background:var('+SVAR[d.stance]+')"></i>'+
+    esc(d.theme)+' · '+SLABEL[d.stance]+' · '+esc(d.name)+'</div></div></div>'
+  ).join('') : '<div class="entry"><div></div><div>Nothing matches these filters. Clear the search or turn off a stance.</div></div>';
+}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+render();
+</script>
+</body>
+</html>
