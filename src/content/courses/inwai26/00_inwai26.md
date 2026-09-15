@@ -23,26 +23,30 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 
 **Day 2**: 0915 - Data, Working with AI
 
-- News
+- News: AI, a threat to humanity 
 - class representative election
 - Tech: Data; scraping; enriching with LLM ; JSON; prompting and context window; 
 - Society: Cognitive biases when working with AI; centaurs and cyborgs; jagged frontier
-- Demo: ChatGPT and Claude apps in depth; system prompts
-- Actors: [Openrouter](https://openrouter.ai/rankings) and inference providers 
-- Group projects 
+<!--- Demo: ChatGPT and Claude apps in depth; system prompts-->
+<!--- Actors: [Openrouter](https://openrouter.ai/rankings) and inference providers -->
+
+- [Slides](https://docs.google.com/presentation/d/1Lq870ToVbn4YgJLj9NcvwD4xpaBY0Zjqdmdrj137STQ/edit?usp=sharing)
+- [AI brainstorm](/data/inwai26-ai-opinions-explorer.html)
+- [Group projects form](https://docs.google.com/spreadsheets/d/1f0FYOYsqJ3NoY24Uz-rpht2JaBbwdstE0dCVtKpSG7U/edit?usp=sharing )
+ 
 
 **Day 3**: 0922 LLMs to agents; AI and Jobs
 
+- Group projects : pitch
 - News
 - Tech: the web as API; API keys; API caps; github workflow; hosting; main APIs (wikipedia, NYT, duckduckgo)
 - Society: AI and Jobs; WEF 2025 report on jobs
 - Demo: scraping EU Parliament debates; building a dataset
 - Actors: OpenAI and Anthropic
-- Group projects 
 
 **Day 4**: 0929 From NLP to LLMs; Regulating AI
 
-- News: [AIFray](https://aifray.com/)
+- News: source [AIFray](https://aifray.com/)
 - Tech: LLMs to agents to multi agents, harnesses
 - Society: AI-act and regulations; sovereignty; open source vs closed source
 - Demo: RAG on AI act
@@ -114,8 +118,3 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 
 
 **Day 12**: 1201 - Project presentations
-
-
-**WIP** : 
-- model evaluation (RAGAS, LLM as a judge)
-- enriching data with LLMs
