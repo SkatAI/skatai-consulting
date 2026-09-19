@@ -10,7 +10,7 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 
 [Syllabus on SciencesPo](https://syllabus.sciencespo.fr/fr/?cours/202610/296781)
 
-**Day 1**: 0908 Welcome, intro, course scope, logistics;
+## **Day 1**: 0908 Welcome, intro, course scope, logistics;
 
 - Intro, presentations, logistics, whatsapp channel
 - brainstorming session: https://ai-opinion-retro.onrender.com/ 
@@ -21,7 +21,7 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - [2. LLMs](https://docs.google.com/presentation/d/1Hyte8y6Z2j-8STfJuRvxBiY3ONy7AVnvAQR7mEyoDJA/edit?usp=sharing)
 
 
-**Day 2**: 0915 - Data, Working with AI
+## **Day 2**: 0915 - Data, Working with AI
 
 - News: AI, a threat to humanity 
 - class representative election
@@ -35,14 +35,22 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - [Group projects form](https://docs.google.com/spreadsheets/d/1f0FYOYsqJ3NoY24Uz-rpht2JaBbwdstE0dCVtKpSG7U/edit?usp=sharing )
  
 
-**Day 3**: 0922 LLMs to agents; AI and Jobs
+## **Day 3**: 0922 LLMs to agents; AI and Jobs
 
 - Group projects : pitch
 - News
-- Tech: the web as API; API keys; API caps; github workflow; hosting; main APIs (wikipedia, NYT, duckduckgo)
+- Tech: the web as API; API keys; API caps; main APIs (wikipedia, NYT, duckduckgo)
+- Hands on : Wikipedia API, get a key, build a simple dataset 
 - Society: AI and Jobs; WEF 2025 report on jobs
-- Demo: scraping EU Parliament debates; building a dataset
 - Actors: OpenAI and Anthropic
+
+[slides](https://docs.google.com/presentation/d/1yih6dDo7J4s_OuLn8CuPq3-yACVJFn7nYqpXoilfOIc/edit?usp=sharing)
+
+### Reading : 
+
+- WEF 2025 report on jobs
+- Dario Machine of Loving grace
+- Centaurs and cyborgs 
 
 **Day 4**: 0929 From NLP to LLMs; Regulating AI
 
@@ -62,7 +70,7 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - Actors: Chinese labs and models
 - Group projects
 
-**Day 6**: 1013 - Deep learning and transformers; Education
+**Day 6**: 1013 - Deep learning and transformers; Data visualization 
 
 - News
 - Tech: LLM Benchmarks; simple predictors to reasoning models
@@ -71,7 +79,7 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - Actors: 
 - Group projects
 
-**Day 7**: 1020 - API
+**Day 7**: 1020 - ML models + Education
 
 - News
 - Tech: ML models, neural networks and the transformer; MoE Mixture of Experts; AI history
@@ -79,6 +87,10 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - Demo: tbd
 - Actors: 
 - Group projects
+
+### Readings 
+- Unesco 
+- 
 
 **Day 8**: 1103 - 
 
