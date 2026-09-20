@@ -35,55 +35,67 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - [Group projects form](https://docs.google.com/spreadsheets/d/1f0FYOYsqJ3NoY24Uz-rpht2JaBbwdstE0dCVtKpSG7U/edit?usp=sharing )
  
 
-## **Day 3**: 0922 LLMs to agents; AI and Jobs
+## **Day 3**: 0922 The web, APIs; AI and Jobs
 
 - Group projects : pitch
-- News
-- Tech: the web as API; API keys; API caps; main APIs (wikipedia, NYT, duckduckgo)
-- Hands on : Wikipedia API, get a key, build a simple dataset 
+- News : new platforms and models : Jev, Muse, grok bot
+- The OpenAI - Huggingface incident
+- Tech: the web as API; API keys; API caps; some APIs (wikipedia, NYT, duckduckgo)
+- Hands on : Wikipedia API, build a simple dataset 
+- Hands on : NYT API, get a developper key, build a simple dataset 
 - Society: AI and Jobs; WEF 2025 report on jobs
-- Actors: OpenAI and Anthropic
 
-[slides](https://docs.google.com/presentation/d/1yih6dDo7J4s_OuLn8CuPq3-yACVJFn7nYqpXoilfOIc/edit?usp=sharing)
+
+- [slides](https://docs.google.com/presentation/d/1yih6dDo7J4s_OuLn8CuPq3-yACVJFn7nYqpXoilfOIc/edit?usp=sharing)
 
 ### Reading : 
 
-- WEF 2025 report on jobs
+- [WEF 2025 future of jobs](https://www.weforum.org/publications/the-future-of-jobs-report-2025/)
 - Dario Machine of Loving grace
-- Centaurs and cyborgs 
 
-**Day 4**: 0929 From NLP to LLMs; Regulating AI
+**Day 4**: 0929 Tokens, embeddings and parameters; Regulating AI
 
 - News: source [AIFray](https://aifray.com/)
-- Tech: LLMs to agents to multi agents, harnesses
-- Society: AI-act and regulations; sovereignty; open source vs closed source
-- Demo: RAG on AI act
-- Actors: Lovable, chatGPT work, github
+- Tech: Tokens, embeddings and LLM parameters
+- Society: AI-act and regulations; sovereignty; 
+- Actors: OpenAI and Anthropic, Sam Altman, Dario Almodei
 - Group projects
 
-**Day 5**: 1006 - Benchmarks and reasoning emergence; Science
+- [slides](https://docs.google.com/presentation/d/1K-iiDBev0nuf9SpXbj7DDyG2vr4ojbPxm6g_MpYlT4c/edit?usp=sharing)
+- [slides on regulation](https://docs.google.com/presentation/d/1Mh1X-lZG4hvb0Uhl66ODN_CX082AztbROlbrCrsu_aE/edit?usp=sharing)
 
-- News
-- Tech: From NLP to LLMs; NER, POS; Embeddings and tokens; 
-- Society: AI and Science
-- Demo: Building apps with AI
-- Actors: Chinese labs and models
-- Group projects
-
-**Day 6**: 1013 - Deep learning and transformers; Data visualization 
+**Day 5**: 1006 - Benchmarks and reasoning emergence; AI on Science
 
 - News
 - Tech: LLM Benchmarks; simple predictors to reasoning models
-- Society: Data visualization
-- Demo: 
-- Actors: 
+- Society: AI and Science
+- Demo: Building apps with AI, 
+- Lovable
+- Opencode 
+- Actors: Chinese labs and models
 - Group projects
+- Next : prepare the workshop
 
-**Day 7**: 1020 - ML models + Education
+- [slides](https://docs.google.com/presentation/d/1TCvjgyqNc4NwVb5kkoEoruud6nq3jvspF9GqvSUbhM8/edit?usp=sharing)
+
+**Day 6**: 1013 - workshop
+
+This is a special session where we work on the EU parliament debate 
+
+We will 
+- constitute the dataset by scraping / downloading the verbatim of the debates for the past 12 months 
+- define study questions 
+- enrich and expand the dataset 
+- design artefacts : applications, web sites,   
+
+
+
+**Day 7**: 1020 - LLM to agents, harnesses + Education
 
 - News
-- Tech: ML models, neural networks and the transformer; MoE Mixture of Experts; AI history
+- Tech: LLM to agents, harnesses
 - Society: Education & loss of skills
+- Actors: Nvidia
 - Demo: tbd
 - Actors: 
 - Group projects
@@ -96,7 +108,7 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 
 - News
 - Tech: Guardrails and abliteration
-- Society: Biases
+- Society: Environment
 - Demo: tbd
 - Actors: 
 - Group projects
