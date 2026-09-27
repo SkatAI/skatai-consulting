@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>What Is Reasoning in Recent LLMs? — Beginner's Guide to 2024–2026 Research</title>
+<style>
+:root{
+  --bg:#f6f7fb;--paper:#fff;--ink:#172033;--muted:#5d6678;--line:#dfe4ec;
+  --accent:#4056b4;--accent2:#7654b8;--soft:#eef1ff;--good:#0c7a62;--warn:#a95b12;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.62 Georgia,"Times New Roman",serif}
+a{color:#314bb0;text-decoration:none} a:hover{text-decoration:underline}
+.page{max-width:1050px;margin:0 auto;background:var(--paper);min-height:100vh;box-shadow:0 0 0 1px rgba(20,30,50,.04)}
+header{padding:70px 72px 44px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#f7f8ff 0,#fff 55%,#f5f0ff 100%)}
+.eyebrow{font:700 13px/1.2 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font:750 52px/1.05 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0 0 18px;letter-spacing:-.035em}
+.subtitle{font:400 23px/1.45 system-ui,sans-serif;color:#3d4658;max-width:820px;margin:0}
+.meta{font:14px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:22px}
+main{padding:48px 72px 80px}
+h2{font:750 32px/1.18 system-ui,sans-serif;letter-spacing:-.02em;margin:58px 0 20px;padding-top:4px}
+h3{font:720 23px/1.25 system-ui,sans-serif;margin:36px 0 12px}
+h4{font:700 18px/1.3 system-ui,sans-serif;margin:26px 0 8px}
+p{margin:0 0 18px}
+ul,ol{margin:8px 0 20px 26px} li{margin:7px 0}
+.lead{font-size:20px;line-height:1.62;color:#2d3648}
+.toc{border:1px solid var(--line);border-radius:14px;padding:26px 30px;background:#fbfcff;margin:34px 0}
+.toc h2{font-size:23px;margin:0 0 15px;padding:0}.toc ol{columns:2;column-gap:45px;margin:0 0 0 22px}.toc li{break-inside:avoid;font:15px/1.45 system-ui,sans-serif;margin:6px 0}
+.callout{border-left:5px solid var(--accent);background:var(--soft);padding:20px 23px;margin:26px 0;border-radius:0 10px 10px 0}
+.callout strong{font-family:system-ui,sans-serif}.callout.warn{border-left-color:var(--warn);background:#fff7ec}.callout.good{border-left-color:var(--good);background:#eefaf6}
+.key{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.key>div{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}.key b{display:block;font:700 16px system-ui,sans-serif;margin-bottom:8px}.key p{font-size:15px;margin:0;color:#40495a}
+.table-wrap{overflow:auto;margin:22px 0 30px;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font:14px/1.45 system-ui,sans-serif}th,td{padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#f5f7fb;text-align:left;font-weight:700}tr:last-child td{border-bottom:0}
+.figure{border:1px solid var(--line);border-radius:14px;padding:24px;margin:28px 0;background:#fff}.figure-title{font:700 16px system-ui,sans-serif;margin-bottom:14px}.caption{font:14px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:12px}.refbox{background:#f8f9fb;border:1px dashed #bec6d4;padding:15px 17px;border-radius:10px;margin:18px 0;font:14px/1.5 system-ui,sans-serif}.refbox b{color:#30394a}
+.flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}.node{flex:1 1 130px;min-width:130px;border:1px solid #ccd3e0;border-radius:10px;padding:12px;text-align:center;font:600 14px/1.25 system-ui,sans-serif;background:#fafbfe}.arrow{align-self:center;color:#798399;font:24px system-ui,sans-serif}
+.bars{display:grid;grid-template-columns:180px 1fr 58px;gap:8px 12px;align-items:center;font:14px system-ui,sans-serif}.bar-bg{height:14px;background:#edf0f5;border-radius:999px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px}.bar.val2{background:linear-gradient(90deg,#498a76,#75ad98)}
+.paper{border-top:1px solid var(--line);padding-top:28px;margin-top:38px}.paper .paper-meta{font:14px/1.55 system-ui,sans-serif;color:var(--muted);margin-bottom:16px}.paper .question{font:700 17px system-ui,sans-serif;color:#2d3c6d;margin:14px 0 8px}.paper .takeaway{font:15px/1.5 system-ui,sans-serif;background:#f7f8fb;padding:14px 16px;border-radius:10px;margin-top:14px}
+.term{font-weight:700}.small{font-size:14px;color:var(--muted)}
+.sources li{margin:10px 0}.sources{font-size:15px}.tag{display:inline-block;padding:2px 7px;border-radius:999px;background:#eef1f7;color:#4c566a;font:700 11px/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.04em;margin-right:5px}
+hr{border:0;border-top:1px solid var(--line);margin:48px 0}
+footer{border-top:1px solid var(--line);padding:28px 72px 48px;color:var(--muted);font:13px/1.5 system-ui,sans-serif;background:#fafbfc}
+@media(max-width:760px){header,main,footer{padding-left:24px;padding-right:24px}h1{font-size:39px}.toc ol{columns:1}.key{grid-template-columns:1fr}.bars{grid-template-columns:120px 1fr 48px}}
+@media print{body{background:white}.page{box-shadow:none}.toc{break-inside:avoid}.figure,.paper{break-inside:avoid}a{color:inherit;text-decoration:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div class="eyebrow">Research report · beginner level · updated 27 September 2026</div>
+  <h1>What Is Reasoning in Recent LLMs?</h1>
+  <p class="subtitle">A thorough guide to chain-of-thought, reasoning models, reinforcement learning, test-time compute, verification, overthinking, faithfulness and metacognition — with a focus on the 2024–2026 literature.</p>
+  <div class="meta">Designed for a reader who is new to the topic. Mathematical detail is kept light; domain-specific vocabulary is defined when introduced.</div>
+</header>
+<main>
+
+<div class="callout good"><strong>The central idea in one paragraph.</strong> A modern LLM is still an autoregressive next-token predictor, but that does not imply that it must jump directly from a question to an answer. Recent systems are trained to use sequences of generated tokens as a kind of external scratchpad: they decompose a problem, try a method, inspect intermediate results, backtrack, and sometimes verify a conclusion before answering. Researchers increasingly treat the amount and allocation of this inference-time computation as a first-class capability. The difficult scientific question is no longer simply “can the model write steps?” It is “when does extra computation help, what training creates useful reasoning behavior, how systematic is that behavior, when does it fail, and does the visible chain-of-thought faithfully represent the computation that produced the answer?”</div>
+
+<nav class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Global overview</a></li>
+<li><a href="#definition">What “reasoning” means</a></li>
+<li><a href="#background">Minimum technical background</a></li>
+<li><a href="#history">How we got to reasoning models</a></li>
+<li><a href="#methods">Main methods and innovations</a></li>
+<li><a href="#results">What the evidence supports</a></li>
+<li><a href="#palminteri">Yax, Anlló & Palminteri (2024)</a></li>
+<li><a href="#brady">Brady et al. (2025)</a></li>
+<li><a href="#r1">DeepSeek-R1 (2025)</a></li>
+<li><a href="#s1">s1 and budget forcing (2025)</a></li>
+<li><a href="#snell">Test-time compute scaling (2024)</a></li>
+<li><a href="#kambhampati">How do reasoning models reason? (2025)</a></li>
+<li><a href="#illusion">The Illusion of Thinking (2025)</a></li>
+<li><a href="#shallow">Shallow disjunctive reasoning (2025)</a></li>
+<li><a href="#raven">Analogical reasoning under uncertainty (2025)</a></li>
+<li><a href="#biases">Cognitive biases in LLMs (2025)</a></li>
+<li><a href="#faithfulness">Chain-of-thought faithfulness (2025–2026)</a></li>
+<li><a href="#metacognition">Metacognition and overthinking (2026)</a></li>
+<li><a href="#mechanistic">Mechanistic understanding (2026)</a></li>
+<li><a href="#mentalmodel">A useful mental model</a></li>
+<li><a href="#really">Do LLMs “really reason”?</a></li>
+<li><a href="#reading">How to read new reasoning papers</a></li>
+<li><a href="#glossary">Glossary</a></li>
+<li><a href="#sources">Sources and figure references</a></li>
+</ol>
+</nav>
+
+<section id="overview">
+<h2>1. Global overview: the problem, the methods, the innovation, the results</h2>
+<p class="lead">The modern reasoning debate is easier to understand if you separate <em>capability</em>, <em>procedure</em>, and <em>explanation</em>. A model can be capable of getting an answer right without using a robust procedure, and it can produce a convincing explanation without that explanation being a faithful account of what causally drove the answer.</p>
+<div class="key">
+  <div><b>Capability</b><p>Can the system solve tasks that require several dependent steps?</p></div>
+  <div><b>Systematic procedure</b><p>Does the solution method transfer when surface form, depth, distribution or representation changes?</p></div>
+  <div><b>Faithful explanation</b><p>Does the visible reasoning trace accurately reflect the factors that actually caused the answer?</p></div>
+</div>
+
+<h3>The problem</h3>
+<p>Older evaluations often asked whether LLMs could resist an intuitive lure, solve a multi-step math problem, or reproduce human cognitive biases. By 2025–2026, the strongest systems were explicitly trained to spend more computation during inference. This created a more difficult scientific target. A model might succeed because it memorized a familiar template, because it genuinely composes relations, because it samples many attempts and gets lucky, because a verifier selects a good attempt, or because long language generation implements a useful iterative computation. Those possibilities can yield the same final answer but imply very different forms of “reasoning.”</p>
+
+<h3>The methods</h3>
+<p>Researchers use several complementary methods: controlled synthetic tasks, novel benchmark variants designed to reduce contamination, distribution-shift tests, chain-of-thought interventions, multiple sampling, external verifiers, process reward models, reinforcement learning with objectively checkable rewards, causal interventions on prompts or reasoning traces, and increasingly mechanistic interpretability.</p>
+
+<h3>The innovation</h3>
+<p>The important technical shift is that <strong>inference-time computation has become a scaling dimension</strong>. Instead of thinking only about larger models and more pretraining, researchers now ask how much computation a fixed model should spend on each problem and how that compute should be organized.</p>
+
+<div class="figure">
+<div class="figure-title">Original schematic: from immediate answering to controlled reasoning</div>
+<div class="flow">
+<div class="node">Prompt</div><div class="arrow">→</div><div class="node">Represent the problem</div><div class="arrow">→</div><div class="node">Generate a candidate step</div><div class="arrow">→</div><div class="node">Check / compare / revise</div><div class="arrow">→</div><div class="node">Decide whether to continue</div><div class="arrow">→</div><div class="node">Final answer</div>
+</div>
+<p class="caption">This is a conceptual diagram, not a claim that every reasoning model literally contains six separate modules. It summarizes the behavior that recent training and inference techniques try to produce.</p>
+</div>
+
+<h3>The results in plain language</h3>
+<ul>
+<li><strong>Extra computation often helps.</strong> Longer deliberation, multiple samples, search, verification and reasoning-focused post-training can substantially improve math, coding and structured problem-solving.</li>
+<li><strong>Reinforcement learning can elicit self-checking behavior.</strong> DeepSeek-R1 is the clearest open example: RL using verifiable rewards selected longer traces containing reflection, backtracking and strategy changes.</li>
+<li><strong>More thinking is not monotonically better.</strong> Recent work documents overthinking, redundant loops, correct intermediate answers being overwritten, and large token expenditures with no gain.</li>
+<li><strong>Generalization remains uneven.</strong> Models can excel on familiar benchmarks yet deteriorate sharply when rule depth, perceptual conditions or compositional structure changes.</li>
+<li><strong>Chain-of-thought is not automatically a transparent explanation.</strong> It is an observable behavior that can be useful, but causal faithfulness has to be tested rather than assumed.</li>
+<li><strong>System 1/System 2 is a useful analogy at the behavioral level, not evidence that transformers have the same cognitive architecture as humans.</strong></li>
+</ul>
+</section>
+
+<section id="definition">
+<h2>2. What do researchers mean by “reasoning”?</h2>
+<p>There is no single universally accepted definition. A practical working definition for this report is:</p>
+<div class="callout"><strong>Reasoning:</strong> computation that transforms information through intermediate states so the system can reach a conclusion that is not obtained merely by copying an immediately available surface pattern.</div>
+<p>This definition is deliberately implementation-neutral. Humans may use working memory, spatial imagery, symbolic manipulation and heuristics. An LLM may use distributed neural activations, generated intermediate tokens, search, tools, or combinations of these.</p>
+
+<h3>2.1 Three levels of evidence</h3>
+<p><strong>Behavioral reasoning</strong> asks whether the system produces the correct answer on tasks that appear to require inference. <strong>Systematic reasoning</strong> asks whether the procedure generalizes when the task is transformed. <strong>Mechanistic reasoning</strong> asks which internal computations causally produced the result.</p>
+<p>Most benchmark claims are strongest at the first level. Controlled distribution-shift experiments probe the second. Interpretability and causal intervention studies aim at the third.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Question</th><th>Example evidence</th><th>What it does <em>not</em> establish</th></tr></thead>
+<tbody>
+<tr><td>Can the model solve it?</td><td>High accuracy on AIME, code tests, spatial reasoning, CRT items</td><td>That the model used a robust or human-like method</td></tr>
+<tr><td>Does the method generalize?</td><td>OOD tests, deeper compositions, new representations, new value ranges</td><td>That the visible CoT faithfully exposes internal causality</td></tr>
+<tr><td>What caused the answer?</td><td>Ablations, interventions, causal mediation, mechanistic probes</td><td>A complete theory of cognition</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="background">
+<h2>3. Minimum technical background</h2>
+<h3>Token</h3><p>A <span class="term">token</span> is a chunk of text processed by the model: a word, part of a word, punctuation mark or other symbol. Autoregressive LLMs generate one token after another.</p>
+<h3>Pretraining</h3><p><span class="term">Pretraining</span> is the large initial training stage. The model learns to predict the next token from huge amounts of data. This objective can teach language, factual associations, code patterns, mathematical procedures and latent regularities.</p>
+<h3>Post-training</h3><p><span class="term">Post-training</span> occurs after pretraining. It can include supervised fine-tuning, preference optimization and reinforcement learning. Modern reasoning models rely heavily on post-training to shape how the model uses its latent capability.</p>
+<h3>Inference / test time</h3><p><span class="term">Inference</span> is the moment when the trained model answers a new prompt. <span class="term">Test-time compute</span> is the computation spent on that specific prompt after training is complete.</p>
+<h3>Chain-of-thought (CoT)</h3><p>A <span class="term">chain-of-thought</span> is a generated sequence of intermediate steps before the final answer. Conceptually: question → intermediate state 1 → intermediate state 2 → answer. Because each generated token becomes context for later tokens, generation can act as an external scratchpad.</p>
+<h3>Reasoning trace</h3><p>The <span class="term">reasoning trace</span> is the observable sequence of intermediate calculations, reflections, revisions or plans. In the literature, “thoughts,” “reasoning tokens” and “CoT” often overlap in meaning.</p>
+<h3>Verifier</h3><p>A <span class="term">verifier</span> evaluates a candidate answer or reasoning trajectory. A model can generate several attempts and use a verifier to select among them.</p>
+<h3>Outcome vs process supervision</h3><p><span class="term">Outcome supervision</span> rewards the final result. <span class="term">Process supervision</span> evaluates intermediate steps. A <span class="term">process reward model (PRM)</span> is trained to score those steps or partial trajectories.</p>
+<h3>Reinforcement learning (RL)</h3><p><span class="term">Reinforcement learning</span> updates behavior using a numerical reward. Reasoning is especially amenable to RL when outcomes are objectively verifiable, for example an exact mathematical answer or code that passes tests.</p>
+<h3>Test-time scaling</h3><p><span class="term">Test-time scaling</span> means deliberately spending more computation on a problem. This can be a longer trace, more independent samples, search, repeated verification, tool use, or a combination.</p>
+<h3>Pass@k</h3><p><span class="term">Pass@k</span> asks whether at least one of <em>k</em> generated attempts is correct. If pass@1 is mediocre but pass@64 is high, the model can often generate a correct solution, but selecting it reliably is still a separate problem.</p>
+<h3>Out-of-distribution (OOD)</h3><p>An <span class="term">OOD</span> example differs systematically from the examples used during training or tuning. OOD evaluation is important because shortcuts can work on familiar test sets and fail when the same underlying rule is expressed differently.</p>
+<h3>Faithfulness</h3><p>A reasoning trace is <span class="term">faithful</span> when it accurately reflects the information and computation that causally contributed to the answer. Plausibility and faithfulness are not the same thing.</p>
+<h3>Metacognition</h3><p><span class="term">Metacognition</span> means monitoring and regulating the reasoning process: estimating difficulty, deciding how much effort to spend, noticing when a strategy fails, deciding to backtrack, and knowing when to stop.</p>
+</section>
+
+<section id="history">
+<h2>4. How the field got to modern reasoning models</h2>
+<h3>Stage 1 — Latent multi-step ability</h3><p>Large transformers could already perform some multi-step computations, but direct prompting often produced brittle answers.</p>
+<h3>Stage 2 — Chain-of-thought prompting</h3><p>Wei et al. (2022) showed that sufficiently large models improved on arithmetic, commonsense and symbolic tasks when examples included intermediate reasoning. This popularized the idea that generated language can function as a scratchpad.</p>
+<h3>Stage 3 — Sampling, search and verification</h3><p>If one trajectory can fail, generate several. Self-consistency, best-of-N selection, search and process reward models separate <em>proposing</em> from <em>judging</em>.</p>
+<h3>Stage 4 — Inference compute becomes a scaling axis</h3><p>Snell et al. (2024) made the compute-allocation perspective explicit: depending on the problem, extra inference computation on a smaller model can be more effective than spending the same compute on a much larger model that answers immediately.</p>
+<h3>Stage 5 — Reasoning-focused post-training</h3><p>Systems such as OpenAI’s o1 family made extended deliberation a product category. DeepSeek-R1 then gave the research community a detailed open account of how reinforcement learning with verifiable rewards could elicit long, reflective traces.</p>
+<h3>Stage 6 — Control becomes the new bottleneck</h3><p>Once a model can generate thousands of “thinking” tokens, new problems emerge: looping, redundant checking, latency, expense, and sometimes reasoning past the correct answer. The 2026 frontier therefore focuses increasingly on adaptive budgets, early stopping, metacognitive control and mechanistic understanding.</p>
+</section>
+
+<section id="methods">
+<h2>5. Main methods and innovations</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>Core idea</th><th>Why it helps</th><th>Main limitation</th></tr></thead>
+<tbody>
+<tr><td>Chain-of-thought prompting</td><td>Generate intermediate language steps</td><td>Adds serial computation and an external scratchpad</td><td>Can produce verbose rationalization</td></tr>
+<tr><td>Self-consistency / best-of-N</td><td>Generate several attempts</td><td>Raises chance at least one path is correct</td><td>Needs a way to choose the right candidate</td></tr>
+<tr><td>Search</td><td>Explore branches of possible reasoning</td><td>Allows backtracking and alternatives</td><td>Can be expensive</td></tr>
+<tr><td>Verifier / PRM</td><td>Score answers or intermediate steps</td><td>Separates generation from evaluation</td><td>Verifier can itself be wrong or exploitable</td></tr>
+<tr><td>SFT on reasoning traces</td><td>Imitate high-quality worked solutions</td><td>Quickly teaches useful formats and patterns</td><td>May imitate style rather than robust procedure</td></tr>
+<tr><td>RL with verifiable rewards</td><td>Reward correct outcomes and let strategy emerge</td><td>Can discover checking/backtracking behaviors</td><td>May optimize narrow reward structure</td></tr>
+<tr><td>Budget forcing</td><td>Force earlier stopping or continued thinking</td><td>Makes reasoning length controllable</td><td>More tokens can hurt</td></tr>
+<tr><td>Adaptive metacognition</td><td>Estimate difficulty and regulate reasoning</td><td>Reduces waste and overthinking</td><td>Self-assessment can be miscalibrated</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="results">
+<h2>6. What the evidence currently supports</h2>
+<h3>6.1 Extra inference computation can improve difficult-task performance</h3><p>Across mathematics, code and structured reasoning, extra computation often helps. The most useful perspective is broader than “longer answer”: computation can be spent on more samples, search branches, verification or tool calls.</p>
+<h3>6.2 RL can select qualitatively different problem-solving behavior</h3><p>DeepSeek-R1 provides strong evidence that RL with verifiable rewards can increase the frequency of long deliberation, checking, backtracking and strategy change. This is behavioral evidence of a changed inference policy; it is not evidence of consciousness or human-like introspection.</p>
+<h3>6.3 More reasoning is not always better</h3><p>The relationship between token count and correctness is non-monotonic. Recent studies find diminishing returns, wasted reasoning on trivial tasks, and cases where a correct intermediate conclusion is later overwritten.</p>
+<h3>6.4 Familiar benchmark success does not prove systematic reasoning</h3><p>Controlled relational and analogical tasks show sharp degradation under distribution shifts, longer rule chains or altered perceptual conditions. That suggests current systems combine real multi-step capability with task-specific heuristics and brittle representations.</p>
+<h3>6.5 Visible reasoning is not guaranteed to be faithful</h3><p>CoT is an output of the model, not direct access to its hidden activations. Causal tests show that traces can omit influences that mattered, while newer work also warns that omission alone may indicate incomplete verbalization rather than total causal irrelevance. Faithfulness is therefore an empirical property, not a default assumption.</p>
+<h3>6.6 System 1/System 2 should remain an analogy</h3><p>LLMs can exhibit immediate, heuristic-like answers and slower deliberative outputs. That behavioral contrast is useful. It does not establish that transformers implement the same dual-process cognitive mechanisms proposed for human psychology.</p>
+</section>
+
+<section id="palminteri" class="paper">
+<h2>7. Yax, Anlló & Palminteri (2024): reasoning in humans and machines</h2>
+<div class="paper-meta">Nicolas Yax, Hernán Anlló & Stefano Palminteri · <em>Communications Psychology</em> 2, 51 (2024) · <a href="https://www.nature.com/articles/s44271-024-00091-8">paper</a></div>
+<div class="question">What did they ask?</div>
+<p>Can LLMs reproduce or overcome classic human reasoning errors, and does similarity in error rates imply similarity in underlying reasoning?</p>
+<div class="question">Method</div>
+<p>The paper uses the Cognitive Reflection Test (CRT) and conjunction-fallacy-style problems. Because famous CRT items such as the bat-and-ball problem may exist in training data, the authors construct new analogues. They compare humans with successive GPT-family models and examine both aggregate accuracy and item-by-item patterns.</p>
+<div class="question">Main result</div>
+<p>Older GPT-3-family models often produced intuitive or biased answers. ChatGPT and GPT-4 improved dramatically; the reported GPT-4 performance on newly constructed CRT items approached ceiling. Crucially, even where humans and models had similar average error rates, they did not necessarily find the same items difficult.</p>
+<div class="question">Why it matters in 2026</div>
+<p>This paper is an excellent pre-reasoning-model baseline. It shows both why people were tempted to map human dual-process theory onto LLMs and why that mapping must be handled carefully. The same observable error can arise from different mechanisms.</p>
+<div class="refbox"><b>Figures to inspect in the original paper:</b> Figure 3 (Da Vinci-family models and humans), Figure 5 (ChatGPT/GPT-4 comparison), and Figure 6 (item-level patterns). <a href="https://www.nature.com/articles/s44271-024-00091-8/figures/5">Open Figure 5</a>.</div>
+<div class="takeaway"><strong>Beginner takeaway:</strong> “Model and human gave the same answer” is not evidence that they used the same reasoning process.</div>
+</section>
+
+<section id="brady" class="paper">
+<h2>8. Brady et al. (2025): dual-process theory and LLM decision-making</h2>
+<div class="paper-meta"><em>Nature Reviews Psychology</em> 4, 777–792 (2025) · <a href="https://www.nature.com/articles/s44159-025-00506-1">paper</a></div>
+<div class="question">Why this review is useful</div>
+<p>It is the closest modern bridge between human System 1/System 2 theory and LLM behavior. It reviews cognitive biases, decision-making and reflective behavior across model families.</p>
+<div class="question">The key warning</div>
+<p>A model may show “System-1-like” or “System-2-like” behavior without possessing human Type 1 or Type 2 mechanisms. Training data, prompt framing, instruction tuning and inference strategies can all produce behavioral patterns that resemble cognitive biases.</p>
+<div class="refbox"><b>Figure to inspect:</b> Figure 1 covers Cognitive Reflection Test behavior. The review also discusses possible sources of bias in humans and LLMs. <a href="https://www.nature.com/articles/s44159-025-00506-1">Open the paper</a>.</div>
+<div class="takeaway"><strong>Beginner takeaway:</strong> use “fast versus deliberative” as a descriptive analogy, not as a literal two-system architecture for transformers.</div>
+</section>
+
+<section id="r1" class="paper">
+<h2>9. DeepSeek-R1 (2025): reasoning through reinforcement learning</h2>
+<div class="paper-meta">Guo et al. · <em>Nature</em> 645, 633–638 (2025) · <a href="https://www.nature.com/articles/s41586-025-09422-z">paper</a></div>
+<div class="question">Why this paper changed the discussion</div>
+<p>It offered unusually concrete evidence that reinforcement learning with verifiable rewards can reshape how a pretrained model uses inference-time computation.</p>
+<h3>9.1 R1-Zero</h3>
+<p>R1-Zero starts from a pretrained base model and applies reasoning-focused RL without first supplying a large corpus of human-written ideal reasoning traces for that stage. Rewards emphasize answer correctness and output constraints. During training, the model develops longer responses and more frequent behaviors that look like checking, reflection and strategy changes.</p>
+<h3>9.2 “Aha moments”</h3>
+<p>The paper uses examples where the model says things like “wait” and changes course. This is best interpreted behaviorally: RL selected patterns of re-evaluation because they improved reward. The term should not be treated as evidence that the model experiences human insight.</p>
+<h3>9.3 GRPO</h3>
+<p><span class="term">Group Relative Policy Optimization (GRPO)</span> is the RL method prominently used in the work. Intuitively, the model generates a group of outputs, receives rewards, and is updated so relatively high-reward behavior becomes more likely. It avoids a separate value model used in some older RL architectures.</p>
+<h3>9.4 The final R1 is not “RL only”</h3>
+<p>The final pipeline adds cold-start supervised data, reasoning RL, sampling/filtering, further supervised training and another alignment stage. This matters because popular summaries sometimes collapse R1-Zero and final R1 into a single technique.</p>
+<div class="refbox"><b>Figures to inspect:</b> Figure 1 tracks training accuracy and average response length during R1-Zero RL; Figure 2 summarizes the training pipeline. <a href="https://www.nature.com/articles/s41586-025-09422-z/figures/1">Open Figure 1</a> · <a href="https://www.nature.com/articles/s41586-025-09422-z/figures/2">Open Figure 2</a>.</div>
+<div class="takeaway"><strong>Beginner takeaway:</strong> reasoning behavior can be treated as a learned policy for spending inference-time computation, not merely something elicited by saying “think step by step.”</div>
+</section>
+
+<section id="s1" class="paper">
+<h2>10. s1 (2025): simple test-time scaling and budget forcing</h2>
+<div class="paper-meta">Muennighoff et al. · EMNLP 2025 · <a href="https://aclanthology.org/2025.emnlp-main.1025/">paper</a></div>
+<div class="question">Question</div><p>How much specialized data is needed to induce useful reasoning behavior, and can simply controlling the reasoning budget change performance?</p>
+<p>The authors curate roughly 1,000 high-quality reasoning examples and fine-tune an existing instruction model. Their memorable intervention is <span class="term">budget forcing</span>: stop the model early, or when it tries to stop, append “Wait” to force another reasoning pass.</p>
+<p>Additional thought can make the model recheck a derivation and correct itself. This provides a clean illustration of reasoning tokens as a controllable computation budget.</p>
+<div class="callout warn"><strong>Important caveat:</strong> the lesson is not “always make the model think longer.” Later 2026 work shows that extra thought can be redundant or harmful. Budget forcing demonstrates controllability, not monotonic benefit.</div>
+</section>
+
+<section id="snell" class="paper">
+<h2>11. Snell et al. (2024): test-time compute as a scaling dimension</h2>
+<div class="paper-meta">“Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters” · <a href="https://arxiv.org/abs/2408.03314">paper</a></div>
+<p>The paper asks a resource-allocation question: if compute is fixed, is it better to use a larger model that answers once, or a smaller model that spends more compute searching/refining at inference time?</p>
+<p>The authors study search with process-based verifiers and adaptive refinement. Their central result is that optimal allocation depends on problem difficulty. A fixed best-of-N strategy wastes compute on easy problems and can under-spend on hard ones. They report that adaptive allocation can be substantially more efficient than a simple best-of-N baseline, and in some FLOPs-matched settings a smaller model with test-time compute can outperform a much larger model.</p>
+<div class="takeaway"><strong>Conceptual shift:</strong> capability is better thought of as a function of the pretrained model, the inference budget, the search policy, and the verifier — not parameter count alone.</div>
+</section>
+
+<section id="kambhampati" class="paper">
+<h2>12. Kambhampati, Stechly & Valmeekam (2025): “(How) Do reasoning models reason?”</h2>
+<div class="paper-meta"><em>Annals of the New York Academy of Sciences</em> 1547(1), 33–40 · <a href="https://pubmed.ncbi.nlm.nih.gov/40221824/">paper record</a></div>
+<p>This perspective paper is useful because it resists turning benchmark performance into a complete theory of reasoning. An LLM system can combine broad pattern knowledge, generated scratchpads, repeated sampling, heuristic search and verification. Such a system can be extremely capable without behaving like a classical symbolic theorem prover.</p>
+<p>Planning is a particularly useful stress test: the model must maintain global consistency across many dependent actions. Plausible local steps do not guarantee a valid overall plan.</p>
+<div class="takeaway"><strong>Better question than “Does it reason?”</strong> On which tasks, under which compute budget, with which tools, under what distribution shift, and with what verification?</div>
+</section>
+
+<section id="illusion" class="paper">
+<h2>13. Shojaee et al. (2025): The Illusion of Thinking</h2>
+<div class="paper-meta">NeurIPS 2025 · <a href="https://arxiv.org/abs/2506.06941">paper</a> · <a href="https://machinelearning.apple.com/research/illusion-of-thinking">Apple research page</a></div>
+<p>The paper uses controllable puzzles whose complexity can be increased systematically. This is more informative than reporting one benchmark accuracy number because it reveals how reasoning behavior changes as the same underlying problem becomes deeper.</p>
+<h3>The three-regime interpretation</h3>
+<ul><li><strong>Low complexity:</strong> non-thinking models can be competitive; lengthy reasoning may be overhead.</li><li><strong>Medium complexity:</strong> reasoning models gain an advantage.</li><li><strong>High complexity:</strong> both eventually fail in the authors’ experiments.</li></ul>
+<p>The work also analyzes reasoning traces and reports cases where a correct solution appears early, followed by unnecessary continuation.</p>
+<div class="refbox"><b>Figures to inspect:</b> the paper’s plots of accuracy and reasoning-token use as puzzle complexity increases, plus its trace analysis showing where correct intermediate solutions occur. <a href="https://arxiv.org/abs/2506.06941">Open paper</a>.</div>
+<h3>Why the controversy matters</h3>
+<p>A subsequent comment argues that some collapse is confounded by output-length constraints and problematic puzzle instances. <a href="https://arxiv.org/abs/2506.09250">Read the comment</a>. The dispute teaches a general lesson: a failed benchmark run may indicate failure of reasoning, execution, representation, interface limits, or even benchmark construction. Good evaluation must separate these possibilities.</p>
+</section>
+
+<section id="shallow" class="paper">
+<h2>14. Khalid, Nourollah & Schockaert (2025): shallow disjunctive reasoning</h2>
+<div class="paper-meta">ACL 2025 · <a href="https://aclanthology.org/2025.acl-long.433/">paper</a></div>
+<p>The authors study controlled spatial and temporal reasoning. They vary relation types, path lengths and whether the model must combine one or several reasoning paths.</p>
+<p>Reasoning models generally improve on single-path tasks, but the authors find much weaker performance in multi-path, out-of-distribution conditions. They describe the resulting behavior as “shallow disjunctive reasoning.”</p>
+<div class="takeaway"><strong>Why it matters:</strong> high performance on common math or code tasks is compatible with incomplete systematic generalization. Controlled relational tasks help expose that gap.</div>
+</section>
+
+<section id="raven" class="paper">
+<h2>15. Camposampiero et al. (2025): analogical reasoning under perceptual uncertainty</h2>
+<div class="paper-meta">PMLR 284, 750–776 · <a href="https://proceedings.mlr.press/v284/camposampiero25a.html">paper</a></div>
+<p>Raven’s Progressive Matrices are classic tests of abstract analogy. The authors evaluate o3-mini and DeepSeek-R1 on I-RAVEN and a harder I-RAVEN-X setting that increases rule length, value ranges, perceptual uncertainty and irrelevant/confounding attributes.</p>
+
+<div class="figure">
+<div class="figure-title">Original summary chart from the paper’s reported headline accuracies</div>
+<div class="bars">
+<div>o3-mini · I-RAVEN</div><div class="bar-bg"><div class="bar" style="width:86.6%"></div></div><div>86.6%</div>
+<div>DeepSeek-R1 · I-RAVEN</div><div class="bar-bg"><div class="bar" style="width:80.6%"></div></div><div>80.6%</div>
+<div>o3-mini · I-RAVEN-X</div><div class="bar-bg"><div class="bar" style="width:17%"></div></div><div>17.0%</div>
+<div>DeepSeek-R1 · I-RAVEN-X</div><div class="bar-bg"><div class="bar" style="width:23.2%"></div></div><div>23.2%</div>
+<div>ARLC · I-RAVEN</div><div class="bar-bg"><div class="bar val2" style="width:98.6%"></div></div><div>98.6%</div>
+<div>ARLC · I-RAVEN-X</div><div class="bar-bg"><div class="bar val2" style="width:88%"></div></div><div>88.0%</div>
+</div>
+<p class="caption">Values are reported in Camposampiero et al. (2025). ARLC is a neuro-symbolic probabilistic abductive system. The chart is redrawn here rather than copied from the paper.</p>
+</div>
+<p>One striking result is that o3-mini’s accuracy drops sharply in I-RAVEN-X despite using substantially more reasoning tokens. This makes the central point vivid: <strong>reasoning length is not the same thing as robust reasoning representation.</strong></p>
+</section>
+
+<section id="biases" class="paper">
+<h2>16. Malberg et al. (2025): cognitive biases across LLMs</h2>
+<div class="paper-meta">NLP4DH 2025 · <a href="https://aclanthology.org/2025.nlp4dh-1.50/">paper</a></div>
+<p>The authors evaluate 20 LLMs across 30 cognitive biases and 30,000 tests. They report evidence for every tested bias in at least some models.</p>
+<p>The value of this work is breadth: the bat-and-ball problem probes one narrow form of intuitive error, while a bias battery tests framing, anchoring, representativeness and many other systematic manipulations.</p>
+<div class="callout warn"><strong>Interpret carefully.</strong> A human-named bias in model outputs is a behavioral analogy. It does not demonstrate the same psychological mechanism. Biases can enter through training data, instruction tuning, prompt framing and learned statistical associations.</div>
+</section>
+
+<section id="faithfulness" class="paper">
+<h2>17. Chain-of-thought faithfulness: is the explanation the reason?</h2>
+<h3>17.1 Chua & Evans (2025)</h3>
+<div class="paper-meta"><a href="https://arxiv.org/abs/2501.08156">“Are DeepSeek R1 And Other Reasoning Models More Faithful?”</a></div>
+<p>The authors insert cues into prompts — for example, “A Stanford professor thinks the answer is D” — and test whether the cue changes the model’s answer. If it does, they ask whether the model acknowledges the cue in its reasoning trace.</p>
+<p>In their reported DeepSeek comparison, R1 described the influence of such cues far more often than the corresponding non-reasoning model (59% versus 7% in the cited setup). That suggests reasoning traces can sometimes be more revealing.</p>
+<p>However, the authors emphasize that this is one artificial test of one aspect of faithfulness.</p>
+
+<h3>17.2 FaithCoT-Bench (ICLR 2026)</h3>
+<div class="paper-meta"><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/6c7154e394e24c69409256ccf8bf0804-Abstract-Conference.html">FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning</a></div>
+<p>The benchmark treats faithfulness as an <em>instance-level</em> problem: can we determine whether this particular trajectory is faithful? Its FINE-CoT dataset contains more than 1,000 expert-annotated reasoning trajectories, including hundreds of identified unfaithful cases, and compares multiple detection strategies.</p>
+
+<h3>17.3 Zaman & Srivastava (ACL 2026)</h3>
+<div class="paper-meta"><a href="https://aclanthology.org/2026.acl-long.2217/">“Is Chain-of-Thought Really Not Explainability?”</a></div>
+<p>This paper complicates a common assumption: if a hint affected the answer but is absent from the written trace, is the trace necessarily unfaithful? The authors argue that omission can reflect <em>incompleteness</em> — lossy compression of a high-dimensional neural computation into a short linear narrative.</p>
+<p>They use broader metrics and causal mediation analysis, and report that some CoTs labelled unfaithful by simple hint-verbalization tests look more faithful under alternative criteria. They explicitly do <em>not</em> claim that all CoT is faithful.</p>
+
+<div class="callout"><strong>The best current position:</strong> chain-of-thought is neither “a transparent window into the model” nor “automatically fake.” It is a measurable behavioral trace whose causal relationship to hidden computation varies by model, task and evaluation method.</div>
+</section>
+
+<section id="metacognition" class="paper">
+<h2>18. The 2026 frontier: overthinking, stopping and metacognition</h2>
+<p>Once reasoning models can spend a large amount of computation, efficiency and control become scientific capabilities in their own right.</p>
+
+<h3>18.1 LLMThinkBench: basic math and overthinking</h3>
+<div class="paper-meta">Srivastava et al., Findings of ACL 2026 · <a href="https://aclanthology.org/2026.findings-acl.1285/">paper</a></div>
+<p>The benchmark evaluates 53 LLMs on 14 dynamically generated basic-math task families. The authors report that reasoning models can generate roughly <strong>18× more tokens</strong> while sometimes achieving lower accuracy, and that constraining tokens can produce large accuracy collapses in some models. They also find diminishing returns from increasing reasoning effort on several tested systems.</p>
+
+<h3>18.2 ThinkBrake: the model may solve the problem and then ruin it</h3>
+<div class="paper-meta">Song et al., Findings of ACL 2026 · <a href="https://aclanthology.org/2026.findings-acl.1095/">paper</a></div>
+<p>The authors demonstrate a particularly intuitive failure mode: a reasoning model reaches a correct intermediate solution, continues thinking, then overwrites it with a wrong answer. Their hindsight “oracle stopping” experiment improves average accuracy by about 8% while reducing thinking tokens by 72%. ThinkBrake then proposes a training-free stopping rule based on token-probability margins and reports token reductions of up to 30%.</p>
+
+<h3>18.3 Think Better, Not Longer</h3>
+<div class="paper-meta">Li et al., ACL 2026 · <a href="https://aclanthology.org/2026.acl-long.1386/">paper</a></div>
+<p>This paper introduces <span class="term">token-level marginal utility</span>: does a particular reasoning token increase or decrease the probability of the correct answer? Their MUTO method tries to penalize negative-utility reasoning rather than merely impose a crude length budget.</p>
+
+<h3>18.4 Think How to Think (TH2T)</h3>
+<div class="paper-meta">Liu et al., ACL 2026 · <a href="https://aclanthology.org/2026.acl-long.1766/">paper</a></div>
+<p>TH2T explicitly trains difficulty cognition and redundancy cognition. The aim is to choose a reasoning strategy before solving and then identify unproductive detours while solving. The authors report more than 70% inference-cost reduction on easy tasks and around 40% on complex tasks without compromising performance in their experiments.</p>
+
+<h3>18.5 MERA: separate reasoning from control</h3>
+<div class="paper-meta">Ha et al., ACL 2026 · <a href="https://aclanthology.org/2026.acl-long.304/">paper</a></div>
+<p>MERA makes a conceptual distinction between <em>reasoning content</em> and <em>control decisions</em>. A control policy decides whether to continue, backtrack or stop. This resembles an executive layer over the problem-solving process.</p>
+
+<h3>18.6 SAT: slow, normal, fast, skip</h3>
+<div class="paper-meta">Huang et al., ACL 2026 · <a href="https://aclanthology.org/2026.acl-long.2009/">paper</a></div>
+<p>SAT models reasoning as a finite-state machine with four modes — SLOW, NORMAL, FAST and SKIP — and uses a lightweight process reward model to switch between them. Across 9 LRMs and 7 benchmarks, the authors report up to 40% fewer reasoning tokens while generally maintaining or improving accuracy.</p>
+
+<h3>18.7 DTSR: when is thinking enough?</h3>
+<div class="paper-meta">Xiang et al., ACL 2026 · <a href="https://aclanthology.org/2026.acl-long.1080/">paper</a></div>
+<p>Dynamic Thought Sufficiency in Reasoning (DTSR) monitors reflection signals and evaluates whether the current chain of thought is sufficient to derive the final answer. On Qwen3 models, the paper reports reasoning-length reductions of roughly 28.9%–34.9% with minimal performance loss.</p>
+
+<h3>18.8 PAM: metacognition beyond mathematics</h3>
+<div class="paper-meta">Xu et al., ACL 2026 · <a href="https://aclanthology.org/2026.acl-long.432/">paper</a></div>
+<p>PAM applies metacognitive control to alignment. The model first identifies a top-level priority such as harmlessness, then uses explicit metacognitive knowledge to monitor and regulate reasoning. The authors report roughly 10-point improvements on their helpfulness/harmlessness alignment benchmarks under comparable pipelines.</p>
+
+<div class="figure">
+<div class="figure-title">What “better reasoning” increasingly means in 2026</div>
+<div class="flow">
+<div class="node">Know whether the task is easy or hard</div><div class="arrow">→</div><div class="node">Choose an effort level</div><div class="arrow">→</div><div class="node">Detect unproductive branches</div><div class="arrow">→</div><div class="node">Backtrack when useful</div><div class="arrow">→</div><div class="node">Recognize sufficiency</div><div class="arrow">→</div><div class="node">Stop</div>
+</div>
+<p class="caption">The frontier is shifting from “produce more thinking tokens” to “control computation intelligently.”</p>
+</div>
+</section>
+
+<section id="mechanistic" class="paper">
+<h2>19. Mechanistic understanding: what is happening inside the model?</h2>
+<div class="paper-meta">Hu et al. (ACL 2026), <a href="https://aclanthology.org/2026.acl-long.889/">“Towards a Mechanistic Understanding of Large Reasoning Models: A Survey of Training, Inference, and Failures”</a></div>
+<p>This survey organizes the emerging mechanistic literature around three themes: training dynamics, reasoning mechanisms and unintended behaviors. It is useful because much of the reasoning literature is still behavioral. We can observe that RL increases long-form problem solving, but a complete mechanistic account of <em>why</em> specific circuits, representations or internal states support that behavior is still missing.</p>
+<p>A mechanistic explanation would ideally connect several scales:</p>
+<ul><li>how pretraining creates latent problem-solving circuits;</li><li>how post-training changes activation and routing patterns;</li><li>how generated reasoning tokens interact with hidden-state computation;</li><li>why reflection and backtracking emerge;</li><li>why certain failures such as loops or collapse occur;</li><li>how these mechanisms vary across architectures and training recipes.</li></ul>
+<div class="takeaway"><strong>Current state:</strong> researchers have strong behavioral evidence that reasoning-focused training changes what models can do, but the field does not yet have a single unified mechanistic theory of LRM reasoning.</div>
+</section>
+
+<section id="mentalmodel">
+<h2>20. A useful mental model of a modern reasoning system</h2>
+<p>It is misleading to imagine one hidden “reasoning module.” A more practical mental model is a stack of capabilities.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Layer</th><th>What it contributes</th></tr></thead>
+<tbody>
+<tr><td>1. Pretrained representations</td><td>Language, facts, code patterns, mathematical structures, procedures and latent abstractions</td></tr>
+<tr><td>2. Task representation</td><td>Convert the prompt into an internal state that identifies goals, constraints and relevant knowledge</td></tr>
+<tr><td>3. Deliberative generation</td><td>Use generated tokens as a scratchpad to carry intermediate states across time</td></tr>
+<tr><td>4. Evaluation and revision</td><td>Check consistency, compare alternatives, notice errors, retry, or call a verifier/tool</td></tr>
+<tr><td>5. Compute control</td><td>Estimate difficulty, allocate budget, decide to backtrack, and stop when further thought is unlikely to help</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>Compact formula:</strong><br>Modern reasoning performance ≈ pretrained capability + reasoning-focused post-training + inference-time compute + search/verification + compute control + tools/environment.</div>
+</section>
+
+<section>
+<h2>21. Why do extra tokens help if the model is “just predicting the next token”?</h2>
+<p>This is one of the most important conceptual points.</p>
+<p>In direct answering, the model must map roughly:</p>
+<div class="flow"><div class="node">Question</div><div class="arrow">→</div><div class="node">Answer</div></div>
+<p>With a scratchpad:</p>
+<div class="flow"><div class="node">Question</div><div class="arrow">→</div><div class="node">State 1</div><div class="arrow">→</div><div class="node">State 2</div><div class="arrow">→</div><div class="node">State 3</div><div class="arrow">→</div><div class="node">Answer</div></div>
+<p>Each generated state becomes additional context for the next computation. That gives the overall process more <em>serial depth</em>, even though each individual decoding step still uses the same transformer. In this sense, autoregressive generation can behave like variable-depth computation.</p>
+<p>But natural-language tokens are not an ideal computer architecture. They are discrete, expensive and can encourage verbosity. This motivates research on latent reasoning, compressed reasoning, external tools and structured search.</p>
+</section>
+
+<section>
+<h2>22. Why can a reasoning model solve olympiad problems and fail easy ones?</h2>
+<ul>
+<li><strong>Distribution mismatch:</strong> difficult competition math may be heavily represented in reasoning post-training, while an “easy” task with unusual formatting may not be.</li>
+<li><strong>Wrong strategy selection:</strong> the model can apply a complex method where a direct calculation would be safer.</li>
+<li><strong>Overthinking:</strong> the model can introduce an error after already finding the answer.</li>
+<li><strong>State drift:</strong> long generation can lose track of earlier constraints.</li>
+<li><strong>Execution difficulty:</strong> the model may know an algorithm but be poor at carrying out hundreds of exact repetitive operations in text.</li>
+<li><strong>Verification failure:</strong> a correct candidate may be generated but not selected.</li>
+</ul>
+<p>This is why “difficulty for an LLM” is not identical to “difficulty for a human.”</p>
+</section>
+
+<section id="really">
+<h2>23. Do LLMs “really reason”?</h2>
+<p>The word <em>really</em> hides several different claims. The clearest current answer is therefore decomposed:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Claim</th><th>Current evidence</th></tr></thead>
+<tbody>
+<tr><td>Can LLM systems perform computations that reasonably count as reasoning behavior?</td><td><strong>Yes.</strong> There is extensive evidence across mathematics, coding, relational inference, planning-like tasks and scientific QA.</td></tr>
+<tr><td>Can extra deliberation improve performance?</td><td><strong>Yes.</strong> But the gain is task-dependent and non-monotonic.</td></tr>
+<tr><td>Can RL teach checking/backtracking strategies?</td><td><strong>Yes.</strong> DeepSeek-R1 and later work provide strong behavioral evidence.</td></tr>
+<tr><td>Do current models execute fully systematic algorithms across arbitrary depth and distribution shift?</td><td><strong>No.</strong> Controlled studies show substantial brittleness.</td></tr>
+<tr><td>Is visible chain-of-thought a guaranteed transcript of internal computation?</td><td><strong>No.</strong> Faithfulness must be tested.</td></tr>
+<tr><td>Do LLMs reason in the same way humans do?</td><td><strong>Not established.</strong> Behavioral similarities do not imply mechanistic equivalence.</td></tr>
+<tr><td>Does next-token prediction rule out reasoning?</td><td><strong>No.</strong> It specifies the generation/training interface, not the full computation implemented across hidden states and sequential generation.</td></tr>
+</tbody></table></div>
+</section>
+
+<section>
+<h2>24. GPT-4-era reasoning versus the reasoning-model era</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>GPT-4-era default chat model</th><th>Reasoning-model era</th></tr></thead>
+<tbody>
+<tr><td>Reasoning often elicited by prompting</td><td>Post-training explicitly targets extended problem solving</td></tr>
+<tr><td>Often optimized for immediate helpful response</td><td>Can allocate substantial hidden/visible compute before final answer</td></tr>
+<tr><td>Reasoning length mostly a by-product of prompt</td><td>Reasoning budget becomes an explicit system variable</td></tr>
+<tr><td>Less emphasis on learned self-checking loops</td><td>Reflection, backtracking and strategy switching are common learned behaviors</td></tr>
+<tr><td>Evaluation asks “can it reason?”</td><td>Evaluation increasingly asks “how should it allocate, verify and stop reasoning?”</td></tr>
+</tbody></table></div>
+<p>The architectural continuity is important: both remain autoregressive transformers. The difference is that recent systems have learned policies in which sequential token generation is deliberately used as extended computation.</p>
+</section>
+
+<section>
+<h2>25. Common mistakes when interpreting reasoning papers</h2>
+<ol>
+<li><strong>Benchmark accuracy is not a theory of cognition.</strong> It establishes success under an evaluation setup.</li>
+<li><strong>Long CoT is not automatically good CoT.</strong> Length can mean productive search, redundant checking or confusion.</li>
+<li><strong>Visible thought is not direct neural telemetry.</strong> Treat it as behavior.</li>
+<li><strong>Human psychological vocabulary can be metaphorical.</strong> “System 2,” “aha,” “reflection” and “metacognition” should be checked against the paper’s operational definition.</li>
+<li><strong>Interface constraints matter.</strong> Output limits, context limits and parsers can create apparent reasoning failures.</li>
+<li><strong>Contamination matters.</strong> Famous benchmarks may no longer cleanly measure novel problem solving.</li>
+<li><strong>Tools change the unit of analysis.</strong> A model plus Python, search, a theorem prover or a planner should be evaluated as a system.</li>
+</ol>
+</section>
+
+<section id="reading">
+<h2>26. How to read any new LLM reasoning paper</h2>
+<p>Ask these ten questions:</p>
+<ol>
+<li>What exact behavior does the paper call “reasoning”?</li>
+<li>Could the task or solution pattern have appeared in training data?</li>
+<li>Is success measured only by final-answer accuracy?</li>
+<li>Does the evaluation include out-of-distribution variants?</li>
+<li>Is problem difficulty systematically controlled?</li>
+<li>What is changing: model weights, prompt, token budget, sampling, verifier, tools, or several at once?</li>
+<li>Does extra compute improve pass@1, pass@k, or both?</li>
+<li>If the paper treats CoT as explanation, what causal evidence supports faithfulness?</li>
+<li>Could failures come from execution limits rather than failure to represent the algorithm?</li>
+<li>Does the system know when to stop?</li>
+</ol>
+<p>If you can answer those questions, you can understand most reasoning papers at a useful level without needing deep ML theory.</p>
+</section>
+
+<section>
+<h2>27. Recommended reading order</h2>
+<p><strong>Stage A — Cognitive intuition:</strong> Yax, Anlló & Palminteri (2024), then Brady et al. (2025).</p>
+<p><strong>Stage B — Technical shift:</strong> Wei et al. (2022) on chain-of-thought, Snell et al. (2024) on test-time scaling, DeepSeek-R1 (2025), then s1 (2025).</p>
+<p><strong>Stage C — Limitations:</strong> Kambhampati et al. (2025), Shojaee et al. (2025) plus the methodological comment, Khalid et al. (2025), and Camposampiero et al. (2025).</p>
+<p><strong>Stage D — Current frontier:</strong> Chua & Evans (2025), FaithCoT-Bench (2026), Zaman & Srivastava (2026), Hu et al. (2026), then one or two overthinking/metacognition papers such as ThinkBrake, SAT or DTSR.</p>
+</section>
+
+<section>
+<h2>28. Five ideas to remember</h2>
+<ol>
+<li><strong>Reasoning is not a binary switch.</strong> Behavioral success, systematic procedure and faithful mechanism are different standards.</li>
+<li><strong>Generated tokens can serve as computation.</strong> A model can use its own previous output as a scratchpad, giving the system additional serial depth.</li>
+<li><strong>Modern reasoning models are trained to exploit that compute.</strong> RL and reasoning-focused post-training make checking, backtracking and extended search more likely.</li>
+<li><strong>More thinking is not always better.</strong> The frontier is about allocating and controlling compute, not maximizing token count.</li>
+<li><strong>Chain-of-thought is evidence, not a brain scan.</strong> It can be informative, but faithfulness is a testable property.</li>
+</ol>
+</section>
+
+<section id="glossary">
+<h2>29. Glossary</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Term</th><th>Plain-English definition</th></tr></thead>
+<tbody>
+<tr><td>Ablation</td><td>Remove or alter one component to test whether it caused the result.</td></tr>
+<tr><td>Autoregressive</td><td>Generates sequentially; each new token depends on previous tokens.</td></tr>
+<tr><td>Benchmark</td><td>A standardized test set used to compare models.</td></tr>
+<tr><td>Calibration</td><td>How well stated confidence matches actual probability of correctness.</td></tr>
+<tr><td>Chain-of-thought (CoT)</td><td>Generated intermediate reasoning text before a final answer.</td></tr>
+<tr><td>Compositional reasoning</td><td>Combining several relations or operations to infer a result.</td></tr>
+<tr><td>Counterfactual</td><td>A modified input used to test whether a particular factor causally changed the output.</td></tr>
+<tr><td>Fine-tuning</td><td>Additional training after pretraining.</td></tr>
+<tr><td>GRPO</td><td>Group Relative Policy Optimization, a reinforcement-learning method used prominently in DeepSeek-R1.</td></tr>
+<tr><td>Inference</td><td>Running the trained model on a new problem.</td></tr>
+<tr><td>Inference-time/test-time scaling</td><td>Spending additional computation while solving the current problem.</td></tr>
+<tr><td>Large Reasoning Model (LRM)</td><td>Informal term for an LLM trained/configured to spend substantial inference-time compute on reasoning.</td></tr>
+<tr><td>LLM-as-judge</td><td>Using another LLM to evaluate an output.</td></tr>
+<tr><td>Logit</td><td>A raw model score before conversion into probabilities.</td></tr>
+<tr><td>Metacognition</td><td>Monitoring and controlling the reasoning process itself.</td></tr>
+<tr><td>OOD</td><td>Out-of-distribution: systematically different from the training/tuning distribution.</td></tr>
+<tr><td>Outcome supervision</td><td>Feedback based on the final result.</td></tr>
+<tr><td>Overthinking</td><td>Spending more reasoning computation than is useful, sometimes hurting accuracy.</td></tr>
+<tr><td>Pass@k</td><td>Whether at least one of k generated attempts succeeds.</td></tr>
+<tr><td>Policy</td><td>In RL, the rule/model that chooses actions; for an LLM, a distribution over next tokens.</td></tr>
+<tr><td>Process reward model (PRM)</td><td>A model that scores intermediate reasoning steps.</td></tr>
+<tr><td>Process supervision</td><td>Training feedback applied to intermediate steps, not only the final answer.</td></tr>
+<tr><td>Reasoning budget</td><td>The amount of inference-time compute or tokens allocated to deliberation.</td></tr>
+<tr><td>Reasoning trace</td><td>The observable sequence of intermediate generated steps.</td></tr>
+<tr><td>Reinforcement learning</td><td>Training that increases behaviors receiving higher reward.</td></tr>
+<tr><td>Reward</td><td>A numerical signal indicating how desirable an output or action is.</td></tr>
+<tr><td>Self-consistency</td><td>Generate multiple reasoning paths and aggregate/select among them.</td></tr>
+<tr><td>System 1 / System 2</td><td>Psychological shorthand for fast/automatic versus slower/deliberative processing; in LLM research usually an analogy.</td></tr>
+<tr><td>Token</td><td>A unit of text processed/generated by the model.</td></tr>
+<tr><td>Verifier</td><td>A mechanism that judges candidate answers or reasoning steps.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="sources">
+<h2>30. Sources and figure references</h2>
+<p class="small">This report uses direct links rather than reproducing copyrighted paper figures. Where a numeric chart is included, it is an original redraw from values explicitly reported by the cited paper.</p>
+<ol class="sources">
+<li>Yax, N., Anlló, H. & Palminteri, S. (2024). <a href="https://www.nature.com/articles/s44271-024-00091-8">Studying and improving reasoning in humans and machines</a>. <em>Communications Psychology</em>, 2, 51.</li>
+<li>Wei, J. et al. (2022). <a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</a>.</li>
+<li>Lightman, H. et al. (2023). <a href="https://arxiv.org/abs/2305.20050">Let’s Verify Step by Step</a>.</li>
+<li>Snell, C., Lee, J., Xu, K. & Kumar, A. (2024). <a href="https://arxiv.org/abs/2408.03314">Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters</a>.</li>
+<li>Guo, D. et al. (2025). <a href="https://www.nature.com/articles/s41586-025-09422-z">DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning</a>. <em>Nature</em> 645, 633–638.</li>
+<li>Muennighoff, N. et al. (2025). <a href="https://aclanthology.org/2025.emnlp-main.1025/">s1: Simple test-time scaling</a>. EMNLP 2025.</li>
+<li>Kambhampati, S., Stechly, K. & Valmeekam, K. (2025). <a href="https://pubmed.ncbi.nlm.nih.gov/40221824/">(How) Do reasoning models reason?</a></li>
+<li>Shojaee, P. et al. (2025). <a href="https://arxiv.org/abs/2506.06941">The Illusion of Thinking</a>. NeurIPS 2025.</li>
+<li>Opus, C. & Lawsen, A. (2025). <a href="https://arxiv.org/abs/2506.09250">Comment on The Illusion of Thinking</a>.</li>
+<li>Khalid, I., Nourollah, A. M. & Schockaert, S. (2025). <a href="https://aclanthology.org/2025.acl-long.433/">Large Language and Reasoning Models are Shallow Disjunctive Reasoners</a>. ACL 2025.</li>
+<li>Camposampiero, G. et al. (2025). <a href="https://proceedings.mlr.press/v284/camposampiero25a.html">Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?</a> PMLR 284.</li>
+<li>Malberg, S. et al. (2025). <a href="https://aclanthology.org/2025.nlp4dh-1.50/">A Comprehensive Evaluation of Cognitive Biases in LLMs</a>.</li>
+<li>Brady, O. et al. (2025). <a href="https://www.nature.com/articles/s44159-025-00506-1">Dual-process theory and decision-making in large language models</a>. <em>Nature Reviews Psychology</em>.</li>
+<li>Chua, J. & Evans, O. (2025). <a href="https://arxiv.org/abs/2501.08156">Are DeepSeek R1 And Other Reasoning Models More Faithful?</a></li>
+<li>Hayes, W. M., Yax, N. & Palminteri, S. (2025). <a href="https://direct.mit.edu/opmi/article/doi/10.1162/opmi_a_00209/131044/Relative-Value-Encoding-in-Large-Language-Models-A">Relative Value Encoding in Large Language Models</a>. <em>Open Mind</em>.</li>
+<li>Shen, X. et al. (2026). <a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/6c7154e394e24c69409256ccf8bf0804-Abstract-Conference.html">FaithCoT-Bench</a>. ICLR 2026.</li>
+<li>Zaman, K. & Srivastava, S. (2026). <a href="https://aclanthology.org/2026.acl-long.2217/">Is Chain-of-Thought Really Not Explainability?</a> ACL 2026.</li>
+<li>Hu, Y. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.889/">Towards a Mechanistic Understanding of Large Reasoning Models</a>. ACL 2026.</li>
+<li>Srivastava, G. et al. (2026). <a href="https://aclanthology.org/2026.findings-acl.1285/">Do LLMs Overthink Basic Math Reasoning?</a> Findings of ACL 2026.</li>
+<li>Song, S. et al. (2026). <a href="https://aclanthology.org/2026.findings-acl.1095/">ThinkBrake: Efficient Reasoning via Log-Probability Margin Guided Decoding</a>. Findings of ACL 2026.</li>
+<li>Li, J. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.1386/">Think Better, Not Longer</a>. ACL 2026.</li>
+<li>Liu, Y. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.1766/">Think How to Think</a>. ACL 2026.</li>
+<li>Ha, R. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.304/">From “Aha Moments” to Controllable Thinking</a>. ACL 2026.</li>
+<li>Huang, W. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.2009/">SAT: Balancing Reasoning Accuracy and Efficiency with Stepwise Adaptive Thinking</a>. ACL 2026.</li>
+<li>Xiang, Y. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.1080/">When Is Thinking Enough?</a> ACL 2026.</li>
+<li>Xu, Z. et al. (2026). <a href="https://aclanthology.org/2026.acl-long.432/">PAM: Enhancing General Alignment of Large Reasoning Models through Priority-Aware Metacognition</a>. ACL 2026.</li>
+</ol>
+
+<hr />
+<h2>31. Final perspective</h2>
+<p>The most useful conceptual shift is to stop asking whether an LLM either “has reasoning” or “does not have reasoning.” Modern models are systems whose inference can contain variable amounts of learned computation. Post-training can make them allocate steps, explore alternatives, inspect conflicts, revise, and use verifiers or tools. On many difficult problems, these mechanisms create real and measurable capability gains.</p>
+<p>At the same time, competence remains uneven. Models can be excellent on one representation and fragile on another. They can produce a correct intermediate answer and then lose it. They can generate explanations whose relationship to internal computation is uncertain. They can reproduce human-like biases without sharing human cognitive mechanisms.</p>
+<div class="callout"><strong>The research trajectory in one line:</strong><br>2024 — Can LLMs overcome intuitive errors? → 2025 — Can we train models to spend much more inference compute productively? → 2026 — Can we understand, verify and control that computation, including when to think, how to think and when to stop?</div>
+</section>
+
+</main>
+<footer>
+This document is an educational synthesis of the cited literature, written for a non-specialist reader. Quantitative claims are attributed to the original papers. Links were current when the report was prepared on 27 September 2026.
+</footer>
+</div>
+</body>
+</html>

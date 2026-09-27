@@ -53,24 +53,28 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 - [WEF 2025 future of jobs](https://www.weforum.org/publications/the-future-of-jobs-report-2025/)
 - Dario Machine of Loving grace
 
-**Day 4**: 0929 Tokens, embeddings and parameters; Regulating AI
+## **Day 4**: 0929 Tokens, embeddings and parameters; Regulating AI
 
-- News: source [AIFray](https://aifray.com/)
+- News: Jev
 - Tech: Tokens, embeddings and LLM parameters
+- [slides on embeddings and tokens](https://docs.google.com/presentation/d/1K-iiDBev0nuf9SpXbj7DDyG2vr4ojbPxm6g_MpYlT4c/edit?usp=sharing)
+
+- Hands on : Claude, Codex, Antigravity, Kimi Code, CLI, OpenCode 
+- [slides hands-on](https://docs.google.com/presentation/d/1sIE06t4cmiCKYoV1H0g3Sropjd1AW3j3KZoA2qagfO4/edit?usp=sharing)
+
+If we have time:
+
 - Society: AI-act and regulations; sovereignty; 
-- Actors: OpenAI and Anthropic, Sam Altman, Dario Almodei
-- Group projects
-
-- [slides](https://docs.google.com/presentation/d/1K-iiDBev0nuf9SpXbj7DDyG2vr4ojbPxm6g_MpYlT4c/edit?usp=sharing)
 - [slides on regulation](https://docs.google.com/presentation/d/1Mh1X-lZG4hvb0Uhl66ODN_CX082AztbROlbrCrsu_aE/edit?usp=sharing)
+- Actors: OpenAI and Anthropic, Sam Altman, Dario Almodei
 
-**Day 5**: 1006 - Benchmarks and reasoning emergence; AI on Science
+
+## **Day 5**: 1006 - Benchmarks and reasoning emergence; AI on Science
 
 - News
 - Tech: LLM Benchmarks; simple predictors to reasoning models
 - Society: AI and Science
-- Demo: Building apps with AI, 
-- Lovable
+- Demo: Building apps with AI, and Lovable
 - Opencode 
 - Actors: Chinese labs and models
 - Group projects
@@ -78,7 +82,9 @@ Course material for the 2026 edition. Each session links to its Google Slides de
 
 - [slides](https://docs.google.com/presentation/d/1TCvjgyqNc4NwVb5kkoEoruud6nq3jvspF9GqvSUbhM8/edit?usp=sharing)
 
-**Day 6**: 1013 - workshop
+- [reasoning in LLMs](/recent_llm_reasoning_report.html)
+
+## **Day 6**: 1013 - workshop
 
 This is a special session where we work on the EU parliament debate 
 
@@ -90,7 +96,7 @@ We will
 
 
 
-**Day 7**: 1020 - LLM to agents, harnesses + Education
+## **Day 7**: 1020 - LLM to agents, harnesses + Education
 
 - News
 - Tech: LLM to agents, harnesses
@@ -104,7 +110,7 @@ We will
 - Unesco 
 - 
 
-**Day 8**: 1103 - 
+## **Day 8**: 1103 - 
 
 - News
 - Tech: Guardrails and abliteration
@@ -113,7 +119,7 @@ We will
 - Actors: 
 - Group projects
 
-**Day 9**: 1110 - 
+## **Day 9**: 1110 - 
 
 - News
 - Tech: Voice AI & Personas
@@ -122,7 +128,7 @@ We will
 - Actors: 
 - Group projects
 
-**Day 10**: 1117 - 
+## **Day 10**: 1117 - 
 
 - News
 - Tech: Image and Video
@@ -131,7 +137,7 @@ We will
 - Actors: 
 - Group projects
 
-**Day 11**: 1124 - 
+## **Day 11**: 1124 - 
 
 - News
 - Tech: Multi agent collaboration; Monitoring
@@ -141,4 +147,4 @@ We will
 - Group projects
 
 
-**Day 12**: 1201 - Project presentations
+## **Day 12**: 1201 - Project presentations
