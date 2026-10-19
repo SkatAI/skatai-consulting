@@ -69,7 +69,21 @@ If we have time:
 - Actors: OpenAI and Anthropic, Sam Altman, Dario Almodei
 
 
-## **Day 5**: 1006 - Benchmarks and reasoning emergence; AI on Science
+## **Day 5**: Tour de table of student projects
+
+
+
+## **Day 6**: 1013 - workshop
+
+This is a special session where we work on the EU parliament debate 
+
+We will 
+- constitute the dataset by scraping / downloading the verbatim of the debates for the past 12 months 
+- define study questions 
+- enrich and expand the dataset 
+- design artefacts : applications, web sites,   
+
+## **Day 7**: 1006 - Benchmarks and reasoning emergence; AI on Science
 
 - News
 - Tech: LLM Benchmarks; simple predictors to reasoning models
@@ -84,19 +98,7 @@ If we have time:
 
 - [reasoning in LLMs](/recent_llm_reasoning_report.html)
 
-## **Day 6**: 1013 - workshop
-
-This is a special session where we work on the EU parliament debate 
-
-We will 
-- constitute the dataset by scraping / downloading the verbatim of the debates for the past 12 months 
-- define study questions 
-- enrich and expand the dataset 
-- design artefacts : applications, web sites,   
-
-
-
-## **Day 7**: 1020 - LLM to agents, harnesses + Education
+## **Day 8**: 1103 - LLM to agents, harnesses + Education
 
 - News
 - Tech: LLM to agents, harnesses
@@ -109,15 +111,6 @@ We will
 ### Readings 
 - Unesco 
 - 
-
-## **Day 8**: 1103 - 
-
-- News
-- Tech: Guardrails and abliteration
-- Society: Environment
-- Demo: tbd
-- Actors: 
-- Group projects
 
 ## **Day 9**: 1110 - 
 
