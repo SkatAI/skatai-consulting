@@ -98,26 +98,28 @@ We will
 
 - [reasoning in LLMs](/recent_llm_reasoning_report.html)
 
-## **Day 8**: 1103 - LLM to agents, harnesses + Education
+## **Day 8**: 1103 - LLM to agents and harnesses
 
 - News
 - Tech: LLM to agents, harnesses
-- Society: Education & loss of skills
-- Actors: Nvidia
-- Demo: tbd
-- Actors: 
-- Group projects
+- working with AI: How to avoid brain rot. loops: Human create - AI completes - AI review, Human decides
+- Demo : claude browser : write a post on linkedin, search twitter, 
+- Demo: build a youtube downloader with yt-dlp in claude code
+- homework : build your own youtube download platform 
+- Actors: Nvidia, the keynote with the bots
+- Group projects : make each group project agentic.
 
 ### Readings 
 - Unesco 
 - 
 
-## **Day 9**: 1110 - 
+## **Day 9**: 1110 - from local to apps
 
 - News
-- Tech: Voice AI & Personas
-- Society: Democracy and disinformation
-- Demo: tbd
+- Tech: Benchmarks, Personas, The basics of app building
+- working with AI: using voice mode to understand a paper 
+- Society: Sovereignty and the AI Act, watermarking and how to avoid AI detection
+- Demo: github and hosting
 - Actors: 
 - Group projects
 
@@ -126,14 +128,14 @@ We will
 - News
 - Tech: Image and Video
 - Society: 
-- Demo: tbd
+- Demo: Build a dashboard of the EU parliament debates
 - Actors: 
 - Group projects
 
 ## **Day 11**: 1124 - 
 
 - News
-- Tech: Multi agent collaboration; Monitoring
+- Tech: 
 - Society: 
 - Demo: tbd
 - Actors: Langfuse; Langsmith
