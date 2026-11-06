@@ -100,45 +100,38 @@ We will
 
 ## **Day 8**: 1103 - LLM to agents and harnesses
 
+LLMs generate content, agents act. The harness assembles elements such as memory and tools that transform the LLM into a Harness.
+
 - News
-- Tech: LLM to agents, harnesses
 - working with AI: How to avoid brain rot. loops: Human create - AI completes - AI review, Human decides
+- Tech: LLM to agents, harnesses. [Slides](https://docs.google.com/presentation/d/19_TjyfiMMbw5Sd8rnpQy0P8FeQ9B5lNQYZXmCh9JZdI/edit?usp=sharing)
 - Demo : claude browser : write a post on linkedin, search twitter, 
+- Workshop : build an Agent using Ollama, OpenCode and Github WorkSpaces and opensource models.
+- Group projects 
+
+## **Day 9**: 1110 - Workshop Build an Agent with OpenCode, (cont.)
+
+- News
+- Tech culture : github, hosting, local models
+- Workshop: building an agent with local models. OpenCode to write the code of the harness. The agent runs on local via Ollama. 
+- Group projects
+- Course feedback
+
+## **Day 10**: 1117 - Build your own app
+
+- News
+- Tech: Benchmarks, Personas
+- Tech: Build your own app
 - Demo: build a youtube downloader with yt-dlp in claude code
-- homework : build your own youtube download platform 
-- Actors: Nvidia, the keynote with the bots
-- Group projects : make each group project agentic.
+- Demo: Build a dashboard of the EU parliament debates with rethorical fallacies analysis
+- Group projects
 
-### Readings 
-- Unesco 
-- 
-
-## **Day 9**: 1110 - from local to apps
+## **Day 11**: 1124 - AI and Society
 
 - News
-- Tech: Benchmarks, Personas, The basics of app building
-- working with AI: using voice mode to understand a paper 
+- Working with AI: using voice mode to understand a paper 
 - Society: Sovereignty and the AI Act, watermarking and how to avoid AI detection
-- Demo: github and hosting
-- Actors: 
-- Group projects
-
-## **Day 10**: 1117 - 
-
-- News
-- Tech: Image and Video
-- Society: 
-- Demo: Build a dashboard of the EU parliament debates
-- Actors: 
-- Group projects
-
-## **Day 11**: 1124 - 
-
-- News
-- Tech: 
-- Society: 
-- Demo: tbd
-- Actors: Langfuse; Langsmith
+- Society: Environment, Science
 - Group projects
 
 
