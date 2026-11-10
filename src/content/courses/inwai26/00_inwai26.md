@@ -112,16 +112,25 @@ LLMs generate content, agents act. The harness assembles elements such as memory
 ## **Day 9**: 1110 - Workshop Build an Agent with OpenCode, (cont.)
 
 - News
-- Tech culture : github, hosting, local models
+- Tech : The tools we use in the workshop : Opencode, Streamlit, Openrouter, Ollama
 - Workshop: building an agent with local models. OpenCode to write the code of the harness. The agent runs on local via Ollama. 
 - Group projects
 - Course feedback
 
-## **Day 10**: 1117 - Build your own app
+
+- [Slides](https://docs.google.com/presentaprojetcsNLqgtORfHfbxyqyOR0nazO4DeDJsXxm06FZxFUkpXos/edit?usp=sharing )
+- repo for the workshop : https://github.com/alexisperrier/build_agent
+- zip file of the repo : https://github.com/alexisperrier/build_agent/archive/refs/heads/main.zip  
+
+Please install opencode desktop before the class https://opencode.ai/desktop
+Not the CLI, make sure you install OpenCode.
+
+
+## **Day 10**: 1117 - Autonomous agents : Hermes
 
 - News
 - Tech: Benchmarks, Personas
-- Tech: Build your own app
+- Tech: autonomous agent infrastructure, Hermes and OpenClaw
 - Demo: build a youtube downloader with yt-dlp in claude code
 - Demo: Build a dashboard of the EU parliament debates with rethorical fallacies analysis
 - Group projects
