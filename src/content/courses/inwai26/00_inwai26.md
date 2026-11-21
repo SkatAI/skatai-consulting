@@ -138,6 +138,10 @@ And then work to build an LLM wiki on the EU parliament verbatim corpus using Op
 - News
 - Skills and MCP how to boost your AI app. [slides](https://docs.google.com/presentation/d/1oBxpkb8ZUgR2SMaqRNWMPR9S1QSlyI2fA4atxcZ77p8/edit?usp=sharing)
 - LLM wikis : a self augmented dynamic corpus exploration and storage architecture
+  - install [Obsidian](https://obsidian.md/download) (free tool for graph visualization) 
+  - [github repo for the data collection ](https://github.com/SkatAI/eu-parliament-verbatim/). just to see how the dataset was built.
+  - the data is in the [data](folder). 20 debates.
+  - [download](https://raw.githubusercontent.com/SkatAI/eu-parliament-verbatim/refs/heads/main/data/2026-09-15.json) the data file. This is the sept 15 2026 debate in json format. 
 - Group projects
 
 
