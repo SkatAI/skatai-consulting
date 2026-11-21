@@ -125,23 +125,22 @@ LLMs generate content, agents act. The harness assembles elements such as memory
 Please install opencode desktop before the class https://opencode.ai/desktop
 Not the CLI, make sure you install OpenCode.
 
-
-## **Day 10**: 1117 - Autonomous agents : Hermes
-
-- News
-- Tech: Benchmarks, Personas
-- Tech: autonomous agent infrastructure, Hermes and OpenClaw
-- Demo: build a youtube downloader with yt-dlp in claude code
-- Demo: Build a dashboard of the EU parliament debates with rethorical fallacies analysis
-- Group projects
-
-## **Day 11**: 1124 - AI and Society
+## **Day 10**: 1117 - Student projects 
 
 - News
-- Working with AI: using voice mode to understand a paper 
-- Society: Sovereignty and the AI Act, watermarking and how to avoid AI detection
-- Society: Environment, Science
+- Student Group projects
+
+## **Day 11**: 1124 - Augment your Claude - LLM wiki
+
+In this last session, we introduce 2 recent elements of AI : Skills and MCP servers. 
+And then work to build an LLM wiki on the EU parliament verbatim corpus using Opencode.
+
+- News
+- Skills and MCP how to boost your AI app. [slides](https://docs.google.com/presentation/d/1oBxpkb8ZUgR2SMaqRNWMPR9S1QSlyI2fA4atxcZ77p8/edit?usp=sharing)
+- LLM wikis : a self augmented dynamic corpus exploration and storage architecture
 - Group projects
 
 
 ## **Day 12**: 1201 - Project presentations
+
+In the last session, students present their projects.
