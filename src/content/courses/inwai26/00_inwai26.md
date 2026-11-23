@@ -130,20 +130,25 @@ Not the CLI, make sure you install OpenCode.
 - News
 - Student Group projects
 
-## **Day 11**: 1124 - Augment your Claude - LLM wiki
+## **Day 11**: 1124 - Augment your AI with Skills & MCP servers - LLM wiki workshop
 
-In this last session, we introduce 2 recent elements of AI : Skills and MCP servers. 
-And then work to build an LLM wiki on the EU parliament verbatim corpus using Opencode.
+In this class, we introduce 2 recent elements of AI : Skills and MCP servers that extend the capacities of your AIs. [slides](https://docs.google.com/presentation/d/1oBxpkb8ZUgR2SMaqRNWMPR9S1QSlyI2fA4atxcZ77p8/edit?usp=sharing)
 
-- News
-- Skills and MCP how to boost your AI app. [slides](https://docs.google.com/presentation/d/1oBxpkb8ZUgR2SMaqRNWMPR9S1QSlyI2fA4atxcZ77p8/edit?usp=sharing)
+And then we build an LLM wiki on the EU parliament verbatim corpus using Opencode. [download the workshop compressed](https://github.com/alexisperrier/workshop_llm_wiki/archive/refs/heads/main.zip). The full github repo is [here](https://github.com/alexisperrier/workshop_llm_wiki)
+
+**You need**:
 - LLM wikis : a self augmented dynamic corpus exploration and storage architecture
   - install [Obsidian](https://obsidian.md/download) (free tool for graph visualization) 
-  - [github repo for the data collection ](https://github.com/SkatAI/eu-parliament-verbatim/). just to see how the dataset was built.
-  - the data is in the [data](folder). 20 debates.
-  - [download](https://raw.githubusercontent.com/SkatAI/eu-parliament-verbatim/refs/heads/main/data/2026-09-15.json) the data file. This is the sept 15 2026 debate in json format. 
-- Group projects
+  - install [Opencode](https://opencode.ai/)
 
+**Other links**:
+- [github repo for the data collection ](https://github.com/SkatAI/eu-parliament-verbatim/). This allows you to download more debates from the EU parliament.
+- All the 20 debates data is in the [data](folder).
+- The [initial LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) idea by [Andrej Karpathy](https://karpathy.ai/)
+
+**Other Resources**:
+- [Claude for science](https://claude.com/docs/claude-science/overview)
+- [World Bank MCP server](https://mcpservers.org/servers/anshumax/world_bank_mcp_server)
 
 ## **Day 12**: 1201 - Project presentations
 
